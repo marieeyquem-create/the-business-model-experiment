@@ -26,8 +26,9 @@
         <p class="eyebrow">Packs Google Sheets</p>
         <h1>Un pack adaptable pour chiffrer votre activité sans repartir de zéro</h1>
         <p>
-          Pour les modèles simples, partez d'un pack qui couvre les flux de revenus standards,
-          avec une seule offre par flux. Si votre modèle est plus spécifique, il sera construit sur mesure.
+          Pour avancer en autonomie, partez d'une base simple qui vous aide à poser vos chiffres
+          et à comprendre les mécaniques économiques. Si vous voulez un modèle fidèle à votre entreprise,
+          il sera construit sur mesure.
         </p>
       </section>
 
@@ -37,9 +38,9 @@
           <h2>Un pack pensé pour votre vraie logique de revenus</h2>
         </div>
         <p>
-          Le Pack Essentiel est fait pour chiffrer un modèle simple : abonnement simple,
-          prestation, vente de produit, formation ou coaching, avec une offre unique par flux.
-          Il aide à comprendre les revenus, les coûts et le résultat sans complexifier le départ.
+          Le Pack Essentiel est une offre low cost pour tester seul, structurer une première version
+          de vos chiffres et comprendre les grandes mécaniques économiques. Il reste volontairement
+          simple et ne remplace pas un modèle personnalisé.
         </p>
       </section>
 
@@ -52,16 +53,15 @@
           <article class="card product featured">
             <h3>Pack Essentiel</h3>
             <p>
-              Pour les entrepreneurs qui veulent chiffrer une activité simple et standard, avec
-              une offre unique par flux de revenus.
+              Pour les entrepreneurs qui veulent essayer en autonomie, poser une première version
+              de leurs chiffres et apprendre à raisonner avec un modèle simple.
             </p>
             <ul>
-              <li>Abonnement simple</li>
-              <li>Prestation de service</li>
-              <li>E-commerce / vente de produit</li>
-              <li>Formation / coaching</li>
-              <li>Consolidation automatique</li>
-              <li>Dashboard de pilotage</li>
+              <li>Base simple pour tester en autonomie</li>
+              <li>Flux standards : abonnement, prestation, vente, formation</li>
+              <li>Une offre unique par flux</li>
+              <li>Volumes saisis mois par mois</li>
+              <li>Consolidation et dashboard simples</li>
             </ul>
             <a class="button primary" href="#">Bientôt disponible</a>
           </article>
@@ -179,7 +179,7 @@
 
       <section class="cta-band">
         <h2>Vous ne savez pas quel template choisir ?</h2>
-        <p>Commencez par la formation gratuite, puis utilisez le Pack Essentiel si votre modèle est simple. Si vous achetez plusieurs modèles ou si votre activité est plus complexe, nous pouvons livrer un fichier consolidé prêt à l'emploi.</p>
+        <p>Commencez par la formation gratuite, puis utilisez le Pack Essentiel pour tester en autonomie. Si vous voulez un modèle fidèle à votre entreprise, nous pouvons construire un template sur mesure ou livrer un fichier consolidé prêt à l'emploi.</p>
         <div class="hero-actions">
           <a class="button primary" href="formation.html">Commencer la formation</a>
           <a class="button secondary light" href="coaching.html">Réserver un coaching</a>
@@ -231,7 +231,7 @@
 
         if (!isComplex && standardModels.length >= 1) {
           resultTitle.textContent = "Pack Essentiel";
-          resultCopy.textContent = "Votre activité semble entrer dans les cas simples et standards. Le Pack Essentiel est le bon point de départ.";
+          resultCopy.textContent = "Le Pack Essentiel est le bon point de départ si vous voulez tester en autonomie et construire une première version simple de vos chiffres.";
           ["Pack Essentiel Google Sheets", ...standardModels.map((model) => modelLabels[model])].forEach((item) => {
             const li = document.createElement("li");
             li.textContent = item;
