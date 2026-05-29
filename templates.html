@@ -105,6 +105,11 @@
         <div class="guide-layout">
           <form class="guide-panel" id="template-guide-form">
             <fieldset>
+              <legend>Décrivez votre activité</legend>
+              <textarea id="business-description" name="description" rows="5" placeholder="Exemple : je vends une formation en ligne, puis certains clients prennent un accompagnement individuel."></textarea>
+            </fieldset>
+
+            <fieldset>
               <legend>Vos revenus viennent de...</legend>
               <label><input type="checkbox" name="model" value="abonnement" /> Abonnements ou revenus récurrents</label>
               <label><input type="checkbox" name="model" value="prestation" /> Prestations, missions, accompagnement</label>
@@ -136,6 +141,8 @@
             <p class="eyebrow">Recommandation</p>
             <h3 id="guide-result-title">Répondez aux questions</h3>
             <p id="guide-result-copy">Cochez les éléments qui décrivent votre activité et votre niveau d'autonomie pour obtenir une recommandation.</p>
+            <div class="recommendation-meta" id="guide-result-meta"></div>
+            <p class="recommendation-label">Composition recommandée</p>
             <ul id="guide-result-list"></ul>
             <a class="button primary" id="guide-result-action" href="coaching.html">Être guidé</a>
           </aside>
@@ -218,8 +225,10 @@
       const guideForm = document.querySelector("#template-guide-form");
       const resultTitle = document.querySelector("#guide-result-title");
       const resultCopy = document.querySelector("#guide-result-copy");
+      const resultMeta = document.querySelector("#guide-result-meta");
       const resultList = document.querySelector("#guide-result-list");
       const resultAction = document.querySelector("#guide-result-action");
+      const descriptionInput = document.querySelector("#business-description");
 
       const modelLabels = {
         abonnement: "Abonnement simple",
@@ -234,9 +243,35 @@
         return [...guideForm.querySelectorAll(`input[name="${name}"]:checked`)].map((input) => input.value);
       }
 
+      function includesAny(text, words) {
+        return words.some((word) => text.includes(word));
+      }
+
+      function inferredFromDescription() {
+        const text = descriptionInput.value.toLowerCase();
+        const models = [];
+        const complexity = [];
+
+        if (includesAny(text, ["abonnement", "abonné", "abonnés", "mensuel", "récurrent", "saas", "membership"])) models.push("abonnement");
+        if (includesAny(text, ["prestation", "mission", "service", "consulting", "accompagnement", "freelance"])) models.push("prestation");
+        if (includesAny(text, ["e-commerce", "ecommerce", "boutique", "produit", "vente de produit", "stock"])) models.push("ecommerce");
+        if (includesAny(text, ["formation", "atelier", "coaching", "cours", "programme"])) models.push("formation");
+        if (includesAny(text, ["appel d'offres", "appel d’offre", "subvention", "financement", "bailleur", "dossier"])) models.push("pipeline");
+        if (includesAny(text, ["marketplace", "commission", "licence", "redevance", "affiliation", "lead generation", "lead"])) models.push("marketplace");
+
+        if (includesAny(text, ["plusieurs activités", "activités indépendantes", "business units", "diversifié"])) complexity.push("independent");
+        if (includesAny(text, ["plusieurs offres", "plusieurs formules", "plusieurs plans", "multi-offres", "gamme"])) complexity.push("multi");
+        if (includesAny(text, ["upsell", "option", "module complémentaire", "cross-sell", "add-on"])) complexity.push("upsell");
+        if (includesAny(text, ["dépend", "déclenche", "après", "puis certains", "conversion vers", "transforme en"])) complexity.push("dependency");
+        if (includesAny(text, ["spécifique", "sur mesure", "particulier", "complexe", "je ne sais pas"])) complexity.push("custom");
+
+        return { models, complexity };
+      }
+
       function updateGuide() {
-        const models = selectedValues("model");
-        const complexity = selectedValues("complexity");
+        const inferred = inferredFromDescription();
+        const models = [...new Set([...selectedValues("model"), ...inferred.models])];
+        const complexity = [...new Set([...selectedValues("complexity"), ...inferred.complexity])];
         const support = selectedValues("support");
         const needsModelWorkshop = complexity.some((item) => ["multi", "upsell", "dependency", "custom"].includes(item));
         const needsGuidance = support.some((item) => ["fill", "analyse", "decision"].includes(item));
@@ -244,10 +279,11 @@
         const needsWorkshop = needsModelWorkshop || needsGuidance;
 
         resultList.innerHTML = "";
+        resultMeta.innerHTML = "";
 
         if (models.length === 0) {
-          resultTitle.textContent = "Choisissez vos sources de revenus";
-          resultCopy.textContent = "Commencez par cocher d'où viennent vos revenus. Le guide composera ensuite votre pack de templates ou recommandera l'atelier si c'est plus adapté.";
+          resultTitle.textContent = "Décrivez vos revenus";
+          resultCopy.textContent = "Écrivez une phrase sur votre activité ou cochez vos sources de revenus. La recommandation se construit automatiquement à partir de vos réponses.";
           resultAction.textContent = "Être guidé";
           resultAction.href = "coaching.html";
           return;
@@ -255,10 +291,30 @@
 
         if (!needsWorkshop && support.length === 0) {
           resultTitle.textContent = "Précisez votre niveau d'autonomie";
-          resultCopy.textContent = "Dites si vous êtes à l'aise pour remplir seul le fichier ou si vous voulez être accompagné. C'est ce qui permet de choisir entre pack autonome et atelier personnalisé.";
+          resultCopy.textContent = "Le guide a identifié les templates utiles. Indiquez maintenant si vous êtes à l'aise pour remplir seul le fichier ou si vous voulez être accompagné.";
+          resultMeta.innerHTML = `<span>${models.length} source(s) de revenus détectée(s)</span>`;
           resultAction.textContent = "Répondre à la question";
           resultAction.href = "#guide-title";
-          return;
+        } else if (needsWorkshop) {
+          resultTitle.textContent = "Atelier personnalisé à 500 €";
+          resultCopy.textContent = needsModelWorkshop
+            ? "Votre demande indique un modèle à adapter : plusieurs offres, options, dépendances entre flux ou logique spécifique. L'atelier inclut le template sur mesure, le setup, le remplissage et l'analyse."
+            : "Votre modèle peut être simple, mais vos réponses montrent que vous voulez être accompagné pour poser les hypothèses, remplir le fichier, comprendre les résultats ou décider quoi ajuster.";
+          resultMeta.innerHTML = "<span>Template sur mesure inclus</span><span>3 temps : setup, remplissage, analyse</span><span>500 €</span>";
+          resultAction.textContent = "Réserver l'atelier personnalisé";
+          resultAction.href = "coaching.html";
+        } else if (isComfortable) {
+          resultTitle.textContent = "Pack de templates recommandé";
+          resultCopy.textContent = "Votre demande peut être traitée en autonomie. Le pack ci-dessous est composé automatiquement à partir de vos réponses, avec consolidation si plusieurs activités indépendantes sont détectées.";
+          resultMeta.innerHTML = "<span>Autonomie</span><span>Pack composé automatiquement</span><span>Prix dégressif selon le nombre de templates</span>";
+          resultAction.textContent = "Acheter le pack recommandé";
+          resultAction.href = "#pack-essentiel";
+        } else {
+          resultTitle.textContent = "Atelier personnalisé à 500 €";
+          resultCopy.textContent = "Si vous hésitez sur votre niveau d'autonomie, l'atelier est recommandé : vous repartez avec un template sur mesure rempli et analysé avec vous.";
+          resultMeta.innerHTML = "<span>Template sur mesure inclus</span><span>Accompagnement au remplissage</span><span>500 €</span>";
+          resultAction.textContent = "Réserver l'atelier personnalisé";
+          resultAction.href = "coaching.html";
         }
 
         const recommendations = models.map((model) => modelLabels[model]);
@@ -271,27 +327,6 @@
         if (support.includes("analyse")) recommendations.push("Analyse des résultats avec vous");
         if (support.includes("decision")) recommendations.push("Aide à la décision sur les choix économiques");
 
-        if (needsWorkshop) {
-          resultTitle.textContent = "Atelier personnalisé à 500 €";
-          resultCopy.textContent = needsModelWorkshop
-            ? "Votre activité demande un modèle sur mesure. L'atelier inclut les templates nécessaires, leur assemblage dans un fichier consolidé, puis trois temps : setup, remplissage et analyse."
-            : "Vous pouvez partir d'un modèle simple, mais l'atelier est plus adapté si vous voulez être accompagné pour poser vos hypothèses, remplir le fichier, comprendre les résultats et décider quoi ajuster.";
-          resultAction.textContent = "Réserver l'atelier personnalisé";
-          resultAction.href = "coaching.html";
-        } else if (isComfortable) {
-          resultTitle.textContent = "Pack de templates recommandé";
-          resultCopy.textContent = models.length > 1 || complexity.includes("independent")
-            ? "Vous semblez pouvoir avancer en autonomie. Votre pack est composé à partir de vos réponses, avec les templates utiles et un fichier consolidé pour regrouper vos activités indépendantes."
-            : "Vous semblez pouvoir avancer en autonomie. Votre pack est composé à partir de vos réponses, avec le template le plus adapté à votre modèle de revenus.";
-          resultAction.textContent = "Demander mon pack de templates";
-          resultAction.href = "mailto:marie@sisuu.fr?subject=Pack%20de%20templates%20recommandé";
-        } else {
-          resultTitle.textContent = "Atelier personnalisé à 500 €";
-          resultCopy.textContent = "Si vous n'êtes pas sûre d'être autonome, l'atelier est le chemin le plus confortable : template sur mesure inclus, aide au remplissage et analyse des impacts économiques.";
-          resultAction.textContent = "Réserver l'atelier personnalisé";
-          resultAction.href = "coaching.html";
-        }
-
         [...new Set(recommendations)].forEach((item) => {
           const li = document.createElement("li");
           li.textContent = item;
@@ -300,6 +335,7 @@
       }
 
       guideForm.addEventListener("change", updateGuide);
+      descriptionInput.addEventListener("input", updateGuide);
       updateGuide();
     </script>
   </body>

@@ -495,6 +495,23 @@ a {
   margin-top: 2px;
 }
 
+.guide-panel textarea {
+  width: 100%;
+  min-height: 132px;
+  resize: vertical;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  color: var(--text);
+  background: var(--surface-2);
+  font: inherit;
+}
+
+.guide-panel textarea:focus {
+  outline: 2px solid rgba(124, 58, 237, 0.22);
+  border-color: var(--accent);
+}
+
 .guide-result {
   position: sticky;
   top: 96px;
@@ -512,6 +529,32 @@ a {
   margin: 0;
   color: var(--muted);
   font-size: 18px;
+}
+
+.recommendation-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.recommendation-meta span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  border-radius: 999px;
+  padding: 0 12px;
+  color: var(--accent-dark);
+  background: rgba(124, 58, 237, 0.1);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.recommendation-label {
+  color: var(--text) !important;
+  font-size: 14px !important;
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
 .guide-result ul {
