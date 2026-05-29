@@ -49,7 +49,7 @@
           <p class="eyebrow">Première offre</p>
           <h2>Pack Essentiel</h2>
         </div>
-        <div class="cards two product-cards">
+        <div class="cards three product-cards">
           <article class="card product featured">
             <h3>Pack Essentiel</h3>
             <p>
@@ -66,20 +66,33 @@
             <a class="button primary" href="#">Bientôt disponible</a>
           </article>
           <article class="card product">
-            <h3>Personnalisation du modèle</h3>
+            <h3>Templates combinés</h3>
             <p>
-              Pour les modèles avec plusieurs offres, des upsells, des dépendances entre flux ou une
-              logique métier spécifique. Le template est alors construit sur mesure.
+              Pour les activités diversifiées mais indépendantes. Vous choisissez les blocs utiles,
+              et vous avancez en autonomie avec un prix dégressif selon le nombre de templates.
             </p>
             <ul>
-              <li>SaaS qui génère du coaching ou des upsells</li>
-              <li>Prestation qui se transforme en abonnement</li>
-              <li>Formation qui déclenche de l'accompagnement</li>
-              <li>Commission, licence, lead generation ou marketplace</li>
-              <li>Appels d'offres, subventions ou pipeline de financement</li>
-              <li>Formules et consolidation sur mesure</li>
+              <li>2, 3 ou 5 templates selon votre activité</li>
+              <li>Activités indépendantes entre elles</li>
+              <li>Un fichier consolidé prêt à remplir</li>
+              <li>Sans atelier si vous êtes à l'aise en autonomie</li>
             </ul>
-            <a class="button secondary" href="coaching.html">Personnaliser mon modèle</a>
+            <a class="button secondary" href="#guide-title">Utiliser le guide</a>
+          </article>
+          <article class="card product">
+            <h3>Modèle personnalisé consolidé</h3>
+            <p class="price">500 €</p>
+            <p>
+              Pour les modèles avec plusieurs offres, des upsells, des dépendances entre flux ou une
+              logique métier spécifique.
+            </p>
+            <ul>
+              <li>Tous les templates nécessaires inclus</li>
+              <li>Assemblage dans un seul modèle consolidé</li>
+              <li>Setup, remplissage, analyse</li>
+              <li>Formules et dashboard adaptés à votre activité</li>
+            </ul>
+            <a class="button secondary" href="coaching.html">Construire mon modèle</a>
           </article>
         </div>
       </section>
@@ -103,7 +116,8 @@
 
             <fieldset>
               <legend>Votre activité a aussi...</legend>
-              <label><input type="checkbox" name="complexity" value="multi" /> Plusieurs offres, plans ou formules</label>
+              <label><input type="checkbox" name="complexity" value="independent" /> Plusieurs activités indépendantes à consolider</label>
+              <label><input type="checkbox" name="complexity" value="multi" /> Plusieurs offres, plans ou formules dans une même activité</label>
               <label><input type="checkbox" name="complexity" value="upsell" /> Des options, upsells ou modules complémentaires</label>
               <label><input type="checkbox" name="complexity" value="dependency" /> Un flux qui dépend d'un autre</label>
               <label><input type="checkbox" name="complexity" value="custom" /> Une logique métier difficile à faire rentrer dans une case</label>
@@ -155,13 +169,13 @@
 
       <section class="section split">
         <div>
-          <p class="eyebrow">Plusieurs modèles</p>
-          <h2>Vous achetez plusieurs modèles ? Nous vous livrons un fichier consolidé prêt à l'emploi.</h2>
+          <p class="eyebrow">Activités indépendantes</p>
+          <h2>Vous achetez plusieurs templates ? Nous pouvons les combiner dans un fichier prêt à remplir.</h2>
         </div>
         <p>
-          Vous n'avez pas à connecter plusieurs fichiers vous-même. Si votre activité combine
-          plusieurs modèles, nous préparons un seul Google Sheet avec les bons onglets, la
-          consolidation des revenus et des coûts, et un dashboard global lisible.
+          Si vos activités sont diversifiées mais indépendantes, vous pouvez acheter plusieurs
+          templates avec un prix dégressif. Nous les regroupons dans un seul fichier consolidé,
+          prêt à remplir, sans forcément passer par un atelier.
         </p>
       </section>
 
@@ -179,7 +193,7 @@
 
       <section class="cta-band">
         <h2>Vous ne savez pas quel template choisir ?</h2>
-        <p>Commencez par la formation gratuite, puis utilisez le Pack Essentiel pour tester en autonomie. Si vous voulez un modèle fidèle à votre entreprise, nous pouvons construire un template sur mesure ou livrer un fichier consolidé prêt à l'emploi.</p>
+        <p>Commencez par la formation gratuite, puis utilisez le Pack Essentiel pour tester en autonomie. Si vos activités sont indépendantes, vous pouvez combiner plusieurs templates. Si elles sont interdépendantes ou spécifiques, l'atelier personnalisé est recommandé.</p>
         <div class="hero-actions">
           <a class="button primary" href="formation.html">Commencer la formation</a>
           <a class="button secondary light" href="coaching.html">Réserver un coaching</a>
@@ -216,8 +230,9 @@
         const models = selectedValues("model");
         const complexity = selectedValues("complexity");
         const standardModels = models.filter((model) => ["abonnement", "prestation", "ecommerce", "formation"].includes(model));
-        const hasAdvancedModel = models.some((model) => ["pipeline", "marketplace"].includes(model));
-        const isComplex = complexity.length > 0 || hasAdvancedModel;
+        const needsWorkshop = complexity.some((item) => ["multi", "upsell", "dependency", "custom"].includes(item));
+        const canCombineAutonomously = complexity.includes("independent") || models.length > 1;
+        const isComplex = needsWorkshop;
 
         resultList.innerHTML = "";
 
@@ -229,7 +244,7 @@
           return;
         }
 
-        if (!isComplex && standardModels.length >= 1) {
+        if (!isComplex && !canCombineAutonomously && standardModels.length >= 1) {
           resultTitle.textContent = "Pack Essentiel";
           resultCopy.textContent = "Le Pack Essentiel est le bon point de départ si vous voulez tester en autonomie et construire une première version simple de vos chiffres.";
           ["Pack Essentiel Google Sheets", ...standardModels.map((model) => modelLabels[model])].forEach((item) => {
@@ -242,15 +257,19 @@
           return;
         }
 
-        if (models.length > 1 || complexity.includes("multi") || complexity.includes("dependency")) {
-          resultTitle.textContent = "Fichier consolidé prêt à l'emploi";
-          resultCopy.textContent = "Votre activité combine plusieurs logiques. Le plus simple est de recevoir un seul Google Sheet assemblé avec les modèles utiles, la consolidation et le dashboard.";
+        if (needsWorkshop) {
+          resultTitle.textContent = "Atelier personnalisé recommandé";
+          resultCopy.textContent = "Votre modèle demande de la personnalisation. L'offre à 500 € inclut les templates nécessaires, leur assemblage en un modèle consolidé, puis trois temps : setup, remplissage et analyse.";
+        } else if (canCombineAutonomously) {
+          resultTitle.textContent = "Templates combinés en autonomie";
+          resultCopy.textContent = "Vos activités semblent pouvoir être modélisées séparément puis consolidées. Vous pouvez acheter plusieurs templates avec un prix dégressif et recevoir un fichier unique prêt à remplir.";
         } else {
-          resultTitle.textContent = "Template sur mesure recommandé";
-          resultCopy.textContent = "Votre modèle dépasse les cas simples du Pack Essentiel. Un template adapté permettra de refléter votre vraie mécanique économique.";
+          resultTitle.textContent = "Template unitaire en autonomie";
+          resultCopy.textContent = "Un template ciblé peut suffire si votre activité reste indépendante et que vous êtes à l'aise pour le remplir seul.";
         }
 
         const recommendations = models.map((model) => modelLabels[model]);
+        if (complexity.includes("independent")) recommendations.push("Fichier consolidé de templates indépendants");
         if (complexity.includes("multi")) recommendations.push("Modèle multi-offres");
         if (complexity.includes("upsell")) recommendations.push("Modèle offre + options / upsells");
         if (complexity.includes("dependency")) recommendations.push("Consolidation entre flux dépendants");
@@ -262,8 +281,16 @@
           resultList.appendChild(li);
         });
 
-        resultAction.textContent = "Demander un template sur mesure";
-        resultAction.href = "coaching.html";
+        if (needsWorkshop) {
+          resultAction.textContent = "Réserver l'atelier personnalisé";
+          resultAction.href = "coaching.html";
+        } else if (canCombineAutonomously) {
+          resultAction.textContent = "Demander mes templates combinés";
+          resultAction.href = "mailto:marie@sisuu.fr?subject=Templates%20combinés";
+        } else {
+          resultAction.textContent = "Demander ce template";
+          resultAction.href = "mailto:marie@sisuu.fr?subject=Template%20unitaire";
+        }
       }
 
       guideForm.addEventListener("change", updateGuide);
