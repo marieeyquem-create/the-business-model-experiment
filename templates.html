@@ -100,7 +100,7 @@
       <section class="section template-guide" aria-labelledby="guide-title">
         <div class="section-heading">
           <p class="eyebrow">Guide de choix</p>
-          <h2 id="guide-title">Quel template correspond à votre activité ?</h2>
+          <h2 id="guide-title">Quelle offre correspond à votre situation ?</h2>
         </div>
         <div class="guide-layout">
           <form class="guide-panel" id="template-guide-form">
@@ -135,7 +135,7 @@
           <aside class="guide-result" aria-live="polite">
             <p class="eyebrow">Recommandation</p>
             <h3 id="guide-result-title">Répondez aux questions</h3>
-            <p id="guide-result-copy">Cochez les éléments qui décrivent votre activité pour obtenir une recommandation.</p>
+            <p id="guide-result-copy">Cochez les éléments qui décrivent votre activité et votre niveau d'autonomie pour obtenir une recommandation.</p>
             <ul id="guide-result-list"></ul>
             <a class="button primary" id="guide-result-action" href="coaching.html">Être guidé</a>
           </aside>
@@ -201,7 +201,7 @@
 
       <section class="cta-band">
         <h2>Vous ne savez pas quel template choisir ?</h2>
-        <p>Commencez par la formation gratuite, puis utilisez le Pack Essentiel pour tester en autonomie. Si vos activités sont indépendantes, vous pouvez combiner plusieurs templates. Si elles sont interdépendantes, spécifiques, ou si vous voulez être accompagné pour remplir et interpréter vos chiffres, l'atelier personnalisé est recommandé.</p>
+        <p>Commencez par la formation gratuite, puis utilisez le guide : il vous oriente soit vers un pack de templates composé à partir de vos réponses si vous êtes autonome, soit vers l'atelier personnalisé à 500 € avec template sur mesure inclus.</p>
         <div class="hero-actions">
           <a class="button primary" href="formation.html">Commencer la formation</a>
           <a class="button secondary light" href="coaching.html">Réserver un coaching</a>
@@ -238,51 +238,31 @@
         const models = selectedValues("model");
         const complexity = selectedValues("complexity");
         const support = selectedValues("support");
-        const standardModels = models.filter((model) => ["abonnement", "prestation", "ecommerce", "formation"].includes(model));
         const needsModelWorkshop = complexity.some((item) => ["multi", "upsell", "dependency", "custom"].includes(item));
         const needsGuidance = support.some((item) => ["fill", "analyse", "decision"].includes(item));
+        const isComfortable = support.includes("comfortable") && !needsGuidance;
         const needsWorkshop = needsModelWorkshop || needsGuidance;
-        const canCombineAutonomously = complexity.includes("independent") || models.length > 1;
-        const isComplex = needsWorkshop;
 
         resultList.innerHTML = "";
 
         if (models.length === 0) {
           resultTitle.textContent = "Choisissez vos sources de revenus";
-          resultCopy.textContent = "Commencez par cocher d'où viennent vos revenus. Le guide pourra ensuite vous dire si vous pouvez avancer seul ou si l'atelier est plus adapté.";
+          resultCopy.textContent = "Commencez par cocher d'où viennent vos revenus. Le guide composera ensuite votre pack de templates ou recommandera l'atelier si c'est plus adapté.";
           resultAction.textContent = "Être guidé";
           resultAction.href = "coaching.html";
           return;
         }
 
-        if (!isComplex && !canCombineAutonomously && standardModels.length >= 1) {
-          resultTitle.textContent = "Pack Essentiel";
-          resultCopy.textContent = "Le Pack Essentiel est le bon point de départ si vous voulez tester en autonomie et construire une première version simple de vos chiffres.";
-          ["Pack Essentiel Google Sheets", ...standardModels.map((model) => modelLabels[model])].forEach((item) => {
-            const li = document.createElement("li");
-            li.textContent = item;
-            resultList.appendChild(li);
-          });
-          resultAction.textContent = "Découvrir le Pack Essentiel";
-          resultAction.href = "#pack-essentiel";
+        if (!needsWorkshop && support.length === 0) {
+          resultTitle.textContent = "Précisez votre niveau d'autonomie";
+          resultCopy.textContent = "Dites si vous êtes à l'aise pour remplir seul le fichier ou si vous voulez être accompagné. C'est ce qui permet de choisir entre pack autonome et atelier personnalisé.";
+          resultAction.textContent = "Répondre à la question";
+          resultAction.href = "#guide-title";
           return;
         }
 
-        if (needsWorkshop) {
-          resultTitle.textContent = "Atelier personnalisé recommandé";
-          resultCopy.textContent = needsModelWorkshop
-            ? "Votre modèle demande de la personnalisation. L'offre à 500 € inclut les templates nécessaires, leur assemblage en un modèle consolidé, puis trois temps : setup, remplissage et analyse."
-            : "Même si votre modèle est simple, l'atelier est recommandé si vous voulez être accompagné pour poser vos hypothèses, remplir le fichier, comprendre les résultats et décider sereinement.";
-        } else if (canCombineAutonomously) {
-          resultTitle.textContent = "Templates combinés en autonomie";
-          resultCopy.textContent = "Vos activités semblent pouvoir être modélisées séparément puis consolidées. Vous pouvez acheter plusieurs templates avec un prix dégressif et recevoir un fichier unique prêt à remplir.";
-        } else {
-          resultTitle.textContent = "Template unitaire en autonomie";
-          resultCopy.textContent = "Un template ciblé peut suffire si votre activité reste indépendante et que vous êtes à l'aise pour le remplir seul.";
-        }
-
         const recommendations = models.map((model) => modelLabels[model]);
-        if (complexity.includes("independent")) recommendations.push("Fichier consolidé de templates indépendants");
+        if (complexity.includes("independent") || models.length > 1) recommendations.push("Fichier consolidé pour regrouper les templates");
         if (complexity.includes("multi")) recommendations.push("Modèle multi-offres");
         if (complexity.includes("upsell")) recommendations.push("Modèle offre + options / upsells");
         if (complexity.includes("dependency")) recommendations.push("Consolidation entre flux dépendants");
@@ -291,22 +271,32 @@
         if (support.includes("analyse")) recommendations.push("Analyse des résultats avec vous");
         if (support.includes("decision")) recommendations.push("Aide à la décision sur les choix économiques");
 
+        if (needsWorkshop) {
+          resultTitle.textContent = "Atelier personnalisé à 500 €";
+          resultCopy.textContent = needsModelWorkshop
+            ? "Votre activité demande un modèle sur mesure. L'atelier inclut les templates nécessaires, leur assemblage dans un fichier consolidé, puis trois temps : setup, remplissage et analyse."
+            : "Vous pouvez partir d'un modèle simple, mais l'atelier est plus adapté si vous voulez être accompagné pour poser vos hypothèses, remplir le fichier, comprendre les résultats et décider quoi ajuster.";
+          resultAction.textContent = "Réserver l'atelier personnalisé";
+          resultAction.href = "coaching.html";
+        } else if (isComfortable) {
+          resultTitle.textContent = "Pack de templates recommandé";
+          resultCopy.textContent = models.length > 1 || complexity.includes("independent")
+            ? "Vous semblez pouvoir avancer en autonomie. Votre pack est composé à partir de vos réponses, avec les templates utiles et un fichier consolidé pour regrouper vos activités indépendantes."
+            : "Vous semblez pouvoir avancer en autonomie. Votre pack est composé à partir de vos réponses, avec le template le plus adapté à votre modèle de revenus.";
+          resultAction.textContent = "Demander mon pack de templates";
+          resultAction.href = "mailto:marie@sisuu.fr?subject=Pack%20de%20templates%20recommandé";
+        } else {
+          resultTitle.textContent = "Atelier personnalisé à 500 €";
+          resultCopy.textContent = "Si vous n'êtes pas sûre d'être autonome, l'atelier est le chemin le plus confortable : template sur mesure inclus, aide au remplissage et analyse des impacts économiques.";
+          resultAction.textContent = "Réserver l'atelier personnalisé";
+          resultAction.href = "coaching.html";
+        }
+
         [...new Set(recommendations)].forEach((item) => {
           const li = document.createElement("li");
           li.textContent = item;
           resultList.appendChild(li);
         });
-
-        if (needsWorkshop) {
-          resultAction.textContent = "Réserver l'atelier personnalisé";
-          resultAction.href = "coaching.html";
-        } else if (canCombineAutonomously) {
-          resultAction.textContent = "Demander mes templates combinés";
-          resultAction.href = "mailto:marie@sisuu.fr?subject=Templates%20combinés";
-        } else {
-          resultAction.textContent = "Demander ce template";
-          resultAction.href = "mailto:marie@sisuu.fr?subject=Template%20unitaire";
-        }
       }
 
       guideForm.addEventListener("change", updateGuide);
