@@ -89,7 +89,7 @@
             <ul>
               <li>Tous les templates nécessaires inclus</li>
               <li>Assemblage dans un seul modèle consolidé</li>
-              <li>Cadrage, remplissage, analyse</li>
+              <li>3 temps d'échange avec moi : setup, chiffrage, analyse</li>
               <li>Formules et tableau de suivi adaptés à votre activité</li>
             </ul>
             <a class="button secondary" href="coaching.html">Construire mon modèle</a>
@@ -208,7 +208,7 @@
 
       <section class="cta-band">
         <h2>Vous ne savez pas quel template choisir ?</h2>
-        <p>Commencez par la formation gratuite, puis utilisez le guide : il vous oriente soit vers un pack de templates composé à partir de vos réponses si vous êtes autonome, soit vers l'atelier personnalisé à 500 € avec template sur mesure inclus.</p>
+        <p>Commencez par la formation gratuite, puis utilisez le guide : il vous oriente soit vers un pack de templates composé à partir de vos réponses si vous êtes autonome, soit vers l'atelier personnalisé à 500 € avec template sur mesure inclus et 3 temps d'échange avec moi.</p>
         <div class="hero-actions">
           <a class="button primary" href="formation.html">Commencer la formation</a>
           <a class="button secondary light" href="coaching.html">Réserver un coaching</a>
@@ -303,11 +303,11 @@
             if (complexity.includes("upsell")) reasons.push("certains clients achètent ensuite une option, un complément ou une offre plus chère");
             if (complexity.includes("dependency")) reasons.push("une vente en entraîne souvent une autre");
             if (complexity.includes("custom")) reasons.push("votre activité ne rentre pas clairement dans les cas standards");
-            resultCopy.textContent = `Atelier recommandé car ${reasons.join(", ")}. Dans ce cas, un template standard risque de mal refléter vos décisions économiques. L'atelier inclut le template sur mesure, le cadrage, le remplissage et l'analyse.`;
+            resultCopy.textContent = `Atelier recommandé car ${reasons.join(", ")}. Dans ce cas, un template standard risque de mal refléter vos décisions économiques. L'atelier inclut le template construit sur mesure et 3 temps d'échange avec moi : setup, chiffrage et analyse.`;
           } else {
-            resultCopy.textContent = "Atelier recommandé parce que vos réponses indiquent un besoin d'accompagnement : choisir les bons chiffres de départ, remplir le fichier, comprendre les résultats ou décider quoi ajuster.";
+            resultCopy.textContent = "Atelier recommandé parce que vos réponses indiquent un besoin d'accompagnement humain : je vous aide à choisir les bons chiffres, remplir le fichier, comprendre les résultats et décider quoi ajuster.";
           }
-          resultMeta.innerHTML = "<span>Template construit sur mesure inclus</span><span>3 temps : cadrage, remplissage, analyse</span><span>500 €</span>";
+          resultMeta.innerHTML = "<span>Template construit sur mesure inclus</span><span>3 temps d'échange avec moi : setup, chiffrage, analyse</span><span>500 €</span>";
           resultAction.textContent = "Réserver l'atelier personnalisé";
           resultAction.href = "coaching.html";
         } else if (canUseTemplatePack) {
@@ -320,8 +320,8 @@
           resultAction.href = "#pack-essentiel";
         } else {
           resultTitle.textContent = "Atelier personnalisé à 500 €";
-          resultCopy.textContent = "Si vous hésitez sur votre niveau d'autonomie, l'atelier est recommandé : vous repartez avec un template sur mesure rempli et analysé avec vous.";
-          resultMeta.innerHTML = "<span>Template construit sur mesure inclus</span><span>Accompagnement au remplissage</span><span>500 €</span>";
+          resultCopy.textContent = "Si vous hésitez sur votre niveau d'autonomie, l'atelier est recommandé : je vous accompagne en 3 temps d'échange et vous repartez avec un template personnalisé, rempli et analysé avec vous.";
+          resultMeta.innerHTML = "<span>Template construit sur mesure inclus</span><span>Accompagnement humain au chiffrage</span><span>500 €</span>";
           resultAction.textContent = "Réserver l'atelier personnalisé";
           resultAction.href = "coaching.html";
         }
