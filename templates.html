@@ -273,10 +273,11 @@
         const models = [...new Set([...selectedValues("model"), ...inferred.models])];
         const complexity = [...new Set([...selectedValues("complexity"), ...inferred.complexity])];
         const support = selectedValues("support");
-        const needsModelWorkshop = complexity.some((item) => ["multi", "upsell", "dependency", "custom"].includes(item));
+        const needsPersonalization = complexity.some((item) => ["upsell", "dependency", "custom"].includes(item));
         const needsGuidance = support.some((item) => ["fill", "analyse", "decision"].includes(item));
         const isComfortable = support.includes("comfortable") && !needsGuidance;
-        const needsWorkshop = needsModelWorkshop || needsGuidance;
+        const canUseTemplatePack = isComfortable && !needsPersonalization;
+        const needsWorkshop = needsPersonalization || needsGuidance;
 
         resultList.innerHTML = "";
         resultMeta.innerHTML = "";
@@ -289,7 +290,7 @@
           return;
         }
 
-        if (!needsWorkshop && support.length === 0) {
+        if (!needsPersonalization && support.length === 0) {
           resultTitle.textContent = "Précisez votre niveau d'autonomie";
           resultCopy.textContent = "Le guide a identifié les templates utiles. Indiquez maintenant si vous êtes à l'aise pour remplir seul le fichier ou si vous voulez être accompagné.";
           resultMeta.innerHTML = `<span>${models.length} source(s) de revenus détectée(s)</span>`;
@@ -297,15 +298,23 @@
           resultAction.href = "#guide-title";
         } else if (needsWorkshop) {
           resultTitle.textContent = "Atelier personnalisé à 500 €";
-          resultCopy.textContent = needsModelWorkshop
-            ? "Votre demande indique un modèle à adapter : plusieurs offres, options, dépendances entre flux ou logique spécifique. L'atelier inclut le template sur mesure, le setup, le remplissage et l'analyse."
-            : "Votre modèle peut être simple, mais vos réponses montrent que vous voulez être accompagné pour poser les hypothèses, remplir le fichier, comprendre les résultats ou décider quoi ajuster.";
+          if (needsPersonalization) {
+            const reasons = [];
+            if (complexity.includes("upsell")) reasons.push("des options ou upsells changent la trajectoire de revenus");
+            if (complexity.includes("dependency")) reasons.push("un flux dépend d'un autre");
+            if (complexity.includes("custom")) reasons.push("la logique métier sort des cas standards");
+            resultCopy.textContent = `Atelier recommandé car ${reasons.join(", ")}. Dans ce cas, un template standard risque de mal refléter vos décisions économiques. L'atelier inclut le template sur mesure, le setup, le remplissage et l'analyse.`;
+          } else {
+            resultCopy.textContent = "Atelier recommandé parce que vos réponses indiquent un besoin d'accompagnement : poser les hypothèses, remplir le fichier, comprendre les résultats ou décider quoi ajuster.";
+          }
           resultMeta.innerHTML = "<span>Template sur mesure inclus</span><span>3 temps : setup, remplissage, analyse</span><span>500 €</span>";
           resultAction.textContent = "Réserver l'atelier personnalisé";
           resultAction.href = "coaching.html";
-        } else if (isComfortable) {
+        } else if (canUseTemplatePack) {
           resultTitle.textContent = "Pack de templates recommandé";
-          resultCopy.textContent = "Votre demande peut être traitée en autonomie. Le pack ci-dessous est composé automatiquement à partir de vos réponses, avec consolidation si plusieurs activités indépendantes sont détectées.";
+          resultCopy.textContent = complexity.includes("multi")
+            ? "Pack autonome recommandé : plusieurs offres, plans ou formules peuvent être modélisés avec un template combiné si les flux ne dépendent pas les uns des autres et si vous êtes à l'aise pour remplir les hypothèses."
+            : "Pack autonome recommandé : votre demande peut être traitée avec des templates standards composés à partir de vos réponses, avec consolidation si plusieurs activités indépendantes sont détectées.";
           resultMeta.innerHTML = "<span>Autonomie</span><span>Pack composé automatiquement</span><span>Prix dégressif selon le nombre de templates</span>";
           resultAction.textContent = "Acheter le pack recommandé";
           resultAction.href = "#pack-essentiel";
@@ -319,7 +328,7 @@
 
         const recommendations = models.map((model) => modelLabels[model]);
         if (complexity.includes("independent") || models.length > 1) recommendations.push("Fichier consolidé pour regrouper les templates");
-        if (complexity.includes("multi")) recommendations.push("Modèle multi-offres");
+        if (complexity.includes("multi")) recommendations.push("Template combiné multi-offres");
         if (complexity.includes("upsell")) recommendations.push("Modèle offre + options / upsells");
         if (complexity.includes("dependency")) recommendations.push("Consolidation entre flux dépendants");
         if (complexity.includes("custom")) recommendations.push("Template sur mesure");
