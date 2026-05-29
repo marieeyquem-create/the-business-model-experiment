@@ -435,6 +435,97 @@ a {
   text-decoration: underline;
 }
 
+
+.template-guide {
+  border-top: 1px solid var(--line);
+}
+
+.guide-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.guide-panel,
+.guide-result {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 12px 30px rgba(40, 28, 70, 0.06);
+}
+
+.guide-panel {
+  display: grid;
+  gap: 18px;
+}
+
+.guide-panel fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.guide-panel legend {
+  font-size: 18px;
+  font-weight: 850;
+  margin-bottom: 10px;
+}
+
+.guide-panel label {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 10px;
+  align-items: start;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--muted);
+  background: var(--surface-2);
+  cursor: pointer;
+}
+
+.guide-panel input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+  margin-top: 2px;
+}
+
+.guide-result {
+  position: sticky;
+  top: 96px;
+  display: grid;
+  gap: 14px;
+}
+
+.guide-result h3 {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.05;
+}
+
+.guide-result p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.guide-result ul {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.guide-result .button {
+  justify-self: start;
+}
+
 .product-cards .product,
 .offer-cards .product {
   display: flex;
@@ -512,8 +603,13 @@ a {
   .hero,
   .split,
   .about-strip,
-  .module {
+  .module,
+  .guide-layout {
     grid-template-columns: 1fr;
+  }
+
+  .guide-result {
+    position: static;
   }
 
   .hero {

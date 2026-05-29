@@ -43,7 +43,7 @@
         </p>
       </section>
 
-      <section class="section">
+      <section class="section" id="pack-essentiel">
         <div class="section-heading">
           <p class="eyebrow">Première offre</p>
           <h2>Pack Essentiel</h2>
@@ -81,6 +81,42 @@
             </ul>
             <a class="button secondary" href="coaching.html">Personnaliser mon modèle</a>
           </article>
+        </div>
+      </section>
+
+      <section class="section template-guide" aria-labelledby="guide-title">
+        <div class="section-heading">
+          <p class="eyebrow">Guide de choix</p>
+          <h2 id="guide-title">Quel template correspond à votre activité ?</h2>
+        </div>
+        <div class="guide-layout">
+          <form class="guide-panel" id="template-guide-form">
+            <fieldset>
+              <legend>Vos revenus viennent de...</legend>
+              <label><input type="checkbox" name="model" value="abonnement" /> Abonnements ou revenus récurrents</label>
+              <label><input type="checkbox" name="model" value="prestation" /> Prestations, missions, accompagnement</label>
+              <label><input type="checkbox" name="model" value="ecommerce" /> Vente de produits ou e-commerce</label>
+              <label><input type="checkbox" name="model" value="formation" /> Formation, coaching ou ateliers</label>
+              <label><input type="checkbox" name="model" value="pipeline" /> Appels d'offres, subventions ou dossiers de financement</label>
+              <label><input type="checkbox" name="model" value="marketplace" /> Commission, marketplace, licence, lead generation ou affiliation</label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Votre activité a aussi...</legend>
+              <label><input type="checkbox" name="complexity" value="multi" /> Plusieurs offres, plans ou formules</label>
+              <label><input type="checkbox" name="complexity" value="upsell" /> Des options, upsells ou modules complémentaires</label>
+              <label><input type="checkbox" name="complexity" value="dependency" /> Un flux qui dépend d'un autre</label>
+              <label><input type="checkbox" name="complexity" value="custom" /> Une logique métier difficile à faire rentrer dans une case</label>
+            </fieldset>
+          </form>
+
+          <aside class="guide-result" aria-live="polite">
+            <p class="eyebrow">Recommandation</p>
+            <h3 id="guide-result-title">Répondez aux questions</h3>
+            <p id="guide-result-copy">Cochez les éléments qui décrivent votre activité pour obtenir une recommandation.</p>
+            <ul id="guide-result-list"></ul>
+            <a class="button primary" id="guide-result-action" href="coaching.html">Être guidé</a>
+          </aside>
         </div>
       </section>
 
@@ -155,5 +191,83 @@
       <span>© 2026 Baradozig</span>
       <span>The Business Model Experiment</span>
     </footer>
+
+    <script>
+      const guideForm = document.querySelector("#template-guide-form");
+      const resultTitle = document.querySelector("#guide-result-title");
+      const resultCopy = document.querySelector("#guide-result-copy");
+      const resultList = document.querySelector("#guide-result-list");
+      const resultAction = document.querySelector("#guide-result-action");
+
+      const modelLabels = {
+        abonnement: "Abonnement simple",
+        prestation: "Prestation de service",
+        ecommerce: "E-commerce / vente de produit",
+        formation: "Formation / coaching",
+        pipeline: "Pipeline appels d'offres / subventions",
+        marketplace: "Marketplace, commission, licence, lead generation ou affiliation"
+      };
+
+      function selectedValues(name) {
+        return [...guideForm.querySelectorAll(`input[name="${name}"]:checked`)].map((input) => input.value);
+      }
+
+      function updateGuide() {
+        const models = selectedValues("model");
+        const complexity = selectedValues("complexity");
+        const standardModels = models.filter((model) => ["abonnement", "prestation", "ecommerce", "formation"].includes(model));
+        const hasAdvancedModel = models.some((model) => ["pipeline", "marketplace"].includes(model));
+        const isComplex = complexity.length > 0 || hasAdvancedModel;
+
+        resultList.innerHTML = "";
+
+        if (models.length === 0 && complexity.length === 0) {
+          resultTitle.textContent = "Répondez aux questions";
+          resultCopy.textContent = "Cochez les éléments qui décrivent votre activité pour obtenir une recommandation.";
+          resultAction.textContent = "Être guidé";
+          resultAction.href = "coaching.html";
+          return;
+        }
+
+        if (!isComplex && standardModels.length >= 1) {
+          resultTitle.textContent = "Pack Essentiel";
+          resultCopy.textContent = "Votre activité semble entrer dans les cas simples et standards. Le Pack Essentiel est le bon point de départ.";
+          ["Pack Essentiel Google Sheets", ...standardModels.map((model) => modelLabels[model])].forEach((item) => {
+            const li = document.createElement("li");
+            li.textContent = item;
+            resultList.appendChild(li);
+          });
+          resultAction.textContent = "Découvrir le Pack Essentiel";
+          resultAction.href = "#pack-essentiel";
+          return;
+        }
+
+        if (models.length > 1 || complexity.includes("multi") || complexity.includes("dependency")) {
+          resultTitle.textContent = "Fichier consolidé prêt à l'emploi";
+          resultCopy.textContent = "Votre activité combine plusieurs logiques. Le plus simple est de recevoir un seul Google Sheet assemblé avec les modèles utiles, la consolidation et le dashboard.";
+        } else {
+          resultTitle.textContent = "Template sur mesure recommandé";
+          resultCopy.textContent = "Votre modèle dépasse les cas simples du Pack Essentiel. Un template adapté permettra de refléter votre vraie mécanique économique.";
+        }
+
+        const recommendations = models.map((model) => modelLabels[model]);
+        if (complexity.includes("multi")) recommendations.push("Modèle multi-offres");
+        if (complexity.includes("upsell")) recommendations.push("Modèle offre + options / upsells");
+        if (complexity.includes("dependency")) recommendations.push("Consolidation entre flux dépendants");
+        if (complexity.includes("custom")) recommendations.push("Template sur mesure");
+
+        [...new Set(recommendations)].forEach((item) => {
+          const li = document.createElement("li");
+          li.textContent = item;
+          resultList.appendChild(li);
+        });
+
+        resultAction.textContent = "Demander un template sur mesure";
+        resultAction.href = "coaching.html";
+      }
+
+      guideForm.addEventListener("change", updateGuide);
+      updateGuide();
+    </script>
   </body>
 </html>
