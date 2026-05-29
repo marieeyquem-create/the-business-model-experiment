@@ -388,10 +388,8 @@ a {
 }
 
 .lesson-copy {
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  align-items: flex-start;
+  display: grid;
+  gap: 8px;
 }
 
 .lesson-copy h4 {
@@ -401,9 +399,11 @@ a {
 }
 
 .lesson-copy small {
-  flex: 0 0 auto;
-  white-space: nowrap;
+  justify-self: flex-start;
   color: var(--accent-dark);
+  background: rgba(120, 70, 255, 0.1);
+  border-radius: 999px;
+  padding: 4px 9px;
   font-weight: 850;
 }
 
@@ -422,6 +422,17 @@ a {
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+.video-link {
+  justify-self: flex-start;
+  color: var(--accent-dark);
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.video-link:hover {
+  text-decoration: underline;
 }
 
 .product-cards .product,
@@ -517,14 +528,6 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .lesson-copy {
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .lesson-copy small {
-    white-space: normal;
-  }
 
   .footer {
     flex-direction: column;
