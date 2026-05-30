@@ -113,10 +113,20 @@
               <legend>Comment votre activité gagne de l'argent ?</legend>
               <label><input type="checkbox" name="model" value="abonnement" /> Des clients paient chaque mois ou chaque année</label>
               <label><input type="checkbox" name="model" value="prestation" /> Vous vendez du temps, des missions ou un accompagnement</label>
+              <label><input type="checkbox" name="model" value="recurrentService" /> Vous vendez un forfait régulier, sans que ce soit un vrai abonnement</label>
               <label><input type="checkbox" name="model" value="ecommerce" /> Vous vendez des produits</label>
+              <label><input type="checkbox" name="model" value="usage" /> Les clients paient selon ce qu'ils consomment ou utilisent</label>
               <label><input type="checkbox" name="model" value="formation" /> Vous vendez des formations, ateliers ou séances de coaching</label>
               <label><input type="checkbox" name="model" value="pipeline" /> Vous répondez à des appels d'offres ou demandez des financements</label>
-              <label><input type="checkbox" name="model" value="marketplace" /> Vous touchez une commission, une redevance ou un revenu d'apporteur d'affaires</label>
+              <label><input type="checkbox" name="model" value="marketplace" /> Vous touchez une commission sur des ventes ou mises en relation</label>
+              <label><input type="checkbox" name="model" value="licence" /> Vous faites payer le droit d'utiliser quelque chose : méthode, outil, contenu, marque...</label>
+              <label><input type="checkbox" name="model" value="leadgen" /> Vous êtes payé quand vous apportez des prospects ou contacts qualifiés</label>
+              <label><input type="checkbox" name="model" value="affiliation" /> Vous touchez une commission quand vous recommandez une offre vendue par quelqu'un d'autre</label>
+              <label><input type="checkbox" name="model" value="advertising" /> Vous gagnez de l'argent avec de la publicité, du sponsoring ou des partenariats</label>
+              <label><input type="checkbox" name="model" value="event" /> Vous organisez des événements, journées, séminaires ou conférences</label>
+              <label><input type="checkbox" name="model" value="freemium" /> Une partie est gratuite, puis certains clients passent à une offre payante</label>
+              <label><input type="checkbox" name="model" value="productMaintenance" /> Vous vendez un produit puis un suivi, une maintenance ou un service récurrent</label>
+              <label><input type="checkbox" name="model" value="unknown" /> Je ne sais pas où me mettre dans cette liste</label>
             </fieldset>
 
             <fieldset>
@@ -134,6 +144,7 @@
               <label><input type="checkbox" name="support" value="fill" /> J'ai besoin d'aide pour choisir les bons chiffres à mettre</label>
               <label><input type="checkbox" name="support" value="analyse" /> J'ai besoin d'aide pour comprendre ce que les résultats veulent dire</label>
               <label><input type="checkbox" name="support" value="decision" /> Je veux être guidé pour savoir quoi changer : prix, coûts, nombre de clients, rythme de vente...</label>
+              <label><input type="checkbox" name="support" value="lost" /> Tout ça, c'est du chinois pour moi. Help.</label>
             </fieldset>
           </form>
 
@@ -231,12 +242,38 @@
       const descriptionInput = document.querySelector("#business-description");
 
       const modelLabels = {
-        abonnement: "Abonnement simple",
-        prestation: "Prestation de service",
-        ecommerce: "E-commerce / vente de produit",
-        formation: "Formation / coaching",
-        pipeline: "Pipeline appels d'offres / subventions",
-        marketplace: "Marketplace, commission, licence, lead generation ou affiliation"
+        abonnement: "Template abonnement simple",
+        prestation: "Template prestation de service",
+        recurrentService: "Template prestation récurrente / forfait",
+        ecommerce: "Template e-commerce / vente de produit",
+        usage: "Template paiement à l'usage ou à la consommation",
+        formation: "Template formation / coaching",
+        pipeline: "Template appels d'offres / subventions",
+        marketplace: "Template marketplace / commission",
+        licence: "Template licence / redevance",
+        leadgen: "Template lead generation",
+        affiliation: "Template affiliation",
+        advertising: "Template publicité / sponsoring",
+        event: "Template événementiel",
+        freemium: "Template gratuit puis payant",
+        productMaintenance: "Template produit + maintenance ou suivi",
+        unknown: "Demande à qualifier avec vous"
+      };
+
+      const complexityLabels = {
+        independent: "Plusieurs activités séparées à additionner",
+        multi: "Plusieurs offres ou formules vendues séparément",
+        upsell: "Option, complément ou offre plus chère après un premier achat",
+        dependency: "Une vente en entraîne souvent une autre",
+        custom: "Ne rentre pas clairement dans les choix proposés"
+      };
+
+      const supportLabels = {
+        comfortable: "Pense pouvoir remplir seul les prix, volumes de clients et coûts",
+        fill: "Besoin d'aide pour choisir les bons chiffres",
+        analyse: "Besoin d'aide pour comprendre les résultats",
+        decision: "Besoin d'aide pour savoir quoi changer",
+        lost: "Tout ça, c'est du chinois pour moi. Help."
       };
 
       function selectedValues(name) {
@@ -252,12 +289,21 @@
         const models = [];
         const complexity = [];
 
-        if (includesAny(text, ["abonnement", "abonné", "abonnés", "mensuel", "récurrent", "saas", "membership"])) models.push("abonnement");
+        if (includesAny(text, ["abonnement", "abonné", "abonnés", "mensuel", "annuel", "récurrent", "saas", "membership"])) models.push("abonnement");
         if (includesAny(text, ["prestation", "mission", "service", "consulting", "accompagnement", "freelance"])) models.push("prestation");
+        if (includesAny(text, ["forfait", "régulier", "récurrent mais", "contrat mensuel"])) models.push("recurrentService");
         if (includesAny(text, ["e-commerce", "ecommerce", "boutique", "produit", "vente de produit", "stock"])) models.push("ecommerce");
+        if (includesAny(text, ["usage", "consommation", "à l'utilisation", "a l'utilisation", "crédit", "minute", "unité"])) models.push("usage");
         if (includesAny(text, ["formation", "atelier", "coaching", "cours", "programme"])) models.push("formation");
         if (includesAny(text, ["appel d'offres", "appel d’offre", "subvention", "financement", "bailleur", "dossier"])) models.push("pipeline");
-        if (includesAny(text, ["marketplace", "commission", "licence", "redevance", "affiliation", "lead generation", "lead"])) models.push("marketplace");
+        if (includesAny(text, ["marketplace", "place de marché", "commission", "mise en relation"])) models.push("marketplace");
+        if (includesAny(text, ["licence", "redevance", "royalty", "droits d'utilisation", "droit d'utiliser"])) models.push("licence");
+        if (includesAny(text, ["lead generation", "lead", "prospect", "contact qualifié", "apport de contacts"])) models.push("leadgen");
+        if (includesAny(text, ["affiliation", "recommande", "apporteur d'affaires", "apporteur d’affaire"])) models.push("affiliation");
+        if (includesAny(text, ["publicité", "sponsoring", "sponsor", "partenariat", "annonceur"])) models.push("advertising");
+        if (includesAny(text, ["événement", "evenement", "séminaire", "conference", "conférence", "billetterie"])) models.push("event");
+        if (includesAny(text, ["freemium", "gratuit puis payant", "version gratuite", "offre gratuite"])) models.push("freemium");
+        if (includesAny(text, ["maintenance", "suivi", "support", "produit puis", "installation puis"])) models.push("productMaintenance");
 
         if (includesAny(text, ["plusieurs activités", "activités indépendantes", "business units", "diversifié"])) complexity.push("independent");
         if (includesAny(text, ["plusieurs offres", "plusieurs formules", "plusieurs plans", "multi-offres", "gamme"])) complexity.push("multi");
@@ -268,13 +314,34 @@
         return { models, complexity };
       }
 
+      function buildPrefilledMailto(title, recommendations, models, complexity, support) {
+        const description = descriptionInput.value.trim() || "Non renseigné";
+        const body = [
+          "Bonjour Marie,",
+          "",
+          "J'ai utilisé le guide de choix et j'aimerais votre recommandation.",
+          "",
+          `Recommandation affichée : ${title}`,
+          `Description de mon activité : ${description}`,
+          `Sources de revenus détectées/cochées : ${models.map((model) => modelLabels[model] || model).join(", ") || "Non renseigné"}`,
+          `Cas particuliers cochés : ${complexity.map((item) => complexityLabels[item] || item).join(", ") || "Aucun"}`,
+          `Besoin d'aide : ${support.map((item) => supportLabels[item] || item).join(", ") || "Non renseigné"}`,
+          `Composition proposée : ${recommendations.join(", ") || "Aucune"}`,
+          "",
+          "Pouvez-vous me confirmer l'offre la plus adaptée ?"
+        ].join("\n");
+        return `mailto:marie@sisuu.fr?subject=${encodeURIComponent("Demande de recommandation template")}&body=${encodeURIComponent(body)}`;
+      }
+
       function updateGuide() {
         const inferred = inferredFromDescription();
         const models = [...new Set([...selectedValues("model"), ...inferred.models])];
         const complexity = [...new Set([...selectedValues("complexity"), ...inferred.complexity])];
+        if (descriptionInput.value.trim().length > 20 && models.length === 0) models.push("unknown");
+        if (models.includes("unknown") && !complexity.includes("custom")) complexity.push("custom");
         const support = selectedValues("support");
-        const needsPersonalization = complexity.some((item) => ["upsell", "dependency", "custom"].includes(item));
-        const needsGuidance = support.some((item) => ["fill", "analyse", "decision"].includes(item));
+        const needsPersonalization = complexity.some((item) => ["dependency", "custom"].includes(item));
+        const needsGuidance = support.some((item) => ["fill", "analyse", "decision", "lost"].includes(item));
         const isComfortable = support.includes("comfortable") && !needsGuidance;
         const canUseTemplatePack = isComfortable && !needsPersonalization;
         const needsWorkshop = needsPersonalization || needsGuidance;
@@ -290,7 +357,13 @@
           return;
         }
 
-        if (!needsPersonalization && support.length === 0) {
+        if (models.includes("unknown")) {
+          resultTitle.textContent = "Demande à préciser";
+          resultCopy.textContent = "Aucun choix ne décrit parfaitement votre activité. Pas de panique : le bouton prépare un message avec vos réponses pour que je puisse vous orienter rapidement.";
+          resultMeta.innerHTML = "<span>Demande préremplie</span><span>Réponse personnalisée</span>";
+          resultAction.textContent = "Préparer ma demande préremplie";
+          resultAction.href = "#";
+        } else if (!needsPersonalization && support.length === 0) {
           resultTitle.textContent = "Précisez votre niveau d'autonomie";
           resultCopy.textContent = "Le guide a identifié les modèles utiles. Indiquez maintenant si vous pensez pouvoir remplir seul les prix, volumes de clients et coûts, ou si vous préférez être accompagné.";
           resultMeta.innerHTML = `<span>${models.length} source(s) de revenus détectée(s)</span>`;
@@ -300,10 +373,14 @@
           resultTitle.textContent = "Atelier personnalisé à 500 €";
           if (needsPersonalization) {
             const reasons = [];
-            if (complexity.includes("upsell")) reasons.push("certains clients achètent ensuite une option, un complément ou une offre plus chère");
             if (complexity.includes("dependency")) reasons.push("une vente en entraîne souvent une autre");
             if (complexity.includes("custom")) reasons.push("votre activité ne rentre pas clairement dans les cas standards");
-            resultCopy.textContent = `Atelier recommandé car ${reasons.join(", ")}. Dans ce cas, un template standard risque de mal refléter vos décisions économiques. L'atelier inclut le template construit sur mesure et 3 temps d'échange avec moi : setup, chiffrage et analyse.`;
+            const explanation = complexity.includes("dependency")
+              ? "les chiffres d'une partie de l'activité dépendent des résultats d'une autre partie"
+              : "un modèle standard risque de ne pas représenter correctement votre façon de vendre";
+            resultCopy.textContent = `Atelier recommandé car ${reasons.join(", ")}. Dans ce cas, ${explanation} : un template standard risque de mal refléter vos décisions économiques. L'atelier inclut le template construit sur mesure et 3 temps d'échange avec moi : setup, chiffrage et analyse.`;
+          } else if (support.includes("lost")) {
+            resultCopy.textContent = "Pas grave si tout ça semble être du chinois : l'atelier est justement fait pour traduire votre activité en chiffres simples. Je vous accompagne pas à pas avec 3 temps d'échange et un template personnalisé inclus.";
           } else {
             resultCopy.textContent = "Atelier recommandé parce que vos réponses indiquent un besoin d'accompagnement humain : je vous aide à choisir les bons chiffres, remplir le fichier, comprendre les résultats et décider quoi ajuster.";
           }
@@ -329,18 +406,25 @@
         const recommendations = models.map((model) => modelLabels[model]);
         if (complexity.includes("independent") || models.length > 1) recommendations.push("Fichier consolidé pour regrouper les templates");
         if (complexity.includes("multi")) recommendations.push("Template combiné pour plusieurs offres");
-        if (complexity.includes("upsell")) recommendations.push("Modèle avec option, complément ou offre plus chère");
+        if (complexity.includes("upsell")) recommendations.push("Template avec option, complément ou offre plus chère");
         if (complexity.includes("dependency")) recommendations.push("Modèle où une vente peut en entraîner une autre");
         if (complexity.includes("custom")) recommendations.push("Template construit sur mesure");
         if (support.includes("fill")) recommendations.push("Aide pour choisir les bons chiffres à renseigner");
         if (support.includes("analyse")) recommendations.push("Analyse des résultats avec vous");
         if (support.includes("decision")) recommendations.push("Aide à la décision sur les choix économiques");
+        if (support.includes("lost")) recommendations.push("Atelier conseillé pour traduire votre activité en chiffres, pas à pas");
 
-        [...new Set(recommendations)].forEach((item) => {
+        const uniqueRecommendations = [...new Set(recommendations)];
+        uniqueRecommendations.forEach((item) => {
           const li = document.createElement("li");
           li.textContent = item;
           resultList.appendChild(li);
         });
+
+        if (models.includes("unknown") || complexity.includes("custom")) {
+          resultAction.textContent = "Préparer ma demande préremplie";
+          resultAction.href = buildPrefilledMailto(resultTitle.textContent, uniqueRecommendations, models, complexity, support);
+        }
       }
 
       guideForm.addEventListener("change", updateGuide);
