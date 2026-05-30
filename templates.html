@@ -14,9 +14,9 @@
     <header class="site-header">
       <a class="brand" href="index.html"><span class="brand-mark">B</span><span>The Business Model Experiment</span></a>
       <nav class="nav" aria-label="Navigation principale">
-        <a href="formation.html">Formation</a>
         <a href="templates.html">Templates</a>
         <a href="coaching.html">Coaching</a>
+        <a href="formation.html">Formation</a>
       </nav>
       <a class="header-cta" href="templates.html">Voir les templates</a>
     </header>
@@ -52,6 +52,7 @@
         <div class="cards three product-cards">
           <article class="card product featured">
             <h3>Pack Essentiel</h3>
+            <p class="price">49 €</p>
             <p>
               Pour les entrepreneurs qui veulent essayer en autonomie, poser une première version
               de leurs chiffres et apprendre à raisonner avec un modèle simple.
@@ -67,14 +68,18 @@
           </article>
           <article class="card product">
             <h3>Templates combinés</h3>
+            <p class="price">À partir de 79 €</p>
             <p>
               Pour les activités diversifiées mais indépendantes. Vous choisissez les blocs utiles,
               et vous avancez en autonomie avec un prix dégressif selon le nombre de templates.
             </p>
             <ul>
-              <li>2, 3 ou 5 templates selon votre activité</li>
+              <li>2 templates combinés : 79 €</li>
+              <li>3 templates combinés : 99 €</li>
+              <li>Au-delà de 3 templates, atelier personnalisé recommandé</li>
               <li>Activités indépendantes entre elles</li>
               <li>Un fichier consolidé prêt à remplir</li>
+              <li>Option session coup de pouce : 100 € pour bien choisir ou démarrer</li>
               <li>Sans atelier si vous êtes à l'aise en autonomie</li>
             </ul>
             <a class="button secondary" href="#guide-title">Utiliser le guide</a>
@@ -200,8 +205,9 @@
         </div>
         <p>
           Si vos activités sont diversifiées mais indépendantes, vous pouvez acheter plusieurs
-          templates avec un prix dégressif. Nous les regroupons dans un seul fichier consolidé,
-          prêt à remplir, sans forcément passer par un atelier.
+          templates avec un prix dégressif : 79 € pour 2 templates et 99 € pour 3 templates.
+          Au-delà, votre modèle mérite généralement une personnalisation : l'atelier permet de
+          construire un fichier consolidé vraiment adapté.
         </p>
       </section>
 
@@ -219,10 +225,10 @@
 
       <section class="cta-band">
         <h2>Vous ne savez pas quel template choisir ?</h2>
-        <p>Commencez par la formation gratuite, puis utilisez le guide : il vous oriente soit vers un pack de templates composé à partir de vos réponses si vous êtes autonome, soit vers l'atelier personnalisé à 500 € avec template sur mesure inclus et 3 temps d'échange avec moi.</p>
+        <p>Utilisez le guide : il vous oriente soit vers un pack de templates si vous êtes autonome, soit vers une session coup de pouce à 100 € pour bien choisir et démarrer, soit vers le parcours personnalisé à 500 € si votre modèle demande une vraie construction sur mesure.</p>
         <div class="hero-actions">
-          <a class="button primary" href="formation.html">Commencer la formation</a>
-          <a class="button secondary light" href="coaching.html">Réserver un coaching</a>
+          <a class="button primary" href="#guide-title">Utiliser le guide</a>
+          <a class="button secondary light" href="coaching.html">Voir les accompagnements</a>
         </div>
       </section>
     </main>
@@ -278,6 +284,13 @@
 
       function selectedValues(name) {
         return [...guideForm.querySelectorAll(`input[name="${name}"]:checked`)].map((input) => input.value);
+      }
+
+      function combinedTemplatePrice(count) {
+        if (count <= 1) return "49 €";
+        if (count === 2) return "79 €";
+        if (count === 3) return "99 €";
+        return null;
       }
 
       function includesAny(text, words) {
@@ -342,9 +355,10 @@
         const support = selectedValues("support");
         const needsPersonalization = complexity.some((item) => ["dependency", "custom"].includes(item));
         const needsGuidance = support.some((item) => ["fill", "analyse", "decision", "lost"].includes(item));
+        const needsStarterSession = !needsPersonalization && support.some((item) => ["fill", "analyse", "decision"].includes(item)) && !support.includes("lost");
         const isComfortable = support.includes("comfortable") && !needsGuidance;
         const canUseTemplatePack = isComfortable && !needsPersonalization;
-        const needsWorkshop = needsPersonalization || needsGuidance;
+        const needsWorkshop = needsPersonalization || support.includes("lost");
 
         resultList.innerHTML = "";
         resultMeta.innerHTML = "";
@@ -369,6 +383,23 @@
           resultMeta.innerHTML = `<span>${models.length} source(s) de revenus détectée(s)</span>`;
           resultAction.textContent = "Répondre à la question";
           resultAction.href = "#guide-title";
+        } else if (needsStarterSession) {
+          const templateCount = Math.max(models.length, complexity.includes("multi") ? 2 : 1);
+          const templatePrice = combinedTemplatePrice(templateCount);
+          const priceLabel = templateCount <= 1 ? "Pack Essentiel : 49 €" : templateCount <= 3 ? `${templateCount} templates combinés : ${templatePrice}` : "Plus de 3 templates : parcours recommandé";
+          if (templateCount > 3) {
+            resultTitle.textContent = "Parcours modèle économique personnalisé";
+            resultCopy.textContent = "Le guide détecte plusieurs templates et un besoin d'aide. Plutôt qu'une simple session, le parcours est plus adapté : il inclut le template personnalisé, le remplissage et l'analyse avec moi.";
+            resultMeta.innerHTML = "<span>Template sur mesure inclus</span><span>3 temps d'échange avec moi</span><span>500 €</span>";
+            resultAction.textContent = "Voir le parcours personnalisé";
+            resultAction.href = "coaching.html";
+          } else {
+            resultTitle.textContent = "Templates + session coup de pouce";
+            resultCopy.textContent = "Vous pouvez acheter le pack recommandé, puis prendre une session coup de pouce pour choisir le bon template, démarrer correctement, vous aider à le remplir ou obtenir un feedback après un premier essai.";
+            resultMeta.innerHTML = `<span>${priceLabel}</span><span>Session coup de pouce : 100 €</span><span>Idéal pour démarrer sans partir seul</span>`;
+            resultAction.textContent = "Réserver une session coup de pouce";
+            resultAction.href = "mailto:marie@sisuu.fr?subject=Session%20coup%20de%20pouce%20templates";
+          }
         } else if (needsWorkshop) {
           resultTitle.textContent = "Atelier personnalisé à 500 €";
           if (needsPersonalization) {
@@ -392,9 +423,20 @@
           resultCopy.textContent = complexity.includes("multi")
             ? "Pack autonome recommandé : plusieurs offres ou formules peuvent être modélisées avec un template combiné si elles se vendent séparément et si vous êtes à l'aise pour renseigner les prix, volumes de clients et coûts."
             : "Pack autonome recommandé : votre demande peut être traitée avec des templates standards composés à partir de vos réponses, avec consolidation si plusieurs activités indépendantes sont détectées.";
-          resultMeta.innerHTML = "<span>Autonomie</span><span>Pack composé automatiquement</span><span>Prix dégressif selon le nombre de templates</span>";
-          resultAction.textContent = "Acheter le pack recommandé";
-          resultAction.href = "#pack-essentiel";
+          const templateCount = Math.max(models.length, complexity.includes("multi") ? 2 : 1);
+          const templatePrice = combinedTemplatePrice(templateCount);
+          if (templateCount > 3) {
+            resultTitle.textContent = "Atelier personnalisé recommandé";
+            resultCopy.textContent = "Le guide détecte plus de 3 templates utiles. À ce niveau, le risque est d'obtenir un fichier trop générique ou difficile à piloter seul : l'atelier permet de construire un modèle consolidé vraiment adapté, avec accompagnement au remplissage et à l'analyse.";
+            resultMeta.innerHTML = "<span>Template sur mesure inclus</span><span>3 temps d'échange avec moi</span><span>500 €</span>";
+            resultAction.textContent = "Réserver l'atelier personnalisé";
+            resultAction.href = "coaching.html";
+          } else {
+            const priceLabel = templateCount <= 1 ? "Pack Essentiel : 49 €" : `${templateCount} templates combinés : ${templatePrice}`;
+            resultMeta.innerHTML = `<span>Autonomie</span><span>Pack composé automatiquement</span><span>${priceLabel}</span>`;
+            resultAction.textContent = "Acheter le pack recommandé";
+            resultAction.href = "#pack-essentiel";
+          }
         } else {
           resultTitle.textContent = "Atelier personnalisé à 500 €";
           resultCopy.textContent = "Si vous hésitez sur votre niveau d'autonomie, l'atelier est recommandé : je vous accompagne en 3 temps d'échange et vous repartez avec un template personnalisé, rempli et analysé avec vous.";

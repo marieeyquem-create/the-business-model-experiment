@@ -328,6 +328,10 @@ a {
   font-size: 19px;
 }
 
+.section-button {
+  margin-top: 18px;
+}
+
 .about-strip {
   background: var(--surface);
   border: 1px solid var(--line);
