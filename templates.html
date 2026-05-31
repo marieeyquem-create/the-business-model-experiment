@@ -46,25 +46,40 @@
 
       <section class="section" id="pack-essentiel">
         <div class="section-heading">
-          <p class="eyebrow">Première offre</p>
-          <h2>Pack Essentiel</h2>
+          <p class="eyebrow">Offres templates</p>
+          <h2>Choisissez le niveau adapté à votre modèle</h2>
         </div>
-        <div class="cards three product-cards">
+        <div class="cards four product-cards">
           <article class="card product featured">
+            <h3>Template unitaire</h3>
+            <p class="price">49 €</p>
+            <p>
+              Pour modéliser une source de revenus précise qui n'est pas forcément incluse dans
+              le Pack Essentiel : usage, marketplace, licence, affiliation, publicité, événementiel,
+              appels d'offres...
+            </p>
+            <ul>
+              <li>Un modèle de revenus ciblé</li>
+              <li>Volumes saisis mois par mois</li>
+              <li>Dashboard CA et profit</li>
+              <li>Idéal si vous savez quel modèle correspond à votre activité</li>
+            </ul>
+            <a class="button primary" href="#guide-title" data-stripe-offer="template-unitaire">Trouver le bon template</a>
+          </article>
+          <article class="card product">
             <h3>Pack Essentiel</h3>
             <p class="price">49 €</p>
             <p>
               Pour les entrepreneurs qui veulent essayer en autonomie, poser une première version
-              de leurs chiffres et apprendre à raisonner avec un modèle simple.
+              de leurs chiffres et apprendre à raisonner avec une base simple.
             </p>
             <ul>
               <li>Base simple pour tester en autonomie</li>
-              <li>Sources de revenus simples : abonnement, prestation, vente, formation</li>
+              <li>Sources de revenus standards : abonnement, prestation, vente, formation</li>
               <li>Une offre simple par source de revenus</li>
-              <li>Volumes saisis mois par mois</li>
               <li>Consolidation et tableau de suivi simples</li>
             </ul>
-            <a class="button primary" href="#">Bientôt disponible</a>
+            <a class="button secondary" href="https://buy.stripe.com/6oU00lfq33Q30iWc3763K05" data-stripe-offer="pack-essentiel">Acheter le Pack Essentiel</a>
           </article>
           <article class="card product">
             <h3>Templates combinés</h3>
@@ -77,10 +92,8 @@
               <li>2 templates combinés : 79 €</li>
               <li>3 templates combinés : 99 €</li>
               <li>Au-delà de 3 templates, atelier personnalisé recommandé</li>
-              <li>Activités indépendantes entre elles</li>
               <li>Un fichier consolidé prêt à remplir</li>
               <li>Option session coup de pouce : 100 € pour bien choisir ou démarrer</li>
-              <li>Sans atelier si vous êtes à l'aise en autonomie</li>
             </ul>
             <a class="button secondary" href="#guide-title">Utiliser le guide</a>
           </article>
@@ -97,7 +110,7 @@
               <li>3 temps d'échange avec moi : setup, chiffrage, analyse</li>
               <li>Formules et tableau de suivi adaptés à votre activité</li>
             </ul>
-            <a class="button secondary" href="coaching.html">Construire mon modèle</a>
+            <a class="button secondary" href="https://buy.stripe.com/6oU8wR91F9an4zc5EJ63K09" data-stripe-offer="parcours-personnalise">Construire mon modèle</a>
           </article>
         </div>
       </section>
@@ -161,6 +174,8 @@
             <p class="recommendation-label">Composition recommandée</p>
             <ul id="guide-result-list"></ul>
             <a class="button primary" id="guide-result-action" href="coaching.html">Être guidé</a>
+            <a class="button secondary guide-payment" id="guide-payment-action" href="#" hidden>Payer l'offre recommandée</a>
+            <a class="button secondary guide-doubt" id="guide-doubt-action" href="https://buy.stripe.com/3cI6oJfq33Q3ghU4AF63K08" hidden>J'ai un doute : session coup de pouce</a>
           </aside>
         </div>
       </section>
@@ -245,7 +260,18 @@
       const resultMeta = document.querySelector("#guide-result-meta");
       const resultList = document.querySelector("#guide-result-list");
       const resultAction = document.querySelector("#guide-result-action");
+      const paymentAction = document.querySelector("#guide-payment-action");
+      const doubtAction = document.querySelector("#guide-doubt-action");
       const descriptionInput = document.querySelector("#business-description");
+
+      const stripeLinks = {
+        templateUnitaire: "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a",
+        packEssentiel: "https://buy.stripe.com/6oU00lfq33Q30iWc3763K05",
+        templates2: "https://buy.stripe.com/28E3cx91FdqDe9Mc3763K06",
+        templates3: "https://buy.stripe.com/7sYdRb6TxeuHaXA9UZ63K07",
+        sessionCoupDePouce: "https://buy.stripe.com/3cI6oJfq33Q3ghU4AF63K08",
+        parcoursPersonnalise: "https://buy.stripe.com/6oU8wR91F9an4zc5EJ63K09"
+      };
 
       const modelLabels = {
         abonnement: "Template abonnement simple",
@@ -327,12 +353,12 @@
         return { models, complexity };
       }
 
-      function buildPrefilledMailto(title, recommendations, models, complexity, support) {
+      function buildPrefilledMailto(title, recommendations, models, complexity, support, paymentLink = "") {
         const description = descriptionInput.value.trim() || "Non renseigné";
         const body = [
           "Bonjour Marie,",
           "",
-          "J'ai utilisé le guide de choix et j'aimerais votre recommandation.",
+          "J'ai utilisé le guide de choix et voici ma recommandation avant paiement.",
           "",
           `Recommandation affichée : ${title}`,
           `Description de mon activité : ${description}`,
@@ -340,10 +366,11 @@
           `Cas particuliers cochés : ${complexity.map((item) => complexityLabels[item] || item).join(", ") || "Aucun"}`,
           `Besoin d'aide : ${support.map((item) => supportLabels[item] || item).join(", ") || "Non renseigné"}`,
           `Composition proposée : ${recommendations.join(", ") || "Aucune"}`,
+          paymentLink ? `Lien de paiement recommandé : ${paymentLink}` : "",
           "",
-          "Pouvez-vous me confirmer l'offre la plus adaptée ?"
-        ].join("\n");
-        return `mailto:marie@sisuu.fr?subject=${encodeURIComponent("Demande de recommandation template")}&body=${encodeURIComponent(body)}`;
+          paymentLink ? "Je vais procéder au paiement correspondant." : "Pouvez-vous me confirmer l'offre la plus adaptée ?"
+        ].filter(Boolean).join("\n");
+        return `mailto:marie@sisuu.fr?subject=${encodeURIComponent(paymentLink ? "Recommandation template avant paiement" : "Demande de recommandation template")}&body=${encodeURIComponent(body)}`;
       }
 
       function updateGuide() {
@@ -359,9 +386,15 @@
         const isComfortable = support.includes("comfortable") && !needsGuidance;
         const canUseTemplatePack = isComfortable && !needsPersonalization;
         const needsWorkshop = needsPersonalization || support.includes("lost");
+        const templateCount = Math.max(models.length, complexity.includes("multi") ? 2 : 1);
 
         resultList.innerHTML = "";
         resultMeta.innerHTML = "";
+        resultAction.dataset.paymentLink = "";
+        paymentAction.hidden = true;
+        paymentAction.href = "#";
+        doubtAction.hidden = true;
+        doubtAction.href = stripeLinks.sessionCoupDePouce;
 
         if (models.length === 0) {
           resultTitle.textContent = "Décrivez vos revenus";
@@ -384,21 +417,20 @@
           resultAction.textContent = "Répondre à la question";
           resultAction.href = "#guide-title";
         } else if (needsStarterSession) {
-          const templateCount = Math.max(models.length, complexity.includes("multi") ? 2 : 1);
           const templatePrice = combinedTemplatePrice(templateCount);
-          const priceLabel = templateCount <= 1 ? "Pack Essentiel : 49 €" : templateCount <= 3 ? `${templateCount} templates combinés : ${templatePrice}` : "Plus de 3 templates : parcours recommandé";
+          const priceLabel = templateCount <= 1 ? "Template unitaire : 49 €" : templateCount <= 3 ? `${templateCount} templates combinés : ${templatePrice}` : "Plus de 3 templates : parcours recommandé";
           if (templateCount > 3) {
             resultTitle.textContent = "Parcours modèle économique personnalisé";
             resultCopy.textContent = "Le guide détecte plusieurs templates et un besoin d'aide. Plutôt qu'une simple session, le parcours est plus adapté : il inclut le template personnalisé, le remplissage et l'analyse avec moi.";
             resultMeta.innerHTML = "<span>Template sur mesure inclus</span><span>3 temps d'échange avec moi</span><span>500 €</span>";
-            resultAction.textContent = "Voir le parcours personnalisé";
-            resultAction.href = "coaching.html";
+            resultAction.textContent = "Envoyer ma recommandation à Marie";
+            resultAction.dataset.paymentLink = stripeLinks.parcoursPersonnalise;
           } else {
             resultTitle.textContent = "Templates + session coup de pouce";
             resultCopy.textContent = "Vous pouvez acheter le pack recommandé, puis prendre une session coup de pouce pour choisir le bon template, démarrer correctement, vous aider à le remplir ou obtenir un feedback après un premier essai.";
             resultMeta.innerHTML = `<span>${priceLabel}</span><span>Session coup de pouce : 100 €</span><span>Idéal pour démarrer sans partir seul</span>`;
-            resultAction.textContent = "Réserver une session coup de pouce";
-            resultAction.href = "mailto:marie@sisuu.fr?subject=Session%20coup%20de%20pouce%20templates";
+            resultAction.textContent = "Envoyer ma recommandation à Marie";
+            resultAction.dataset.paymentLink = stripeLinks.sessionCoupDePouce;
           }
         } else if (needsWorkshop) {
           resultTitle.textContent = "Atelier personnalisé à 500 €";
@@ -416,33 +448,34 @@
             resultCopy.textContent = "Atelier recommandé parce que vos réponses indiquent un besoin d'accompagnement humain : je vous aide à choisir les bons chiffres, remplir le fichier, comprendre les résultats et décider quoi ajuster.";
           }
           resultMeta.innerHTML = "<span>Template construit sur mesure inclus</span><span>3 temps d'échange avec moi : setup, chiffrage, analyse</span><span>500 €</span>";
-          resultAction.textContent = "Réserver l'atelier personnalisé";
-          resultAction.href = "coaching.html";
+          resultAction.textContent = "Envoyer ma recommandation à Marie";
+          resultAction.dataset.paymentLink = stripeLinks.parcoursPersonnalise;
         } else if (canUseTemplatePack) {
-          resultTitle.textContent = "Pack de templates recommandé";
-          resultCopy.textContent = complexity.includes("multi")
-            ? "Pack autonome recommandé : plusieurs offres ou formules peuvent être modélisées avec un template combiné si elles se vendent séparément et si vous êtes à l'aise pour renseigner les prix, volumes de clients et coûts."
-            : "Pack autonome recommandé : votre demande peut être traitée avec des templates standards composés à partir de vos réponses, avec consolidation si plusieurs activités indépendantes sont détectées.";
-          const templateCount = Math.max(models.length, complexity.includes("multi") ? 2 : 1);
+          resultTitle.textContent = templateCount === 1 ? "Template unitaire recommandé" : "Pack de templates recommandé";
+          resultCopy.textContent = templateCount === 1
+            ? "Template unitaire recommandé : votre activité correspond à un modèle de revenus précis. Le Pack Essentiel est utile pour explorer les flux standards, mais vous pouvez aussi acheter uniquement le template qui correspond à votre cas."
+            : complexity.includes("multi")
+              ? "Pack autonome recommandé : plusieurs offres ou formules peuvent être modélisées avec un template combiné si elles se vendent séparément et si vous êtes à l'aise pour renseigner les prix, volumes de clients et coûts."
+              : "Pack autonome recommandé : votre demande peut être traitée avec des templates standards composés à partir de vos réponses, avec consolidation si plusieurs activités indépendantes sont détectées.";
           const templatePrice = combinedTemplatePrice(templateCount);
           if (templateCount > 3) {
             resultTitle.textContent = "Atelier personnalisé recommandé";
             resultCopy.textContent = "Le guide détecte plus de 3 templates utiles. À ce niveau, le risque est d'obtenir un fichier trop générique ou difficile à piloter seul : l'atelier permet de construire un modèle consolidé vraiment adapté, avec accompagnement au remplissage et à l'analyse.";
             resultMeta.innerHTML = "<span>Template sur mesure inclus</span><span>3 temps d'échange avec moi</span><span>500 €</span>";
-            resultAction.textContent = "Réserver l'atelier personnalisé";
-            resultAction.href = "coaching.html";
+            resultAction.textContent = "Envoyer ma recommandation à Marie";
+            resultAction.dataset.paymentLink = stripeLinks.parcoursPersonnalise;
           } else {
-            const priceLabel = templateCount <= 1 ? "Pack Essentiel : 49 €" : `${templateCount} templates combinés : ${templatePrice}`;
-            resultMeta.innerHTML = `<span>Autonomie</span><span>Pack composé automatiquement</span><span>${priceLabel}</span>`;
-            resultAction.textContent = "Acheter le pack recommandé";
-            resultAction.href = "#pack-essentiel";
+            const priceLabel = templateCount <= 1 ? "Template unitaire : 49 €" : `${templateCount} templates combinés : ${templatePrice}`;
+            resultMeta.innerHTML = `<span>Autonomie</span><span>${templateCount <= 1 ? "Template ciblé" : "Pack composé automatiquement"}</span><span>${priceLabel}</span>`;
+            resultAction.textContent = "Envoyer ma recommandation à Marie";
+            resultAction.dataset.paymentLink = templateCount <= 1 ? stripeLinks.templateUnitaire : templateCount === 2 ? stripeLinks.templates2 : stripeLinks.templates3;
           }
         } else {
           resultTitle.textContent = "Atelier personnalisé à 500 €";
           resultCopy.textContent = "Si vous hésitez sur votre niveau d'autonomie, l'atelier est recommandé : je vous accompagne en 3 temps d'échange et vous repartez avec un template personnalisé, rempli et analysé avec vous.";
           resultMeta.innerHTML = "<span>Template construit sur mesure inclus</span><span>Accompagnement humain au chiffrage</span><span>500 €</span>";
-          resultAction.textContent = "Réserver l'atelier personnalisé";
-          resultAction.href = "coaching.html";
+          resultAction.textContent = "Envoyer ma recommandation à Marie";
+          resultAction.dataset.paymentLink = stripeLinks.parcoursPersonnalise;
         }
 
         const recommendations = models.map((model) => modelLabels[model]);
@@ -463,7 +496,15 @@
           resultList.appendChild(li);
         });
 
-        if (models.includes("unknown") || complexity.includes("custom")) {
+        const paymentLink = resultAction.dataset.paymentLink || "";
+        if (paymentLink) {
+          resultAction.href = buildPrefilledMailto(resultTitle.textContent, uniqueRecommendations, models, complexity, support, paymentLink);
+          paymentAction.hidden = false;
+          paymentAction.href = paymentLink;
+          if (paymentLink !== stripeLinks.sessionCoupDePouce && paymentLink !== stripeLinks.parcoursPersonnalise) {
+            doubtAction.hidden = false;
+          }
+        } else if (models.includes("unknown") || complexity.includes("custom")) {
           resultAction.textContent = "Préparer ma demande préremplie";
           resultAction.href = buildPrefilledMailto(resultTitle.textContent, uniqueRecommendations, models, complexity, support);
         }
