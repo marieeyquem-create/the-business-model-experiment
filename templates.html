@@ -23,8 +23,8 @@
 
     <main>
       <section class="page-hero">
-        <p class="eyebrow">Packs Google Sheets</p>
-        <h1>Un pack adaptable pour chiffrer votre activité sans repartir de zéro</h1>
+        <p class="eyebrow">Templates Google Sheets</p>
+        <h1>Des templates adaptés à votre modèle de revenus, sans repartir de zéro</h1>
         <p>
           Pour avancer en autonomie, partez d'une base simple qui vous aide à poser vos chiffres
           et à comprendre les mécaniques économiques. Si vous voulez un modèle fidèle à votre entreprise,
@@ -35,28 +35,28 @@
       <section class="section split">
         <div>
           <p class="eyebrow">Pas un tableur générique</p>
-          <h2>Un pack pensé pour votre vraie logique de revenus</h2>
+          <h2>Un template pour chaque vraie logique de revenus</h2>
         </div>
         <p>
-          Le Pack Essentiel est une offre low cost pour tester seul, structurer une première version
-          de vos chiffres et comprendre les grandes mécaniques économiques. Il reste volontairement
-          simple et ne remplace pas un modèle personnalisé.
+          Chaque template correspond à une façon concrète de gagner de l'argent : abonnement,
+          prestation, vente de produit, usage, marketplace, licence, publicité, événementiel ou
+          appels d'offres. Vous partez du modèle qui ressemble à votre activité, puis vous combinez
+          plusieurs templates si vos revenus viennent de plusieurs sources indépendantes.
         </p>
       </section>
 
-      <section class="section" id="pack-essentiel">
+      <section class="section" id="offres-templates">
         <div class="section-heading">
           <p class="eyebrow">Offres templates</p>
           <h2>Choisissez le niveau adapté à votre modèle</h2>
         </div>
-        <div class="cards four product-cards">
+        <div class="cards three product-cards">
           <article class="card product featured">
             <h3>Template unitaire</h3>
             <p class="price">49 €</p>
             <p>
-              Pour modéliser une source de revenus précise qui n'est pas forcément incluse dans
-              le Pack Essentiel : usage, marketplace, licence, affiliation, publicité, événementiel,
-              appels d'offres...
+              Pour modéliser une source de revenus précise : abonnement, prestation, vente de produit,
+              usage, marketplace, licence, affiliation, publicité, événementiel, appels d'offres...
             </p>
             <ul>
               <li>Un modèle de revenus ciblé</li>
@@ -65,21 +65,6 @@
               <li>Idéal si vous savez quel modèle correspond à votre activité</li>
             </ul>
             <a class="button primary" href="#guide-title" data-stripe-offer="template-unitaire">Trouver le bon template</a>
-          </article>
-          <article class="card product">
-            <h3>Pack Essentiel</h3>
-            <p class="price">49 €</p>
-            <p>
-              Pour les entrepreneurs qui veulent essayer en autonomie, poser une première version
-              de leurs chiffres et apprendre à raisonner avec une base simple.
-            </p>
-            <ul>
-              <li>Base simple pour tester en autonomie</li>
-              <li>Sources de revenus standards : abonnement, prestation, vente, formation</li>
-              <li>Une offre simple par source de revenus</li>
-              <li>Consolidation et tableau de suivi simples</li>
-            </ul>
-            <a class="button secondary" href="https://buy.stripe.com/6oU00lfq33Q30iWc3763K05" data-stripe-offer="pack-essentiel">Acheter le Pack Essentiel</a>
           </article>
           <article class="card product">
             <h3>Templates combinés</h3>
@@ -191,8 +176,8 @@
             <span class="card-number">01</span>
             <h3>Choisissez vos sources de revenus</h3>
             <p>
-              Chaque source de revenus du Pack Essentiel reste volontairement simple : une offre,
-              des clients saisis mois par mois, des coûts et une lecture directe du résultat.
+              Chaque template reste volontairement simple : une logique de revenus, des clients ou volumes
+              saisis mois par mois, des coûts et une lecture directe du résultat.
             </p>
           </article>
           <article class="card">
@@ -207,7 +192,7 @@
             <span class="card-number">03</span>
             <h3>Lisez la consolidation</h3>
             <p>
-              Le pack additionne les sources de revenus utilisées pour donner une vision globale du
+              Le fichier consolidé additionne les sources de revenus utilisées pour donner une vision globale du
               chiffre d'affaires, des coûts et du résultat.
             </p>
           </article>
@@ -241,7 +226,7 @@
 
       <section class="cta-band">
         <h2>Vous ne savez pas quel template choisir ?</h2>
-        <p>Utilisez le guide : il vous oriente soit vers un pack de templates si vous êtes autonome, soit vers une session coup de pouce à 100 € pour bien choisir et démarrer, soit vers le parcours personnalisé à 500 € si votre modèle demande une vraie construction sur mesure.</p>
+        <p>Utilisez le guide : il vous oriente soit vers un template unitaire, soit vers des templates combinés si vous êtes autonome, soit vers une session coup de pouce à 100 € pour bien choisir et démarrer, soit vers le parcours personnalisé à 500 € si votre modèle demande une vraie construction sur mesure.</p>
         <div class="hero-actions">
           <a class="button primary" href="#guide-title">Utiliser le guide</a>
           <a class="button secondary light" href="coaching.html">Voir les accompagnements</a>
@@ -267,7 +252,6 @@
 
       const stripeLinks = {
         templateUnitaire: "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a",
-        packEssentiel: "https://buy.stripe.com/6oU00lfq33Q30iWc3763K05",
         templates2: "https://buy.stripe.com/28E3cx91FdqDe9Mc3763K06",
         templates3: "https://buy.stripe.com/7sYdRb6TxeuHaXA9UZ63K07",
         sessionCoupDePouce: "https://buy.stripe.com/3cI6oJfq33Q3ghU4AF63K08",
@@ -385,7 +369,7 @@
         const needsGuidance = support.some((item) => ["fill", "analyse", "decision", "lost"].includes(item));
         const needsStarterSession = !needsPersonalization && support.some((item) => ["fill", "analyse", "decision"].includes(item)) && !support.includes("lost");
         const isComfortable = support.includes("comfortable") && !needsGuidance;
-        const canUseTemplatePack = isComfortable && !needsPersonalization;
+        const canUseTemplates = isComfortable && !needsPersonalization;
         const needsWorkshop = needsPersonalization || support.includes("lost");
         const templateCount = Math.max(models.length, complexity.includes("multi") ? 2 : 1);
 
@@ -428,7 +412,7 @@
             resultAction.dataset.paymentLink = stripeLinks.parcoursPersonnalise;
           } else {
             resultTitle.textContent = "Templates + session coup de pouce";
-            resultCopy.textContent = "Vous pouvez acheter le pack recommandé, puis prendre une session coup de pouce pour choisir le bon template, démarrer correctement, vous aider à le remplir ou obtenir un feedback après un premier essai.";
+            resultCopy.textContent = "Vous pouvez acheter le ou les templates recommandés, puis prendre une session coup de pouce pour choisir le bon template, démarrer correctement, vous aider à le remplir ou obtenir un feedback après un premier essai.";
             resultMeta.innerHTML = `<span>${priceLabel}</span><span>Session coup de pouce : 100 €</span><span>Idéal pour démarrer sans partir seul</span>`;
             resultAction.textContent = "Envoyer ma recommandation à Marie";
             resultAction.dataset.paymentLink = stripeLinks.sessionCoupDePouce;
@@ -451,13 +435,13 @@
           resultMeta.innerHTML = "<span>Template construit sur mesure inclus</span><span>3 temps d'échange avec moi : setup, chiffrage, analyse</span><span>500 €</span>";
           resultAction.textContent = "Envoyer ma recommandation à Marie";
           resultAction.dataset.paymentLink = stripeLinks.parcoursPersonnalise;
-        } else if (canUseTemplatePack) {
-          resultTitle.textContent = templateCount === 1 ? "Template unitaire recommandé" : "Pack de templates recommandé";
+        } else if (canUseTemplates) {
+          resultTitle.textContent = templateCount === 1 ? "Template unitaire recommandé" : "Templates combinés recommandés";
           resultCopy.textContent = templateCount === 1
-            ? "Template unitaire recommandé : votre activité correspond à un modèle de revenus précis. Le Pack Essentiel est utile pour explorer les flux standards, mais vous pouvez aussi acheter uniquement le template qui correspond à votre cas."
+            ? "Template unitaire recommandé : votre activité correspond à un modèle de revenus précis. Vous achetez uniquement le template qui correspond à votre cas."
             : complexity.includes("multi")
-              ? "Pack autonome recommandé : plusieurs offres ou formules peuvent être modélisées avec un template combiné si elles se vendent séparément et si vous êtes à l'aise pour renseigner les prix, volumes de clients et coûts."
-              : "Pack autonome recommandé : votre demande peut être traitée avec des templates standards composés à partir de vos réponses, avec consolidation si plusieurs activités indépendantes sont détectées.";
+              ? "Templates combinés recommandés : plusieurs offres ou formules peuvent être modélisées avec un fichier combiné si elles se vendent séparément et si vous êtes à l'aise pour renseigner les prix, volumes de clients et coûts."
+              : "Templates combinés recommandés : votre demande peut être traitée avec des templates standards composés à partir de vos réponses, avec consolidation si plusieurs activités indépendantes sont détectées.";
           const templatePrice = combinedTemplatePrice(templateCount);
           if (templateCount > 3) {
             resultTitle.textContent = "Atelier personnalisé recommandé";
@@ -467,7 +451,7 @@
             resultAction.dataset.paymentLink = stripeLinks.parcoursPersonnalise;
           } else {
             const priceLabel = templateCount <= 1 ? "Template unitaire : 49 €" : `${templateCount} templates combinés : ${templatePrice}`;
-            resultMeta.innerHTML = `<span>Autonomie</span><span>${templateCount <= 1 ? "Template ciblé" : "Pack composé automatiquement"}</span><span>${priceLabel}</span>`;
+            resultMeta.innerHTML = `<span>Autonomie</span><span>${templateCount <= 1 ? "Template ciblé" : "Templates combinés"}</span><span>${priceLabel}</span>`;
             resultAction.textContent = "Envoyer ma recommandation à Marie";
             resultAction.dataset.paymentLink = templateCount <= 1 ? stripeLinks.templateUnitaire : templateCount === 2 ? stripeLinks.templates2 : stripeLinks.templates3;
           }
