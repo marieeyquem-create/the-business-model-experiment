@@ -113,7 +113,7 @@
               <textarea id="business-description" name="description" rows="5" placeholder="Exemple : je vends une formation en ligne, puis certains clients prennent un accompagnement individuel."></textarea>
               <label class="field-stack" for="guide-email">
                 Votre email pour recevoir la recommandation et les templates
-                <input id="guide-email" name="email" type="email" autocomplete="email" placeholder="prenom@entreprise.com" />
+                <input id="guide-email" name="email" type="email" autocomplete="email" placeholder="prenom@entreprise.com" required />
               </label>
               <p class="field-warning" id="email-warning" hidden>Indiquez votre email pour que je puisse rapprocher votre recommandation et votre paiement.</p>
             </fieldset>
@@ -618,9 +618,15 @@
           resultAction.href = buildPrefilledMailto(resultTitle.textContent, uniqueRecommendations, models, complexity, support, paymentLink);
           paymentAction.hidden = false;
           paymentAction.textContent = "Payer l'offre recommandée";
-          paymentAction.href = paymentLink;
-          paymentAction.dataset.paymentLink = paymentLink;
           paymentAction.dataset.recommendations = JSON.stringify(uniqueRecommendations);
+          if (isValidEmail(emailInput.value)) {
+            paymentAction.href = paymentLink;
+            paymentAction.dataset.paymentLink = paymentLink;
+          } else {
+            paymentAction.href = "#contact-options";
+            paymentAction.dataset.paymentLink = "";
+            showGuideWarning("Indiquez un email valide pour recevoir votre recommandation et permettre le suivi après paiement.", "email");
+          }
           if (paymentLink !== stripeLinks.sessionCoupDePouce && paymentLink !== stripeLinks.parcoursPersonnalise) {
             doubtAction.hidden = false;
           }
