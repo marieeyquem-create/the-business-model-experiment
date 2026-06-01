@@ -157,6 +157,7 @@
             <h3 id="guide-result-title">Répondez aux questions</h3>
             <p id="guide-result-copy">Répondez avec vos mots : le guide traduit vos réponses en recommandation concrète.</p>
             <div class="recommendation-meta" id="guide-result-meta"></div>
+            <p class="form-note" id="guide-result-warning" hidden></p>
             <p class="recommendation-label">Composition recommandée</p>
             <ul id="guide-result-list"></ul>
             <a class="button primary guide-payment" id="guide-payment-action" href="#" hidden>Payer l'offre recommandée</a>
@@ -244,6 +245,7 @@
       const resultTitle = document.querySelector("#guide-result-title");
       const resultCopy = document.querySelector("#guide-result-copy");
       const resultMeta = document.querySelector("#guide-result-meta");
+      const resultWarning = document.querySelector("#guide-result-warning");
       const resultList = document.querySelector("#guide-result-list");
       const resultAction = document.querySelector("#guide-result-action");
       const paymentAction = document.querySelector("#guide-payment-action");
@@ -308,6 +310,20 @@
 
       function includesAny(text, words) {
         return words.some((word) => text.includes(word));
+      }
+
+      function isValidStripePaymentLink(link) {
+        return typeof link === "string" && link.startsWith("https://buy.stripe.com/");
+      }
+
+      function showGuideWarning(message) {
+        resultWarning.textContent = message;
+        resultWarning.hidden = false;
+      }
+
+      function clearGuideWarning() {
+        resultWarning.textContent = "";
+        resultWarning.hidden = true;
       }
 
       function inferredFromDescription() {
@@ -380,9 +396,13 @@
 
       async function sendRecommendationThenPay(event) {
         event.preventDefault();
-        const paymentLink = paymentAction.href;
+        const paymentLink = paymentAction.dataset.paymentLink || "";
         const recommendations = JSON.parse(paymentAction.dataset.recommendations || "[]");
-        if (!paymentLink || paymentLink === "#") return;
+        if (!isValidStripePaymentLink(paymentLink) || recommendations.length === 0) {
+          showGuideWarning("Dernière étape : cochez une option dans « Pour remplir vos chiffres... » pour finaliser la recommandation avant de payer.");
+          document.querySelector('fieldset:last-of-type').scrollIntoView({ behavior: "smooth", block: "center" });
+          return;
+        }
 
         const originalText = paymentAction.textContent;
         paymentAction.textContent = "Préparation du paiement...";
@@ -423,9 +443,12 @@
 
         resultList.innerHTML = "";
         resultMeta.innerHTML = "";
+        clearGuideWarning();
         resultAction.dataset.paymentLink = "";
         paymentAction.hidden = true;
         paymentAction.href = "#";
+        paymentAction.dataset.paymentLink = "";
+        paymentAction.dataset.recommendations = "[]";
         doubtAction.hidden = true;
         doubtAction.href = stripeLinks.sessionCoupDePouce;
 
@@ -449,6 +472,12 @@
           resultMeta.innerHTML = `<span>${models.length} source(s) de revenus détectée(s)</span>`;
           resultAction.textContent = "Répondre à la question";
           resultAction.href = "#guide-title";
+          paymentAction.hidden = false;
+          paymentAction.textContent = "Payer l'offre recommandée";
+          paymentAction.href = "#";
+          paymentAction.dataset.paymentLink = "";
+          paymentAction.dataset.recommendations = "[]";
+          showGuideWarning("Pour finaliser la recommandation, cochez d'abord une option dans « Pour remplir vos chiffres... ».");
         } else if (needsStarterSession) {
           const templatePrice = combinedTemplatePrice(templateCount);
           const priceLabel = templateCount <= 1 ? "Template unitaire : 49 €" : templateCount <= 3 ? `${templateCount} templates combinés : ${templatePrice}` : "Plus de 3 templates : parcours recommandé";
@@ -535,6 +564,7 @@
           paymentAction.hidden = false;
           paymentAction.textContent = "Payer l'offre recommandée";
           paymentAction.href = paymentLink;
+          paymentAction.dataset.paymentLink = paymentLink;
           paymentAction.dataset.recommendations = JSON.stringify(uniqueRecommendations);
           if (paymentLink !== stripeLinks.sessionCoupDePouce && paymentLink !== stripeLinks.parcoursPersonnalise) {
             doubtAction.hidden = false;

@@ -561,6 +561,15 @@ a {
   font-weight: 800;
 }
 
+.guide-result .form-note {
+  border-left: 3px solid var(--accent);
+  padding: 10px 12px;
+  color: var(--accent-dark);
+  background: rgba(124, 58, 237, 0.08);
+  font-size: 14px;
+  font-weight: 750;
+}
+
 .recommendation-label {
   color: var(--text) !important;
   font-size: 14px !important;
