@@ -561,13 +561,19 @@ a {
   font-weight: 800;
 }
 
-.guide-result .form-note {
-  border-left: 3px solid var(--accent);
+.guide-result .form-note,
+.field-warning {
+  border-left: 3px solid #dc2626;
   padding: 10px 12px;
-  color: var(--accent-dark);
-  background: rgba(124, 58, 237, 0.08);
+  color: #991b1b;
+  background: #fef2f2;
   font-size: 14px;
   font-weight: 750;
+}
+
+.field-warning {
+  margin: 0;
+  border-radius: 0 8px 8px 0;
 }
 
 .recommendation-label {

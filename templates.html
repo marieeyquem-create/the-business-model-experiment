@@ -142,8 +142,9 @@
               <label><input type="checkbox" name="complexity" value="custom" /> Vous avez du mal à décrire votre activité avec les choix proposés</label>
             </fieldset>
 
-            <fieldset>
+            <fieldset id="support-options">
               <legend>Pour remplir vos chiffres...</legend>
+              <p class="field-warning" id="support-warning" hidden>Pour finaliser votre recommandation, cochez une option ci-dessous.</p>
               <label><input type="checkbox" name="support" value="comfortable" /> Je pense pouvoir remplir seul les prix, volumes de clients et coûts</label>
               <label><input type="checkbox" name="support" value="fill" /> J'ai besoin d'aide pour choisir les bons chiffres à mettre</label>
               <label><input type="checkbox" name="support" value="analyse" /> J'ai besoin d'aide pour comprendre ce que les résultats veulent dire</label>
@@ -246,6 +247,8 @@
       const resultCopy = document.querySelector("#guide-result-copy");
       const resultMeta = document.querySelector("#guide-result-meta");
       const resultWarning = document.querySelector("#guide-result-warning");
+      const supportWarning = document.querySelector("#support-warning");
+      const supportOptions = document.querySelector("#support-options");
       const resultList = document.querySelector("#guide-result-list");
       const resultAction = document.querySelector("#guide-result-action");
       const paymentAction = document.querySelector("#guide-payment-action");
@@ -319,11 +322,15 @@
       function showGuideWarning(message) {
         resultWarning.textContent = message;
         resultWarning.hidden = false;
+        supportWarning.textContent = message;
+        supportWarning.hidden = false;
       }
 
       function clearGuideWarning() {
         resultWarning.textContent = "";
         resultWarning.hidden = true;
+        supportWarning.textContent = "";
+        supportWarning.hidden = true;
       }
 
       function inferredFromDescription() {
@@ -399,8 +406,8 @@
         const paymentLink = paymentAction.dataset.paymentLink || "";
         const recommendations = JSON.parse(paymentAction.dataset.recommendations || "[]");
         if (!isValidStripePaymentLink(paymentLink) || recommendations.length === 0) {
-          showGuideWarning("Dernière étape : cochez une option dans « Pour remplir vos chiffres... » pour finaliser la recommandation avant de payer.");
-          document.querySelector('fieldset:last-of-type').scrollIntoView({ behavior: "smooth", block: "center" });
+          showGuideWarning("Pour finaliser votre recommandation, cochez une option dans « Pour remplir vos chiffres... ».");
+          supportOptions.scrollIntoView({ behavior: "smooth", block: "center" });
           return;
         }
 
@@ -471,13 +478,13 @@
           resultCopy.textContent = "Le guide a identifié les modèles utiles. Indiquez maintenant si vous pensez pouvoir remplir seul les prix, volumes de clients et coûts, ou si vous préférez être accompagné.";
           resultMeta.innerHTML = `<span>${models.length} source(s) de revenus détectée(s)</span>`;
           resultAction.textContent = "Répondre à la question";
-          resultAction.href = "#guide-title";
+          resultAction.href = "#support-options";
           paymentAction.hidden = false;
           paymentAction.textContent = "Payer l'offre recommandée";
-          paymentAction.href = "#";
+          paymentAction.href = "#support-options";
           paymentAction.dataset.paymentLink = "";
           paymentAction.dataset.recommendations = "[]";
-          showGuideWarning("Pour finaliser la recommandation, cochez d'abord une option dans « Pour remplir vos chiffres... ».");
+          showGuideWarning("Pour finaliser votre recommandation, cochez une option dans « Pour remplir vos chiffres... ».");
         } else if (needsStarterSession) {
           const templatePrice = combinedTemplatePrice(templateCount);
           const priceLabel = templateCount <= 1 ? "Template unitaire : 49 €" : templateCount <= 3 ? `${templateCount} templates combinés : ${templatePrice}` : "Plus de 3 templates : parcours recommandé";
