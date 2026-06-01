@@ -159,8 +159,8 @@
             <div class="recommendation-meta" id="guide-result-meta"></div>
             <p class="recommendation-label">Composition recommandée</p>
             <ul id="guide-result-list"></ul>
-            <a class="button primary" id="guide-result-action" href="coaching.html">Être guidé</a>
-            <a class="button secondary guide-payment" id="guide-payment-action" href="#" hidden>Payer l'offre recommandée</a>
+            <a class="button primary guide-payment" id="guide-payment-action" href="#" hidden>Payer l'offre recommandée</a>
+            <a class="button secondary" id="guide-result-action" href="coaching.html">Envoyer ma recommandation à Marie</a>
             <a class="button secondary guide-doubt" id="guide-doubt-action" href="https://buy.stripe.com/3cI6oJfq33Q3ghU4AF63K08" hidden>J'ai un doute : session coup de pouce</a>
           </aside>
         </div>
@@ -485,6 +485,7 @@
         if (paymentLink) {
           resultAction.href = buildPrefilledMailto(resultTitle.textContent, uniqueRecommendations, models, complexity, support, paymentLink);
           paymentAction.hidden = false;
+          paymentAction.textContent = "Payer l'offre recommandée";
           paymentAction.href = paymentLink;
           if (paymentLink !== stripeLinks.sessionCoupDePouce && paymentLink !== stripeLinks.parcoursPersonnalise) {
             doubtAction.hidden = false;
