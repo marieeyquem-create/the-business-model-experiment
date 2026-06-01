@@ -507,10 +507,9 @@ a {
   margin-top: 2px;
 }
 
-.guide-panel textarea {
+.guide-panel textarea,
+.guide-panel input[type="email"] {
   width: 100%;
-  min-height: 132px;
-  resize: vertical;
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 14px;
@@ -519,9 +518,25 @@ a {
   font: inherit;
 }
 
-.guide-panel textarea:focus {
+.guide-panel textarea {
+  min-height: 132px;
+  resize: vertical;
+}
+
+.guide-panel input[type="email"] {
+  height: 48px;
+  margin-top: 8px;
+}
+
+.guide-panel textarea:focus,
+.guide-panel input[type="email"]:focus {
   outline: 2px solid rgba(124, 58, 237, 0.22);
   border-color: var(--accent);
+}
+
+.guide-panel .field-stack {
+  display: grid;
+  gap: 4px;
 }
 
 .guide-result {

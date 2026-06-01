@@ -108,9 +108,14 @@
         </div>
         <div class="guide-layout">
           <form class="guide-panel" id="template-guide-form">
-            <fieldset>
+            <fieldset id="contact-options">
               <legend>Décrivez votre activité</legend>
               <textarea id="business-description" name="description" rows="5" placeholder="Exemple : je vends une formation en ligne, puis certains clients prennent un accompagnement individuel."></textarea>
+              <label class="field-stack" for="guide-email">
+                Votre email pour recevoir la recommandation et les templates
+                <input id="guide-email" name="email" type="email" autocomplete="email" placeholder="prenom@entreprise.com" />
+              </label>
+              <p class="field-warning" id="email-warning" hidden>Indiquez votre email pour que je puisse rapprocher votre recommandation et votre paiement.</p>
             </fieldset>
 
             <fieldset id="model-options">
@@ -248,6 +253,9 @@
       const resultCopy = document.querySelector("#guide-result-copy");
       const resultMeta = document.querySelector("#guide-result-meta");
       const resultWarning = document.querySelector("#guide-result-warning");
+      const emailWarning = document.querySelector("#email-warning");
+      const emailInput = document.querySelector("#guide-email");
+      const contactOptions = document.querySelector("#contact-options");
       const modelWarning = document.querySelector("#model-warning");
       const modelOptions = document.querySelector("#model-options");
       const supportWarning = document.querySelector("#support-warning");
@@ -322,10 +330,14 @@
         return typeof link === "string" && link.startsWith("https://buy.stripe.com/");
       }
 
+      function isValidEmail(value) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+      }
+
       function showGuideWarning(message, target = "support") {
         resultWarning.textContent = message;
         resultWarning.hidden = false;
-        const fieldWarning = target === "model" ? modelWarning : supportWarning;
+        const fieldWarning = target === "email" ? emailWarning : target === "model" ? modelWarning : supportWarning;
         fieldWarning.textContent = message;
         fieldWarning.hidden = false;
       }
@@ -333,6 +345,8 @@
       function clearGuideWarning() {
         resultWarning.textContent = "";
         resultWarning.hidden = true;
+        emailWarning.textContent = "";
+        emailWarning.hidden = true;
         modelWarning.textContent = "";
         modelWarning.hidden = true;
         supportWarning.textContent = "";
@@ -371,12 +385,14 @@
 
       function buildPrefilledMailto(title, recommendations, models, complexity, support, paymentLink = "") {
         const description = descriptionInput.value.trim() || "Non renseigné";
+        const email = emailInput.value.trim() || "Non renseigné";
         const body = [
           "Bonjour Marie,",
           "",
           "J'ai utilisé le guide de choix et voici ma recommandation avant paiement.",
           "",
           `Recommandation affichée : ${title}`,
+          `Email : ${email}`,
           `Description de mon activité : ${description}`,
           `Sources de revenus détectées/cochées : ${models.map((model) => modelLabels[model] || model).join(", ") || "Non renseigné"}`,
           `Cas particuliers cochés : ${complexity.map((item) => complexityLabels[item] || item).join(", ") || "Aucun"}`,
@@ -400,6 +416,7 @@
           models: models.map((model) => modelLabels[model] || model),
           complexity: complexity.map((item) => complexityLabels[item] || item),
           support: support.map((item) => supportLabels[item] || item),
+          email: emailInput.value.trim(),
           description: descriptionInput.value.trim(),
           payment_link: paymentLink,
           created_at: new Date().toISOString(),
@@ -411,6 +428,11 @@
         event.preventDefault();
         const paymentLink = paymentAction.dataset.paymentLink || "";
         const recommendations = JSON.parse(paymentAction.dataset.recommendations || "[]");
+        if (!isValidEmail(emailInput.value)) {
+          showGuideWarning("Indiquez un email valide pour recevoir votre recommandation et permettre le suivi après paiement.", "email");
+          contactOptions.scrollIntoView({ behavior: "smooth", block: "center" });
+          return;
+        }
         if (selectedValues("model").length === 0) {
           showGuideWarning("Pour finaliser votre recommandation, cochez au moins une source de revenus.", "model");
           modelOptions.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -477,7 +499,7 @@
         doubtAction.href = stripeLinks.sessionCoupDePouce;
 
         if (selectedModels.length === 0) {
-          const hasStartedGuide = descriptionInput.value.trim().length > 0 || models.length > 0 || complexity.length > 0 || support.length > 0;
+          const hasStartedGuide = descriptionInput.value.trim().length > 0 || emailInput.value.trim().length > 0 || models.length > 0 || complexity.length > 0 || support.length > 0;
           resultTitle.textContent = hasStartedGuide ? "Choisissez votre source de revenus" : "Répondez aux questions";
           resultCopy.textContent = hasStartedGuide
             ? "La description aide le guide, mais pour finaliser une recommandation il faut cocher au moins une source de revenus dans la première section."
@@ -610,6 +632,7 @@
 
       guideForm.addEventListener("change", updateGuide);
       descriptionInput.addEventListener("input", updateGuide);
+      emailInput.addEventListener("input", updateGuide);
       paymentAction.addEventListener("click", sendRecommendationThenPay);
       updateGuide();
     </script>
