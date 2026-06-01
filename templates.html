@@ -113,8 +113,9 @@
               <textarea id="business-description" name="description" rows="5" placeholder="Exemple : je vends une formation en ligne, puis certains clients prennent un accompagnement individuel."></textarea>
             </fieldset>
 
-            <fieldset>
+            <fieldset id="model-options">
               <legend>Comment votre activité gagne de l'argent ?</legend>
+              <p class="field-warning" id="model-warning" hidden>Pour finaliser votre recommandation, cochez au moins une source de revenus ci-dessous.</p>
               <label><input type="checkbox" name="model" value="abonnement" /> Des clients paient chaque mois ou chaque année</label>
               <label><input type="checkbox" name="model" value="prestation" /> Vous vendez du temps, des missions ou un accompagnement</label>
               <label><input type="checkbox" name="model" value="recurrentService" /> Vous vendez un forfait régulier, sans que ce soit un vrai abonnement</label>
@@ -145,11 +146,11 @@
             <fieldset id="support-options">
               <legend>Pour remplir vos chiffres...</legend>
               <p class="field-warning" id="support-warning" hidden>Pour finaliser votre recommandation, cochez une option ci-dessous.</p>
-              <label><input type="checkbox" name="support" value="comfortable" /> Je pense pouvoir remplir seul les prix, volumes de clients et coûts</label>
-              <label><input type="checkbox" name="support" value="fill" /> J'ai besoin d'aide pour choisir les bons chiffres à mettre</label>
-              <label><input type="checkbox" name="support" value="analyse" /> J'ai besoin d'aide pour comprendre ce que les résultats veulent dire</label>
-              <label><input type="checkbox" name="support" value="decision" /> Je veux être guidé pour savoir quoi changer : prix, coûts, nombre de clients, rythme de vente...</label>
-              <label><input type="checkbox" name="support" value="lost" /> Tout ça, c'est du chinois pour moi. Help.</label>
+              <label><input type="radio" name="support" value="comfortable" /> Je pense pouvoir remplir seul les prix, volumes de clients et coûts</label>
+              <label><input type="radio" name="support" value="fill" /> J'ai besoin d'aide pour choisir les bons chiffres à mettre</label>
+              <label><input type="radio" name="support" value="analyse" /> J'ai besoin d'aide pour comprendre ce que les résultats veulent dire</label>
+              <label><input type="radio" name="support" value="decision" /> Je veux être guidé pour savoir quoi changer : prix, coûts, nombre de clients, rythme de vente...</label>
+              <label><input type="radio" name="support" value="lost" /> Tout ça, c'est du chinois pour moi. Help.</label>
             </fieldset>
           </form>
 
@@ -247,6 +248,8 @@
       const resultCopy = document.querySelector("#guide-result-copy");
       const resultMeta = document.querySelector("#guide-result-meta");
       const resultWarning = document.querySelector("#guide-result-warning");
+      const modelWarning = document.querySelector("#model-warning");
+      const modelOptions = document.querySelector("#model-options");
       const supportWarning = document.querySelector("#support-warning");
       const supportOptions = document.querySelector("#support-options");
       const resultList = document.querySelector("#guide-result-list");
@@ -319,16 +322,19 @@
         return typeof link === "string" && link.startsWith("https://buy.stripe.com/");
       }
 
-      function showGuideWarning(message) {
+      function showGuideWarning(message, target = "support") {
         resultWarning.textContent = message;
         resultWarning.hidden = false;
-        supportWarning.textContent = message;
-        supportWarning.hidden = false;
+        const fieldWarning = target === "model" ? modelWarning : supportWarning;
+        fieldWarning.textContent = message;
+        fieldWarning.hidden = false;
       }
 
       function clearGuideWarning() {
         resultWarning.textContent = "";
         resultWarning.hidden = true;
+        modelWarning.textContent = "";
+        modelWarning.hidden = true;
         supportWarning.textContent = "";
         supportWarning.hidden = true;
       }
@@ -405,9 +411,19 @@
         event.preventDefault();
         const paymentLink = paymentAction.dataset.paymentLink || "";
         const recommendations = JSON.parse(paymentAction.dataset.recommendations || "[]");
-        if (!isValidStripePaymentLink(paymentLink) || recommendations.length === 0) {
-          showGuideWarning("Pour finaliser votre recommandation, cochez une option dans « Pour remplir vos chiffres... ».");
+        if (selectedValues("model").length === 0) {
+          showGuideWarning("Pour finaliser votre recommandation, cochez au moins une source de revenus.", "model");
+          modelOptions.scrollIntoView({ behavior: "smooth", block: "center" });
+          return;
+        }
+        if (selectedValues("support").length !== 1) {
+          showGuideWarning("Pour finaliser votre recommandation, cochez une seule option dans « Pour remplir vos chiffres... ».");
           supportOptions.scrollIntoView({ behavior: "smooth", block: "center" });
+          return;
+        }
+        if (!isValidStripePaymentLink(paymentLink) || recommendations.length === 0) {
+          showGuideWarning("Pour finaliser votre recommandation, complétez les questions obligatoires du guide.", "model");
+          modelOptions.scrollIntoView({ behavior: "smooth", block: "center" });
           return;
         }
 
@@ -435,7 +451,8 @@
 
       function updateGuide() {
         const inferred = inferredFromDescription();
-        const models = [...new Set([...selectedValues("model"), ...inferred.models])];
+        const selectedModels = selectedValues("model");
+        const models = [...new Set([...selectedModels, ...inferred.models])];
         const complexity = [...new Set([...selectedValues("complexity"), ...inferred.complexity])];
         if (descriptionInput.value.trim().length > 20 && models.length === 0) models.push("unknown");
         if (models.includes("unknown") && !complexity.includes("custom")) complexity.push("custom");
@@ -459,11 +476,20 @@
         doubtAction.hidden = true;
         doubtAction.href = stripeLinks.sessionCoupDePouce;
 
-        if (models.length === 0) {
-          resultTitle.textContent = "Décrivez vos revenus";
-          resultCopy.textContent = "Écrivez une phrase sur votre activité ou cochez vos sources de revenus. La recommandation se construit automatiquement à partir de vos réponses.";
-          resultAction.textContent = "Être guidé";
-          resultAction.href = "coaching.html";
+        if (selectedModels.length === 0) {
+          const hasStartedGuide = descriptionInput.value.trim().length > 0 || models.length > 0 || complexity.length > 0 || support.length > 0;
+          resultTitle.textContent = hasStartedGuide ? "Choisissez votre source de revenus" : "Répondez aux questions";
+          resultCopy.textContent = hasStartedGuide
+            ? "La description aide le guide, mais pour finaliser une recommandation il faut cocher au moins une source de revenus dans la première section."
+            : "Répondez avec vos mots : le guide traduit vos réponses en recommandation concrète.";
+          resultAction.textContent = hasStartedGuide ? "Répondre à la question" : "Être guidé";
+          resultAction.href = hasStartedGuide ? "#model-options" : "coaching.html";
+          paymentAction.hidden = !hasStartedGuide;
+          paymentAction.textContent = "Payer l'offre recommandée";
+          paymentAction.href = "#model-options";
+          paymentAction.dataset.paymentLink = "";
+          paymentAction.dataset.recommendations = "[]";
+          if (hasStartedGuide) showGuideWarning("Pour finaliser votre recommandation, cochez au moins une source de revenus.", "model");
           return;
         }
 
