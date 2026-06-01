@@ -258,6 +258,8 @@
         parcoursPersonnalise: "https://buy.stripe.com/6oU8wR91F9an4zc5EJ63K09"
       };
 
+      const recommendationWebhookUrl = "https://hook.eu1.make.com/bwopmp4cu8wesc5xrp2dz0vvla2dyhmr";
+
       const modelLabels = {
         abonnement: "Template abonnement simple",
         prestation: "Template prestation de service",
@@ -356,6 +358,52 @@
           paymentLink ? "Je vais procéder au paiement correspondant." : "Pouvez-vous me confirmer l'offre la plus adaptée ?"
         ].filter(Boolean).join("\n");
         return `mailto:marie@sisuu.fr?subject=${encodeURIComponent(paymentLink ? "Recommandation template avant paiement" : "Demande de recommandation template")}&body=${encodeURIComponent(body)}`;
+      }
+
+      function currentGuidePayload(paymentLink, recommendations) {
+        const models = [...new Set([...selectedValues("model"), ...inferredFromDescription().models])];
+        const complexity = [...new Set([...selectedValues("complexity"), ...inferredFromDescription().complexity])];
+        const support = selectedValues("support");
+        return {
+          recommendation_title: resultTitle.textContent,
+          recommendation_copy: resultCopy.textContent,
+          templates_recommended: recommendations,
+          models: models.map((model) => modelLabels[model] || model),
+          complexity: complexity.map((item) => complexityLabels[item] || item),
+          support: support.map((item) => supportLabels[item] || item),
+          description: descriptionInput.value.trim(),
+          payment_link: paymentLink,
+          created_at: new Date().toISOString(),
+          source: "guide_site"
+        };
+      }
+
+      async function sendRecommendationThenPay(event) {
+        event.preventDefault();
+        const paymentLink = paymentAction.href;
+        const recommendations = JSON.parse(paymentAction.dataset.recommendations || "[]");
+        if (!paymentLink || paymentLink === "#") return;
+
+        const originalText = paymentAction.textContent;
+        paymentAction.textContent = "Préparation du paiement...";
+        paymentAction.setAttribute("aria-busy", "true");
+
+        try {
+          await fetch(recommendationWebhookUrl, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(currentGuidePayload(paymentLink, recommendations))
+          });
+        } catch (error) {
+          console.warn("Recommendation webhook failed", error);
+        } finally {
+          window.location.href = paymentLink;
+          setTimeout(() => {
+            paymentAction.textContent = originalText;
+            paymentAction.removeAttribute("aria-busy");
+          }, 1500);
+        }
       }
 
       function updateGuide() {
@@ -487,6 +535,7 @@
           paymentAction.hidden = false;
           paymentAction.textContent = "Payer l'offre recommandée";
           paymentAction.href = paymentLink;
+          paymentAction.dataset.recommendations = JSON.stringify(uniqueRecommendations);
           if (paymentLink !== stripeLinks.sessionCoupDePouce && paymentLink !== stripeLinks.parcoursPersonnalise) {
             doubtAction.hidden = false;
           }
@@ -498,6 +547,7 @@
 
       guideForm.addEventListener("change", updateGuide);
       descriptionInput.addEventListener("input", updateGuide);
+      paymentAction.addEventListener("click", sendRecommendationThenPay);
       updateGuide();
     </script>
   </body>
