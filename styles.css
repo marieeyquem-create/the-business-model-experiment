@@ -536,7 +536,20 @@ a {
 
 .guide-panel .field-stack {
   display: grid;
-  gap: 4px;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  padding: 0;
+  border: 0;
+  color: var(--text);
+  background: transparent;
+  cursor: default;
+  font-weight: 750;
+}
+
+.guide-panel .field-stack input[type="email"] {
+  width: 100%;
+  margin-top: 0;
+  font-weight: 500;
 }
 
 .guide-result {
