@@ -80,6 +80,92 @@
       ],
       "screenshots": [],
       "related_products": []
+    },
+    {
+      "id": "BM-SUB-001",
+      "slug": "abonnement-simple",
+      "category": "modèles unitaires",
+      "name": "BM-SUB-001 – Abonnement simple",
+      "subtitle": "Le modèle financier des activités à abonnement mensuel : SaaS simple, membership, box ou service récurrent.",
+      "short_description": "Un template pour prévoir mois par mois vos nouveaux abonnés, les désabonnements, le revenu récurrent, le CAC, les coûts de service et la trésorerie.",
+      "long_description": "Ce template transforme une mécanique d'abonnement simple en prévisionnel financier lisible. Vous saisissez chaque mois les nouveaux abonnés prévus ; le fichier calcule automatiquement les abonnés perdus, le parc actif, le chiffre d'affaires récurrent, les coûts d'acquisition, les coûts de service, le résultat et la trésorerie. Il est conçu pour une offre principale sans upsell ni dépendance avec une autre activité.",
+      "audience": [
+        "SaaS avec une offre principale",
+        "Memberships et communautés payantes",
+        "Box et abonnements de produits",
+        "Services facturés chaque mois ou chaque année"
+      ],
+      "features": [
+        "Saisie mensuelle des nouveaux abonnés",
+        "Calcul automatique du churn et des abonnés actifs",
+        "Revenus récurrents hors taxes",
+        "CAC expliqué et intégré au modèle",
+        "Coût de service par abonné",
+        "Charges fixes et clé de répartition",
+        "Compte de résultat et trésorerie sur 24 mois",
+        "Dashboard avec CA, profit et abonnés actifs",
+        "Sortie standard compatible avec les consolidations Baradozig"
+      ],
+      "business_models": [
+        "abonnement mensuel",
+        "SaaS simple",
+        "membership",
+        "box par abonnement",
+        "service récurrent"
+      ],
+      "files": [
+        "template Excel",
+        "guide PDF",
+        "fiche produit",
+        "données produit JSON"
+      ],
+      "price": 49,
+      "currency": "EUR",
+      "tags": [
+        "abonnement",
+        "SaaS",
+        "MRR",
+        "churn",
+        "CAC",
+        "revenu récurrent"
+      ],
+      "difficulty": "simple",
+      "version": "2.0.0",
+      "date": "2026-06-18",
+      "changelog": [
+        {
+          "version": "2.0.0",
+          "date": "2026-06-18",
+          "changes": [
+            "Migration vers l'architecture Baradozig Framework v2",
+            "Ajout de la trésorerie et de la consolidation standard",
+            "Protection automatique des formules",
+            "Dashboard avec deux graphiques"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Puis-je saisir un nombre différent de nouveaux abonnés chaque mois ?",
+          "answer": "Oui. La feuille Prévisions est prévue pour saisir manuellement les nouveaux abonnés mois par mois."
+        },
+        {
+          "question": "Que signifie le churn ?",
+          "answer": "C'est le pourcentage des abonnés actifs qui arrêtent leur abonnement chaque mois."
+        },
+        {
+          "question": "Ce template convient-il si j'ai plusieurs formules ?",
+          "answer": "Il convient à une offre principale. Pour plusieurs plans avec des prix et churn différents, utilisez un modèle multi-abonnements."
+        },
+        {
+          "question": "Puis-je ajouter du coaching ou des options achetées par certains abonnés ?",
+          "answer": "Non, ces revenus dépendent du parc d'abonnés et nécessitent un modèle abonnement avec upsell ou une personnalisation."
+        }
+      ],
+      "screenshots": [],
+      "related_products": [
+        "BM-EDI-001 – Édition indépendante"
+      ]
     }
   ]
 }
