@@ -1,0 +1,85 @@
+{
+  "schema_version": "2.0",
+  "templates": [
+    {
+      "id": "BM-EDI-001",
+      "slug": "edition-independante",
+      "category": "modèles sectoriels",
+      "name": "BM-EDI-001 – Édition indépendante",
+      "subtitle": "Revues, livres, BD, beaux livres, fanzines et projets d'autoédition",
+      "short_description": "Un modèle financier complet pour relier catalogue, offres, canaux de vente, stocks, rentabilité et trésorerie d'une activité éditoriale.",
+      "long_description": "Ce template permet de chiffrer un projet éditorial sans multiplier les saisies. Les volumes sont prévus par canal, les ventes alimentent automatiquement le modèle économique, les stocks et la trésorerie. Il distingue les ventes directes, les salons, les abonnements et la distribution en librairie avec délai d'encaissement.",
+      "audience": [
+        "Éditeurs et éditrices indépendants",
+        "Revues, fanzines et collectifs éditoriaux",
+        "Auteurs-éditeurs et projets d'autoédition",
+        "Structures publiant plusieurs numéros, livres ou packs"
+      ],
+      "features": [
+        "Catalogue de publications et d'offres",
+        "Prévisions mensuelles par canal",
+        "Préventes avant impression",
+        "Ventes directes, salons et abonnements",
+        "Canal librairie / distributeur en wholesale avec paiement M+3",
+        "Suivi des stocks, retours et invendus",
+        "Compte de résultat et trésorerie sur 24 mois",
+        "Dashboard avec six graphiques",
+        "Sortie standard compatible avec la consolidation Baradozig"
+      ],
+      "business_models": [
+        "vente de publications",
+        "abonnement éditorial",
+        "prévente",
+        "vente wholesale",
+        "packs de publications"
+      ],
+      "files": [
+        "template Excel",
+        "guide PDF",
+        "fiche produit",
+        "données produit JSON"
+      ],
+      "price": 49,
+      "currency": "EUR",
+      "tags": [
+        "édition",
+        "revue",
+        "livre",
+        "stock",
+        "prévente",
+        "librairie",
+        "abonnement"
+      ],
+      "difficulty": "intermédiaire",
+      "version": "2.0.0",
+      "date": "2026-06-18",
+      "changelog": [
+        {
+          "version": "2.0.0",
+          "date": "2026-06-18",
+          "changes": [
+            "Migration vers Baradozig Framework v2",
+            "Génération automatisée des livrables",
+            "Catalogue produit structuré"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Puis-je modéliser plusieurs publications ?",
+          "answer": "Oui. Le catalogue prévoit plusieurs publications et plusieurs offres, y compris des packs."
+        },
+        {
+          "question": "Les ventes libraires sont-elles traitées comme une commission ?",
+          "answer": "Non. Le canal est modélisé comme une vente wholesale à prix HT, avec retours éventuels et paiement décalé."
+        },
+        {
+          "question": "Puis-je ajouter des salons ou modifier les exemples ?",
+          "answer": "Oui. Les zones prévues pour les catalogues, salons et hypothèses sont modifiables sans toucher aux feuilles techniques protégées."
+        }
+      ],
+      "screenshots": [],
+      "related_products": []
+    }
+  ]
+}

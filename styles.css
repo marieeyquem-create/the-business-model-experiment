@@ -750,3 +750,37 @@ a {
     flex-direction: column;
   }
 }
+
+
+.catalogue-status {
+  grid-column: 1 / -1;
+  color: var(--muted);
+}
+
+.catalogue-product .product-code {
+  margin: 0;
+  color: var(--accent-dark);
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.catalogue-product h3 {
+  margin-top: 0;
+}
+
+.product-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.product-tags span {
+  padding: 5px 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-2);
+  color: var(--muted);
+  font-size: 13px;
+}

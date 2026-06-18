@@ -101,6 +101,21 @@
         </div>
       </section>
 
+
+      <section class="section" id="catalogue-templates">
+        <div class="section-heading">
+          <p class="eyebrow">Bibliothèque Baradozig</p>
+          <h2>Découvrez les templates disponibles</h2>
+          <p class="wide-text">
+            Chaque fiche présente le modèle couvert, les fonctionnalités, le niveau de difficulté
+            et la version disponible.
+          </p>
+        </div>
+        <div class="cards three product-cards" id="template-catalogue-grid">
+          <p class="catalogue-status">Chargement de la bibliothèque...</p>
+        </div>
+      </section>
+
       <section class="section template-guide" aria-labelledby="guide-title">
         <div class="section-heading">
           <p class="eyebrow">Guide de choix</p>
@@ -248,6 +263,65 @@
     </footer>
 
     <script>
+
+      const catalogueGrid = document.querySelector("#template-catalogue-grid");
+
+      function formatProductPrice(product) {
+        return product.price == null ? "Sur demande" : `${product.price} €`;
+      }
+
+      function renderTemplateCatalogue(products) {
+        if (!catalogueGrid) return;
+        catalogueGrid.replaceChildren();
+        products.forEach((product) => {
+          const article = document.createElement("article");
+          article.className = "card product catalogue-product";
+
+          const code = document.createElement("p");
+          code.className = "product-code";
+          code.textContent = `${product.id} · version ${product.version}`;
+
+          const title = document.createElement("h3");
+          title.textContent = product.name.replace(/^BM-[A-Z]+-\d+\s*[–-]\s*/, "");
+
+          const subtitle = document.createElement("p");
+          subtitle.textContent = product.short_description;
+
+          const price = document.createElement("p");
+          price.className = "price";
+          price.textContent = formatProductPrice(product);
+
+          const tags = document.createElement("div");
+          tags.className = "product-tags";
+          (product.tags || []).slice(0, 4).forEach((tag) => {
+            const span = document.createElement("span");
+            span.textContent = tag;
+            tags.appendChild(span);
+          });
+
+          const link = document.createElement("a");
+          link.className = "button secondary";
+          link.href = `products/${product.slug}.html`;
+          link.textContent = "Voir la fiche";
+
+          article.append(code, title, subtitle, tags, price, link);
+          catalogueGrid.appendChild(article);
+        });
+      }
+
+      if (catalogueGrid) {
+        fetch("data/templates.json")
+          .then((response) => {
+            if (!response.ok) throw new Error("Catalogue indisponible");
+            return response.json();
+          })
+          .then((catalogue) => renderTemplateCatalogue(catalogue.templates || []))
+          .catch(() => {
+            catalogueGrid.innerHTML =
+              '<p class="catalogue-status">La bibliothèque sera bientôt disponible.</p>';
+          });
+      }
+
       const guideForm = document.querySelector("#template-guide-form");
       const resultTitle = document.querySelector("#guide-result-title");
       const resultCopy = document.querySelector("#guide-result-copy");
