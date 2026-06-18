@@ -92,10 +92,10 @@
       "id": "BM-SRV-001",
       "slug": "prestation-service",
       "category": "modèles unitaires",
-      "name": "BM-SRV-001 – Prestation de service",
-      "subtitle": "Le modèle financier des consultants, agences, indépendants et entreprises qui vendent des missions.",
-      "short_description": "Un template pour relier missions vendues, prix, temps de production, capacité disponible, coûts directs et rentabilité.",
-      "long_description": "Ce template transforme une activité de prestation vendue par mission en prévisionnel financier lisible. Vous saisissez mois par mois le nombre de nouvelles missions ; le fichier calcule automatiquement le chiffre d'affaires, les jours nécessaires, le taux d'occupation, les coûts d'acquisition, les coûts directs, le résultat et la trésorerie. Il permet de vérifier non seulement si les missions sont rentables, mais aussi si elles peuvent réellement être produites avec la capacité disponible.",
+      "name": "BM-SRV-001 – Prestation de service multi-offres",
+      "subtitle": "Le modèle financier des prestataires qui vendent plusieurs offres ou construisent chaque mission sur mesure.",
+      "short_description": "Un template pour chiffrer librement chaque offre ou mission client, puis consolider automatiquement revenus, capacité, rentabilité et trésorerie.",
+      "long_description": "Ce template s'adapte aux activités de prestation réelles : plusieurs offres standard, missions différentes selon les clients ou combinaison des deux. Chaque ligne de la feuille Prévisions peut représenter une offre vendue plusieurs fois dans un mois ou une prestation entièrement sur mesure. Vous saisissez le client, le prix HT, les jours nécessaires, les coûts directs, le coût commercial et le délai de paiement. Le fichier consolide automatiquement le chiffre d'affaires, la charge de travail, le taux d'occupation, les coûts, le résultat et la trésorerie sur 24 mois.",
       "audience": [
         "Consultants, freelances et experts indépendants",
         "Agences, studios et cabinets de conseil",
@@ -103,12 +103,14 @@
         "Prestataires mobilisant du temps, des achats ou de la sous-traitance"
       ],
       "features": [
-        "Saisie mensuelle des nouvelles missions",
-        "Prix moyen hors taxes par mission",
-        "Calcul des jours nécessaires et du taux d'occupation",
+        "500 lignes préparées pour les offres et missions",
+        "Plusieurs offres avec des prix et coûts différents",
+        "Une mission entièrement personnalisable par client",
+        "Quantités et prix hors taxes saisis ligne par ligne",
+        "Calcul automatique des jours nécessaires et du taux d'occupation",
         "Alerte économique sur la capacité disponible",
-        "CAC expliqué et intégré au modèle",
-        "Coûts directs par mission",
+        "Coût commercial et coûts directs propres à chaque mission",
+        "Délais de paiement intégrés à la trésorerie",
         "Charges fixes et clé de répartition",
         "Compte de résultat et trésorerie sur 24 mois",
         "Dashboard avec CA, profit et taux d'occupation",
@@ -133,9 +135,9 @@
       "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-SRV-001",
       "guide_url": "../templates.html#guide-title",
       "limitations": [
-        "Vous vendez plusieurs offres avec des prix, coûts ou temps de production très différents.",
         "Une mission déclenche ensuite un abonnement, une commission ou une autre source de revenus.",
-        "Votre capacité dépend de plusieurs équipes, métiers ou niveaux de séniorité."
+        "Votre capacité dépend de plusieurs équipes, métiers ou niveaux de séniorité distincts.",
+        "Vous avez besoin d'un suivi détaillé des échéanciers, acomptes ou factures en plusieurs fois."
       ],
       "tags": [
         "prestation",
@@ -143,13 +145,25 @@
         "conseil",
         "agence",
         "freelance",
+        "multi-offres",
+        "sur mesure",
         "capacité",
         "taux d'occupation"
       ],
       "difficulty": "simple",
-      "version": "2.0.0",
+      "version": "2.1.0",
       "date": "2026-06-18",
       "changelog": [
+        {
+          "version": "2.1.0",
+          "date": "2026-06-18",
+          "changes": [
+            "Remplacement de l'offre moyenne par une saisie ligne par ligne",
+            "Gestion de plusieurs offres et des missions sur mesure",
+            "Ajout des clients et des délais de paiement",
+            "500 lignes de prévisions préparées et filtrables"
+          ]
+        },
         {
           "version": "2.0.0",
           "date": "2026-06-18",
@@ -164,16 +178,16 @@
       ],
       "faq": [
         {
-          "question": "Puis-je saisir un nombre différent de missions chaque mois ?",
-          "answer": "Oui. La feuille Prévisions permet de renseigner manuellement les nouvelles missions mois par mois."
+          "question": "Puis-je avoir plusieurs offres avec des prix différents ?",
+          "answer": "Oui. Chaque ligne peut avoir son propre nom d'offre, son prix, son temps de réalisation et ses coûts."
         },
         {
           "question": "À quoi sert le taux d'occupation ?",
           "answer": "Il compare les jours nécessaires pour produire les missions avec les jours réellement disponibles. Au-delà de 100 %, le volume prévu ne peut pas être produit avec la capacité actuelle."
         },
         {
-          "question": "Ce template convient-il si je vends plusieurs offres ?",
-          "answer": "Il convient à une offre principale ou à des missions suffisamment proches pour utiliser un prix, un coût et un temps moyens. Sinon, choisissez un modèle multi-offres."
+          "question": "Puis-je créer une offre différente pour chaque client ?",
+          "answer": "Oui. Une ligne peut représenter une mission totalement sur mesure avec les hypothèses propres à ce client."
         },
         {
           "question": "Puis-je modéliser une mission qui débouche ensuite sur un abonnement ?",
