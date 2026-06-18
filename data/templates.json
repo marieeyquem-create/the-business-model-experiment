@@ -59,9 +59,17 @@
         "abonnement"
       ],
       "difficulty": "intermédiaire",
-      "version": "2.3.1",
+      "version": "2.4.0",
       "date": "2026-06-18",
       "changelog": [
+        {
+          "version": "2.4.0",
+          "date": "2026-06-18",
+          "changes": [
+            "Titres d'axes placés hors du graphique pour garantir leur lisibilité dans Excel",
+            "Suppression des superpositions entre titres et graduations"
+          ]
+        },
         {
           "version": "2.3.1",
           "date": "2026-06-18",
@@ -221,9 +229,17 @@
         "taux d'occupation"
       ],
       "difficulty": "simple",
-      "version": "2.4.1",
+      "version": "2.5.0",
       "date": "2026-06-18",
       "changelog": [
+        {
+          "version": "2.5.0",
+          "date": "2026-06-18",
+          "changes": [
+            "Titres d'axes placés hors du graphique pour garantir leur lisibilité dans Excel",
+            "Suppression des superpositions entre titres et graduations"
+          ]
+        },
         {
           "version": "2.4.1",
           "date": "2026-06-18",
@@ -398,9 +414,17 @@
         "revenu récurrent"
       ],
       "difficulty": "intermédiaire",
-      "version": "2.4.1",
+      "version": "2.5.0",
       "date": "2026-06-18",
       "changelog": [
+        {
+          "version": "2.5.0",
+          "date": "2026-06-18",
+          "changes": [
+            "Titres d'axes placés hors du graphique pour garantir leur lisibilité dans Excel",
+            "Suppression des superpositions entre titres et graduations"
+          ]
+        },
         {
           "version": "2.4.1",
           "date": "2026-06-18",
