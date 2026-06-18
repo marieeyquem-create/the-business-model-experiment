@@ -51,14 +51,11 @@ a {
 }
 
 .brand-mark {
-  width: 34px;
-  height: 34px;
-  border-radius: 8px;
-  display: grid;
-  place-items: center;
-  color: white;
-  background: var(--accent);
-  box-shadow: 0 12px 24px rgba(124, 58, 237, 0.24);
+  display: block;
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  object-fit: contain;
 }
 
 .nav {
