@@ -89,6 +89,104 @@
       "related_products": []
     },
     {
+      "id": "BM-SRV-001",
+      "slug": "prestation-service",
+      "category": "modèles unitaires",
+      "name": "BM-SRV-001 – Prestation de service",
+      "subtitle": "Le modèle financier des consultants, agences, indépendants et entreprises qui vendent des missions.",
+      "short_description": "Un template pour relier missions vendues, prix, temps de production, capacité disponible, coûts directs et rentabilité.",
+      "long_description": "Ce template transforme une activité de prestation vendue par mission en prévisionnel financier lisible. Vous saisissez mois par mois le nombre de nouvelles missions ; le fichier calcule automatiquement le chiffre d'affaires, les jours nécessaires, le taux d'occupation, les coûts d'acquisition, les coûts directs, le résultat et la trésorerie. Il permet de vérifier non seulement si les missions sont rentables, mais aussi si elles peuvent réellement être produites avec la capacité disponible.",
+      "audience": [
+        "Consultants, freelances et experts indépendants",
+        "Agences, studios et cabinets de conseil",
+        "Entreprises vendant des missions ou des projets",
+        "Prestataires mobilisant du temps, des achats ou de la sous-traitance"
+      ],
+      "features": [
+        "Saisie mensuelle des nouvelles missions",
+        "Prix moyen hors taxes par mission",
+        "Calcul des jours nécessaires et du taux d'occupation",
+        "Alerte économique sur la capacité disponible",
+        "CAC expliqué et intégré au modèle",
+        "Coûts directs par mission",
+        "Charges fixes et clé de répartition",
+        "Compte de résultat et trésorerie sur 24 mois",
+        "Dashboard avec CA, profit et taux d'occupation",
+        "Sortie standard compatible avec les consolidations Baradozig"
+      ],
+      "business_models": [
+        "prestation de service",
+        "conseil",
+        "freelance",
+        "agence",
+        "mission au forfait",
+        "projet"
+      ],
+      "files": [
+        "template Excel",
+        "guide PDF",
+        "fiche produit",
+        "données produit JSON"
+      ],
+      "price": 49,
+      "currency": "EUR",
+      "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-SRV-001",
+      "guide_url": "../templates.html#guide-title",
+      "limitations": [
+        "Vous vendez plusieurs offres avec des prix, coûts ou temps de production très différents.",
+        "Une mission déclenche ensuite un abonnement, une commission ou une autre source de revenus.",
+        "Votre capacité dépend de plusieurs équipes, métiers ou niveaux de séniorité."
+      ],
+      "tags": [
+        "prestation",
+        "service",
+        "conseil",
+        "agence",
+        "freelance",
+        "capacité",
+        "taux d'occupation"
+      ],
+      "difficulty": "simple",
+      "version": "2.0.0",
+      "date": "2026-06-18",
+      "changelog": [
+        {
+          "version": "2.0.0",
+          "date": "2026-06-18",
+          "changes": [
+            "Migration vers l'architecture Baradozig Framework v2",
+            "Ajout du calcul de capacité et du taux d'occupation",
+            "Ajout de la trésorerie et de la consolidation standard",
+            "Protection automatique des formules",
+            "Dashboard avec deux graphiques"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Puis-je saisir un nombre différent de missions chaque mois ?",
+          "answer": "Oui. La feuille Prévisions permet de renseigner manuellement les nouvelles missions mois par mois."
+        },
+        {
+          "question": "À quoi sert le taux d'occupation ?",
+          "answer": "Il compare les jours nécessaires pour produire les missions avec les jours réellement disponibles. Au-delà de 100 %, le volume prévu ne peut pas être produit avec la capacité actuelle."
+        },
+        {
+          "question": "Ce template convient-il si je vends plusieurs offres ?",
+          "answer": "Il convient à une offre principale ou à des missions suffisamment proches pour utiliser un prix, un coût et un temps moyens. Sinon, choisissez un modèle multi-offres."
+        },
+        {
+          "question": "Puis-je modéliser une mission qui débouche ensuite sur un abonnement ?",
+          "answer": "Cette dépendance entre deux revenus nécessite un modèle combiné ou une personnalisation."
+        }
+      ],
+      "screenshots": [],
+      "related_products": [
+        "BM-SUB-001 – Abonnement simple",
+        "BM-EDI-001 – Édition indépendante"
+      ]
+    },
+    {
       "id": "BM-SUB-001",
       "slug": "abonnement-simple",
       "category": "modèles unitaires",
