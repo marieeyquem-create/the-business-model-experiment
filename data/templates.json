@@ -227,8 +227,8 @@
       "category": "modèles unitaires",
       "name": "BM-SUB-001 – Abonnements multi-offres",
       "subtitle": "Le modèle financier des activités qui proposent plusieurs abonnements, plans ou niveaux de service.",
-      "short_description": "Un template multi-offres pour prévoir les cohortes, le MRR, le churn, le CAC, la LTV et la rentabilité de chaque formule.",
-      "long_description": "Ce template modélise jusqu'à 20 offres d'abonnement avec leurs propres prix, churn, CAC, coûts de service et abonnés de départ. Vous saisissez mois par mois les nouveaux abonnés attendus pour chaque formule ; le fichier calcule automatiquement les pertes, les abonnés actifs, le MRR, le résultat, la trésorerie et les unit economics consolidés. Le dashboard met en avant les indicateurs réellement utiles pour piloter un revenu récurrent : ARPU, churn pondéré, CAC moyen, LTV, ratio LTV/CAC et délai de récupération du CAC.",
+      "short_description": "Un template multi-offres pour prévoir les cohortes, le MRR, le churn, le CAC, les deux lectures de la LTV et la rentabilité de chaque formule.",
+      "long_description": "Ce template modélise jusqu'à 20 offres d'abonnement avec leurs propres prix, churn, CAC, coûts de service et abonnés de départ. Vous saisissez mois par mois les nouveaux abonnés attendus pour chaque formule ; le fichier calcule automatiquement les pertes, les abonnés actifs, le MRR, le résultat, la trésorerie et les unit economics consolidés. Le dashboard distingue la LTV de chiffre d'affaires, fondée sur la mensualité et la durée moyenne, de la LTV de marge brute utilisée pour comparer la valeur économique au CAC.",
       "audience": [
         "SaaS avec plusieurs plans",
         "Memberships et communautés payantes",
@@ -241,11 +241,13 @@
         "Saisie mensuelle des nouveaux abonnés par formule",
         "Calcul automatique des cohortes et du MRR",
         "ARPU et churn pondérés",
-        "Calcul de la LTV et du ratio LTV / CAC",
+        "Durée moyenne estimée à partir du churn",
+        "LTV de chiffre d'affaires et LTV de marge brute",
+        "Ratio LTV de marge / CAC",
         "Délai de récupération du CAC",
         "Charges fixes et clé de répartition",
         "Compte de résultat et trésorerie sur 24 mois",
-        "Dashboard avec CA, profit et ratio LTV / CAC",
+        "Dashboard avec CA, profit et ratio LTV de marge / CAC",
         "Sortie standard compatible avec les consolidations Baradozig"
       ],
       "business_models": [
@@ -279,9 +281,18 @@
         "revenu récurrent"
       ],
       "difficulty": "intermédiaire",
-      "version": "2.1.0",
+      "version": "2.2.0",
       "date": "2026-06-18",
       "changelog": [
+        {
+          "version": "2.2.0",
+          "date": "2026-06-18",
+          "changes": [
+            "Distinction entre LTV de chiffre d'affaires et LTV de marge brute",
+            "Affichage de la durée moyenne estimée d'abonnement",
+            "Clarification du ratio LTV de marge / CAC"
+          ]
+        },
         {
           "version": "2.1.0",
           "date": "2026-06-18",
@@ -313,8 +324,8 @@
           "answer": "C'est le pourcentage des abonnés actifs qui arrêtent leur abonnement chaque mois."
         },
         {
-          "question": "La LTV est-elle calculée automatiquement ?",
-          "answer": "Oui. Elle est calculée à partir de la marge brute mensuelle par abonné et du churn pondéré."
+          "question": "Comment la LTV est-elle calculée ?",
+          "answer": "La LTV de CA correspond à la mensualité HT multipliée par la durée moyenne estimée. La LTV de marge brute déduit le coût mensuel de service et sert au ratio LTV/CAC."
         },
         {
           "question": "Puis-je ajouter du coaching ou des options achetées par certains abonnés ?",
