@@ -59,9 +59,18 @@
         "abonnement"
       ],
       "difficulty": "intermédiaire",
-      "version": "2.3.0",
+      "version": "2.3.1",
       "date": "2026-06-18",
       "changelog": [
+        {
+          "version": "2.3.1",
+          "date": "2026-06-18",
+          "changes": [
+            "Réserves fixes autour de la zone de tracé pour supprimer les superpositions",
+            "Graphiques portés à 26 × 16 cm",
+            "Affichage d'une graduation mensuelle sur trois"
+          ]
+        },
         {
           "version": "2.3.0",
           "date": "2026-06-18",
@@ -212,9 +221,18 @@
         "taux d'occupation"
       ],
       "difficulty": "simple",
-      "version": "2.4.0",
+      "version": "2.4.1",
       "date": "2026-06-18",
       "changelog": [
+        {
+          "version": "2.4.1",
+          "date": "2026-06-18",
+          "changes": [
+            "Réserves fixes autour de la zone de tracé pour supprimer les superpositions",
+            "Graphiques portés à 26 × 16 cm",
+            "Affichage d'une graduation mensuelle sur trois"
+          ]
+        },
         {
           "version": "2.4.0",
           "date": "2026-06-18",
@@ -380,9 +398,18 @@
         "revenu récurrent"
       ],
       "difficulty": "intermédiaire",
-      "version": "2.4.0",
+      "version": "2.4.1",
       "date": "2026-06-18",
       "changelog": [
+        {
+          "version": "2.4.1",
+          "date": "2026-06-18",
+          "changes": [
+            "Réserves fixes autour de la zone de tracé pour supprimer les superpositions",
+            "Graphiques portés à 26 × 16 cm",
+            "Affichage d'une graduation mensuelle sur trois"
+          ]
+        },
         {
           "version": "2.4.0",
           "date": "2026-06-18",
