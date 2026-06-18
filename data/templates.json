@@ -39,6 +39,7 @@
         "fiche produit",
         "données produit JSON"
       ],
+      "delivery_filename": "BM-EDI-001-edition-independante.xlsx",
       "price": 49,
       "currency": "EUR",
       "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-EDI-001",
@@ -58,9 +59,33 @@
         "abonnement"
       ],
       "difficulty": "intermédiaire",
-      "version": "2.1.0",
+      "version": "2.2.2",
       "date": "2026-06-18",
       "changelog": [
+        {
+          "version": "2.2.2",
+          "date": "2026-06-18",
+          "changes": [
+            "Ajout de marges entre les titres d'axes et les graduations",
+            "Raccourcissement des titres d'axes pour améliorer la lisibilité"
+          ]
+        },
+        {
+          "version": "2.2.1",
+          "date": "2026-06-18",
+          "changes": [
+            "Nom du fichier livré aligné sur la fiche produit"
+          ]
+        },
+        {
+          "version": "2.2.0",
+          "date": "2026-06-18",
+          "changes": [
+            "Ajout de noms explicites aux axes des six graphiques",
+            "Affichage systématique des graduations et des unités",
+            "Clarification des axes par mois, canal et publication"
+          ]
+        },
         {
           "version": "2.1.0",
           "date": "2026-06-18",
@@ -141,6 +166,7 @@
         "fiche produit",
         "données produit JSON"
       ],
+      "delivery_filename": "BM-SRV-001-prestation-de-service-multi-offres.xlsx",
       "price": 49,
       "currency": "EUR",
       "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-SRV-001",
@@ -162,9 +188,33 @@
         "taux d'occupation"
       ],
       "difficulty": "simple",
-      "version": "2.2.0",
+      "version": "2.3.2",
       "date": "2026-06-18",
       "changelog": [
+        {
+          "version": "2.3.2",
+          "date": "2026-06-18",
+          "changes": [
+            "Ajout de marges entre les titres d'axes et les graduations",
+            "Raccourcissement des titres d'axes pour améliorer la lisibilité"
+          ]
+        },
+        {
+          "version": "2.3.1",
+          "date": "2026-06-18",
+          "changes": [
+            "Nom du fichier livré aligné sur la fiche produit"
+          ]
+        },
+        {
+          "version": "2.3.0",
+          "date": "2026-06-18",
+          "changes": [
+            "Ajout de noms explicites aux axes de tous les graphiques",
+            "Affichage systématique des graduations et des unités",
+            "Renforcement des lignes de lecture sur les courbes"
+          ]
+        },
         {
           "version": "2.2.0",
           "date": "2026-06-18",
@@ -263,6 +313,7 @@
         "fiche produit",
         "données produit JSON"
       ],
+      "delivery_filename": "BM-SUB-001-abonnements-multi-offres.xlsx",
       "price": 49,
       "currency": "EUR",
       "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-SUB-001",
@@ -281,9 +332,33 @@
         "revenu récurrent"
       ],
       "difficulty": "intermédiaire",
-      "version": "2.2.0",
+      "version": "2.3.2",
       "date": "2026-06-18",
       "changelog": [
+        {
+          "version": "2.3.2",
+          "date": "2026-06-18",
+          "changes": [
+            "Ajout de marges entre les titres d'axes et les graduations",
+            "Raccourcissement des titres d'axes pour améliorer la lisibilité"
+          ]
+        },
+        {
+          "version": "2.3.1",
+          "date": "2026-06-18",
+          "changes": [
+            "Nom du fichier livré aligné sur la fiche produit"
+          ]
+        },
+        {
+          "version": "2.3.0",
+          "date": "2026-06-18",
+          "changes": [
+            "Ajout de noms explicites aux axes de tous les graphiques",
+            "Affichage systématique des graduations et des unités",
+            "Renforcement des lignes de lecture sur les courbes"
+          ]
+        },
         {
           "version": "2.2.0",
           "date": "2026-06-18",
