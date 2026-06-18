@@ -59,9 +59,17 @@
         "abonnement"
       ],
       "difficulty": "intermédiaire",
-      "version": "2.4.0",
+      "version": "2.4.1",
       "date": "2026-06-18",
       "changelog": [
+        {
+          "version": "2.4.1",
+          "date": "2026-06-18",
+          "changes": [
+            "Rapprochement du titre de l'axe horizontal",
+            "Réduction proportionnelle des graphiques sans modifier leur ratio"
+          ]
+        },
         {
           "version": "2.4.0",
           "date": "2026-06-18",
@@ -229,9 +237,17 @@
         "taux d'occupation"
       ],
       "difficulty": "simple",
-      "version": "2.5.0",
+      "version": "2.5.1",
       "date": "2026-06-18",
       "changelog": [
+        {
+          "version": "2.5.1",
+          "date": "2026-06-18",
+          "changes": [
+            "Rapprochement du titre de l'axe horizontal",
+            "Réduction proportionnelle des graphiques sans modifier leur ratio"
+          ]
+        },
         {
           "version": "2.5.0",
           "date": "2026-06-18",
@@ -414,9 +430,17 @@
         "revenu récurrent"
       ],
       "difficulty": "intermédiaire",
-      "version": "2.5.0",
+      "version": "2.5.1",
       "date": "2026-06-18",
       "changelog": [
+        {
+          "version": "2.5.1",
+          "date": "2026-06-18",
+          "changes": [
+            "Rapprochement du titre de l'axe horizontal",
+            "Réduction proportionnelle des graphiques sans modifier leur ratio"
+          ]
+        },
         {
           "version": "2.5.0",
           "date": "2026-06-18",
