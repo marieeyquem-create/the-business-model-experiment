@@ -26,10 +26,13 @@
         <p class="eyebrow">Templates Google Sheets</p>
         <h1>Des templates adaptés à votre modèle de revenus, sans repartir de zéro</h1>
         <p>
-          Pour avancer en autonomie, partez d'une base simple qui vous aide à poser vos chiffres
-          et à comprendre les mécaniques économiques. Si vous voulez un modèle fidèle à votre entreprise,
-          il sera construit sur mesure.
+          Vous savez quel modèle correspond à votre activité ? Consultez sa fiche et achetez-le directement.
+          Si vous avez plusieurs sources de revenus, plusieurs offres ou besoin d'aide, composez votre modèle avec le guide.
         </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#catalogue-templates">Voir les templates</a>
+          <a class="button secondary" href="#guide-title">Composer mon modèle</a>
+        </div>
       </section>
 
       <section class="section split">
@@ -64,7 +67,7 @@
               <li>Dashboard CA et profit</li>
               <li>Idéal si vous savez quel modèle correspond à votre activité</li>
             </ul>
-            <a class="button primary" href="#guide-title" data-stripe-offer="template-unitaire">Trouver le bon template</a>
+            <a class="button primary" href="#catalogue-templates">Voir les templates</a>
           </article>
           <article class="card product">
             <h3>Templates combinés</h3>
@@ -299,12 +302,24 @@
             tags.appendChild(span);
           });
 
-          const link = document.createElement("a");
-          link.className = "button secondary";
-          link.href = `products/${product.slug}.html`;
-          link.textContent = "Voir la fiche";
+          const actions = document.createElement("div");
+          actions.className = "product-actions";
 
-          article.append(code, title, subtitle, tags, price, link);
+          if (product.purchase_url) {
+            const buyLink = document.createElement("a");
+            buyLink.className = "button primary";
+            buyLink.href = product.purchase_url;
+            buyLink.textContent = `Acheter – ${formatProductPrice(product)}`;
+            actions.appendChild(buyLink);
+          }
+
+          const detailsLink = document.createElement("a");
+          detailsLink.className = "button secondary";
+          detailsLink.href = `products/${product.slug}.html`;
+          detailsLink.textContent = "Voir la fiche";
+          actions.appendChild(detailsLink);
+
+          article.append(code, title, subtitle, tags, price, actions);
           catalogueGrid.appendChild(article);
         });
       }

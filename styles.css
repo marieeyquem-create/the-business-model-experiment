@@ -784,3 +784,15 @@ a {
   color: var(--muted);
   font-size: 13px;
 }
+
+
+.product-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.product-actions .button {
+  margin-top: 0;
+}

@@ -41,6 +41,13 @@
       ],
       "price": 49,
       "currency": "EUR",
+      "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-EDI-001",
+      "guide_url": "../templates.html#guide-title",
+      "limitations": [
+        "Vous avez une autre activité indépendante à consolider avec l'édition.",
+        "Une vente éditoriale déclenche ensuite du coaching, de la formation ou une autre offre.",
+        "Votre mécanique de revenus ne correspond pas aux canaux et offres prévus."
+      ],
       "tags": [
         "édition",
         "revue",
@@ -121,6 +128,13 @@
       ],
       "price": 49,
       "currency": "EUR",
+      "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-SUB-001",
+      "guide_url": "../templates.html#guide-title",
+      "limitations": [
+        "Vous avez plusieurs formules avec des prix ou churn différents.",
+        "Certains abonnés achètent ensuite du coaching, des options ou des services complémentaires.",
+        "L'abonnement dépend d'une autre offre ou doit être consolidé avec plusieurs activités."
+      ],
       "tags": [
         "abonnement",
         "SaaS",
