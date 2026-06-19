@@ -59,9 +59,16 @@
         "abonnement"
       ],
       "difficulty": "intermédiaire",
-      "version": "2.4.1",
+      "version": "2.4.2",
       "date": "2026-06-18",
       "changelog": [
+        {
+          "version": "2.4.2",
+          "date": "2026-06-19",
+          "changes": [
+            "Alignement du titre horizontal immédiatement sous le graphique"
+          ]
+        },
         {
           "version": "2.4.1",
           "date": "2026-06-18",
@@ -170,6 +177,110 @@
       ],
       "screenshots": [],
       "related_products": []
+    },
+    {
+      "id": "BM-ECO-001",
+      "slug": "ecommerce-multi-produits",
+      "category": "modèles unitaires",
+      "name": "BM-ECO-001 – E-commerce multi-produits",
+      "display_name": "E-commerce avec plusieurs produits",
+      "subtitle": "Le modèle financier des marques et boutiques qui vendent plusieurs produits sur un ou plusieurs canaux.",
+      "short_description": "Pilotez vos ventes, marges, dépenses d'acquisition, stocks, approvisionnements et trésorerie produit par produit et canal par canal.",
+      "long_description": "Ce template modélise une activité e-commerce réelle, sans réduire toute la boutique à un panier moyen. Vous pouvez définir plusieurs produits, leurs coûts et leurs stocks, puis prévoir les ventes par produit et par canal. Le fichier calcule automatiquement les retours, les commissions, les frais de paiement, la logistique, la marge contributive, le CAC, le ROAS, les besoins d'approvisionnement et la trésorerie sur 24 mois.",
+      "audience": [
+        "Marques vendant leurs propres produits",
+        "Boutiques e-commerce multi-produits",
+        "Créateurs et fabricants vendant en direct",
+        "Entreprises combinant site, marketplace, revendeurs et ventes physiques"
+      ],
+      "features": [
+        "Catalogue préparé pour 50 produits ou références",
+        "Jusqu'à 20 canaux avec leurs commissions, frais et délais",
+        "500 lignes de prévisions de ventes modifiables",
+        "Saisie unique des ventes par produit, canal et mois",
+        "Prix, coût produit, emballage et taux de retour propres à chaque produit",
+        "Dépenses marketing, nouveaux clients, trafic, CAC, ROAS et conversion",
+        "500 lignes d'approvisionnement avec réception et paiement fournisseur",
+        "Suivi mensuel des stocks et alertes de rupture",
+        "Valeur du stock final et couverture estimée",
+        "Marge brute et marge contributive après acquisition",
+        "Compte de résultat et trésorerie sur 24 mois",
+        "Dashboard métier par mois, produit et canal",
+        "Feuille de contrôles automatiques",
+        "Sortie standard compatible avec les consolidations Baradozig"
+      ],
+      "business_models": [
+        "vente de produits",
+        "e-commerce",
+        "vente sur marketplace",
+        "vente via revendeurs",
+        "vente directe et événementielle"
+      ],
+      "files": [
+        "template Excel",
+        "guide PDF",
+        "fiche produit",
+        "données produit JSON"
+      ],
+      "delivery_filename": "BM-ECO-001-ecommerce-multi-produits.xlsx",
+      "price": 49,
+      "currency": "EUR",
+      "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-ECO-001",
+      "guide_url": "../templates.html#guide-title",
+      "limitations": [
+        "Une vente déclenche ensuite un abonnement, une maintenance ou une autre source de revenus.",
+        "Vous fabriquez avec des nomenclatures complexes, plusieurs composants ou des capacités industrielles.",
+        "Vous avez besoin d'un pilotage comptable détaillé par entrepôt, lot ou commande réelle."
+      ],
+      "tags": [
+        "e-commerce",
+        "produits",
+        "stock",
+        "marketplace",
+        "marge",
+        "CAC",
+        "ROAS",
+        "trésorerie",
+        "multi-produits"
+      ],
+      "difficulty": "intermédiaire",
+      "version": "2.0.0",
+      "date": "2026-06-19",
+      "changelog": [
+        {
+          "version": "2.0.0",
+          "date": "2026-06-19",
+          "changes": [
+            "Migration vers Baradozig Framework v2",
+            "Reconstruction multi-produits et multi-canaux",
+            "Ajout des approvisionnements, stocks, contrôles et indicateurs e-commerce",
+            "Création d'un dashboard métier avec cinq graphiques"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Puis-je vendre plusieurs produits avec des prix et marges différents ?",
+          "answer": "Oui. Chaque produit possède son prix, son coût, son emballage, son stock et son taux de retour."
+        },
+        {
+          "question": "Puis-je utiliser plusieurs canaux de vente ?",
+          "answer": "Oui. Chaque vente est associée à un canal avec ses commissions, ses frais logistiques et son délai d'encaissement."
+        },
+        {
+          "question": "Le fichier distingue-t-il marge et trésorerie ?",
+          "answer": "Oui. La marge utilise le coût des produits vendus, tandis que la trésorerie tient compte des approvisionnements réellement payés."
+        },
+        {
+          "question": "Dois-je saisir mes ventes plusieurs fois ?",
+          "answer": "Non. La feuille Prévisions ventes est la saisie centrale ; toutes les autres feuilles récupèrent automatiquement ses données."
+        }
+      ],
+      "screenshots": [],
+      "related_products": [
+        "BM-SUB-001 – Abonnements multi-offres",
+        "BM-SRV-001 – Prestation de service multi-offres"
+      ]
     },
     {
       "id": "BM-SRV-001",
