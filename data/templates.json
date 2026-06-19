@@ -191,7 +191,7 @@
         "Marques vendant leurs propres produits",
         "Boutiques e-commerce multi-produits",
         "Créateurs et fabricants vendant en direct",
-        "Entreprises combinant site, marketplace, revendeurs et ventes physiques"
+        "Entreprises vendant leurs propres produits via leur site, des plateformes tierces, des revendeurs ou des points de vente physiques"
       ],
       "features": [
         "Catalogue préparé pour 50 produits ou références",
@@ -212,7 +212,7 @@
       "business_models": [
         "vente de produits",
         "e-commerce",
-        "vente sur marketplace",
+        "vente de ses propres produits via une plateforme tierce comme Amazon ou Etsy",
         "vente via revendeurs",
         "vente directe et événementielle"
       ],
@@ -236,7 +236,7 @@
         "e-commerce",
         "produits",
         "stock",
-        "marketplace",
+        "plateforme de vente tierce",
         "marge",
         "CAC",
         "ROAS",
