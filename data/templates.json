@@ -394,6 +394,114 @@
       ]
     },
     {
+      "id": "BM-MKT-001",
+      "slug": "marketplace-multi-categories",
+      "category": "modèles unitaires",
+      "name": "BM-MKT-001 – Marketplace multi-catégories",
+      "display_name": "Marketplace multi-catégories",
+      "subtitle": "Le modèle financier des plateformes qui mettent en relation acheteurs et vendeurs et se rémunèrent sur les transactions.",
+      "short_description": "Pilotez GMV, commissions, take rate, acheteurs, vendeurs, acquisition, annulations, litiges et trésorerie catégorie par catégorie.",
+      "long_description": "Ce template permet de modéliser une véritable marketplace sans confondre transactions, utilisateurs et chiffre d'affaires. Vous pouvez définir plusieurs catégories avec leurs commissions et coûts, prévoir l'activité mensuelle des acheteurs et vendeurs, mesurer la liquidité, les CAC et le take rate, puis simuler les encaissements du GMV et les reversements vendeurs sur 24 mois.",
+      "audience": [
+        "Marketplaces de produits ou services",
+        "Plateformes de réservation",
+        "Sites de mise en relation",
+        "Marketplaces B2B",
+        "Plateformes encaissant puis reversant les vendeurs"
+      ],
+      "features": [
+        "30 catégories avec commissions et frais différenciés",
+        "500 lignes de prévisions mensuelles",
+        "Acheteurs et vendeurs suivis séparément",
+        "Nouveaux utilisateurs et utilisateurs perdus",
+        "GMV brut et net après annulations",
+        "Commission vendeur, frais acheteur et frais fixes",
+        "Take rate réel",
+        "Transactions par acheteur et par vendeur",
+        "CAC acheteur et CAC vendeur",
+        "Coûts de paiement, support et litiges",
+        "Deux modes d'encaissement",
+        "Reversements vendeurs et délais",
+        "Compte de résultat et trésorerie sur 24 mois",
+        "Dashboard métier avec cinq graphiques",
+        "Contrôles automatiques",
+        "Sortie standard compatible avec les consolidations Baradozig"
+      ],
+      "business_models": [
+        "marketplace de produits",
+        "marketplace de services",
+        "plateforme de réservation",
+        "mise en relation B2B",
+        "commission transactionnelle"
+      ],
+      "files": [
+        "template Excel",
+        "guide PDF",
+        "fiche produit",
+        "données produit JSON"
+      ],
+      "delivery_filename": "BM-MKT-001-marketplace-multi-categories.xlsx",
+      "price": 49,
+      "currency": "EUR",
+      "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-MKT-001",
+      "guide_url": "../templates.html#guide-title",
+      "limitations": [
+        "Vous vendez également un abonnement premium aux vendeurs.",
+        "Vous monétisez des annonces sponsorisées, des leads ou de la publicité.",
+        "Vous avez besoin d'un suivi opérationnel individuel de chaque commande, vendeur ou litige."
+      ],
+      "tags": [
+        "marketplace",
+        "commission",
+        "GMV",
+        "take rate",
+        "acheteurs",
+        "vendeurs",
+        "transactions",
+        "CAC",
+        "trésorerie"
+      ],
+      "difficulty": "avancé",
+      "version": "2.0.0",
+      "date": "2026-06-19",
+      "changelog": [
+        {
+          "version": "2.0.0",
+          "date": "2026-06-19",
+          "changes": [
+            "Migration vers Baradozig Framework v2",
+            "Reconstruction multi-catégories",
+            "Ajout du suivi bilatéral acheteurs et vendeurs",
+            "Distinction GMV, chiffre d'affaires et flux de paiement",
+            "Création d'un dashboard métier avec cinq graphiques"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Le GMV est-il mon chiffre d'affaires ?",
+          "answer": "Non. Le GMV est le volume vendu entre utilisateurs. Votre chiffre d'affaires correspond aux commissions et frais conservés."
+        },
+        {
+          "question": "Puis-je avoir plusieurs taux de commission ?",
+          "answer": "Oui. Chaque catégorie possède ses propres commissions, frais, annulations et coûts."
+        },
+        {
+          "question": "Puis-je suivre séparément vendeurs et acheteurs ?",
+          "answer": "Oui. Le fichier calcule leurs volumes actifs, leurs pertes, leur CAC et leur niveau d'activité."
+        },
+        {
+          "question": "La plateforme peut-elle encaisser le paiement total ?",
+          "answer": "Oui. Vous choisissez entre l'encaissement du GMV avec reversement vendeur ou l'encaissement des seuls revenus de la plateforme."
+        }
+      ],
+      "screenshots": [],
+      "related_products": [
+        "BM-ECO-001 – E-commerce multi-produits",
+        "BM-SUB-001 – Abonnements multi-offres"
+      ]
+    },
+    {
       "id": "BM-SRV-001",
       "slug": "prestation-service",
       "category": "modèles unitaires",
