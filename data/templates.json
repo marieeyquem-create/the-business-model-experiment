@@ -394,6 +394,115 @@
       ]
     },
     {
+      "id": "BM-LEAD-001",
+      "slug": "lead-generation-multi-offres",
+      "category": "modèles unitaires",
+      "name": "BM-LEAD-001 – Lead generation multi-offres",
+      "display_name": "Lead generation multi-offres",
+      "subtitle": "Le modèle financier des entreprises qui génèrent, qualifient et vendent des contacts, des leads ou des rendez-vous.",
+      "short_description": "Pilotez votre tunnel, vos offres, vos clients, vos canaux d'acquisition, votre capacité de traitement et votre rentabilité.",
+      "long_description": "Ce template modélise une activité réelle de génération de leads sans réduire tous les contacts à un prix moyen. Vous pouvez créer plusieurs offres, facturer au contact, au lead qualifié, au lead accepté, au rendez-vous tenu ou au forfait, puis prévoir les volumes par client et canal. Le fichier calcule automatiquement le tunnel de qualité, les remboursements, les coûts d'acquisition et de traitement, la capacité nécessaire, la marge par unité et la trésorerie sur 24 mois.",
+      "audience": [
+        "Agences de lead generation",
+        "Entreprises vendant des leads qualifiés",
+        "Plateformes de mise en relation facturant les contacts transmis",
+        "Agences de prospection et de prise de rendez-vous",
+        "Éditeurs de sites ou médias monétisant leur audience par des leads"
+      ],
+      "features": [
+        "30 offres avec unités de facturation et prix différenciés",
+        "20 canaux d'acquisition avec leurs coûts par contact",
+        "50 clients avec délais de paiement, impayés, quotas et budgets",
+        "600 lignes de prévisions mensuelles",
+        "Saisie unique par mois, offre, canal et client",
+        "Tunnel contacts, qualifiés, acceptés, rendez-vous et unités facturées",
+        "Facturation au contact, au lead qualifié, au lead accepté ou au rendez-vous",
+        "Forfaits mensuels complémentaires",
+        "Remboursements, invalidité et impayés",
+        "Coûts d'acquisition, enrichissement, traitement et support",
+        "Temps de traitement et contrôle de capacité",
+        "Analyse du chiffre d'affaires par offre, canal et client",
+        "Concentration du chiffre d'affaires sur le premier client",
+        "Compte de résultat et trésorerie sur 24 mois",
+        "Dashboard métier avec six graphiques",
+        "Contrôles automatiques",
+        "Sortie standard compatible avec les consolidations Baradozig"
+      ],
+      "business_models": [
+        "vente de leads qualifiés",
+        "vente de contacts opt-in",
+        "prise de rendez-vous facturée",
+        "prospection commerciale externalisée",
+        "forfait mensuel et facturation à la performance"
+      ],
+      "files": [
+        "template Excel",
+        "guide PDF",
+        "fiche produit",
+        "données produit JSON"
+      ],
+      "delivery_filename": "BM-LEAD-001-lead-generation-multi-offres.xlsx",
+      "price": 49,
+      "currency": "EUR",
+      "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-LEAD-001",
+      "guide_url": "../templates.html#guide-title",
+      "limitations": [
+        "Vous suivez chaque prospect individuellement dans un CRM.",
+        "La rémunération dépend du chiffre d'affaires futur généré chez le client.",
+        "Vous combinez la vente de leads avec un abonnement logiciel, de la publicité ou une marketplace transactionnelle."
+      ],
+      "tags": [
+        "lead generation",
+        "leads",
+        "prospection",
+        "rendez-vous",
+        "acquisition",
+        "qualification",
+        "coût par lead",
+        "capacité",
+        "trésorerie"
+      ],
+      "difficulty": "intermédiaire",
+      "version": "2.0.0",
+      "date": "2026-06-19",
+      "changelog": [
+        {
+          "version": "2.0.0",
+          "date": "2026-06-19",
+          "changes": [
+            "Migration vers Baradozig Framework v2",
+            "Reconstruction multi-offres et multi-clients",
+            "Ajout du tunnel complet de qualité",
+            "Ajout de la capacité de traitement",
+            "Création d'un dashboard métier avec six graphiques"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Puis-je proposer plusieurs types de leads ou de rendez-vous ?",
+          "answer": "Oui. Chaque offre possède son unité facturée, son prix, ses taux de conversion et ses coûts propres."
+        },
+        {
+          "question": "Puis-je facturer à la fois au forfait et à la performance ?",
+          "answer": "Oui. Chaque ligne peut combiner un forfait mensuel et une facturation variable."
+        },
+        {
+          "question": "Puis-je distinguer plusieurs clients et canaux d'acquisition ?",
+          "answer": "Oui. Les prévisions sont saisies par offre, client et canal, puis consolidées automatiquement."
+        },
+        {
+          "question": "Le fichier remplace-t-il un CRM ?",
+          "answer": "Non. Il modélise les volumes et l'économie mensuelle de l'activité, sans suivre chaque prospect individuellement."
+        }
+      ],
+      "screenshots": [],
+      "related_products": [
+        "BM-MKT-001 – Marketplace multi-catégories",
+        "BM-SRV-001 – Prestation de service multi-offres"
+      ]
+    },
+    {
       "id": "BM-MKT-001",
       "slug": "marketplace-multi-categories",
       "category": "modèles unitaires",
