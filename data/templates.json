@@ -283,6 +283,117 @@
       ]
     },
     {
+      "id": "BM-FOR-001",
+      "slug": "formation-accompagnement",
+      "category": "modèles unitaires",
+      "name": "BM-FOR-001 – Formation et accompagnement multi-offres",
+      "display_name": "Formation et accompagnements",
+      "subtitle": "Le modèle financier des formateurs, coachs et organismes qui vendent plusieurs formats d'apprentissage et d'accompagnement.",
+      "short_description": "Pilotez vos formations, cohortes, ateliers, coachings et offres digitales avec leurs prix, capacités, temps, marges et encaissements.",
+      "long_description": "Ce template permet de modéliser une activité de formation réelle sans confondre participants, sessions et clients. Chaque offre possède sa propre unité de facturation, son prix, sa capacité, ses coûts et son temps de réalisation. Les ventes sont saisies une seule fois et alimentent automatiquement le remplissage, le seuil de rentabilité, la charge de travail, le résultat comptable, la marge économique et la trésorerie sur 24 mois.",
+      "audience": [
+        "Formateurs et formatrices indépendants",
+        "Coachs et accompagnateurs",
+        "Organismes de formation",
+        "Entreprises vendant cohortes, ateliers ou programmes",
+        "Créateurs de formations digitales"
+      ],
+      "features": [
+        "Catalogue préparé pour 30 offres",
+        "Formation collective vendue par participant",
+        "Formation B2B vendue au groupe",
+        "Atelier, masterclass et programme en cohorte",
+        "Coaching individuel vendu à la séance ou au forfait",
+        "Formation digitale vendue par accès",
+        "500 lignes de ventes, clients, sessions ou cohortes",
+        "Prix spécifique possible pour chaque vente",
+        "Calcul du remplissage et du seuil de rentabilité",
+        "Conception, préparation, animation et suivi",
+        "Capacité mensuelle et alertes de surcharge",
+        "Valorisation économique du temps",
+        "CAC et dépenses commerciales",
+        "Acomptes, soldes et délais d'encaissement",
+        "Résultat comptable et marge économique sur 24 mois",
+        "Dashboard métier avec cinq graphiques",
+        "Feuille de contrôles automatiques",
+        "Sortie standard compatible avec les consolidations Baradozig"
+      ],
+      "business_models": [
+        "formation collective",
+        "formation B2B",
+        "programme en cohorte",
+        "atelier et masterclass",
+        "coaching individuel",
+        "formation digitale"
+      ],
+      "files": [
+        "template Excel",
+        "guide PDF",
+        "fiche produit",
+        "données produit JSON"
+      ],
+      "delivery_filename": "BM-FOR-001-formation-accompagnement-multi-offres.xlsx",
+      "price": 49,
+      "currency": "EUR",
+      "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-FOR-001",
+      "guide_url": "../templates.html#guide-title",
+      "limitations": [
+        "Une formation déclenche automatiquement une vente de coaching selon un taux de conversion.",
+        "Vous vendez un abonnement récurrent donnant accès à des formations ou séances.",
+        "Votre activité nécessite un suivi réglementaire ou comptable détaillé propre aux organismes de formation."
+      ],
+      "tags": [
+        "formation",
+        "coaching",
+        "cohorte",
+        "atelier",
+        "capacité",
+        "remplissage",
+        "temps",
+        "trésorerie",
+        "multi-offres"
+      ],
+      "difficulty": "intermédiaire",
+      "version": "2.0.0",
+      "date": "2026-06-19",
+      "changelog": [
+        {
+          "version": "2.0.0",
+          "date": "2026-06-19",
+          "changes": [
+            "Migration vers Baradozig Framework v2",
+            "Reconstruction multi-offres et multi-formats",
+            "Ajout du remplissage, du seuil de rentabilité et de la capacité",
+            "Distinction entre résultat comptable et marge économique après valorisation du temps",
+            "Création d'un dashboard métier avec cinq graphiques"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Puis-je combiner formations collectives et coaching individuel ?",
+          "answer": "Oui, s'ils sont vendus indépendamment. Chaque offre dispose de ses propres prix, coûts, capacités et temps."
+        },
+        {
+          "question": "Puis-je facturer une offre au groupe plutôt que par participant ?",
+          "answer": "Oui. L'unité facturée peut être un participant, un accès, une séance, un groupe ou un forfait."
+        },
+        {
+          "question": "Le temps de préparation est-il pris en compte ?",
+          "answer": "Oui. Le fichier distingue conception initiale, préparation, animation et suivi, puis les compare à votre capacité mensuelle."
+        },
+        {
+          "question": "Puis-je gérer les acomptes ?",
+          "answer": "Oui. Chaque ligne peut utiliser l'acompte et le délai de solde prévus dans le catalogue ou des conditions spécifiques."
+        }
+      ],
+      "screenshots": [],
+      "related_products": [
+        "BM-SRV-001 – Prestation de service multi-offres",
+        "BM-SUB-001 – Abonnements multi-offres"
+      ]
+    },
+    {
       "id": "BM-SRV-001",
       "slug": "prestation-service",
       "category": "modèles unitaires",
