@@ -503,6 +503,115 @@
       ]
     },
     {
+      "id": "BM-LIC-001",
+      "slug": "licences-redevances-multi-contrats",
+      "category": "modèles unitaires",
+      "name": "BM-LIC-001 – Licences et redevances multi-contrats",
+      "display_name": "Licences et redevances multi-contrats",
+      "subtitle": "Le modèle financier des entreprises qui concèdent des marques, produits, contenus, technologies ou autres droits d'exploitation.",
+      "short_description": "Pilotez vos contrats, royalties fixes ou variables, minimums garantis, avances, reversements et trésorerie.",
+      "long_description": "Ce template modélise un portefeuille réel de licences sans réduire tous les contrats à une redevance moyenne. Vous pouvez combiner fixe mensuel, pourcentage du chiffre d'affaires, montant par unité, paliers et minimum garanti. Le fichier suit également les périodes contractuelles, les avances sur royalties, les délais de déclaration et de paiement, les reversements aux détenteurs de droits, la rentabilité par contrat et la trésorerie sur 24 mois.",
+      "audience": [
+        "Marques concédant des droits d'exploitation",
+        "Éditeurs, auteurs et producteurs de contenus",
+        "Entreprises licenciant une technologie ou un savoir-faire",
+        "Réseaux de licence de marque ou franchise légère",
+        "Détenteurs de droits percevant des royalties"
+      ],
+      "features": [
+        "50 contrats avec produits, territoires et licenciés distincts",
+        "600 lignes de prévisions mensuelles",
+        "Redevance fixe, pourcentage du CA, montant par unité ou formule hybride",
+        "Trois taux de royalties avec deux seuils de chiffre d'affaires",
+        "Minimum garanti mensuel",
+        "Dates de début et de fin de contrat",
+        "Avances sur royalties et absorption progressive",
+        "Feuille dédiée au solde d'avance contrat par contrat",
+        "Délais de déclaration et de paiement",
+        "Coûts de support, coûts unitaires et coûts spécifiques",
+        "Reversements aux auteurs ou détenteurs de droits",
+        "Coût de signature des nouveaux contrats",
+        "Analyse des revenus et marges par contrat",
+        "Mesure de la concentration du chiffre d'affaires",
+        "Compte de résultat et trésorerie sur 24 mois",
+        "Dashboard métier avec six graphiques",
+        "Contrôles automatiques",
+        "Sortie standard compatible avec les consolidations Baradozig"
+      ],
+      "business_models": [
+        "licence de marque",
+        "royalties sur chiffre d'affaires",
+        "redevance par unité",
+        "licence de technologie",
+        "droits d'auteur et droits d'exploitation"
+      ],
+      "files": [
+        "template Excel",
+        "guide PDF",
+        "fiche produit",
+        "données produit JSON"
+      ],
+      "delivery_filename": "BM-LIC-001-licences-redevances-multi-contrats.xlsx",
+      "price": 49,
+      "currency": "EUR",
+      "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-LIC-001",
+      "guide_url": "../templates.html#guide-title",
+      "limitations": [
+        "Le contrat inclut une prestation importante de déploiement, formation ou accompagnement.",
+        "Vous devez produire une reddition de comptes juridique détaillée par transaction.",
+        "Les royalties dépendent de nombreuses tranches cumulatives ou de règles contractuelles très spécifiques."
+      ],
+      "tags": [
+        "licence",
+        "redevance",
+        "royalties",
+        "droits",
+        "minimum garanti",
+        "avance",
+        "contrats",
+        "trésorerie"
+      ],
+      "difficulty": "avancé",
+      "version": "2.0.0",
+      "date": "2026-06-20",
+      "changelog": [
+        {
+          "version": "2.0.0",
+          "date": "2026-06-20",
+          "changes": [
+            "Migration vers Baradozig Framework v2",
+            "Reconstruction multi-contrats",
+            "Ajout des paliers, minimums garantis et avances",
+            "Ajout des reversements aux détenteurs de droits",
+            "Création d'un dashboard métier avec six graphiques"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Puis-je avoir plusieurs modes de redevance ?",
+          "answer": "Oui. Chaque contrat peut utiliser un fixe, un pourcentage du chiffre d'affaires, un montant par unité ou une formule hybride."
+        },
+        {
+          "question": "Le fichier gère-t-il les minimums garantis ?",
+          "answer": "Oui. La redevance due correspond au montant le plus élevé entre la formule contractuelle et le minimum garanti."
+        },
+        {
+          "question": "Puis-je suivre une avance sur royalties ?",
+          "answer": "Oui. Le fichier suit les avances reçues, leur absorption et le montant restant à recouvrer."
+        },
+        {
+          "question": "Puis-je ajouter des prestations de mise en place ?",
+          "answer": "Pour une prestation significative, il est préférable de combiner ce template avec le modèle Prestation de service."
+        }
+      ],
+      "screenshots": [],
+      "related_products": [
+        "BM-SRV-001 – Prestation de service multi-offres",
+        "BM-EDI-001 – Édition indépendante"
+      ]
+    },
+    {
       "id": "BM-MKT-001",
       "slug": "marketplace-multi-categories",
       "category": "modèles unitaires",
