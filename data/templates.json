@@ -179,6 +179,116 @@
       "related_products": []
     },
     {
+      "id": "BM-ADV-001",
+      "slug": "publicite-sponsoring-multi-formats",
+      "category": "modèles unitaires",
+      "name": "BM-ADV-001 – Publicité et sponsoring multi-formats",
+      "display_name": "Publicité et sponsoring multi-formats",
+      "subtitle": "Le modèle financier des médias, créateurs et événements qui monétisent leur audience par la publicité ou le sponsoring.",
+      "short_description": "Pilotez vos supports, formats, campagnes, annonceurs, inventaires publicitaires, coûts de production et trésorerie.",
+      "long_description": "Ce template modélise une activité publicitaire réelle sans réduire tous les revenus à un CPM moyen. Vous pouvez vendre plusieurs formats sur différents supports, au CPM, au CPC, au forfait ou en sponsoring mensuel. Le fichier suit l'inventaire disponible, les unités vendues et réellement délivrées, les sous-livraisons, les avoirs, les commissions de régie, les coûts de production, la marge par format et la trésorerie sur 24 mois.",
+      "audience": [
+        "Médias numériques et sites éditoriaux",
+        "Newsletters et podcasts sponsorisés",
+        "Créateurs de contenus et chaînes vidéo",
+        "Magazines et publications",
+        "Événements vendant des offres de sponsoring"
+      ],
+      "features": [
+        "40 formats publicitaires répartis entre plusieurs supports",
+        "50 annonceurs avec délais de paiement et impayés",
+        "600 lignes de prévisions mensuelles",
+        "Saisie unique par campagne, format, annonceur et mois",
+        "Facturation au CPM, au CPC, au forfait ou en sponsoring mensuel",
+        "Inventaire disponible et taux de remplissage CPM",
+        "CPM effectif calculé sur les impressions délivrées",
+        "Unités vendues et unités réellement délivrées",
+        "Avoirs automatiques en cas de sous-livraison des forfaits",
+        "Coûts de diffusion, clics, production et livrables",
+        "Commissions commerciales ou de régie",
+        "Partages de revenus avec des partenaires",
+        "Analyse du chiffre d'affaires et de la marge par format",
+        "Concentration du chiffre d'affaires par annonceur",
+        "Compte de résultat et trésorerie sur 24 mois",
+        "Dashboard métier avec six graphiques",
+        "Contrôles automatiques",
+        "Sortie standard compatible avec les consolidations Baradozig"
+      ],
+      "business_models": [
+        "publicité au CPM",
+        "publicité au CPC",
+        "contenu sponsorisé",
+        "sponsoring mensuel",
+        "partenariat de marque"
+      ],
+      "files": [
+        "template Excel",
+        "guide PDF",
+        "fiche produit",
+        "données produit JSON"
+      ],
+      "delivery_filename": "BM-ADV-001-publicite-sponsoring-multi-formats.xlsx",
+      "price": 49,
+      "currency": "EUR",
+      "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-ADV-001",
+      "guide_url": "../templates.html#guide-title",
+      "limitations": [
+        "L'annonceur achète des leads ou des contacts qualifiés plutôt que de la visibilité.",
+        "Vous devez suivre chaque insertion publicitaire dans un outil d'adserving opérationnel.",
+        "Les campagnes incluent une prestation de conseil ou de production très importante et sur mesure."
+      ],
+      "tags": [
+        "publicité",
+        "sponsoring",
+        "CPM",
+        "CPC",
+        "audience",
+        "inventaire",
+        "annonceurs",
+        "média",
+        "trésorerie"
+      ],
+      "difficulty": "intermédiaire",
+      "version": "2.0.0",
+      "date": "2026-06-20",
+      "changelog": [
+        {
+          "version": "2.0.0",
+          "date": "2026-06-20",
+          "changes": [
+            "Migration vers Baradozig Framework v2",
+            "Reconstruction multi-formats et multi-annonceurs",
+            "Ajout des modes CPM, CPC, forfait et sponsoring",
+            "Ajout de l'inventaire et de la sous-livraison",
+            "Création d'un dashboard métier avec six graphiques"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Puis-je vendre plusieurs formats publicitaires ?",
+          "answer": "Oui. Chaque format possède son support, son mode de facturation, son prix, son inventaire et ses coûts."
+        },
+        {
+          "question": "Puis-je mélanger CPM, forfait et sponsoring ?",
+          "answer": "Oui. Chaque campagne utilise le mode du format choisi et toutes les campagnes sont consolidées automatiquement."
+        },
+        {
+          "question": "Le fichier gère-t-il la sous-livraison ?",
+          "answer": "Oui. Pour les forfaits et sponsorings, un avoir proportionnel est calculé si les livrables promis ne sont pas délivrés."
+        },
+        {
+          "question": "Est-ce un outil d'adserving ?",
+          "answer": "Non. Il modélise les volumes et la rentabilité mensuelle, sans piloter chaque impression ou insertion réelle."
+        }
+      ],
+      "screenshots": [],
+      "related_products": [
+        "BM-LEAD-001 – Lead generation multi-offres",
+        "BM-EDI-001 – Édition indépendante"
+      ]
+    },
+    {
       "id": "BM-ECO-001",
       "slug": "ecommerce-multi-produits",
       "category": "modèles unitaires",
