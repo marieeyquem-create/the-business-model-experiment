@@ -9,6 +9,7 @@
       "subtitle": "Revues, BD, magazines, livres, beaux livres, fanzines et projets d'autoédition",
       "short_description": "Le modèle financier des éditeurs indépendants : revues, BD, magazines, livres et fanzines.",
       "long_description": "Ce template permet de chiffrer un projet éditorial sans multiplier les saisies. Les volumes sont prévus par canal, les ventes alimentent automatiquement le modèle économique, les stocks et la trésorerie. Il distingue les ventes directes, les salons, les abonnements et la distribution en librairie avec délai d'encaissement.",
+      "business_model_description": "L'éditeur finance la création et l'impression de ses publications avant de les vendre par différents canaux. Le stock doit être piloté au plus juste : un tirage trop important immobilise de la trésorerie et risque de produire des invendus, tandis qu'un stock insuffisant entraîne des ruptures et des ventes perdues. Le taux d'écoulement, les stocks disponibles, la marge par publication, les performances de chaque canal et les délais d'encaissement permettent de décider combien imprimer, réimprimer et distribuer.",
       "audience": [
         "Éditeurs et éditrices indépendants",
         "Revues, fanzines et collectifs éditoriaux",
@@ -187,6 +188,7 @@
       "subtitle": "Le modèle financier des médias, créateurs et événements qui monétisent leur audience par la publicité ou le sponsoring.",
       "short_description": "Pilotez vos supports, formats, campagnes, annonceurs, inventaires publicitaires, coûts de production et trésorerie.",
       "long_description": "Ce template modélise une activité publicitaire réelle sans réduire tous les revenus à un CPM moyen. Vous pouvez vendre plusieurs formats sur différents supports, au CPM, au CPC, au forfait ou en sponsoring mensuel. Le fichier suit l'inventaire disponible, les unités vendues et réellement délivrées, les sous-livraisons, les avoirs, les commissions de régie, les coûts de production, la marge par format et la trésorerie sur 24 mois.",
+      "business_model_description": "Ce modèle monétise une audience ou une visibilité grâce à des campagnes publicitaires, des contenus sponsorisés ou des partenariats. Les revenus peuvent dépendre du nombre d'affichages, de clics, de contenus livrés ou d'un forfait. Le taux de remplissage des espaces disponibles, le revenu réellement obtenu pour l'audience délivrée, la marge par format et la dépendance aux principaux annonceurs permettent de mesurer la performance commerciale du modèle.",
       "audience": [
         "Médias numériques et sites éditoriaux",
         "Newsletters et podcasts sponsorisés",
@@ -297,6 +299,7 @@
       "subtitle": "Le modèle financier des marques et boutiques qui vendent plusieurs produits sur un ou plusieurs canaux.",
       "short_description": "Pilotez vos ventes, marges, dépenses d'acquisition, stocks, approvisionnements et trésorerie produit par produit et canal par canal.",
       "long_description": "Ce template modélise une activité e-commerce réelle, sans réduire toute la boutique à un panier moyen. Vous pouvez définir plusieurs produits, leurs coûts et leurs stocks, puis prévoir les ventes par produit et par canal. Le fichier calcule automatiquement les retours, les commissions, les frais de paiement, la logistique, la marge contributive, le CAC, le ROAS, les besoins d'approvisionnement et la trésorerie sur 24 mois.",
+      "business_model_description": "Une activité e-commerce achète ou fabrique des produits, les stocke, puis les vend par différents canaux. La marge dépend du prix, du coût des produits, des retours, de la logistique, des commissions et des dépenses publicitaires. Le suivi des marges, du coût d'acquisition, du rendement publicitaire, des stocks et de la trésorerie permet de savoir quels produits et canaux contribuent réellement à la rentabilité.",
       "audience": [
         "Marques vendant leurs propres produits",
         "Boutiques e-commerce multi-produits",
@@ -401,6 +404,7 @@
       "subtitle": "Le modèle financier des formateurs, coachs et organismes qui vendent plusieurs formats d'apprentissage et d'accompagnement.",
       "short_description": "Pilotez vos formations, cohortes, ateliers, coachings et offres digitales avec leurs prix, capacités, temps, marges et encaissements.",
       "long_description": "Ce template permet de modéliser une activité de formation réelle sans confondre participants, sessions et clients. Chaque offre possède sa propre unité de facturation, son prix, sa capacité, ses coûts et son temps de réalisation. Les ventes sont saisies une seule fois et alimentent automatiquement le remplissage, le seuil de rentabilité, la charge de travail, le résultat comptable, la marge économique et la trésorerie sur 24 mois.",
+      "business_model_description": "Ce modèle combine souvent plusieurs formats : formations collectives, ateliers, programmes, contenus numériques ou accompagnements individuels. La rentabilité dépend du nombre de participants, du remplissage, du prix, des coûts et du temps consacré à la conception, à la préparation et à l'animation. Ces indicateurs permettent d'identifier les offres rentables, les seuils minimums de participants et les éventuels dépassements de capacité.",
       "audience": [
         "Formateurs et formatrices indépendants",
         "Coachs et accompagnateurs",
@@ -512,6 +516,7 @@
       "subtitle": "Le modèle financier des entreprises qui génèrent, qualifient et vendent des contacts, des leads ou des rendez-vous.",
       "short_description": "Pilotez votre tunnel, vos offres, vos clients, vos canaux d'acquisition, votre capacité de traitement et votre rentabilité.",
       "long_description": "Ce template modélise une activité réelle de génération de leads sans réduire tous les contacts à un prix moyen. Vous pouvez créer plusieurs offres, facturer au contact, au lead qualifié, au lead accepté, au rendez-vous tenu ou au forfait, puis prévoir les volumes par client et canal. Le fichier calcule automatiquement le tunnel de qualité, les remboursements, les coûts d'acquisition et de traitement, la capacité nécessaire, la marge par unité et la trésorerie sur 24 mois.",
+      "business_model_description": "Cette activité transforme des contacts en prospects qualifiés, rendez-vous ou opportunités vendus à des clients. Tous les contacts générés ne deviennent pas facturables : il faut donc suivre chaque étape du parcours, les taux de transformation, le coût d'acquisition et le coût de traitement. Ces indicateurs montrent où les contacts sont perdus et si le prix facturé couvre réellement le coût de production d'un lead ou d'un rendez-vous valable.",
       "audience": [
         "Agences de lead generation",
         "Entreprises vendant des leads qualifiés",
@@ -621,6 +626,7 @@
       "subtitle": "Le modèle financier des entreprises qui concèdent des marques, produits, contenus, technologies ou autres droits d'exploitation.",
       "short_description": "Pilotez vos contrats, royalties fixes ou variables, minimums garantis, avances, reversements et trésorerie.",
       "long_description": "Ce template modélise un portefeuille réel de licences sans réduire tous les contrats à une redevance moyenne. Vous pouvez combiner fixe mensuel, pourcentage du chiffre d'affaires, montant par unité, paliers et minimum garanti. Le fichier suit également les périodes contractuelles, les avances sur royalties, les délais de déclaration et de paiement, les reversements aux détenteurs de droits, la rentabilité par contrat et la trésorerie sur 24 mois.",
+      "business_model_description": "Ce modèle permet à une entreprise d'autoriser l'exploitation d'une marque, d'un contenu, d'une technologie ou d'un autre droit en échange de redevances. Les revenus peuvent être fixes, calculés sur les ventes, facturés à l'unité ou soumis à un minimum garanti. Le suivi des redevances, des avances, des reversements, des échéances et de la concentration des revenus permet d'évaluer la rentabilité et le risque de chaque contrat.",
       "audience": [
         "Marques concédant des droits d'exploitation",
         "Éditeurs, auteurs et producteurs de contenus",
@@ -730,6 +736,7 @@
       "subtitle": "Le modèle financier des plateformes qui mettent en relation acheteurs et vendeurs et se rémunèrent sur les transactions.",
       "short_description": "Pilotez GMV, commissions, take rate, acheteurs, vendeurs, acquisition, annulations, litiges et trésorerie catégorie par catégorie.",
       "long_description": "Ce template permet de modéliser une véritable marketplace sans confondre transactions, utilisateurs et chiffre d'affaires. Vous pouvez définir plusieurs catégories avec leurs commissions et coûts, prévoir l'activité mensuelle des acheteurs et vendeurs, mesurer la liquidité, les CAC et le take rate, puis simuler les encaissements du GMV et les reversements vendeurs sur 24 mois.",
+      "business_model_description": "Une marketplace met en relation des acheteurs et des vendeurs, puis conserve une commission ou des frais sur les transactions. Le volume total vendu sur la plateforme n'est donc pas son chiffre d'affaires. Le taux de commission réel, le nombre d'acheteurs et de vendeurs actifs, la fréquence des transactions et leur coût d'acquisition permettent de vérifier que la plateforme génère suffisamment d'échanges pour devenir rentable.",
       "audience": [
         "Marketplaces de produits ou services",
         "Plateformes de réservation",
@@ -837,6 +844,7 @@
       "subtitle": "Le modèle financier des prestataires qui vendent plusieurs offres ou construisent chaque mission sur mesure.",
       "short_description": "Un template pour chiffrer librement chaque offre ou mission client, puis consolider automatiquement revenus, capacité, rentabilité et trésorerie.",
       "long_description": "Ce template s'adapte aux activités de prestation réelles : plusieurs offres standard, missions différentes selon les clients ou combinaison des deux. Chaque ligne de la feuille Prévisions peut représenter une offre vendue plusieurs fois dans un mois ou une prestation entièrement sur mesure. Vous saisissez le client, le prix HT, les jours nécessaires, les coûts directs, le coût commercial et le délai de paiement. Le fichier consolide automatiquement le chiffre d'affaires, la charge de travail, le taux d'occupation, les coûts, le résultat et la trésorerie sur 24 mois.",
+      "business_model_description": "La rentabilité dépend du prix facturé, du temps nécessaire pour réaliser chaque mission et des coûts directement engagés. Le taux d'occupation est déterminant : trop élevé, il révèle un risque de saturation ; trop faible, le temps disponible continue de coûter sans générer de revenus. Pour un entrepreneur seul, cela réduit directement sa capacité à se rémunérer. La marge par mission, le revenu par jour travaillé et le taux d'occupation permettent donc de trouver le bon équilibre entre rentabilité et capacité.",
       "audience": [
         "Consultants, freelances et experts indépendants",
         "Agences, studios et cabinets de conseil",
@@ -1035,6 +1043,7 @@
       "subtitle": "Le modèle financier des activités qui proposent plusieurs abonnements, plans ou niveaux de service.",
       "short_description": "Un template multi-offres pour prévoir les cohortes, le MRR, le churn, le CAC, les deux lectures de la LTV et la rentabilité de chaque formule.",
       "long_description": "Ce template modélise jusqu'à 20 offres d'abonnement avec leurs propres prix, churn, CAC, coûts de service et abonnés de départ. Vous saisissez mois par mois les nouveaux abonnés attendus pour chaque formule ; le fichier calcule automatiquement les pertes, les abonnés actifs, le MRR, le résultat, la trésorerie et les unit economics consolidés. Le dashboard distingue la LTV de chiffre d'affaires, fondée sur la mensualité et la durée moyenne, de la LTV de marge brute utilisée pour comparer la valeur économique au CAC.",
+      "business_model_description": "Ce modèle repose sur des revenus récurrents : chaque mois, de nouveaux abonnés arrivent tandis que d'autres résilient. Les indicateurs essentiels sont le revenu mensuel récurrent, le taux de résiliation, le coût d'acquisition d'un client et sa valeur sur toute la durée de l'abonnement. Ils permettent de vérifier si chaque formule fidélise suffisamment et rapporte plus qu'elle ne coûte à vendre et à servir.",
       "audience": [
         "SaaS avec plusieurs plans",
         "Memberships et communautés payantes",
