@@ -180,6 +180,118 @@
       "related_products": []
     },
     {
+      "id": "BM-GRA-001",
+      "slug": "financements-projets-multi-bailleurs",
+      "category": "modèles spécifiques",
+      "name": "BM-GRA-001 – Financements de projets multi-bailleurs",
+      "display_name": "Financements de projets multi-bailleurs",
+      "subtitle": "Le modèle financier des associations et entreprises qui financent leurs projets auprès de fondations, bailleurs et organismes publics.",
+      "short_description": "Pilotez vos projets, demandes, cofinancements, frais de fonctionnement, échéanciers de versement et besoins de trésorerie.",
+      "long_description": "Ce template relie chaque projet à son budget, aux différentes demandes de financement et aux versements réellement encaissés. Il permet de maintenir un pipeline suffisant malgré les refus, de construire des plans de cofinancement, de mesurer la couverture des frais de fonctionnement et d'anticiper la trésorerie à avancer lorsque les fonds sont versés tardivement.",
+      "business_model_description": "Ce modèle repose sur un portefeuille permanent de demandes : une partie sera refusée, une autre sera accordée, parfois avec des versements très tardifs. La structure doit donc déposer un volume financier suffisant, assembler plusieurs cofinancements par projet et vérifier que les financements couvrent aussi ses frais de fonctionnement. Le pipeline en euros, le taux de succès financier, le reste à financer et les montants accordés mais non encaissés permettent de piloter cette activité sans confondre promesse de financement et argent disponible.",
+      "audience": [
+        "Associations et entreprises de l'économie sociale et solidaire",
+        "Structures financées par des fondations ou des bailleurs",
+        "Organisations répondant à des appels à projets",
+        "Entreprises portant des projets cofinancés",
+        "Structures devant avancer les dépenses avant remboursement"
+      ],
+      "features": [
+        "40 projets avec budgets et calendriers distincts",
+        "50 financeurs avec pratiques de décision et de versement propres",
+        "500 demandes de financement individualisées",
+        "800 échéances de versement prévisionnelles ou réelles",
+        "600 lignes de dépenses mensuelles par projet",
+        "Plans de cofinancement automatiques par projet",
+        "Pipeline suivi en euros par statut",
+        "Valeur pondérée des demandes en attente",
+        "Montants refusés, accordés, encaissés et restant à encaisser",
+        "Taux de succès calculé sur les montants",
+        "Montant moyen et dispersion des demandes",
+        "Couverture des frais de fonctionnement",
+        "Coût du montage et du reporting",
+        "Écarts entre budget et dépenses planifiées",
+        "Compte de résultat et trésorerie sur 24 mois",
+        "Dashboard métier avec six graphiques",
+        "Contrôles automatiques",
+        "Sortie standard compatible avec les consolidations Baradozig"
+      ],
+      "business_models": [
+        "subventions",
+        "appels à projets",
+        "financements de fondations",
+        "financements de bailleurs",
+        "projets cofinancés",
+        "remboursement après réalisation"
+      ],
+      "files": [
+        "template Excel",
+        "guide PDF",
+        "fiche produit",
+        "données produit JSON"
+      ],
+      "delivery_filename": "BM-GRA-001-financements-projets-multi-bailleurs.xlsx",
+      "price": 49,
+      "currency": "EUR",
+      "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-GRA-001",
+      "guide_url": "../templates.html#guide-title",
+      "limitations": [
+        "Le financeur impose des règles contractuelles très spécifiques non prévues par le modèle.",
+        "Vous devez produire une comptabilité analytique certifiée ou un reporting réglementaire détaillé.",
+        "Vos projets combinent subventions, ventes commerciales et investissements complexes interdépendants."
+      ],
+      "tags": [
+        "subvention",
+        "bailleur",
+        "fondation",
+        "appel à projets",
+        "pipeline",
+        "cofinancement",
+        "frais de fonctionnement",
+        "trésorerie"
+      ],
+      "difficulty": "avancé",
+      "version": "2.0.0",
+      "date": "2026-06-20",
+      "changelog": [
+        {
+          "version": "2.0.0",
+          "date": "2026-06-20",
+          "changes": [
+            "Reconstruction complète selon le Framework Baradozig v2",
+            "Ajout des projets et des plans de cofinancement",
+            "Ajout du pipeline individualisé en euros",
+            "Distinction entre décisions favorables et encaissements",
+            "Ajout de la couverture des frais de fonctionnement",
+            "Création d'un dashboard métier avec six graphiques"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Puis-je rattacher plusieurs financeurs à un même projet ?",
+          "answer": "Oui. Chaque demande est reliée au projet concerné et le plan de cofinancement est consolidé automatiquement."
+        },
+        {
+          "question": "Le pipeline est-il suivi en nombre de dossiers ?",
+          "answer": "Le pilotage principal se fait en euros. Le nombre de demandes reste seulement utile pour estimer le temps de montage."
+        },
+        {
+          "question": "Puis-je distinguer un accord d'un encaissement ?",
+          "answer": "Oui. Les montants accordés, encaissés et restant à encaisser sont suivis séparément."
+        },
+        {
+          "question": "Les frais de fonctionnement sont-ils pris en compte ?",
+          "answer": "Oui. Le fichier mesure la part couverte par les financements et le montant qui reste à financer par la structure."
+        }
+      ],
+      "screenshots": [],
+      "related_products": [
+        "BM-SRV-001 – Prestation de service multi-offres",
+        "BM-FOR-001 – Formation et accompagnement multi-offres"
+      ]
+    },
+    {
       "id": "BM-ADV-001",
       "slug": "publicite-sponsoring-multi-formats",
       "category": "modèles unitaires",
