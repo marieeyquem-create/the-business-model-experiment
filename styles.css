@@ -685,6 +685,114 @@ a {
   border-top: 1px solid var(--line);
 }
 
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.9fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.contact-form,
+.contact-aside {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 26px;
+  box-shadow: 0 12px 30px rgba(40, 28, 70, 0.06);
+}
+
+.contact-form {
+  display: grid;
+  gap: 18px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 8px;
+  color: var(--text);
+  font-weight: 800;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  color: var(--text);
+  background: var(--surface-2);
+  font: inherit;
+  font-weight: 500;
+}
+
+.contact-form textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: 2px solid rgba(124, 58, 237, 0.22);
+  border-color: var(--accent);
+}
+
+.checkbox-line {
+  display: grid !important;
+  grid-template-columns: 20px 1fr;
+  align-items: start;
+  gap: 10px !important;
+  color: var(--muted) !important;
+  font-weight: 650 !important;
+}
+
+.checkbox-line input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+  margin-top: 3px;
+}
+
+.contact-form .button {
+  justify-self: start;
+}
+
+.contact-aside {
+  display: grid;
+  gap: 18px;
+}
+
+.contact-aside h2 {
+  margin: 0;
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1.02;
+}
+
+.contact-aside ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 20px;
+  color: var(--muted);
+}
+
+.contact-aside .button {
+  justify-self: start;
+}
+
+.form-note.error {
+  border-left-color: #dc2626;
+  color: #991b1b;
+  background: #fef2f2;
+}
+
 @media (max-width: 860px) {
   .site-header {
     align-items: flex-start;
@@ -699,7 +807,8 @@ a {
   .split,
   .about-strip,
   .module,
-  .guide-layout {
+  .guide-layout,
+  .contact-layout {
     grid-template-columns: 1fr;
   }
 
@@ -717,6 +826,10 @@ a {
   }
 
   .cards.two {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
     grid-template-columns: 1fr;
   }
 
