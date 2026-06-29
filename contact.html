@@ -108,7 +108,7 @@
     </footer>
 
     <script>
-      const CONTACT_EMAIL = "marie@sisuu.fr";
+      const CONTACT_EMAIL = "marie.eyquem@gmail.com";
       const CONTACT_WEBHOOK_URL = "";
 
       const form = document.querySelector("#contact-form");
@@ -163,7 +163,7 @@
           showStatus("Votre logiciel mail va s'ouvrir avec un message pré-rempli. Il faudra cliquer sur envoyer dans votre messagerie.");
         }
 
-        const subject = `Demande contact - ${data.topic}`;
+        const subject = "question the business model experiment";
         const mailto = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(buildBody(data))}`;
         window.location.href = mailto;
       });
