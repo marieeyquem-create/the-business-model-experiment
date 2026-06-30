@@ -1180,6 +1180,115 @@
       "business_model_description": "Ce modèle permet à une entreprise d'autoriser l'exploitation d'une marque, d'un contenu, d'une technologie ou d'un autre droit en échange de redevances. Les revenus peuvent être fixes, calculés sur les ventes, facturés à l'unité ou soumis à un minimum garanti. Le suivi des redevances, des avances, des reversements, des échéances et de la concentration des revenus permet d'évaluer la rentabilité et le risque de chaque contrat."
     },
     {
+      "id": "BM-MEM-001",
+      "slug": "communaute-espace-membre",
+      "category": "modèles unitaires",
+      "name": "BM-MEM-001 – Communauté payante / espace membre",
+      "display_name": "Communauté payante / espace membre",
+      "subtitle": "Le modèle financier des communautés, clubs et espaces membres avec offres gratuites, payantes et complémentaires.",
+      "short_description": "Pilotez membres gratuits, membres payants, départs, animation, revenus récurrents, offres complémentaires, rentabilité et trésorerie.",
+      "long_description": "Ce template modélise une communauté, un club ou un espace membre avec plusieurs niveaux : gratuit, basic, premium, pro ou entreprise. Vous saisissez les nouveaux membres, le passage gratuit vers payant, les départs, les offres complémentaires, les contenus et événements inclus. Le fichier calcule automatiquement les membres actifs, les revenus récurrents, les coûts de service, le temps d'animation, la rentabilité et la trésorerie sur 24 mois.",
+      "business_model_description": "Dans un modèle de communauté payante ou d'espace membre, la rentabilité dépend du nombre de personnes attirées, de la part qui devient payante, du nombre de membres qui restent, du prix des niveaux d'accès, du temps d'animation, des contenus inclus et des offres complémentaires. Ce n'est pas seulement un abonnement : il faut aussi vérifier si la promesse communautaire peut être tenue sans dépasser la capacité humaine. Les KPI clés sont les membres actifs, le revenu mensuel récurrent, les membres qui arrêtent, le revenu moyen par membre, le coût pour obtenir un nouveau membre payant, le temps d'animation et la trésorerie.",
+      "audience": [
+        "Créateurs et médias avec communauté payante",
+        "Consultants, formateurs et experts qui animent un club",
+        "Communautés d'apprentissage ou d'entraide",
+        "Réseaux professionnels et collectifs",
+        "Entrepreneurs qui veulent tester une offre gratuite puis payante"
+      ],
+      "features": [
+        "Niveaux de membres paramétrables : gratuit, basic, premium, pro, entreprise",
+        "Passage gratuit vers payant expliqué sans jargon",
+        "Membres qui arrêtent suivis mois par mois",
+        "Revenus mensuels récurrents",
+        "Offres complémentaires payantes : coaching, atelier, formation, événement premium",
+        "Temps d'animation et capacité mensuelle",
+        "Coût moyen pour obtenir un nouveau membre payant",
+        "Contenus et événements inclus dans l'offre",
+        "Revenu moyen attendu par membre",
+        "Compte de résultat et trésorerie sur 24 mois",
+        "Contrôles automatiques sur capacité, départs, acquisition et trésorerie",
+        "Dashboard métier avec graphiques de synthèse",
+        "Sortie standard compatible avec les consolidations Baradozig"
+      ],
+      "business_models": [
+        "communauté payante",
+        "espace membre",
+        "membership",
+        "club",
+        "freemium",
+        "abonnement communautaire",
+        "offres complémentaires"
+      ],
+      "files": [
+        "template Excel",
+        "guide PDF",
+        "mode d'emploi détaillé",
+        "fiche produit",
+        "données produit JSON"
+      ],
+      "delivery_filename": "BM-MEM-001-communaute-espace-membre.xlsx",
+      "price": 49,
+      "currency": "EUR",
+      "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-MEM-001",
+      "guide_url": "../templates.html#guide-title",
+      "limitations": [
+        "Votre activité est un SaaS pur avec métriques techniques avancées.",
+        "Vous vendez uniquement des prestations sur mesure.",
+        "Votre modèle repose surtout sur la publicité ou le sponsoring."
+      ],
+      "tags": [
+        "communauté",
+        "membership",
+        "espace membre",
+        "club",
+        "abonnement",
+        "freemium",
+        "premium",
+        "animation",
+        "offres complémentaires"
+      ],
+      "difficulty": "intermédiaire",
+      "version": "1.0.0",
+      "date": "2026-07-01",
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-07-01",
+          "changes": [
+            "Création du template Communauté payante / espace membre au format Baradozig Framework v2",
+            "Ajout des niveaux de membres, acquisition, contenus inclus et offres complémentaires",
+            "Ajout des contrôles de capacité d'animation et de trésorerie",
+            "Création d'un dashboard métier avec graphiques de synthèse"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Est-ce un template freemium / premium ?",
+          "answer": "Il peut modéliser un passage gratuit vers payant, mais il est plus précis : il est conçu pour une communauté, un club ou un espace membre avec animation, contenus, événements et offres complémentaires."
+        },
+        {
+          "question": "Que signifie membres qui arrêtent ?",
+          "answer": "C'est la part des membres payants qui quittent l'offre ou arrêtent de payer chaque mois. Le terme technique est churn, mais le fichier utilise une formulation plus claire."
+        },
+        {
+          "question": "Que sont les offres complémentaires payantes ?",
+          "answer": "Ce sont les ventes en plus de l'abonnement : coaching, atelier, formation, audit, événement premium ou accompagnement. On parle parfois d'upsells."
+        },
+        {
+          "question": "Pourquoi suivre le temps d'animation ?",
+          "answer": "Parce qu'une communauté peut sembler rentable mais devenir intenable si elle demande trop de temps de contenu, modération, support ou événements."
+        }
+      ],
+      "screenshots": [],
+      "related_products": [
+        "BM-SUB-001 – Abonnements multi-offres",
+        "BM-FOR-001 – Formation et accompagnement multi-offres",
+        "BM-PRJ-001 – Prestations sur mesure multi-projets"
+      ]
+    },
+    {
       "id": "BM-MKT-001",
       "slug": "marketplace-multi-categories",
       "category": "modèles unitaires",
