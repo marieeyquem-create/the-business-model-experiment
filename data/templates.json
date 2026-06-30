@@ -1181,6 +1181,113 @@
       "business_model_description": "Une marketplace met en relation des acheteurs et des vendeurs, puis conserve une commission ou des frais sur les transactions. Le volume total vendu sur la plateforme n'est donc pas son chiffre d'affaires. Le taux de commission réel, le nombre d'acheteurs et de vendeurs actifs, la fréquence des transactions et leur coût d'acquisition permettent de vérifier que la plateforme génère suffisamment d'échanges pour devenir rentable."
     },
     {
+      "id": "BM-PRJ-001",
+      "slug": "prestations-sur-mesure-multi-projets",
+      "category": "modèles unitaires",
+      "name": "BM-PRJ-001 – Prestations sur mesure multi-projets",
+      "display_name": "Prestations sur mesure multi-projets",
+      "subtitle": "Le modèle financier des consultants, agences, studios et prestataires qui vendent des missions différentes à chaque client.",
+      "short_description": "Pilotez devis, taux de signature, projets signés, capacité de production, acomptes, marges, revenu par jour et trésorerie.",
+      "long_description": "Ce template modélise une activité de conseil, agence, studio, freelance ou bureau d'étude qui vend des missions sur mesure. Vous suivez à la fois le pipeline commercial, les projets signés, la capacité de production et les encaissements. Le fichier permet de comprendre combien de devis envoyer, quels projets sont vraiment rentables, si la charge de travail est réaliste, et quand la trésorerie peut devenir fragile.",
+      "business_model_description": "Dans un modèle de prestations sur mesure, le chiffre d'affaires ne vient pas d'une offre unique vendue en volume, mais d'un pipeline de devis puis de projets signés. Chaque mission peut avoir un prix, une durée, des coûts externes, un acompte, un solde et un délai de paiement différents. La rentabilité dépend donc du taux de transformation commercial, du prix facturé, du temps réellement consommé, des coûts directs, du taux d'occupation et de la trésorerie. Les KPI clés sont le chiffre d'affaires signé, le chiffre d'affaires probable, la marge par projet, le revenu par jour de production, le taux d'occupation, le niveau de pipeline et la trésorerie.",
+      "audience": [
+        "Consultants, freelances et experts indépendants",
+        "Agences, studios créatifs et cabinets de conseil",
+        "Bureaux d'étude et prestataires B2B",
+        "Entreprises qui vendent des devis ou projets différents selon les clients",
+        "Entrepreneurs qui veulent vérifier prix, capacité et trésorerie avant de signer plus de missions"
+      ],
+      "features": [
+        "Pipeline commercial avec montant de devis, probabilité de signature et statut",
+        "500 lignes préparées pour les projets signés",
+        "Types de missions paramétrables",
+        "Prix, jours, coûts externes et coûts commerciaux par projet",
+        "Acompte, solde et délais de paiement intégrés",
+        "Planning de capacité et taux d'occupation mensuel",
+        "Calcul du revenu par jour de production",
+        "Compte de résultat et trésorerie sur 24 mois",
+        "Contrôles automatiques sur capacité, trésorerie, pipeline et revenu par jour",
+        "Dashboard métier avec graphiques de synthèse",
+        "Sortie standard compatible avec les consolidations Baradozig"
+      ],
+      "business_models": [
+        "prestation sur mesure",
+        "conseil",
+        "agence",
+        "freelance",
+        "bureau d'étude",
+        "mission au forfait",
+        "pipeline commercial"
+      ],
+      "files": [
+        "template Excel",
+        "guide PDF",
+        "mode d'emploi détaillé",
+        "fiche produit",
+        "données produit JSON"
+      ],
+      "delivery_filename": "BM-PRJ-001-prestations-sur-mesure-multi-projets.xlsx",
+      "price": 49,
+      "currency": "EUR",
+      "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-PRJ-001",
+      "guide_url": "../templates.html#guide-title",
+      "limitations": [
+        "Vous vendez principalement une offre standard avec un prix fixe et un volume élevé.",
+        "Votre activité repose surtout sur des abonnements récurrents.",
+        "Vous devez suivre une production industrielle, du stock ou de la logistique produit."
+      ],
+      "tags": [
+        "prestation",
+        "projet",
+        "devis",
+        "pipeline",
+        "consultant",
+        "freelance",
+        "agence",
+        "capacité",
+        "trésorerie"
+      ],
+      "difficulty": "intermédiaire",
+      "version": "1.0.0",
+      "date": "2026-06-30",
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-06-30",
+          "changes": [
+            "Création du template Prestations sur mesure multi-projets au format Baradozig Framework v2",
+            "Ajout du pipeline commercial, des projets signés et du planning de capacité",
+            "Ajout des acomptes, soldes et délais de paiement",
+            "Création d'un dashboard métier avec graphiques de synthèse"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Quelle différence avec le template Prestation de service multi-offres ?",
+          "answer": "Le template Prestation multi-offres convient mieux si vous avez des offres relativement structurées. Celui-ci est conçu pour les missions sur mesure, avec devis, probabilité de signature, projet signé, acompte, solde et capacité de production."
+        },
+        {
+          "question": "Puis-je saisir une mission unique pour un client ?",
+          "answer": "Oui. Chaque ligne de Projets signés peut représenter une mission totalement spécifique : client, prix, jours, coûts, acompte et délai de paiement."
+        },
+        {
+          "question": "Le pipeline est-il compté dans le chiffre d'affaires signé ?",
+          "answer": "Non. Le pipeline sert à estimer le chiffre d'affaires probable. Le chiffre d'affaires signé vient uniquement des projets confirmés, pour éviter le double comptage."
+        },
+        {
+          "question": "À quoi sert le taux d'occupation ?",
+          "answer": "Il vérifie si les jours nécessaires pour livrer les projets sont compatibles avec la capacité disponible. Un mois peut être rentable mais impossible à produire si la charge dépasse la capacité."
+        }
+      ],
+      "screenshots": [],
+      "related_products": [
+        "BM-SRV-001 – Prestation de service multi-offres",
+        "BM-BRC-001 – Brand content multi-projets",
+        "BM-FOR-001 – Formation et accompagnement multi-offres"
+      ]
+    },
+    {
       "id": "BM-SRV-001",
       "slug": "prestation-service",
       "category": "modèles unitaires",
