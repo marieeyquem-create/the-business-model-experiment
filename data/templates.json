@@ -404,6 +404,122 @@
       "business_model_description": "Ce modèle monétise une audience ou une visibilité grâce à des campagnes publicitaires, des contenus sponsorisés ou des partenariats. Les revenus peuvent dépendre du nombre d'affichages, de clics, de contenus livrés ou d'un forfait. Le taux de remplissage des espaces disponibles, le revenu réellement obtenu pour l'audience délivrée, la marge par format et la dépendance aux principaux annonceurs permettent de mesurer la performance commerciale du modèle."
     },
     {
+      "id": "BM-APP-001",
+      "slug": "produit-digital-application-saas",
+      "category": "modèles unitaires",
+      "name": "BM-APP-001 – Produit digital / application SaaS",
+      "display_name": "Produit digital / application SaaS",
+      "subtitle": "Le modèle financier des applications, plateformes et logiciels en ligne : gratuit, premium, abonnements, options, coûts techniques et croissance utilisateurs.",
+      "short_description": "Pilotez utilisateurs gratuits, clients payants, conversion, revenus récurrents, options, acquisition, coûts produit et trésorerie.",
+      "long_description": "Ce template modélise une application, plateforme ou logiciel en ligne avec une offre gratuite, plusieurs plans payants, des options ou achats complémentaires, des coûts techniques, du support, du développement produit et des dépenses d'acquisition. Vous saisissez les nouveaux utilisateurs mois par mois ; le fichier calcule automatiquement les utilisateurs actifs, le revenu mensuel récurrent, les coûts produit, la rentabilité, le coût d'acquisition, la valeur estimée par client et la trésorerie sur 24 mois.",
+      "business_model_description": "Dans un modèle de produit digital ou application SaaS, la rentabilité dépend de la croissance des utilisateurs, de la part qui devient payante, du nombre de clients qui restent, du prix des plans, du coût d'acquisition, des coûts techniques et du support. Le chiffre d'affaires récurrent peut donner une impression de stabilité, mais le modèle devient fragile si les utilisateurs payants arrêtent trop vite, si le produit coûte trop cher à maintenir ou si l'acquisition coûte plus que la valeur attendue d'un client.",
+      "audience": [
+        "Entrepreneurs qui lancent une application ou plateforme en ligne",
+        "Fondateurs de SaaS avec offre gratuite et plans payants",
+        "Créateurs d'outils digitaux, logiciels métier ou produits no-code",
+        "Équipes qui veulent tester un modèle gratuit, premium ou entreprise",
+        "Porteurs de projet qui sous-estiment les coûts de maintenance, support ou acquisition"
+      ],
+      "features": [
+        "Plans paramétrables : gratuit, starter, pro, business, entreprise",
+        "Nouveaux utilisateurs saisis mois par mois",
+        "Utilisateurs gratuits et payants actifs",
+        "Utilisateurs payants qui arrêtent expliqués sans jargon",
+        "Revenu mensuel récurrent",
+        "Options payantes et achats complémentaires",
+        "Coûts techniques fixes et variables",
+        "Développement initial, maintenance et évolutions produit",
+        "Support utilisateur et coût du temps passé",
+        "Coût d'acquisition par nouveau client payant",
+        "Valeur de chiffre d'affaires estimée par client",
+        "Ratio valeur / coût d'acquisition",
+        "Compte de résultat et trésorerie sur 24 mois",
+        "Contrôles automatiques sur trésorerie, départs, acquisition et support",
+        "Dashboard métier avec graphiques de synthèse",
+        "Sortie standard compatible avec les consolidations Baradozig"
+      ],
+      "business_models": [
+        "SaaS",
+        "application",
+        "produit digital",
+        "freemium",
+        "premium",
+        "abonnement logiciel",
+        "options payantes",
+        "plans entreprise"
+      ],
+      "files": [
+        "template Excel",
+        "guide PDF",
+        "mode d'emploi détaillé",
+        "fiche produit",
+        "données produit JSON"
+      ],
+      "delivery_filename": "BM-APP-001-produit-digital-application-saas.xlsx",
+      "price": 49,
+      "currency": "EUR",
+      "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-APP-001",
+      "guide_url": "../templates.html#guide-title",
+      "limitations": [
+        "Votre activité est surtout une communauté animée avec contenus et événements.",
+        "Vous vendez principalement des prestations sur mesure autour du produit.",
+        "Vous mettez en relation deux côtés d'un marché et prenez une commission sur transactions."
+      ],
+      "tags": [
+        "SaaS",
+        "application",
+        "produit digital",
+        "freemium",
+        "premium",
+        "abonnement",
+        "MRR",
+        "churn",
+        "CAC",
+        "logiciel",
+        "plateforme"
+      ],
+      "difficulty": "intermédiaire",
+      "version": "1.0.0",
+      "date": "2026-07-01",
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-07-01",
+          "changes": [
+            "Création du template Produit digital / application SaaS au format Baradozig Framework v2",
+            "Ajout des plans gratuits et payants, options, coûts techniques et développement produit",
+            "Ajout des contrôles sur acquisition, départs, support et trésorerie",
+            "Création d'un dashboard métier avec graphiques de synthèse"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Quelle différence avec le template Abonnements multi-offres ?",
+          "answer": "Le template Abonnements modélise surtout des formules récurrentes. Celui-ci ajoute la logique propre à une application SaaS : base gratuite, passage gratuit vers payant, coûts techniques, support, développement produit, options et valeur par client."
+        },
+        {
+          "question": "Que signifie SaaS ?",
+          "answer": "SaaS signifie Software as a Service : un logiciel ou une application accessible en ligne, souvent payé par abonnement."
+        },
+        {
+          "question": "Que signifie utilisateurs qui arrêtent ?",
+          "answer": "Ce sont les clients payants qui arrêtent leur abonnement chaque mois. Le terme technique est churn, mais le fichier utilise une formulation plus claire."
+        },
+        {
+          "question": "Peut-on modéliser une offre gratuite puis premium ?",
+          "answer": "Oui. Le fichier distingue les utilisateurs gratuits, les plans payants et le passage gratuit vers payant."
+        }
+      ],
+      "screenshots": [],
+      "related_products": [
+        "BM-SUB-001 – Abonnements multi-offres",
+        "BM-MEM-001 – Communauté payante / espace membre",
+        "BM-MKT-001 – Marketplace multi-catégories",
+        "BM-PRJ-001 – Prestations sur mesure multi-projets"
+      ]
+    },
+    {
       "id": "BM-AUD-001",
       "slug": "monetisation-audience-multiplateformes",
       "category": "modèles unitaires",
