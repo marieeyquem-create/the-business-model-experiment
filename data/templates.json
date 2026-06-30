@@ -740,6 +740,114 @@
       "business_model_description": "Une activité e-commerce achète ou fabrique des produits, les stocke, puis les vend par différents canaux. La marge dépend du prix, du coût des produits, des retours, de la logistique, des commissions et des dépenses publicitaires. Le suivi des marges, du coût d'acquisition, du rendement publicitaire, des stocks et de la trésorerie permet de savoir quels produits et canaux contribuent réellement à la rentabilité."
     },
     {
+      "id": "BM-EVT-001",
+      "slug": "evenementiel-multi-evenements",
+      "category": "modèles unitaires",
+      "name": "BM-EVT-001 – Événementiel multi-événements",
+      "display_name": "Événementiel multi-événements",
+      "subtitle": "Le modèle financier des ateliers, conférences, séminaires, retraites, salons et événements ponctuels ou récurrents.",
+      "short_description": "Pilotez capacité, remplissage, billetterie, coûts événement, point mort, marge, trésorerie et cash à avancer.",
+      "long_description": "Ce template modélise une activité qui organise plusieurs événements : ateliers, conférences, séminaires, retraites, masterclass, salons ou événements communautaires. Vous saisissez les événements, leurs participants, prix, recettes annexes et coûts variables, puis détaillez les coûts de salle, intervenants, technique, communication ou logistique. Le fichier calcule automatiquement la rentabilité, le point mort, la trésorerie et les alertes de remplissage sur 24 mois.",
+      "business_model_description": "Dans un modèle événementiel, la rentabilité dépend du nombre de participants, du prix moyen, des recettes annexes, des coûts fixes propres à chaque événement et des coûts variables par participant. Le chiffre d'affaires ne suffit pas : il faut savoir combien de places vendre pour atteindre le point mort, combien de trésorerie avancer avant l'événement, et quels formats créent vraiment de la marge. Les KPI clés sont le taux de remplissage, le point mort, la marge par événement, le profit opérationnel, la trésorerie et le cash à avancer.",
+      "audience": [
+        "Entrepreneurs qui organisent des ateliers, masterclass ou journées intensives",
+        "Organisateurs de conférences, salons, séminaires ou retraites",
+        "Associations et collectifs qui doivent sécuriser la rentabilité d'événements",
+        "Médias, communautés ou organismes de formation qui monétisent des événements",
+        "Porteurs de projet qui veulent savoir combien de participants vendre avant de réserver un lieu"
+      ],
+      "features": [
+        "Formats d'événements paramétrables",
+        "500 lignes préparées pour les événements",
+        "500 lignes de coûts événement détaillés",
+        "Capacité, participants et taux de remplissage",
+        "Prix moyen HT et recettes annexes",
+        "Coûts fixes événement et coûts variables par participant",
+        "Point mort calculé automatiquement",
+        "Acomptes, mois de paiement et trésorerie",
+        "Charges fixes de structure",
+        "Contrôles automatiques sur capacité, point mort et trésorerie",
+        "Dashboard métier avec graphiques de synthèse",
+        "Sortie standard compatible avec les consolidations Baradozig"
+      ],
+      "business_models": [
+        "événementiel",
+        "atelier",
+        "conférence",
+        "séminaire",
+        "retraite",
+        "masterclass",
+        "salon",
+        "billetterie"
+      ],
+      "files": [
+        "template Excel",
+        "guide PDF",
+        "mode d'emploi détaillé",
+        "fiche produit",
+        "données produit JSON"
+      ],
+      "delivery_filename": "BM-EVT-001-evenementiel-multi-evenements.xlsx",
+      "price": 49,
+      "currency": "EUR",
+      "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-EVT-001",
+      "guide_url": "../templates.html#guide-title",
+      "limitations": [
+        "Votre activité repose principalement sur des abonnements récurrents.",
+        "Vous vendez surtout des prestations sur mesure sans événement daté.",
+        "Votre événement implique une billetterie très complexe avec de nombreux tarifs dynamiques."
+      ],
+      "tags": [
+        "événementiel",
+        "atelier",
+        "conférence",
+        "séminaire",
+        "billetterie",
+        "point mort",
+        "remplissage",
+        "trésorerie"
+      ],
+      "difficulty": "intermédiaire",
+      "version": "1.0.0",
+      "date": "2026-06-30",
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-06-30",
+          "changes": [
+            "Création du template Événementiel multi-événements au format Baradozig Framework v2",
+            "Ajout des formats, événements et coûts détaillés",
+            "Ajout du point mort, du taux de remplissage et de la trésorerie",
+            "Création d'un dashboard métier avec graphiques de synthèse"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Puis-je modéliser plusieurs événements différents ?",
+          "answer": "Oui. Chaque ligne de la feuille Événements représente un événement, avec son format, sa capacité, ses participants, son prix et ses coûts."
+        },
+        {
+          "question": "Les coûts détaillés sont-ils saisis une seule fois ?",
+          "answer": "Oui. La feuille Coûts événements permet de détailler salle, technique, intervenants, communication ou logistique. Ces coûts sont ensuite récupérés automatiquement."
+        },
+        {
+          "question": "À quoi sert le point mort ?",
+          "answer": "Il indique le nombre de participants nécessaires pour couvrir les coûts propres à l'événement. C'est un repère essentiel avant de réserver un lieu ou lancer la communication."
+        },
+        {
+          "question": "Le template suit-il la trésorerie ?",
+          "answer": "Oui. Il distingue encaissements, paiements des coûts événement, charges fixes et trésorerie finale mois par mois."
+        }
+      ],
+      "screenshots": [],
+      "related_products": [
+        "BM-PRJ-001 – Prestations sur mesure multi-projets",
+        "BM-FOR-001 – Formation et accompagnement multi-offres",
+        "BM-ADV-001 – Publicité et sponsoring multi-formats"
+      ]
+    },
+    {
       "id": "BM-FOR-001",
       "slug": "formation-accompagnement",
       "category": "modèles unitaires",
