@@ -43,7 +43,7 @@
         </div>
         <p>
           Chaque template correspond à une façon concrète de gagner de l'argent : abonnement,
-          prestation, vente de produit, usage, marketplace, licence, publicité, événementiel ou
+          prestation, vente de produit, usage, marketplace, licence, publicité, brand content, événementiel ou
           appels d'offres. Vous partez du modèle qui ressemble à votre activité, puis vous combinez
           plusieurs templates si vos revenus viennent de plusieurs sources indépendantes.
         </p>
@@ -60,7 +60,7 @@
             <p class="price">49 €</p>
             <p>
               Pour modéliser une source de revenus précise : abonnement, prestation, vente de produit,
-              usage, marketplace, licence, affiliation, publicité, événementiel, appels d'offres...
+              usage, marketplace, licence, affiliation, publicité, brand content, événementiel, appels d'offres...
             </p>
             <ul>
               <li>Un modèle de revenus ciblé</li>
@@ -152,6 +152,7 @@
               <label><input type="checkbox" name="model" value="leadgen" /> Vous êtes payé quand vous apportez des prospects ou contacts qualifiés</label>
               <label><input type="checkbox" name="model" value="affiliation" /> Vous touchez une commission quand vous recommandez une offre vendue par quelqu'un d'autre</label>
               <label><input type="checkbox" name="model" value="advertising" /> Vous gagnez de l'argent avec de la publicité, du sponsoring ou des partenariats</label>
+              <label><input type="checkbox" name="model" value="brandContent" /> Des marques vous paient pour produire des contenus : articles, vidéos, podcasts, dossiers, campagnes éditoriales...</label>
               <label><input type="checkbox" name="model" value="event" /> Vous organisez des événements, journées, séminaires ou conférences</label>
               <label><input type="checkbox" name="model" value="freemium" /> Une partie est gratuite, puis certains clients passent à une offre payante</label>
               <label><input type="checkbox" name="model" value="productMaintenance" /> Vous vendez un produit puis un suivi, une maintenance ou un service récurrent</label>
@@ -379,6 +380,7 @@
         leadgen: "Template lead generation",
         affiliation: "Template affiliation",
         advertising: "Template publicité / sponsoring",
+        brandContent: "Template brand content multi-projets",
         event: "Template événementiel",
         freemium: "Template gratuit puis payant",
         productMaintenance: "Template produit + maintenance ou suivi",
@@ -460,6 +462,7 @@
         if (includesAny(text, ["lead generation", "lead", "prospect", "contact qualifié", "apport de contacts"])) models.push("leadgen");
         if (includesAny(text, ["affiliation", "recommande", "apporteur d'affaires", "apporteur d’affaire"])) models.push("affiliation");
         if (includesAny(text, ["publicité", "sponsoring", "sponsor", "partenariat", "annonceur"])) models.push("advertising");
+        if (includesAny(text, ["brand content", "contenu de marque", "contenus de marque", "article partenaire", "articles partenaires", "studio de contenu", "campagne éditoriale", "campagnes éditoriales", "contenu sponsorisé", "contenus sponsorisés", "podcast de marque", "vidéo de marque"])) models.push("brandContent");
         if (includesAny(text, ["événement", "evenement", "séminaire", "conference", "conférence", "billetterie"])) models.push("event");
         if (includesAny(text, ["freemium", "gratuit puis payant", "version gratuite", "offre gratuite"])) models.push("freemium");
         if (includesAny(text, ["maintenance", "suivi", "support", "produit puis", "installation puis"])) models.push("productMaintenance");
