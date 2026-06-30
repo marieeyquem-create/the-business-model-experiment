@@ -404,6 +404,125 @@
       "business_model_description": "Ce modèle monétise une audience ou une visibilité grâce à des campagnes publicitaires, des contenus sponsorisés ou des partenariats. Les revenus peuvent dépendre du nombre d'affichages, de clics, de contenus livrés ou d'un forfait. Le taux de remplissage des espaces disponibles, le revenu réellement obtenu pour l'audience délivrée, la marge par format et la dépendance aux principaux annonceurs permettent de mesurer la performance commerciale du modèle."
     },
     {
+      "id": "BM-AUD-001",
+      "slug": "monetisation-audience-multiplateformes",
+      "category": "modèles unitaires",
+      "name": "BM-AUD-001 – Monétisation d'audience multi-plateformes",
+      "display_name": "Monétisation d'audience multi-plateformes",
+      "subtitle": "Le modèle financier des médias et créateurs qui publient leurs propres contenus et monétisent leur audience sur Instagram, TikTok, YouTube, Twitch et autres plateformes.",
+      "short_description": "Pilotez vos vues, RPM, abonnements, tips, coûts de production, temps passé, marge, dépendance plateforme et trésorerie.",
+      "long_description": "Ce template modélise un média ou créateur qui publie ses contenus sur plusieurs plateformes et veut comprendre si son audience peut devenir rentable. Vous pouvez définir des contenus parents, puis saisir leurs déclinaisons plateforme par plateforme : version YouTube, extrait TikTok, reel Instagram, live Twitch, etc. Chaque plateforme garde ses propres règles de rémunération, RPM, part monétisée, abonnements, commissions et délais de paiement. Le dashboard permet de suivre l'audience, les revenus plateforme, le RPM effectif, le profit, le taux d'occupation de production et la trésorerie sur 24 mois. Un onglet de contrôles automatiques aide à repérer les incohérences ou points de vigilance avant l'analyse.",
+      "business_model_description": "Dans un modèle de monétisation d'audience, le média produit ses propres contenus pour développer une audience, puis les plateformes ou les communautés génèrent des revenus : publicité, fonds créateurs, partage de revenus, abonnements, tips, dons ou memberships. Un même contenu peut être décliné sur plusieurs plateformes : le coût socle de captation ou de préparation doit alors être compté une seule fois, puis chaque déclinaison ajoute ses coûts et jours d'adaptation. La rentabilité dépend donc du volume d'audience, de la part réellement monétisée, du revenu moyen pour 1 000 vues, du temps de production, des coûts de création et des délais d'encaissement. Les KPI clés sont le RPM effectif, le chiffre d'affaires par plateforme, le revenu par jour de production, la marge contributive, la dépendance à une plateforme et la trésorerie.",
+      "audience": [
+        "Médias sociaux publiant leurs propres contenus",
+        "Créateurs multi-plateformes",
+        "Médias culturels, musique, rap, sport ou entertainment",
+        "Chaînes YouTube, comptes TikTok, Instagram, Twitch ou plateformes similaires",
+        "Collectifs ou studios qui veulent mesurer la rentabilité de leur audience propre"
+      ],
+      "features": [
+        "80 contenus parents ou séries éditoriales",
+        "20 plateformes paramétrables",
+        "40 formats de contenu",
+        "500 lignes de prévisions audience sur 24 mois",
+        "Saisie par contenu parent, plateforme et déclinaison",
+        "Coût socle mutualisé compté une seule fois par contenu parent et par mois",
+        "Coûts et jours spécifiques pour chaque adaptation plateforme",
+        "Vues, écoutes ou impressions par bloc de contenus",
+        "Part de l'audience réellement monétisée",
+        "RPM par défaut ou spécifique par ligne",
+        "Abonnements, tips, dons et revenus directs",
+        "Commissions plateforme sur revenus directs",
+        "Coûts de production, diffusion et coûts spécifiques",
+        "Jours de production et taux d'occupation",
+        "RPM effectif calculé automatiquement",
+        "Revenu par jour de production",
+        "Analyse par plateforme",
+        "Compte de résultat et trésorerie sur 24 mois",
+        "Dashboard métier avec graphiques de synthèse",
+        "Contrôles automatiques",
+        "Sortie standard compatible avec les consolidations Baradozig"
+      ],
+      "business_models": [
+        "monétisation d'audience",
+        "revenus plateforme",
+        "créateur de contenus",
+        "média social",
+        "abonnements et tips",
+        "revenus publicitaires plateforme"
+      ],
+      "files": [
+        "template Excel",
+        "guide PDF",
+        "mode d'emploi détaillé",
+        "fiche produit",
+        "données produit JSON"
+      ],
+      "delivery_filename": "BM-AUD-001-monetisation-audience-multiplateformes.xlsx",
+      "price": 49,
+      "currency": "EUR",
+      "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-AUD-001",
+      "guide_url": "../templates.html#guide-title",
+      "limitations": [
+        "Vous êtes payé directement par une marque ou un label pour produire un contenu ou une campagne.",
+        "Vous vendez principalement de l'inventaire publicitaire à des annonceurs.",
+        "Votre activité repose surtout sur la vente de leads, de produits ou de prestations de service."
+      ],
+      "tags": [
+        "audience",
+        "créateur",
+        "média",
+        "TikTok",
+        "Instagram",
+        "YouTube",
+        "Twitch",
+        "RPM",
+        "vues",
+        "abonnements",
+        "tips",
+        "trésorerie"
+      ],
+      "difficulty": "intermédiaire",
+      "version": "2.0.0",
+      "date": "2026-06-30",
+      "changelog": [
+        {
+          "version": "2.0.0",
+          "date": "2026-06-30",
+          "changes": [
+            "Création du template Monétisation d'audience au format Baradozig Framework v2",
+            "Ajout des plateformes, formats de contenus et prévisions audience",
+            "Ajout du RPM effectif, des abonnements, tips et revenus directs",
+            "Création d'un dashboard métier avec graphiques de synthèse"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Quelle différence avec le brand content ?",
+          "answer": "Le brand content correspond aux contenus payés par une marque, un label ou un partenaire. Ici, le média produit ses propres contenus et monétise l'audience via les plateformes, abonnements ou revenus directs."
+        },
+        {
+          "question": "Puis-je mélanger YouTube, TikTok, Instagram et Twitch ?",
+          "answer": "Oui. Chaque plateforme a ses propres règles de rémunération, RPM, part monétisée, abonnements, commissions et délais de paiement."
+        },
+        {
+          "question": "Le fichier sait-il si les RPM sont les bons ?",
+          "answer": "Non. Le template structure vos hypothèses, mais vous devez renseigner vos propres RPM ou estimations selon vos données et les règles de chaque plateforme."
+        },
+        {
+          "question": "Puis-je ajouter des revenus de sponsoring ?",
+          "answer": "Pour un sponsoring direct ou un contenu payé par une marque, utilisez plutôt le template Brand content ou Publicité / sponsoring, puis combinez les modèles si besoin."
+        }
+      ],
+      "screenshots": [],
+      "related_products": [
+        "BM-BRC-001 – Brand content multi-projets",
+        "BM-ADV-001 – Publicité et sponsoring multi-formats",
+        "BM-FOR-001 – Formation et accompagnement multi-offres"
+      ]
+    },
+    {
       "id": "BM-BRC-001",
       "slug": "brand-content-multi-projets",
       "category": "modèles unitaires",
