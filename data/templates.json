@@ -288,7 +288,7 @@
       ],
       "screenshots": [],
       "related_products": [
-        "BM-SRV-001 – Prestation de service multi-offres",
+        "BM-SRV-001 – Offres de service standardisées",
         "BM-FOR-001 – Formation et accompagnement multi-offres"
       ]
     },
@@ -462,7 +462,7 @@
       "guide_url": "../templates.html#guide-title",
       "limitations": [
         "Votre activité est surtout une communauté animée avec contenus et événements.",
-        "Vous vendez principalement des prestations sur mesure autour du produit.",
+        "Vous vendez principalement des missions sur devis ou projets sur mesure autour du produit.",
         "Vous mettez en relation deux côtés d'un marché et prenez une commission sur transactions."
       ],
       "tags": [
@@ -516,7 +516,7 @@
         "BM-SUB-001 – Abonnements multi-offres",
         "BM-MEM-001 – Communauté payante / espace membre",
         "BM-MKT-001 – Marketplace multi-catégories",
-        "BM-PRJ-001 – Prestations sur mesure multi-projets"
+        "BM-PRJ-001 – Missions sur devis / projets sur mesure"
       ]
     },
     {
@@ -746,7 +746,7 @@
       "screenshots": [],
       "related_products": [
         "BM-ADV-001 – Publicité et sponsoring multi-formats",
-        "BM-SRV-001 – Prestation de service multi-offres",
+        "BM-SRV-001 – Offres de service standardisées",
         "BM-FOR-001 – Formation et accompagnement multi-offres"
       ]
     },
@@ -759,6 +759,7 @@
       "subtitle": "Le modèle financier des marques et boutiques qui vendent plusieurs produits sur un ou plusieurs canaux.",
       "short_description": "Pilotez vos ventes, marges, dépenses d'acquisition, stocks, approvisionnements et trésorerie produit par produit et canal par canal.",
       "long_description": "Ce template modélise une activité e-commerce réelle, sans réduire toute la boutique à un panier moyen. Vous pouvez définir plusieurs produits, leurs coûts et leurs stocks, puis prévoir les ventes par produit et par canal. Le fichier calcule automatiquement les retours, les commissions, les frais de paiement, la logistique, la marge contributive, le CAC, le ROAS, les besoins d'approvisionnement et la trésorerie sur 24 mois.",
+      "business_model_description": "",
       "audience": [
         "Marques vendant leurs propres produits",
         "Boutiques e-commerce multi-produits",
@@ -851,9 +852,8 @@
       "screenshots": [],
       "related_products": [
         "BM-SUB-001 – Abonnements multi-offres",
-        "BM-SRV-001 – Prestation de service multi-offres"
-      ],
-      "business_model_description": "Une activité e-commerce achète ou fabrique des produits, les stocke, puis les vend par différents canaux. La marge dépend du prix, du coût des produits, des retours, de la logistique, des commissions et des dépenses publicitaires. Le suivi des marges, du coût d'acquisition, du rendement publicitaire, des stocks et de la trésorerie permet de savoir quels produits et canaux contribuent réellement à la rentabilité."
+        "BM-SRV-001 – Offres de service standardisées"
+      ]
     },
     {
       "id": "BM-EVT-001",
@@ -910,7 +910,7 @@
       "guide_url": "../templates.html#guide-title",
       "limitations": [
         "Votre activité repose principalement sur des abonnements récurrents.",
-        "Vous vendez surtout des prestations sur mesure sans événement daté.",
+        "Vous vendez surtout des missions sur devis ou projets sur mesure sans événement daté.",
         "Votre événement implique une billetterie très complexe avec de nombreux tarifs dynamiques."
       ],
       "tags": [
@@ -958,7 +958,7 @@
       ],
       "screenshots": [],
       "related_products": [
-        "BM-PRJ-001 – Prestations sur mesure multi-projets",
+        "BM-PRJ-001 – Missions sur devis / projets sur mesure",
         "BM-FOR-001 – Formation et accompagnement multi-offres",
         "BM-ADV-001 – Publicité et sponsoring multi-formats"
       ]
@@ -972,6 +972,7 @@
       "subtitle": "Le modèle financier des formateurs, coachs et organismes qui vendent plusieurs formats d'apprentissage et d'accompagnement.",
       "short_description": "Pilotez vos formations, cohortes, ateliers, coachings et offres digitales avec leurs prix, capacités, temps, marges et encaissements.",
       "long_description": "Ce template permet de modéliser une activité de formation réelle sans confondre participants, sessions et clients. Chaque offre possède sa propre unité de facturation, son prix, sa capacité, ses coûts et son temps de réalisation. Les ventes sont saisies une seule fois et alimentent automatiquement le remplissage, le seuil de rentabilité, la charge de travail, le résultat comptable, la marge économique et la trésorerie sur 24 mois.",
+      "business_model_description": "",
       "audience": [
         "Formateurs et formatrices indépendants",
         "Coachs et accompagnateurs",
@@ -1070,10 +1071,9 @@
       ],
       "screenshots": [],
       "related_products": [
-        "BM-SRV-001 – Prestation de service multi-offres",
+        "BM-SRV-001 – Offres de service standardisées",
         "BM-SUB-001 – Abonnements multi-offres"
-      ],
-      "business_model_description": "Ce modèle combine souvent plusieurs formats : formations collectives, ateliers, programmes, contenus numériques ou accompagnements individuels. La rentabilité dépend du nombre de participants, du remplissage, du prix, des coûts et du temps consacré à la conception, à la préparation et à l'animation. Ces indicateurs permettent d'identifier les offres rentables, les seuils minimums de participants et les éventuels dépassements de capacité."
+      ]
     },
     {
       "id": "BM-LEAD-001",
@@ -1084,6 +1084,7 @@
       "subtitle": "Le modèle financier des entreprises qui génèrent, qualifient et vendent des contacts, des leads ou des rendez-vous.",
       "short_description": "Pilotez votre tunnel, vos offres, vos clients, vos canaux d'acquisition, votre capacité de traitement et votre rentabilité.",
       "long_description": "Ce template modélise une activité réelle de génération de leads sans réduire tous les contacts à un prix moyen. Vous pouvez créer plusieurs offres, facturer au contact, au lead qualifié, au lead accepté, au rendez-vous tenu ou au forfait, puis prévoir les volumes par client et canal. Le fichier calcule automatiquement le tunnel de qualité, les remboursements, les coûts d'acquisition et de traitement, la capacité nécessaire, la marge par unité et la trésorerie sur 24 mois.",
+      "business_model_description": "",
       "audience": [
         "Agences de lead generation",
         "Entreprises vendant des leads qualifiés",
@@ -1181,9 +1182,8 @@
       "screenshots": [],
       "related_products": [
         "BM-MKT-001 – Marketplace multi-catégories",
-        "BM-SRV-001 – Prestation de service multi-offres"
-      ],
-      "business_model_description": "Cette activité transforme des contacts en prospects qualifiés, rendez-vous ou opportunités vendus à des clients. Tous les contacts générés ne deviennent pas facturables : il faut donc suivre chaque étape du parcours, les taux de transformation, le coût d'acquisition et le coût de traitement. Ces indicateurs montrent où les contacts sont perdus et si le prix facturé couvre réellement le coût de production d'un lead ou d'un rendez-vous valable."
+        "BM-SRV-001 – Offres de service standardisées"
+      ]
     },
     {
       "id": "BM-LIC-001",
@@ -1194,6 +1194,7 @@
       "subtitle": "Le modèle financier des entreprises qui concèdent des marques, produits, contenus, technologies ou autres droits d'exploitation.",
       "short_description": "Pilotez vos contrats, royalties fixes ou variables, minimums garantis, avances, reversements et trésorerie.",
       "long_description": "Ce template modélise un portefeuille réel de licences sans réduire tous les contrats à une redevance moyenne. Vous pouvez combiner fixe mensuel, pourcentage du chiffre d'affaires, montant par unité, paliers et minimum garanti. Le fichier suit également les périodes contractuelles, les avances sur royalties, les délais de déclaration et de paiement, les reversements aux détenteurs de droits, la rentabilité par contrat et la trésorerie sur 24 mois.",
+      "business_model_description": "",
       "audience": [
         "Marques concédant des droits d'exploitation",
         "Éditeurs, auteurs et producteurs de contenus",
@@ -1290,10 +1291,9 @@
       ],
       "screenshots": [],
       "related_products": [
-        "BM-SRV-001 – Prestation de service multi-offres",
+        "BM-SRV-001 – Offres de service standardisées",
         "BM-EDI-001 – Édition indépendante"
-      ],
-      "business_model_description": "Ce modèle permet à une entreprise d'autoriser l'exploitation d'une marque, d'un contenu, d'une technologie ou d'un autre droit en échange de redevances. Les revenus peuvent être fixes, calculés sur les ventes, facturés à l'unité ou soumis à un minimum garanti. Le suivi des redevances, des avances, des reversements, des échéances et de la concentration des revenus permet d'évaluer la rentabilité et le risque de chaque contrat."
+      ]
     },
     {
       "id": "BM-LOC-001",
@@ -1350,7 +1350,7 @@
       "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-LOC-001",
       "guide_url": "../templates.html#guide-title",
       "limitations": [
-        "Votre activité vend surtout des prestations humaines sur mesure : utilisez plutôt Prestations sur mesure multi-projets ou Services récurrents / forfaits mensuels.",
+        "Votre activité vend surtout des prestations humaines sur mesure : utilisez plutôt Missions sur devis / projets sur mesure ou Services récurrents / forfaits mensuels.",
         "Votre revenu vient surtout d'un abonnement sans actif limité à occuper : utilisez plutôt Abonnements multi-offres.",
         "Vous vendez des produits physiques avec stocks : utilisez plutôt E-commerce multi-produits."
       ],
@@ -1401,7 +1401,7 @@
       "screenshots": [],
       "related_products": [
         "BM-EVT-001 – Événementiel multi-événements",
-        "BM-PRJ-001 – Prestations sur mesure multi-projets",
+        "BM-PRJ-001 – Missions sur devis / projets sur mesure",
         "BM-REC-001 – Services récurrents / forfaits mensuels",
         "BM-ECO-001 – E-commerce multi-produits"
       ]
@@ -1461,7 +1461,7 @@
       "guide_url": "../templates.html#guide-title",
       "limitations": [
         "Votre activité est un SaaS pur avec métriques techniques avancées.",
-        "Vous vendez uniquement des prestations sur mesure.",
+        "Vous vendez uniquement des missions sur devis ou projets sur mesure.",
         "Votre modèle repose surtout sur la publicité ou le sponsoring."
       ],
       "tags": [
@@ -1512,7 +1512,7 @@
       "related_products": [
         "BM-SUB-001 – Abonnements multi-offres",
         "BM-FOR-001 – Formation et accompagnement multi-offres",
-        "BM-PRJ-001 – Prestations sur mesure multi-projets"
+        "BM-PRJ-001 – Missions sur devis / projets sur mesure"
       ]
     },
     {
@@ -1628,11 +1628,11 @@
       "id": "BM-PRJ-001",
       "slug": "prestations-sur-mesure-multi-projets",
       "category": "modèles unitaires",
-      "name": "BM-PRJ-001 – Prestations sur mesure multi-projets",
-      "display_name": "Prestations sur mesure multi-projets",
-      "subtitle": "Le modèle financier des consultants, agences, studios et prestataires qui vendent des missions différentes à chaque client.",
-      "short_description": "Pilotez devis, taux de signature, projets signés, capacité de production, acomptes, marges, revenu par jour et trésorerie.",
-      "long_description": "Ce template modélise une activité de conseil, agence, studio, freelance ou bureau d'étude qui vend des missions sur mesure. Vous suivez à la fois le pipeline commercial, les projets signés, la capacité de production et les encaissements. Le fichier permet de comprendre combien de devis envoyer, quels projets sont vraiment rentables, si la charge de travail est réaliste, et quand la trésorerie peut devenir fragile.",
+      "name": "BM-PRJ-001 – Missions sur devis / projets sur mesure",
+      "display_name": "Missions sur devis / projets sur mesure",
+      "subtitle": "Le modèle financier des activités où chaque client donne lieu à un devis, un projet signé, un acompte, un solde et un planning de production.",
+      "short_description": "Pilotez devis, taux de signature, projets signés, acomptes, soldes, capacité de production, marge par projet, revenu par jour et trésorerie.",
+      "long_description": "Ce template modélise une activité de conseil, agence, studio, freelance ou bureau d'étude où chaque client peut donner lieu à une mission différente : devis, probabilité de signature, projet signé, acompte, solde, jours de production et délai de paiement. Vous suivez à la fois le pipeline commercial, les projets réellement signés, la capacité de production et les encaissements. Le fichier permet de comprendre combien de devis envoyer, quels projets sont vraiment rentables, si la charge de travail est réaliste, et quand la trésorerie peut devenir fragile.",
       "business_model_description": "Dans un modèle de prestations sur mesure, le chiffre d'affaires ne vient pas d'une offre unique vendue en volume, mais d'un pipeline de devis puis de projets signés. Chaque mission peut avoir un prix, une durée, des coûts externes, un acompte, un solde et un délai de paiement différents. La rentabilité dépend donc du taux de transformation commercial, du prix facturé, du temps réellement consommé, des coûts directs, du taux d'occupation et de la trésorerie. Les KPI clés sont le chiffre d'affaires signé, le chiffre d'affaires probable, la marge par projet, le revenu par jour de production, le taux d'occupation, le niveau de pipeline et la trésorerie.",
       "audience": [
         "Consultants, freelances et experts indépendants",
@@ -1699,7 +1699,7 @@
           "version": "1.0.0",
           "date": "2026-06-30",
           "changes": [
-            "Création du template Prestations sur mesure multi-projets au format Baradozig Framework v2",
+            "Création du template Missions sur devis / projets sur mesure au format Baradozig Framework v2",
             "Ajout du pipeline commercial, des projets signés et du planning de capacité",
             "Ajout des acomptes, soldes et délais de paiement",
             "Création d'un dashboard métier avec graphiques de synthèse"
@@ -1708,8 +1708,8 @@
       ],
       "faq": [
         {
-          "question": "Quelle différence avec le template Prestation de service multi-offres ?",
-          "answer": "Le template Prestation multi-offres convient mieux si vous avez des offres relativement structurées. Celui-ci est conçu pour les missions sur mesure, avec devis, probabilité de signature, projet signé, acompte, solde et capacité de production."
+          "question": "Quelle différence avec le template Offres de service standardisées ?",
+          "answer": "Offres de service standardisées convient mieux si vous vendez des packs, forfaits, diagnostics, audits, ateliers ou petites missions répétables. Celui-ci est conçu pour les missions sur devis, avec probabilité de signature, projet signé, acompte, solde, délai de paiement et capacité de production."
         },
         {
           "question": "Puis-je saisir une mission unique pour un client ?",
@@ -1726,7 +1726,7 @@
       ],
       "screenshots": [],
       "related_products": [
-        "BM-SRV-001 – Prestation de service multi-offres",
+        "BM-SRV-001 – Offres de service standardisées",
         "BM-BRC-001 – Brand content multi-projets",
         "BM-FOR-001 – Formation et accompagnement multi-offres"
       ]
@@ -1823,7 +1823,7 @@
       ],
       "faq": [
         {
-          "question": "Quelle différence avec Prestations sur mesure multi-projets ?",
+          "question": "Quelle différence avec Missions sur devis / projets sur mesure ?",
           "answer": "Prestations sur mesure modélise des missions uniques avec devis, planning, acompte et solde. Ce template modélise des services répétés chaque mois, avec clients actifs, temps mensuel consommé et capacité."
         },
         {
@@ -1841,8 +1841,8 @@
       ],
       "screenshots": [],
       "related_products": [
-        "BM-PRJ-001 – Prestations sur mesure multi-projets",
-        "BM-SRV-001 – Prestation de service multi-offres",
+        "BM-PRJ-001 – Missions sur devis / projets sur mesure",
+        "BM-SRV-001 – Offres de service standardisées",
         "BM-FOR-001 – Formation et accompagnement multi-offres",
         "BM-BRC-001 – Brand content multi-projets"
       ]
@@ -1851,15 +1851,17 @@
       "id": "BM-SRV-001",
       "slug": "prestation-service",
       "category": "modèles unitaires",
-      "name": "BM-SRV-001 – Prestation de service multi-offres",
-      "subtitle": "Le modèle financier des prestataires qui vendent plusieurs offres ou construisent chaque mission sur mesure.",
-      "short_description": "Un template pour chiffrer librement chaque offre ou mission client, puis consolider automatiquement revenus, capacité, rentabilité et trésorerie.",
-      "long_description": "Ce template s'adapte aux activités de prestation réelles : plusieurs offres standard, missions différentes selon les clients ou combinaison des deux. Chaque ligne de la feuille Prévisions peut représenter une offre vendue plusieurs fois dans un mois ou une prestation entièrement sur mesure. Vous saisissez le client, le prix HT, les jours nécessaires, les coûts directs, le coût commercial et le délai de paiement. Le fichier consolide automatiquement le chiffre d'affaires, la charge de travail, le taux d'occupation, les coûts, le résultat et la trésorerie sur 24 mois.",
+      "name": "BM-SRV-001 – Offres de service standardisées",
+      "display_name": "Offres de service standardisées",
+      "subtitle": "Le modèle financier des prestataires qui vendent des offres répétables : packs, forfaits, diagnostics, audits, ateliers ou petites missions structurées.",
+      "short_description": "Modélisez plusieurs offres de service répétables, leurs prix, volumes, coûts, jours nécessaires, taux d'occupation, rentabilité et trésorerie.",
+      "long_description": "Ce template est conçu pour les prestataires qui vendent des offres relativement structurées : packs, forfaits, diagnostics, audits, ateliers, interventions ou petites missions que l'on peut répéter d'un client à l'autre. Vous saisissez les volumes vendus mois par mois, le prix hors taxes, les jours nécessaires, les coûts directs, le coût commercial et le délai de paiement. Le fichier consolide automatiquement le chiffre d'affaires, la charge de travail, le taux d'occupation, les coûts, le résultat et la trésorerie sur 24 mois. Si chaque client nécessite un devis complet, un projet signé, un acompte, un solde et un suivi de pipeline, utilisez plutôt le template Missions sur devis / projets sur mesure.",
+      "business_model_description": "",
       "audience": [
-        "Consultants, freelances et experts indépendants",
-        "Agences, studios et cabinets de conseil",
-        "Entreprises vendant des missions ou des projets",
-        "Prestataires mobilisant du temps, des achats ou de la sous-traitance"
+        "Consultants, freelances et experts indépendants avec des offres packagées",
+        "Agences, studios et cabinets qui vendent des diagnostics, audits, ateliers ou forfaits",
+        "Prestataires qui ont plusieurs offres avec des prix et temps de production relativement stables",
+        "Entrepreneurs qui veulent comparer la rentabilité de plusieurs offres de service"
       ],
       "features": [
         "500 lignes préparées pour les offres et missions",
@@ -1897,6 +1899,7 @@
       "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-SRV-001",
       "guide_url": "../templates.html#guide-title",
       "limitations": [
+        "Chaque client donne lieu à un devis complet, un projet unique, un acompte et un solde : utilisez plutôt Missions sur devis / projets sur mesure.",
         "Une mission déclenche ensuite un abonnement, une commission ou une autre source de revenus.",
         "Votre capacité dépend de plusieurs équipes, métiers ou niveaux de séniorité distincts.",
         "Vous avez besoin d'un suivi détaillé des échéanciers, acomptes ou factures en plusieurs fois."
@@ -1913,9 +1916,16 @@
         "taux d'occupation"
       ],
       "difficulty": "simple",
-      "version": "2.5.1",
+      "version": "2.5.2",
       "date": "2026-06-18",
       "changelog": [
+        {
+          "version": "2.5.2",
+          "date": "2026-06-19",
+          "changes": [
+            "Alignement du titre horizontal immédiatement sous le graphique"
+          ]
+        },
         {
           "version": "2.5.1",
           "date": "2026-06-18",
@@ -2031,8 +2041,8 @@
           "answer": "Il compare les jours nécessaires pour produire les missions avec les jours réellement disponibles. Au-delà de 100 %, le volume prévu ne peut pas être produit avec la capacité actuelle."
         },
         {
-          "question": "Puis-je créer une offre différente pour chaque client ?",
-          "answer": "Oui. Une ligne peut représenter une mission totalement sur mesure avec les hypothèses propres à ce client."
+          "question": "Quelle différence avec Missions sur devis / projets sur mesure ?",
+          "answer": "Ce template convient si vos offres sont relativement répétables : pack, audit, diagnostic, atelier, forfait ou petite mission structurée. Missions sur devis / projets sur mesure convient mieux si chaque client nécessite un devis, un projet signé, un acompte, un solde, une probabilité de signature et un suivi du pipeline."
         },
         {
           "question": "Puis-je modéliser une mission qui débouche ensuite sur un abonnement ?",
@@ -2041,10 +2051,10 @@
       ],
       "screenshots": [],
       "related_products": [
+        "BM-PRJ-001 – Missions sur devis / projets sur mesure",
         "BM-SUB-001 – Abonnements multi-offres",
-        "BM-EDI-001 – Édition indépendante"
-      ],
-      "business_model_description": "La rentabilité dépend du prix facturé, du temps nécessaire pour réaliser chaque mission et des coûts directement engagés. Le taux d'occupation est déterminant : trop élevé, il révèle un risque de saturation ; trop faible, le temps disponible continue de coûter sans générer de revenus. Pour un entrepreneur seul, cela réduit directement sa capacité à se rémunérer. La marge par mission, le revenu par jour travaillé et le taux d'occupation permettent donc de trouver le bon équilibre entre rentabilité et capacité."
+        "BM-REC-001 – Services récurrents / forfaits mensuels"
+      ]
     },
     {
       "id": "BM-SUB-001",
