@@ -389,7 +389,8 @@
           "studio yoga", "pilates", "soins", "rendez vous", "prise de rdv"
         ],
         "BM-FOOD-001": [
-          "cafe", "café", "bar", "restaurant", "resto", "brasserie", "cantine", "snack", "sandwicherie",
+          "cafe", "café", "bar", "restaurant", "resto", "brasserie", "cantine", "snack", "snacking",
+          "sandwich", "sandwichs", "sandwicherie", "kebab", "tacos", "burger", "pizzeria",
           "salon de the", "salon de thé", "coffee shop", "traiteur", "food truck", "dark kitchen", "ghost kitchen",
           "boulangerie", "patisserie", "pâtisserie", "chocolaterie", "glacier", "fromagerie", "epicerie fine",
           "épicerie fine", "plats prepares", "plats préparés", "vente a emporter", "vente à emporter",
@@ -683,7 +684,13 @@
           });
       }
 
-      catalogueSearch?.addEventListener("input", () => renderTemplateCatalogue(catalogueProducts));
+      catalogueSearch?.addEventListener("input", () => {
+        activeCatalogueFilter = "all";
+        catalogueFilterPills?.querySelectorAll(".filter-pill").forEach((pill) => {
+          pill.classList.toggle("active", pill.dataset.filter === "all");
+        });
+        renderTemplateCatalogue(catalogueProducts);
+      });
       catalogueFilterPills?.addEventListener("click", (event) => {
         const button = event.target.closest("button[data-filter]");
         if (!button) return;
