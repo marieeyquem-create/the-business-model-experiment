@@ -525,6 +525,136 @@
         ]
       };
 
+      const extraBusinessAliasesById = {
+        "BM-FOOD-001": [
+          "boucherie", "charcuterie", "poissonnerie", "primeur", "cremerie", "crèmerie", "cremier", "crémier",
+          "bar a salade", "bar à salade", "bar a jus", "bar à jus", "bar a vin", "bar à vin", "bar tapas",
+          "creperie", "crêperie", "sushi", "ramen", "saladerie", "rotisserie", "rôtisserie", "confiserie",
+          "cookies", "torréfacteur", "torrefacteur", "micro brasserie", "microbrasserie", "brasseur",
+          "cave a manger", "cave à manger", "epicerie vrac", "épicerie vrac", "vente de repas",
+          "plats cuisinés", "plats cuisines", "meal prep", "chef a domicile", "chef à domicile"
+        ],
+        "BM-RET-001": [
+          "boutique de chaussures", "chaussures", "bijouterie", "horlogerie", "maroquinerie", "parfumerie",
+          "cosmetiques", "cosmétiques", "decoration", "décoration", "ameublement", "brocante", "antiquaire",
+          "disquaire", "boutique sport", "materiel sport", "matériel sport", "magasin bio", "jardinerie",
+          "quincaillerie", "droguerie", "boutique cadeaux", "souvenirs", "galerie boutique", "pop up store"
+        ],
+        "BM-ECO-001": [
+          "site ecommerce", "site e-commerce", "marque d'accessoires", "marque alimentaire en ligne",
+          "vente directe consommateur", "direct to consumer", "d2c", "vente instagram", "tiktok shop",
+          "commande en ligne", "marketplace amazon", "boutique etsy", "produit numerique vendu en ligne",
+          "produit numérique vendu en ligne"
+        ],
+        "BM-MTO-001": [
+          "couturier", "couturiere", "couturière", "styliste", "artisan cuir", "sellier", "tapissier",
+          "imprimeur", "impression 3d", "serigraphie", "sérigraphie", "graveur", "illustrateur objets",
+          "atelier fabrication", "atelier de production", "fab lab", "prototype", "produit personnalise",
+          "produit personnalisé", "commande personnalisee", "commande personnalisée"
+        ],
+        "BM-RDV-001": [
+          "dentiste", "cabinet dentaire", "veterinaire", "vétérinaire", "toiletteur", "toilettage",
+          "tatoueur", "tatouage", "perceur", "piercing", "maquillage permanent", "laser", "epilation",
+          "épilation", "esthetique", "esthétique", "coach de vie", "coach nutrition", "consultation individuelle",
+          "seance individuelle", "séance individuelle", "cabinet liberal", "cabinet libéral"
+        ],
+        "BM-FOR-001": [
+          "professeur", "prof", "cours de langue", "cours anglais", "cours musique", "cours de musique",
+          "cours dessin", "cours cuisine", "education", "éducation", "tutorat", "soutien scolaire",
+          "preparation concours", "préparation concours", "stage formation", "atelier creatif", "atelier créatif"
+        ],
+        "BM-PRJ-001": [
+          "photographe mariage", "photographe", "videaste", "vidéaste", "architecte interieur",
+          "architecte intérieur", "paysagiste", "maitre d'oeuvre", "maître d'oeuvre", "consultant seo",
+          "consultant rh", "consultant marketing", "agence seo", "agence social media", "agence evenementielle",
+          "agence événementielle", "production audiovisuelle", "studio design"
+        ],
+        "BM-SRV-001": [
+          "home organiser", "conciergerie", "menage", "ménage", "nettoyage", "relooking", "personal shopper",
+          "diagnostic immobilier", "etat des lieux", "état des lieux", "audit energetique", "audit énergétique",
+          "bilan de competences", "bilan de compétences", "service a domicile", "service à domicile"
+        ],
+        "BM-REC-001": [
+          "secretaire externalisee", "secrétaire externalisée", "assistant virtuel", "assistante virtuelle",
+          "paie externalisee", "paie externalisée", "maintenance informatique", "infogerance", "infogérance",
+          "gestion reseaux sociaux", "gestion réseaux sociaux", "agence mensuelle", "service recurrent",
+          "service récurrent"
+        ],
+        "BM-SUB-001": [
+          "box mensuelle", "box beauté", "box beaute", "box alimentaire", "box vin", "box lecture",
+          "abonnement contenu", "abonnement produits", "abonnement service", "club abonnement",
+          "programme mensuel", "revue par abonnement"
+        ],
+        "BM-APP-001": [
+          "mobile app", "plateforme ia", "outil ia", "outil ai", "logiciel métier", "logiciel metier",
+          "plateforme collaborative", "extension chrome", "plugin", "outil productivite", "outil productivité",
+          "application b2b", "application b2c", "plateforme saas"
+        ],
+        "BM-MEM-001": [
+          "communauté d'entrepreneurs", "communaute entrepreneurs", "club de dirigeants", "club investisseurs",
+          "réseau professionnel", "reseau professionnel", "mastermind", "cercle", "communauté payante",
+          "communaute payante", "adhérents payants", "membres payants"
+        ],
+        "BM-ADV-001": [
+          "vente d'espaces publicitaires", "vente espaces publicitaires", "sponsoring evenement",
+          "sponsoring événement", "sponsor podcast", "sponsor newsletter", "annonceurs locaux",
+          "partenariat annonceur", "campagne sponsorisee", "campagne sponsorisée"
+        ],
+        "BM-AUD-001": [
+          "media rap", "média rap", "media musique", "média musique", "media local", "média local",
+          "journal en ligne", "creator economy", "chaine twitch", "chaîne twitch", "compte instagram",
+          "compte tiktok", "monetiser audience", "monétiser audience", "contenu video", "contenu vidéo"
+        ],
+        "BM-BRC-001": [
+          "agence contenu", "agence éditoriale", "agence editoriale", "studio podcast", "studio video",
+          "studio vidéo", "contenu pour label", "promotion artiste", "campagne influence marque",
+          "dossier sponsorise", "dossier sponsorisé"
+        ],
+        "BM-EDI-001": [
+          "editeur independant", "éditeur indépendant", "magazine papier", "revue papier", "roman",
+          "guide papier", "zine", "livret", "catalogue editorial", "catalogue éditorial"
+        ],
+        "BM-GRA-001": [
+          "association subvention", "projet subventionné", "projet subventionne", "fondations",
+          "financement fondation", "financement europe", "appel a manifestation", "appel à manifestation",
+          "ami", "dossier bailleur", "subvention fonctionnement"
+        ],
+        "BM-TEN-001": [
+          "répondre appel offre", "repondre appel offre", "marches publics", "marchés publics",
+          "commande publique", "appel d'offre public", "consultation publique", "contrat cadre",
+          "acheteur public", "collectivités", "collectivites"
+        ],
+        "BM-EVT-001": [
+          "organisateur evenement", "organisateur événement", "organisatrice evenement", "organisatrice événement",
+          "team building", "pop up", "foire", "marché créateurs", "marche createurs", "atelier public",
+          "rencontre", "networking", "afterwork", "reunion payante", "réunion payante"
+        ],
+        "BM-LOC-001": [
+          "location bureaux", "location cabinet", "location cuisine", "cuisine partagée", "cuisine partagee",
+          "location studio", "location équipement", "location equipement", "location vehicule",
+          "location véhicule", "escape game", "salle evenementielle", "salle événementielle"
+        ],
+        "BM-MKT-001": [
+          "plateforme freelance", "plateforme services", "plateforme artisans", "plateforme professeurs",
+          "plateforme réservation restaurant", "plateforme reservation restaurant", "plateforme rendez-vous",
+          "plateforme rdv", "annuaire professionnel", "mise en relation b2b"
+        ],
+        "BM-LEAD-001": [
+          "agence lead", "agence leads", "generation leads", "génération leads", "courtier leads",
+          "comparateur", "demande de devis", "qualification prospects", "rendez-vous commerciaux"
+        ],
+        "BM-LIC-001": [
+          "licence logiciel", "licence contenu", "licence méthode", "licence methode", "royalties musique",
+          "droits musicaux", "licence brevet", "licence technologie", "franchise de marque",
+          "certification partenaires"
+        ],
+        "BM-ASSO-001": [
+          "association environnement", "association educative", "association éducative", "association insertion",
+          "association artistique", "association de quartier", "club sportif", "lieu culturel associatif",
+          "collectif artistique", "projet associatif", "structure ess", "tiers-lieu associatif"
+        ]
+      };
+
       const searchStopWords = new Set([
         "je", "j", "ai", "suis", "nous", "on", "mon", "ma", "mes", "notre", "nos", "une", "un", "des",
         "de", "du", "d", "la", "le", "les", "l", "a", "au", "aux", "et", "ou", "pour", "avec", "sans",
@@ -566,12 +696,16 @@
           ...(product.tags || []),
           ...(product.business_models || []),
           ...(product.audience || []),
-          ...(productSearchAliasesById[product.id] || [])
+          ...(productSearchAliasesById[product.id] || []),
+          ...(extraBusinessAliasesById[product.id] || [])
         ].filter(Boolean).join(" "));
       }
 
       function productAliasSearchText(product) {
-        return normalizeSearchText((productSearchAliasesById[product.id] || []).join(" "));
+        return normalizeSearchText([
+          ...(productSearchAliasesById[product.id] || []),
+          ...(extraBusinessAliasesById[product.id] || [])
+        ].join(" "));
       }
 
       function productSearchScore(product, rawSearchTerm) {
