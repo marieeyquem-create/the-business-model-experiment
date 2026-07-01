@@ -2177,6 +2177,109 @@
       ]
     },
     {
+      "id": "BM-RDV-001",
+      "slug": "cabinet-activite-rendez-vous",
+      "category": "modèles unitaires",
+      "name": "BM-RDV-001 – Cabinet / activité sur rendez-vous",
+      "display_name": "Cabinet / activité sur rendez-vous",
+      "subtitle": "Le modèle financier des activités qui vendent des séances, consultations, soins ou rendez-vous.",
+      "short_description": "Pilotez rendez-vous, taux de remplissage, no-show, revenu par heure disponible, capacité praticien, point mort et trésorerie.",
+      "long_description": "Ce template modélise une activité dont la rentabilité dépend de créneaux de rendez-vous : cabinet de soins, thérapeute, esthétique, bien-être, conseil individuel, accompagnement court, diagnostic ou consultations. Vous paramétrez les offres de rendez-vous, les praticiens ou ressources, les volumes mensuels, les annulations, les coûts directs, les charges fixes et les délais d'encaissement. Le fichier calcule automatiquement le chiffre d'affaires, le taux de remplissage, le revenu par heure disponible, le point mort, le profit et la trésorerie sur 24 mois.",
+      "business_model_description": "Dans une activité sur rendez-vous, le moteur économique est la capacité de créneaux disponibles. Le chiffre d'affaires dépend du nombre de rendez-vous, du prix moyen, de la durée des séances et du taux de rendez-vous réellement réalisés. Une heure disponible mais non vendue est généralement perdue ; une annulation ou un no-show peut consommer de la capacité sans générer le revenu attendu. Les KPI clés sont le taux de remplissage, les rendez-vous réalisés, le revenu par heure disponible, le taux d'annulation/no-show, le point mort en rendez-vous, le profit opérationnel et la trésorerie.",
+      "audience": [
+        "Cabinet de soins, thérapeute, psychologue, coach, praticien bien-être ou esthétique",
+        "Activité de consultations, diagnostics, séances individuelles ou rendez-vous courts",
+        "Cabinet avec plusieurs praticiens, intervenants ou salles disponibles",
+        "Activité où la capacité de créneaux et le taux de remplissage déterminent la rentabilité"
+      ],
+      "features": [
+        "Offres de rendez-vous paramétrables",
+        "Praticiens ou ressources avec capacité mensuelle",
+        "Prévisions de rendez-vous mois par mois",
+        "No-show et annulations non facturées",
+        "Durée des séances et heures consommées",
+        "Revenu par heure disponible",
+        "Taux de remplissage de la capacité",
+        "Coûts directs par rendez-vous",
+        "Charges fixes de cabinet",
+        "Point mort en chiffre d'affaires et rendez-vous",
+        "Dashboard métier avec explication des KPI",
+        "Sortie standard compatible avec les consolidations Baradozig"
+      ],
+      "business_models": [
+        "cabinet",
+        "rendez-vous",
+        "consultations",
+        "soins",
+        "bien-être",
+        "esthétique",
+        "coaching individuel",
+        "activité à créneaux"
+      ],
+      "files": [
+        "template Excel",
+        "guide PDF",
+        "mode d'emploi détaillé",
+        "fiche produit",
+        "données produit JSON"
+      ],
+      "delivery_filename": "BM-RDV-001-cabinet-activite-rendez-vous.xlsx",
+      "price": 49,
+      "currency": "EUR",
+      "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-RDV-001",
+      "guide_url": "../templates.html#guide-title",
+      "limitations": [
+        "Vous vendez surtout des projets longs sur devis : utilisez plutôt Missions sur devis / projets sur mesure.",
+        "Vous vendez des forfaits mensuels avec clients actifs et temps consommé : utilisez plutôt Services récurrents / forfaits mensuels.",
+        "Vous louez surtout des salles ou équipements sans prestation humaine : utilisez plutôt Location / mise à disposition d'actifs."
+      ],
+      "tags": [
+        "cabinet",
+        "rendez-vous",
+        "créneaux",
+        "consultations",
+        "no-show",
+        "taux de remplissage",
+        "capacité",
+        "point mort"
+      ],
+      "difficulty": "intermédiaire",
+      "version": "1.0.0",
+      "date": "2026-07-01",
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-07-01",
+          "changes": [
+            "Création du template Cabinet / activité sur rendez-vous au format Baradozig Framework v2",
+            "Ajout des offres de rendez-vous, praticiens, prévisions RDV et capacité",
+            "Ajout du no-show, taux de remplissage, revenu par heure disponible et point mort",
+            "Création d'un dashboard métier avec explication des KPI"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Quelle différence avec les services standardisés ?",
+          "answer": "Ici, la contrainte centrale est le calendrier de rendez-vous : durée des séances, capacité disponible, remplissage, annulations et no-show. Les services standardisés suivent plutôt des offres ou missions répétables avec un temps de production plus large."
+        },
+        {
+          "question": "Le template prend-il en compte les no-shows ?",
+          "answer": "Oui. Vous pouvez saisir un taux de rendez-vous non réalisés ou non facturés pour éviter de surestimer le chiffre d'affaires."
+        },
+        {
+          "question": "Puis-je suivre plusieurs praticiens ?",
+          "answer": "Oui. La feuille Praticiens ressources permet de saisir plusieurs praticiens, intervenants ou ressources avec leur capacité mensuelle et leur coût."
+        }
+      ],
+      "screenshots": [],
+      "related_products": [
+        "BM-SRV-001 – Offres de service standardisées",
+        "BM-REC-001 – Services récurrents / forfaits mensuels",
+        "BM-LOC-001 – Location / mise à disposition d'actifs"
+      ]
+    },
+    {
       "id": "BM-REC-001",
       "slug": "services-recurrents-forfaits-mensuels",
       "category": "modèles unitaires",
