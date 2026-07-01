@@ -132,7 +132,7 @@
         <div class="catalogue-tools" aria-label="Filtres de la bibliothèque">
           <label class="catalogue-search" for="template-search">
             Rechercher un template
-            <input id="template-search" type="search" placeholder="Exemple : SaaS, stock, rendez-vous, subvention, média..." />
+            <input id="template-search" type="search" placeholder="Tapez votre activité : café, kiné, marque de bijoux, association culturelle, SaaS..." />
           </label>
           <div class="filter-pills" id="template-filter-pills">
             <button type="button" class="filter-pill active" data-filter="all">Tous</button>
@@ -382,38 +382,160 @@
           "cabinet medical", "cabinet médical", "cabinet paramedical", "cabinet paramédical",
           "infirmier", "infirmiere", "infirmière", "sage femme", "dieticien", "diététicien",
           "nutritionniste", "naturopathe", "sophrologue", "estheticienne", "esthéticienne",
-          "coiffeur", "salon de coiffure", "massage", "masseur", "soins", "rendez vous", "prise de rdv"
+          "coiffeur", "salon de coiffure", "barbier", "onglerie", "prothesiste ongulaire", "prothésiste ongulaire",
+          "spa", "institut de beaute", "institut de beauté", "massage", "masseur", "reflexologue", "réflexologue",
+          "podologue", "orthophoniste", "ergotherapeute", "ergothérapeute", "psychomotricien", "psychiatre",
+          "coach sportif", "personal trainer", "pilates individuel", "cours particulier", "yoga individuel",
+          "studio yoga", "pilates", "soins", "rendez vous", "prise de rdv"
         ],
-        "BM-FOOD-001": ["restaurant", "traiteur", "food truck", "dark kitchen", "coffee shop", "boulangerie", "patisserie", "pâtisserie", "plats prepares", "plats préparés"],
-        "BM-RET-001": ["commerce", "magasin", "concept store", "boutique", "retail", "librairie", "epicerie", "épicerie"],
-        "BM-ECO-001": ["shopify", "woocommerce", "amazon", "etsy", "vente en ligne", "dnvb", "marque produit"],
-        "BM-MTO-001": ["artisan", "artisanat", "createur", "créateur", "bijoux", "meuble", "textile", "cosmetique", "cosmétique", "sur mesure", "precommande", "précommande"],
-        "BM-FOR-001": ["formateur", "formatrice", "organisme de formation", "opco", "cours", "atelier", "masterclass", "cohorte", "programme"],
-        "BM-PRJ-001": ["consultant", "consultante", "freelance", "agence", "bureau d'etude", "bureau d'étude", "devis", "mission client"],
-        "BM-SRV-001": ["pack", "offre packagée", "offre packagee", "service standard", "prestation standard", "forfait"],
-        "BM-REC-001": ["raf externalise", "raf externalisé", "daf externalise", "daf externalisé", "rh externalise", "rh externalisé", "office manager", "maintenance mensuelle"],
-        "BM-SUB-001": ["box", "membership", "club payant", "abonnement mensuel", "abonnement annuel", "plan payant"],
-        "BM-APP-001": ["saas", "logiciel", "application", "app", "plateforme digitale", "outil en ligne", "freemium"],
-        "BM-MEM-001": ["communaute", "communauté", "club", "espace membre", "adhesion", "adhésion", "membres"],
-        "BM-ADV-001": ["annonceur", "regie", "régie", "pub", "sponsor", "sponsoring", "partenariat média", "cpm", "cpc"],
-        "BM-AUD-001": ["youtube", "instagram", "tiktok", "twitch", "podcast", "newsletter", "createur de contenu", "créateur de contenu", "influenceur", "influenceuse"],
-        "BM-BRC-001": ["contenu de marque", "studio de contenu", "article sponsorise", "article sponsorisé", "video de marque", "vidéo de marque", "podcast de marque"],
-        "BM-EDI-001": ["editeur", "éditeur", "edition", "édition", "livre", "bd", "revue", "magazine", "fanzine", "autoedition", "autoédition"],
-        "BM-GRA-001": ["subvention", "fondation", "bailleur", "appel a projets", "appel à projets", "financement public", "cofinancement"],
-        "BM-TEN-001": ["marche public", "marché public", "appel d'offres", "collectivite", "collectivité", "institution", "grand compte", "ao"],
-        "BM-EVT-001": ["conference", "conférence", "seminaire", "séminaire", "retraite", "salon", "billetterie", "festival"],
-        "BM-LOC-001": ["location salle", "coworking", "studio", "materiel", "matériel", "equipement", "équipement", "privatisation"],
-        "BM-MKT-001": ["place de marche", "place de marché", "mise en relation", "plateforme commission", "vendeurs", "acheteurs"],
-        "BM-LEAD-001": ["prospection", "leads", "rdv qualifie", "rdv qualifié", "apport de prospects", "contact qualifie", "contact qualifié"],
-        "BM-LIC-001": ["royalties", "droits auteur", "droits d'auteur", "licence de marque", "redevance", "franchise"],
-        "BM-ASSO-001": ["association", "asso", "collectif", "tiers lieu", "tiers-lieu", "cotisation", "dons", "adhérents"]
+        "BM-FOOD-001": [
+          "cafe", "café", "bar", "restaurant", "resto", "brasserie", "cantine", "snack", "sandwicherie",
+          "salon de the", "salon de thé", "coffee shop", "traiteur", "food truck", "dark kitchen", "ghost kitchen",
+          "boulangerie", "patisserie", "pâtisserie", "chocolaterie", "glacier", "fromagerie", "epicerie fine",
+          "épicerie fine", "plats prepares", "plats préparés", "vente a emporter", "vente à emporter",
+          "livraison repas", "click and collect alimentaire", "cuisine", "restauration", "produits alimentaires"
+        ],
+        "BM-RET-001": [
+          "commerce", "magasin", "concept store", "boutique", "retail", "librairie", "epicerie", "épicerie",
+          "fleuriste", "opticien", "caviste", "friperie", "depot vente", "dépôt vente", "boutique vetements",
+          "boutique vêtements", "boutique deco", "boutique déco", "boutique enfant", "jouets", "animalerie",
+          "parapharmacie", "mercerie", "papeterie", "showroom", "point de vente"
+        ],
+        "BM-ECO-001": [
+          "shopify", "woocommerce", "prestashop", "amazon", "etsy", "vente en ligne", "boutique en ligne",
+          "e shop", "eshop", "dnvb", "marque produit", "marque de vetements", "marque de vêtements",
+          "marque cosmetique", "marque cosmétique", "marque bijoux", "marque de bijoux", "dropshipping",
+          "box produit", "produits physiques", "vente internet"
+        ],
+        "BM-MTO-001": [
+          "artisan", "artisanat", "createur", "créateur", "bijoux", "joaillerie", "ceramique", "céramique",
+          "meuble", "menuiserie", "ébéniste", "ebeniste", "textile", "couture", "upcycling", "cosmetique",
+          "cosmétique", "savon", "savonnerie", "bougie", "marque de bijoux", "objet personnalise", "objet personnalisé",
+          "sur mesure", "precommande", "précommande", "production a la commande", "production à la commande",
+          "petite serie", "petite série", "fait main", "made to order"
+        ],
+        "BM-FOR-001": [
+          "formateur", "formatrice", "organisme de formation", "opco", "cours", "atelier", "masterclass",
+          "cohorte", "programme", "bootcamp", "formation en ligne", "formation presentiel", "formation présentiel",
+          "elearning", "e-learning", "ecole", "école", "academie", "académie", "mentorat", "coaching groupe",
+          "studio yoga", "yoga", "pilates", "cours collectifs",
+          "accompagnement collectif", "certification", "cpf"
+        ],
+        "BM-PRJ-001": [
+          "consultant", "consultante", "freelance", "agence", "bureau d'etude", "bureau d'étude", "devis",
+          "mission client", "architecte", "decorateur", "décorateur", "designer", "developpeur freelance",
+          "développeur freelance", "agence web", "agence communication", "studio graphique", "conseil",
+          "audit", "strategie", "stratégie", "projet client", "chef de projet"
+        ],
+        "BM-SRV-001": [
+          "pack", "offre packagée", "offre packagee", "service standard", "prestation standard", "forfait",
+          "audit express", "diagnostic", "bilan", "offre fixe", "service en ligne", "template service",
+          "prestation repetable", "prestation répétable"
+        ],
+        "BM-REC-001": [
+          "raf externalise", "raf externalisé", "daf externalise", "daf externalisé", "rh externalise",
+          "rh externalisé", "office manager", "maintenance mensuelle", "community manager mensuel",
+          "support mensuel", "assistance mensuelle", "retainer", "abonnement de service", "forfait mensuel",
+          "gestion administrative", "comptabilite externalisee", "comptabilité externalisée"
+        ],
+        "BM-SUB-001": [
+          "box", "membership", "club payant", "abonnement mensuel", "abonnement annuel", "plan payant",
+          "newsletter payante", "media payant", "média payant", "subscription", "adhesion mensuelle",
+          "adhésion mensuelle", "service par abonnement"
+        ],
+        "BM-APP-001": [
+          "saas", "logiciel", "application", "app", "plateforme digitale", "outil en ligne", "freemium",
+          "logiciel en ligne", "application mobile", "web app", "plateforme web", "outil digital",
+          "ia", "ai", "api", "crm", "erp", "market intelligence", "produit digital"
+        ],
+        "BM-MEM-001": [
+          "communaute", "communauté", "club", "espace membre", "adhesion", "adhésion", "membres",
+          "reseau", "réseau", "collectif payant", "club entrepreneurs", "club business", "discord payant",
+          "slack payant", "membership communautaire"
+        ],
+        "BM-ADV-001": [
+          "annonceur", "regie", "régie", "pub", "publicite", "publicité", "sponsor", "sponsoring",
+          "partenariat média", "cpm", "cpc", "media kit", "régie pub", "regie pub", "banniere",
+          "bannière", "newsletter sponsorisee", "newsletter sponsorisée", "espace publicitaire"
+        ],
+        "BM-AUD-001": [
+          "youtube", "instagram", "tiktok", "twitch", "podcast", "newsletter", "createur de contenu",
+          "créateur de contenu", "influenceur", "influenceuse", "streamer", "blogueur", "blogueuse",
+          "media social", "média social", "chaine youtube", "chaîne youtube", "reels", "shorts",
+          "substack", "patreon", "tips", "donations", "abonnés", "followers"
+        ],
+        "BM-BRC-001": [
+          "contenu de marque", "studio de contenu", "article sponsorise", "article sponsorisé",
+          "video de marque", "vidéo de marque", "podcast de marque", "brand content", "campagne editoriale",
+          "campagne éditoriale", "native advertising", "contenu sponsorise", "contenu sponsorisé",
+          "production contenu pour marque", "label", "maison de disque", "attaché de presse"
+        ],
+        "BM-EDI-001": [
+          "editeur", "éditeur", "edition", "édition", "livre", "bd", "bande dessinee", "bande dessinée",
+          "revue", "magazine", "fanzine", "autoedition", "autoédition", "maison edition", "maison d'édition",
+          "publication", "journal", "mook", "beau livre", "auteur editeur", "auteur éditeur"
+        ],
+        "BM-GRA-001": [
+          "subvention", "fondation", "bailleur", "appel a projets", "appel à projets", "financement public",
+          "cofinancement", "mecenat", "mécénat", "dossier financement", "aap", "programme europeen",
+          "programme européen", "financeur", "financement projet", "ong", "impact social"
+        ],
+        "BM-TEN-001": [
+          "marche public", "marché public", "appel d'offres", "collectivite", "collectivité", "institution",
+          "grand compte", "ao", "consultation", "reponse appel offre", "réponse appel offre", "mairie",
+          "departement", "département", "region", "région", "administration", "chu", "hopital", "hôpital"
+        ],
+        "BM-EVT-001": [
+          "conference", "conférence", "seminaire", "séminaire", "retraite", "salon", "billetterie",
+          "festival", "evenement", "événement", "event", "atelier ponctuel", "journee", "journée",
+          "webinaire", "webinar", "concert", "spectacle", "expo", "exposition", "masterclass live"
+        ],
+        "BM-LOC-001": [
+          "location salle", "coworking", "studio", "materiel", "matériel", "equipement", "équipement",
+          "privatisation", "salle de sport", "studio photo", "studio video", "studio vidéo", "lieu",
+          "tiers lieu", "tiers-lieu", "espace", "salle", "vehicule", "véhicule", "machine", "outil partagé"
+        ],
+        "BM-MKT-001": [
+          "place de marche", "place de marché", "mise en relation", "plateforme commission", "vendeurs",
+          "acheteurs", "marketplace", "plateforme de reservation", "plateforme de réservation", "annuaire payant",
+          "commission transaction", "intermediation", "intermédiation"
+        ],
+        "BM-LEAD-001": [
+          "prospection", "leads", "rdv qualifie", "rdv qualifié", "apport de prospects", "contact qualifie",
+          "contact qualifié", "generation de prospects", "génération de prospects", "prise de rendez-vous",
+          "prospection b2b", "apporteur affaires", "apporteur d'affaires"
+        ],
+        "BM-LIC-001": [
+          "royalties", "droits auteur", "droits d'auteur", "licence de marque", "redevance", "franchise",
+          "propriete intellectuelle", "propriété intellectuelle", "droits exploitation", "droits d'exploitation",
+          "brevet", "marque", "methode", "méthode", "certification sous licence"
+        ],
+        "BM-ASSO-001": [
+          "association", "asso", "collectif", "tiers lieu", "tiers-lieu", "cotisation", "dons", "adhérents",
+          "adhesion", "adhésion", "benevoles", "bénévoles", "ess", "structure hybride", "lieu associatif",
+          "association culturelle", "association sportive", "association sociale", "ong locale"
+        ]
       };
+
+      const searchStopWords = new Set([
+        "je", "j", "ai", "suis", "nous", "on", "mon", "ma", "mes", "notre", "nos", "une", "un", "des",
+        "de", "du", "d", "la", "le", "les", "l", "a", "au", "aux", "et", "ou", "pour", "avec", "sans",
+        "dans", "sur", "qui", "que", "quoi", "comment", "activité", "activite", "business", "entreprise",
+        "projet", "vente", "vends", "vend", "faire", "fais", "lance", "creer", "créer", "ouvrir",
+        "ouvrirai", "offre", "offres"
+      ]);
 
       function normalizeSearchText(value) {
         return String(value || "")
           .normalize("NFD")
           .replace(/[\u0300-\u036f]/g, "")
           .toLowerCase();
+      }
+
+      function searchTokens(value) {
+        return normalizeSearchText(value)
+          .split(/[^a-z0-9]+/)
+          .filter((token) => token.length >= 3 && !searchStopWords.has(token));
       }
 
       function formatProductPrice(product) {
@@ -440,17 +562,44 @@
         ].filter(Boolean).join(" "));
       }
 
+      function productAliasSearchText(product) {
+        return normalizeSearchText((productSearchAliasesById[product.id] || []).join(" "));
+      }
+
+      function productSearchScore(product, rawSearchTerm) {
+        const searchTerm = normalizeSearchText(rawSearchTerm.trim());
+        if (!searchTerm) return 1;
+
+        const tokens = searchTokens(rawSearchTerm);
+        const searchText = productSearchText(product);
+        const aliasText = productAliasSearchText(product);
+        let score = 0;
+
+        if (aliasText.includes(searchTerm)) score += 80;
+        else if (searchText.includes(searchTerm)) score += 45;
+
+        tokens.forEach((token) => {
+          if (aliasText.includes(token)) score += 14;
+          else if (searchText.includes(token)) score += 3;
+        });
+
+        const minimumScore = tokens.length > 1 ? 8 : 3;
+        return score >= minimumScore ? score : 0;
+      }
+
       function productMatchesFilter(product) {
-        const searchTerm = normalizeSearchText((catalogueSearch?.value || "").trim());
         const groups = productGroupsById[product.id] || [];
         const matchesGroup = activeCatalogueFilter === "all" || groups.includes(activeCatalogueFilter);
-        const matchesSearch = !searchTerm || productSearchText(product).includes(searchTerm);
+        const matchesSearch = productSearchScore(product, catalogueSearch?.value || "") > 0;
         return matchesGroup && matchesSearch;
       }
 
       function renderTemplateCatalogue(products) {
         if (!catalogueGrid) return;
-        const filteredProducts = products.filter(productMatchesFilter);
+        const rawSearchTerm = catalogueSearch?.value || "";
+        const filteredProducts = products
+          .filter(productMatchesFilter)
+          .sort((a, b) => productSearchScore(b, rawSearchTerm) - productSearchScore(a, rawSearchTerm));
         catalogueGrid.replaceChildren();
         if (catalogueCount) {
           const countLabel = filteredProducts.length === 1 ? "1 template affiché" : `${filteredProducts.length} templates affichés`;
