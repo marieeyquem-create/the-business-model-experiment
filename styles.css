@@ -656,6 +656,106 @@ a {
   width: fit-content;
 }
 
+.orientation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.orientation-card {
+  display: grid;
+  gap: 6px;
+  min-height: 118px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 12px 30px rgba(40, 28, 70, 0.06);
+}
+
+.orientation-card strong {
+  color: var(--text);
+  font-size: 18px;
+}
+
+.orientation-card span {
+  color: var(--muted);
+}
+
+.orientation-card:hover {
+  border-color: rgba(124, 58, 237, 0.45);
+  box-shadow: var(--shadow);
+}
+
+.catalogue-tools {
+  display: grid;
+  gap: 14px;
+  margin: 0 0 24px;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 12px 30px rgba(40, 28, 70, 0.06);
+}
+
+.catalogue-search {
+  display: grid;
+  gap: 8px;
+  color: var(--text);
+  font-weight: 850;
+}
+
+.catalogue-search input {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0 14px;
+  color: var(--text);
+  background: var(--surface-2);
+  font: inherit;
+  font-weight: 500;
+}
+
+.catalogue-search input:focus {
+  outline: 2px solid rgba(124, 58, 237, 0.22);
+  border-color: var(--accent);
+}
+
+.filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-pill {
+  min-height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0 13px;
+  color: var(--muted);
+  background: var(--surface-2);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.filter-pill.active,
+.filter-pill:hover {
+  color: white;
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+.catalogue-count {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 800;
+}
+
 .featured {
   border-color: rgba(124, 58, 237, 0.45);
   box-shadow: var(--shadow);
@@ -821,7 +921,8 @@ a {
   }
 
   .cards.three,
-  .cards.four {
+  .cards.four,
+  .orientation-grid {
     grid-template-columns: 1fr;
   }
 

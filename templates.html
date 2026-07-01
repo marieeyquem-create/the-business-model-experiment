@@ -109,11 +109,42 @@
       <section class="section" id="catalogue-templates">
         <div class="section-heading">
           <p class="eyebrow">Bibliothèque Baradozig</p>
-          <h2>Découvrez les templates disponibles</h2>
+          <h2>Trouvez rapidement le bon template</h2>
           <p class="wide-text">
-            Chaque fiche présente le modèle couvert, les fonctionnalités, le niveau de difficulté
-            et la version disponible.
+            Si vous savez déjà ce que vous cherchez, filtrez la bibliothèque et ouvrez directement
+            la fiche du template. Si votre activité mélange plusieurs sources de revenus, utilisez plutôt le guide.
           </p>
+        </div>
+        <div class="orientation-grid">
+          <a class="orientation-card" href="#template-search">
+            <strong>Je sais ce que je veux</strong>
+            <span>Je cherche un template précis et je veux aller vite.</span>
+          </a>
+          <a class="orientation-card" href="#guide-title">
+            <strong>J'ai plusieurs revenus</strong>
+            <span>Je veux savoir quels templates combiner.</span>
+          </a>
+          <a class="orientation-card" href="coaching.html">
+            <strong>J'ai besoin d'aide</strong>
+            <span>Je veux être guidé dans le choix, le remplissage ou l'analyse.</span>
+          </a>
+        </div>
+        <div class="catalogue-tools" aria-label="Filtres de la bibliothèque">
+          <label class="catalogue-search" for="template-search">
+            Rechercher un template
+            <input id="template-search" type="search" placeholder="Exemple : SaaS, stock, rendez-vous, subvention, média..." />
+          </label>
+          <div class="filter-pills" id="template-filter-pills">
+            <button type="button" class="filter-pill active" data-filter="all">Tous</button>
+            <button type="button" class="filter-pill" data-filter="services">Services, temps et projets</button>
+            <button type="button" class="filter-pill" data-filter="products">Produits, stock et commerce</button>
+            <button type="button" class="filter-pill" data-filter="recurring">Abonnements et revenus récurrents</button>
+            <button type="button" class="filter-pill" data-filter="media">Média, audience et contenus</button>
+            <button type="button" class="filter-pill" data-filter="platforms">Plateformes et commissions</button>
+            <button type="button" class="filter-pill" data-filter="projects">Financements et appels d'offres</button>
+            <button type="button" class="filter-pill" data-filter="places">Lieux, événements et rendez-vous</button>
+          </div>
+          <p class="catalogue-count" id="template-catalogue-count"></p>
         </div>
         <div class="cards three product-cards" id="template-catalogue-grid">
           <p class="catalogue-status">Chargement de la bibliothèque...</p>
@@ -141,12 +172,20 @@
               <legend>Comment votre activité gagne de l'argent ?</legend>
               <p class="field-warning" id="model-warning" hidden>Pour finaliser votre recommandation, cochez au moins une source de revenus ci-dessous.</p>
               <label><input type="checkbox" name="model" value="abonnement" /> Des clients paient chaque mois ou chaque année</label>
-              <label><input type="checkbox" name="model" value="prestation" /> Vous vendez du temps, des missions ou un accompagnement</label>
+              <label><input type="checkbox" name="model" value="prestation" /> Vous vendez des missions sur devis ou des projets sur mesure</label>
+              <label><input type="checkbox" name="model" value="standardService" /> Vous vendez des offres de service répétables : packs, forfaits, prestations standardisées</label>
               <label><input type="checkbox" name="model" value="recurrentService" /> Vous vendez un forfait régulier, sans que ce soit un vrai abonnement</label>
+              <label><input type="checkbox" name="model" value="rendezvous" /> Vous vendez des rendez-vous, séances, consultations ou soins</label>
               <label><input type="checkbox" name="model" value="ecommerce" /> Vous vendez des produits</label>
+              <label><input type="checkbox" name="model" value="retail" /> Vous vendez dans une boutique physique</label>
+              <label><input type="checkbox" name="model" value="food" /> Vous vendez des produits alimentaires, sur place, à emporter ou en livraison</label>
+              <label><input type="checkbox" name="model" value="madeToOrder" /> Vous fabriquez ou produisez après commande</label>
               <label><input type="checkbox" name="model" value="usage" /> Les clients paient selon ce qu'ils consomment ou utilisent</label>
               <label><input type="checkbox" name="model" value="formation" /> Vous vendez des formations, ateliers ou séances de coaching</label>
+              <label><input type="checkbox" name="model" value="location" /> Vous louez ou mettez à disposition un lieu, du matériel ou un actif</label>
               <label><input type="checkbox" name="model" value="pipeline" /> Vous répondez à des appels d'offres ou demandez des financements</label>
+              <label><input type="checkbox" name="model" value="association" /> Vous êtes une association ou une structure avec plusieurs types de revenus</label>
+              <label><input type="checkbox" name="model" value="edition" /> Vous publiez des revues, livres, BD, magazines ou fanzines</label>
               <label><input type="checkbox" name="model" value="marketplace" /> Vous touchez une commission sur des ventes ou mises en relation</label>
               <label><input type="checkbox" name="model" value="licence" /> Vous faites payer le droit d'utiliser quelque chose : méthode, outil, contenu, marque...</label>
               <label><input type="checkbox" name="model" value="leadgen" /> Vous êtes payé quand vous apportez des prospects ou contacts qualifiés</label>
@@ -271,15 +310,86 @@
     <script>
 
       const catalogueGrid = document.querySelector("#template-catalogue-grid");
+      const catalogueSearch = document.querySelector("#template-search");
+      const catalogueCount = document.querySelector("#template-catalogue-count");
+      const catalogueFilterPills = document.querySelector("#template-filter-pills");
+      let catalogueProducts = [];
+      let activeCatalogueFilter = "all";
+
+      const productGroupsById = {
+        "BM-SRV-001": ["services"],
+        "BM-PRJ-001": ["services"],
+        "BM-REC-001": ["services", "recurring"],
+        "BM-FOR-001": ["services", "places"],
+        "BM-LEAD-001": ["services", "platforms"],
+        "BM-RDV-001": ["services", "places"],
+        "BM-ECO-001": ["products"],
+        "BM-RET-001": ["products", "places"],
+        "BM-FOOD-001": ["products", "places"],
+        "BM-MTO-001": ["products"],
+        "BM-EDI-001": ["products", "media"],
+        "BM-SUB-001": ["recurring"],
+        "BM-APP-001": ["recurring", "platforms"],
+        "BM-MEM-001": ["recurring"],
+        "BM-ADV-001": ["media"],
+        "BM-AUD-001": ["media"],
+        "BM-BRC-001": ["media", "services"],
+        "BM-MKT-001": ["platforms"],
+        "BM-LIC-001": ["platforms", "media"],
+        "BM-GRA-001": ["projects"],
+        "BM-TEN-001": ["projects", "services"],
+        "BM-ASSO-001": ["projects", "places", "recurring"],
+        "BM-EVT-001": ["places"],
+        "BM-LOC-001": ["places"]
+      };
 
       function formatProductPrice(product) {
         return product.price == null ? "Sur demande" : `${product.price} €`;
       }
 
+      function displayProductName(product) {
+        return (product.display_name || product.name || "").replace(/^BM-[A-Z]+-\d+\s*[–-]\s*/, "");
+      }
+
+      function productSearchText(product) {
+        return [
+          product.id,
+          product.slug,
+          product.name,
+          product.display_name,
+          product.subtitle,
+          product.short_description,
+          product.long_description,
+          ...(product.tags || []),
+          ...(product.business_models || []),
+          ...(product.audience || [])
+        ].filter(Boolean).join(" ").toLowerCase();
+      }
+
+      function productMatchesFilter(product) {
+        const searchTerm = (catalogueSearch?.value || "").trim().toLowerCase();
+        const groups = productGroupsById[product.id] || [];
+        const matchesGroup = activeCatalogueFilter === "all" || groups.includes(activeCatalogueFilter);
+        const matchesSearch = !searchTerm || productSearchText(product).includes(searchTerm);
+        return matchesGroup && matchesSearch;
+      }
+
       function renderTemplateCatalogue(products) {
         if (!catalogueGrid) return;
+        const filteredProducts = products.filter(productMatchesFilter);
         catalogueGrid.replaceChildren();
-        products.forEach((product) => {
+        if (catalogueCount) {
+          const countLabel = filteredProducts.length === 1 ? "1 template affiché" : `${filteredProducts.length} templates affichés`;
+          catalogueCount.textContent = `${countLabel} sur ${products.length}`;
+        }
+        if (filteredProducts.length === 0) {
+          const empty = document.createElement("p");
+          empty.className = "catalogue-status";
+          empty.textContent = "Aucun template ne correspond à ce filtre. Essayez un autre mot-clé ou utilisez le guide de choix.";
+          catalogueGrid.appendChild(empty);
+          return;
+        }
+        filteredProducts.forEach((product) => {
           const article = document.createElement("article");
           article.className = "card product catalogue-product";
 
@@ -288,7 +398,7 @@
           code.textContent = `${product.id} · version ${product.version}`;
 
           const title = document.createElement("h3");
-          title.textContent = product.name.replace(/^BM-[A-Z]+-\d+\s*[–-]\s*/, "");
+          title.textContent = displayProductName(product);
 
           const subtitle = document.createElement("p");
           subtitle.textContent = product.short_description;
@@ -333,12 +443,26 @@
             if (!response.ok) throw new Error("Catalogue indisponible");
             return response.json();
           })
-          .then((catalogue) => renderTemplateCatalogue(catalogue.templates || []))
+          .then((catalogue) => {
+            catalogueProducts = catalogue.templates || [];
+            renderTemplateCatalogue(catalogueProducts);
+          })
           .catch(() => {
             catalogueGrid.innerHTML =
               '<p class="catalogue-status">La bibliothèque sera bientôt disponible.</p>';
           });
       }
+
+      catalogueSearch?.addEventListener("input", () => renderTemplateCatalogue(catalogueProducts));
+      catalogueFilterPills?.addEventListener("click", (event) => {
+        const button = event.target.closest("button[data-filter]");
+        if (!button) return;
+        activeCatalogueFilter = button.dataset.filter;
+        catalogueFilterPills.querySelectorAll(".filter-pill").forEach((pill) => {
+          pill.classList.toggle("active", pill === button);
+        });
+        renderTemplateCatalogue(catalogueProducts);
+      });
 
       const guideForm = document.querySelector("#template-guide-form");
       const resultTitle = document.querySelector("#guide-result-title");
@@ -369,23 +493,31 @@
       const recommendationWebhookUrl = "https://hook.eu1.make.com/bwopmp4cu8wesc5xrp2dz0vvla2dyhmr";
 
       const modelLabels = {
-        abonnement: "Template abonnement simple",
-        prestation: "Template prestation de service",
-        recurrentService: "Template prestation récurrente / forfait",
-        ecommerce: "Template e-commerce / vente de produit",
-        usage: "Template paiement à l'usage ou à la consommation",
-        formation: "Template formation / coaching",
-        pipeline: "Template appels d'offres / subventions",
-        marketplace: "Template marketplace / commission",
-        licence: "Template licence / redevance",
-        leadgen: "Template lead generation",
-        affiliation: "Template affiliation",
-        advertising: "Template publicité / sponsoring",
-        audienceMonetization: "Template monétisation d'audience multi-plateformes",
-        brandContent: "Template brand content multi-projets",
-        event: "Template événementiel",
-        freemium: "Template gratuit puis payant",
-        productMaintenance: "Template produit + maintenance ou suivi",
+        abonnement: "Abonnements multi-offres",
+        prestation: "Missions sur devis / projets sur mesure",
+        standardService: "Offres de service standardisées",
+        recurrentService: "Services récurrents / forfaits mensuels",
+        rendezvous: "Cabinet / activité sur rendez-vous",
+        ecommerce: "E-commerce avec plusieurs produits",
+        retail: "Boutique physique multi-produits",
+        food: "Vente alimentaire multi-canaux",
+        madeToOrder: "Production à la commande / fabrication sur mesure",
+        usage: "Produit digital / application SaaS",
+        formation: "Formation et accompagnements",
+        location: "Location / mise à disposition d'actifs",
+        pipeline: "Financements, appels à projets ou appels d'offres",
+        association: "Association / structure à revenus mixtes",
+        edition: "Édition indépendante",
+        marketplace: "Marketplace multi-catégories",
+        licence: "Licences et redevances multi-contrats",
+        leadgen: "Lead generation multi-offres",
+        affiliation: "Marketplace, lead generation ou licences selon le cas",
+        advertising: "Publicité et sponsoring multi-formats",
+        audienceMonetization: "Monétisation d'audience multi-plateformes",
+        brandContent: "Brand content multi-projets",
+        event: "Événementiel multi-événements",
+        freemium: "Produit digital / application SaaS ou communauté payante",
+        productMaintenance: "Produit digital / application SaaS ou services récurrents",
         unknown: "Demande à qualifier avec vous"
       };
 
@@ -452,13 +584,21 @@
         const models = [];
         const complexity = [];
 
-        if (includesAny(text, ["abonnement", "abonné", "abonnés", "mensuel", "annuel", "récurrent", "saas", "membership"])) models.push("abonnement");
+        if (includesAny(text, ["abonnement", "abonné", "abonnés", "mensuel", "annuel", "membership"])) models.push("abonnement");
         if (includesAny(text, ["prestation", "mission", "service", "consulting", "accompagnement", "freelance"])) models.push("prestation");
+        if (includesAny(text, ["pack", "packs", "offre standard", "offres standard", "offre répétable", "offres répétables", "forfait standard"])) models.push("standardService");
         if (includesAny(text, ["forfait", "régulier", "récurrent mais", "contrat mensuel"])) models.push("recurrentService");
-        if (includesAny(text, ["e-commerce", "ecommerce", "boutique", "produit", "vente de produit", "stock"])) models.push("ecommerce");
-        if (includesAny(text, ["usage", "consommation", "à l'utilisation", "a l'utilisation", "crédit", "minute", "unité"])) models.push("usage");
+        if (includesAny(text, ["rendez-vous", "rdv", "consultation", "séance", "soin", "cabinet", "no-show"])) models.push("rendezvous");
+        if (includesAny(text, ["e-commerce", "ecommerce", "vente en ligne", "produit", "vente de produit", "stock"])) models.push("ecommerce");
+        if (includesAny(text, ["boutique physique", "commerce", "magasin", "retail", "concept store"])) models.push("retail");
+        if (includesAny(text, ["restaurant", "alimentaire", "food", "traiteur", "livraison", "à emporter", "a emporter", "coffee shop"])) models.push("food");
+        if (includesAny(text, ["fabrication", "sur commande", "précommande", "precommande", "fait main", "petite série", "production"])) models.push("madeToOrder");
+        if (includesAny(text, ["usage", "consommation", "à l'utilisation", "a l'utilisation", "crédit", "minute", "unité", "saas", "application", "logiciel", "plateforme"])) models.push("usage");
         if (includesAny(text, ["formation", "atelier", "coaching", "cours", "programme"])) models.push("formation");
+        if (includesAny(text, ["location", "louer", "salle", "studio", "coworking", "matériel", "materiel", "équipement", "equipement"])) models.push("location");
         if (includesAny(text, ["appel d'offres", "appel d’offre", "subvention", "financement", "bailleur", "dossier"])) models.push("pipeline");
+        if (includesAny(text, ["association", "collectif", "cotisation", "don", "adhérent", "adhérent", "adhésion"])) models.push("association");
+        if (includesAny(text, ["édition", "edition", "revue", "livre", "bd", "magazine", "fanzine", "publication"])) models.push("edition");
         if (includesAny(text, ["marketplace", "place de marché", "commission", "mise en relation"])) models.push("marketplace");
         if (includesAny(text, ["licence", "redevance", "royalty", "droits d'utilisation", "droit d'utiliser"])) models.push("licence");
         if (includesAny(text, ["lead generation", "lead", "prospect", "contact qualifié", "apport de contacts"])) models.push("leadgen");
