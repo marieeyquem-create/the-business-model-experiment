@@ -1629,12 +1629,12 @@
       "subtitle": "Le modèle financier des prestations vendues chaque mois : forfaits, clients actifs, temps passé, sous-traitance, marge, capacité et trésorerie.",
       "short_description": "Pilotez forfaits mensuels, clients récurrents, temps consommé, revenu par jour, taux d'occupation, missions ponctuelles et trésorerie.",
       "long_description": "Ce template modélise une activité de services récurrents ou fonctions externalisées vendues sous forme de forfaits mensuels : RAF, DAF, RH, office management, support, assistance, maintenance, marketing opérationnel ou bras droit freelance. Vous saisissez les forfaits, les nouveaux clients mois par mois, les clients qui arrêtent, le temps consommé, la sous-traitance et les missions ponctuelles. Le fichier calcule automatiquement le revenu récurrent, la marge, le taux d'occupation, le revenu par jour, le profit et la trésorerie sur 24 mois.",
-      "business_model_description": "Dans un modèle de services récurrents, le client paie chaque mois pour qu'un service humain soit réalisé régulièrement. Ce n'est pas seulement un abonnement : derrière le paiement mensuel, il y a du temps de travail à produire. La rentabilité dépend donc du prix du forfait, du temps réellement nécessaire pour servir chaque client, des coûts directs, de la sous-traitance et de la capacité disponible. Le risque principal est de vendre du récurrent qui semble rassurant en chiffre d'affaires, mais qui consomme trop de temps et devient peu rentable ou impossible à absorber.",
+      "business_model_description": "Le moteur économique de ce modèle se joue dans l'écart entre le forfait facturé et le temps réellement consommé. Un revenu mensuel récurrent peut sembler rassurant, mais il devient fragile si les clients sollicitent plus de jours que prévu, si la sous-traitance absorbe la marge ou si le taux d'occupation dépasse la capacité disponible. Les indicateurs clés sont donc le revenu mensuel récurrent, le revenu par jour, le taux d'occupation, la marge avant charges fixes, les clients qui arrêtent et la trésorerie.",
       "audience": [
         "RAF, DAF, RH ou office manager externalisés",
         "Freelances ou petites équipes qui vendent des forfaits mensuels",
         "Services de support, assistance, maintenance ou secrétariat externalisé",
-        "Prestataires marketing, opérations, automatisation, no-code ou CRM en retainer mensuel",
+        "Prestataires marketing, opérations, automatisation, no-code ou CRM en forfait mensuel de service",
         "Entrepreneurs qui veulent savoir combien de clients récurrents ils peuvent gérer sans se saturer"
       ],
       "features": [
@@ -1661,7 +1661,7 @@
         "DAF externalisé",
         "office management",
         "support externalisé",
-        "retainer",
+        "forfait mensuel de service",
         "maintenance mensuelle"
       ],
       "files": [
@@ -1691,7 +1691,7 @@
         "office manager",
         "support",
         "maintenance",
-        "retainer",
+        "forfait mensuel de service",
         "capacité",
         "revenu par jour"
       ],
