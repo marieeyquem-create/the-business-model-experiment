@@ -636,9 +636,9 @@
       "name": "BM-ASSO-001 – Association / structure à revenus mixtes",
       "display_name": "Association / structure à revenus mixtes",
       "subtitle": "Le modèle financier des associations, collectifs et structures hybrides financés par cotisations, dons, subventions, prestations, événements ou privatisations.",
-      "short_description": "Pilotez revenus mixtes, privatisation du lieu, frais de fonctionnement, activités, ressources humaines, dépendance financière et trésorerie.",
-      "long_description": "Ce template modélise une association ou structure hybride qui combine plusieurs sources de revenus : cotisations, dons, mécénat, subventions, prestations, événements, privatisation d'un lieu, ventes ou contributions libres. Vous paramétrez les sources de revenus, les activités, les dépenses directes, les charges fixes et les ressources humaines. Le fichier calcule automatiquement le budget, la couverture des frais de fonctionnement, la dépendance aux principales ressources, le résultat et la trésorerie sur 24 mois.",
-      "business_model_description": "Dans une structure à revenus mixtes, l'enjeu n'est pas seulement d'équilibrer un budget global. Il faut vérifier si les revenus sont libres ou affectés, s'ils couvrent les frais de fonctionnement, si les activités financent vraiment leurs coûts directs, si la structure dépend trop d'une seule ressource et si la trésorerie reste positive malgré les délais d'encaissement. Les KPI clés sont les revenus acquis, la part de fonctionnement couverte, le reste à financer, le poids de la première source, les coûts RH, le résultat opérationnel et la trésorerie minimale.",
+      "short_description": "Pilotez revenus mixtes, privatisation du lieu, frais de fonctionnement, activités, ressources humaines, poids des principales sources et trésorerie.",
+      "long_description": "Ce template modélise une association ou structure hybride qui combine plusieurs sources de revenus : cotisations, dons, mécénat, subventions, prestations, événements, privatisation d'un lieu, ventes ou contributions libres. Vous paramétrez les sources de revenus, les activités, les dépenses directes, les charges fixes et les ressources humaines. Le fichier calcule automatiquement le budget, la couverture des frais de fonctionnement, le poids des principales sources de revenus, le résultat et la trésorerie sur 24 mois.",
+      "business_model_description": "Dans une structure à revenus mixtes, l'enjeu n'est pas seulement d'équilibrer un budget global. Il faut vérifier si les revenus sont libres ou affectés, s'ils couvrent les frais de fonctionnement, si les activités financent vraiment leurs coûts directs, si une seule source de revenu pèse trop lourd et si la trésorerie reste positive malgré les délais d'encaissement. Les KPI clés sont les revenus acquis, la part de fonctionnement couverte, le reste à financer, le poids de la première source de revenu, les coûts RH, le résultat opérationnel et la trésorerie minimale.",
       "audience": [
         "Associations avec cotisations, dons, prestations, événements ou subventions",
         "Collectifs, tiers-lieux, structures culturelles, structures d'intérêt général ou ESS",
@@ -657,7 +657,7 @@
         "Charges fixes de structure",
         "Ressources humaines au coût total employeur",
         "Couverture des frais de fonctionnement",
-        "Dépendance à la première source de revenu",
+        "Poids de la première source de revenu",
         "Trésorerie mensuelle",
         "Dashboard métier avec explication des KPI",
         "Sortie standard compatible avec les consolidations Baradozig"
@@ -710,7 +710,7 @@
           "changes": [
             "Création du template Association / structure à revenus mixtes au format Baradozig Framework v2",
             "Ajout des sources de revenus, activités, dépenses, charges fixes et ressources humaines",
-            "Ajout de la couverture des frais de fonctionnement et de la dépendance aux revenus",
+            "Ajout de la couverture des frais de fonctionnement et du poids de la première source de revenu",
             "Création d'un dashboard métier avec explication des KPI"
           ]
         }
