@@ -2182,6 +2182,109 @@
       ]
     },
     {
+      "id": "BM-RET-001",
+      "slug": "boutique-physique-multi-produits",
+      "category": "modèles unitaires",
+      "name": "BM-RET-001 – Boutique physique multi-produits",
+      "display_name": "Boutique physique multi-produits",
+      "subtitle": "Le modèle financier des commerces de détail qui vendent plusieurs familles de produits en boutique physique.",
+      "short_description": "Pilotez ventes, panier moyen, marge brute, achats de stock, démarques, invendus, point mort boutique et trésorerie.",
+      "long_description": "Ce template modélise une boutique physique qui vend plusieurs familles de produits : concept store, boutique de créateurs, librairie-boutique, vêtements, décoration, cosmétiques, caviste, épicerie fine non préparée ou magasin spécialisé. Vous paramétrez les familles de produits, les ventes mensuelles, les achats de stock, les démarques, les invendus et les charges fixes. Le fichier calcule automatiquement le chiffre d'affaires, la marge brute, la rotation de stock, le point mort, le profit et la trésorerie sur 24 mois.",
+      "business_model_description": "Dans une boutique physique, le chiffre d'affaires ne suffit pas à comprendre la viabilité. La rentabilité dépend de la marge par famille de produits, du panier moyen, du niveau de stock, des démarques, des invendus, du loyer, de la masse salariale et de la saisonnalité. Un stock trop faible crée des ruptures, mais un stock trop élevé immobilise de l'argent et peut devenir dormant. Les indicateurs clés sont la marge brute, le taux de marge brute, le panier moyen, le point mort boutique, la rotation de stock, les invendus, le profit opérationnel et la trésorerie minimale.",
+      "audience": [
+        "Concept store, boutique de créateurs ou boutique cadeau",
+        "Librairie-boutique, papeterie, décoration, vêtements ou accessoires",
+        "Cosmétiques, bien-être, caviste, épicerie fine non préparée ou magasin spécialisé",
+        "Commerce qui vend plusieurs familles de produits avec des marges différentes",
+        "Projet où les achats de stock et le loyer pèsent fortement sur la trésorerie"
+      ],
+      "features": [
+        "Familles de produits paramétrables",
+        "Prévisions de ventes mois par mois",
+        "Prix moyen et coût d'achat hors taxes",
+        "Marge brute par famille",
+        "Achats de stock et délais de paiement fournisseurs",
+        "Démarques, promotions, casse et invendus",
+        "Charges fixes de boutique",
+        "Point mort en chiffre d'affaires et en tickets",
+        "Rotation de stock et stock final estimé",
+        "Trésorerie mensuelle",
+        "Dashboard métier avec explication des KPI",
+        "Sortie standard compatible avec les consolidations Baradozig"
+      ],
+      "business_models": [
+        "commerce de détail",
+        "boutique physique",
+        "concept store",
+        "boutique multi-produits",
+        "retail",
+        "stock",
+        "marge brute"
+      ],
+      "files": [
+        "template Excel",
+        "guide PDF",
+        "mode d'emploi détaillé",
+        "fiche produit",
+        "données produit JSON"
+      ],
+      "delivery_filename": "BM-RET-001-boutique-physique-multi-produits.xlsx",
+      "price": 49,
+      "currency": "EUR",
+      "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-RET-001",
+      "guide_url": "../templates.html#guide-title",
+      "limitations": [
+        "Vous vendez surtout en ligne avec frais d'expédition, retours et acquisition digitale : utilisez plutôt E-commerce multi-produits.",
+        "Vous fabriquez après commande avec acompte, production et solde : utilisez plutôt Production à la commande / fabrication sur mesure.",
+        "Vous vendez des produits alimentaires préparés avec pertes de production, commissions de livraison ou service sur place : utilisez plutôt Vente alimentaire multi-canaux."
+      ],
+      "tags": [
+        "boutique",
+        "commerce",
+        "retail",
+        "stock",
+        "marge brute",
+        "panier moyen",
+        "point mort",
+        "trésorerie"
+      ],
+      "difficulty": "intermédiaire",
+      "version": "1.0.0",
+      "date": "2026-07-01",
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-07-01",
+          "changes": [
+            "Création du template Boutique physique multi-produits au format Baradozig Framework v2",
+            "Ajout des familles produits, ventes, achats de stock et démarques",
+            "Ajout de la marge brute, rotation de stock, point mort boutique et trésorerie",
+            "Création d'un dashboard métier avec explication des KPI"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Quelle différence avec le template e-commerce ?",
+          "answer": "Le template boutique physique se concentre sur le stock en magasin, le loyer, les ventes en boutique, le panier moyen, les démarques et le point mort du magasin. L'e-commerce intègre davantage les canaux digitaux, l'acquisition client, les frais d'expédition et les retours."
+        },
+        {
+          "question": "Puis-je suivre plusieurs familles de produits ?",
+          "answer": "Oui. Le fichier est conçu pour comparer plusieurs familles de produits avec des prix, coûts d'achat, marges et risques d'invendus différents."
+        },
+        {
+          "question": "Le template suit-il le stock ?",
+          "answer": "Oui, de manière simple : stock initial, achats, coût des produits vendus, démarques, invendus et stock final estimé. L'objectif est de piloter la trésorerie et les risques, pas de remplacer un logiciel de caisse ou d'inventaire."
+        }
+      ],
+      "screenshots": [],
+      "related_products": [
+        "BM-ECO-001 – E-commerce avec plusieurs produits",
+        "BM-FOOD-001 – Vente alimentaire multi-canaux",
+        "BM-MTO-001 – Production à la commande / fabrication sur mesure"
+      ]
+    },
+    {
       "id": "BM-SRV-001",
       "slug": "prestation-service",
       "category": "modèles unitaires",
