@@ -293,6 +293,116 @@
       ]
     },
     {
+      "id": "BM-TEN-001",
+      "slug": "appels-offres-marches-publics-grands-comptes",
+      "category": "modèles spécifiques",
+      "name": "BM-TEN-001 – Appels d'offres / marchés publics et grands comptes",
+      "display_name": "Appels d'offres / marchés publics et grands comptes",
+      "subtitle": "Le modèle financier des entreprises qui vendent à des collectivités, institutions, grands comptes ou organisations via des consultations formalisées.",
+      "short_description": "Pilotez opportunités, réponses déposées, taux de succès, coûts de réponse, marchés gagnés, marge, capacité de livraison et trésorerie.",
+      "long_description": "Ce template modélise une activité qui vend par appels d'offres, marchés publics, consultations, référencements ou propositions formalisées à des collectivités, institutions, grands comptes, établissements publics ou grandes organisations. Vous saisissez les opportunités, les réponses déposées, les probabilités, les coûts de réponse, les marchés gagnés, les coûts de livraison, les délais de décision et les délais de paiement. Le fichier calcule automatiquement le pipeline, le chiffre d'affaires probable, le chiffre d'affaires signé, la marge, la charge de réponse, la capacité de livraison et la trésorerie sur 24 mois.",
+      "business_model_description": "Dans un modèle fondé sur les appels d'offres, la vente commence bien avant la signature : il faut repérer des opportunités, décider où répondre, investir du temps dans les dossiers, attendre la décision, puis livrer et encaisser parfois tardivement. La rentabilité dépend donc du montant des marchés gagnés, du taux de succès, du coût de réponse, des coûts de livraison, de la capacité mobilisée et des délais de paiement. Les indicateurs clés sont le montant déposé, le montant gagné, le taux de succès en euros, le coût moyen d'une réponse, la marge des marchés gagnés, le carnet de commandes, le chiffre d'affaires signé non encaissé et la trésorerie.",
+      "audience": [
+        "Entreprises répondant à des marchés publics ou appels d'offres privés",
+        "Prestataires de conseil, études, formation, communication, événementiel ou services aux collectivités",
+        "Structures culturelles, ESS, impact, innovation ou développement territorial vendant à des institutions",
+        "Fournisseurs de produits ou services pour collectivités, établissements publics ou grands comptes",
+        "Entrepreneurs qui veulent savoir si le temps passé à répondre aux dossiers est rentable"
+      ],
+      "features": [
+        "Types de marchés paramétrables",
+        "Pipeline d'opportunités et réponses déposées",
+        "Probabilité de gain et chiffre d'affaires probable",
+        "Coût de réponse en temps et en euros",
+        "Marchés gagnés avec livraison, coûts directs et sous-traitance",
+        "Délais de décision, livraison et paiement",
+        "Carnet de commandes signé",
+        "Montant déposé, gagné, perdu et en attente",
+        "Taux de succès en euros",
+        "Marge par marché gagné",
+        "Capacité de réponse et de livraison",
+        "Trésorerie avec paiements différés",
+        "Dashboard métier avec graphiques de synthèse",
+        "Sortie standard compatible avec les consolidations Baradozig"
+      ],
+      "business_models": [
+        "appels d'offres",
+        "marchés publics",
+        "grands comptes",
+        "consultations privées",
+        "vente institutionnelle",
+        "pipeline commercial formalisé",
+        "réponse à consultation"
+      ],
+      "files": [
+        "template Excel",
+        "guide PDF",
+        "mode d'emploi détaillé",
+        "fiche produit",
+        "données produit JSON"
+      ],
+      "delivery_filename": "BM-TEN-001-appels-offres-marches-publics-grands-comptes.xlsx",
+      "price": 49,
+      "currency": "EUR",
+      "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-TEN-001",
+      "guide_url": "../templates.html#guide-title",
+      "limitations": [
+        "Vous demandez une subvention ou un financement de projet : utilisez plutôt Financements de projets multi-bailleurs.",
+        "Vous vendez des missions sur devis sans procédure formalisée d'appel d'offres : utilisez plutôt Missions sur devis / projets sur mesure.",
+        "Vous vendez surtout des offres répétables sans phase de consultation lourde : utilisez plutôt Offres de service standardisées."
+      ],
+      "tags": [
+        "appel d'offres",
+        "marché public",
+        "grand compte",
+        "collectivité",
+        "consultation",
+        "pipeline",
+        "taux de succès",
+        "trésorerie"
+      ],
+      "difficulty": "avancé",
+      "version": "1.0.0",
+      "date": "2026-07-01",
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-07-01",
+          "changes": [
+            "Création du template Appels d'offres / marchés publics et grands comptes au format Baradozig Framework v2",
+            "Ajout du pipeline d'opportunités, des réponses déposées et des marchés gagnés",
+            "Ajout du coût de réponse, du taux de succès et du carnet de commandes",
+            "Création d'un dashboard métier avec graphiques de synthèse"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Quelle différence avec Financements de projets multi-bailleurs ?",
+          "answer": "Financements multi-bailleurs sert à suivre des demandes de subventions ou cofinancements. Ici, vous vendez une prestation, un produit ou un service via une consultation : l'enjeu est le coût de réponse, le taux de succès, la marge du marché gagné et l'encaissement."
+        },
+        {
+          "question": "Puis-je suivre les opportunités avant de savoir si je réponds ?",
+          "answer": "Oui. La feuille Opportunités permet de distinguer les opportunités repérées, les réponses déposées, les marchés gagnés, perdus ou abandonnés."
+        },
+        {
+          "question": "Le temps passé à répondre est-il pris en compte ?",
+          "answer": "Oui. Vous pouvez saisir les jours de réponse, leur coût, les frais externes et vérifier si le volume de réponses reste rentable au regard des marchés gagnés."
+        },
+        {
+          "question": "Le template suit-il la trésorerie ?",
+          "answer": "Oui. Il distingue la date de réponse, la décision, la livraison et le paiement, car l'argent peut arriver longtemps après l'effort commercial."
+        }
+      ],
+      "screenshots": [],
+      "related_products": [
+        "BM-GRA-001 – Financements de projets multi-bailleurs",
+        "BM-PRJ-001 – Missions sur devis / projets sur mesure",
+        "BM-SRV-001 – Offres de service standardisées",
+        "BM-FOR-001 – Formation et accompagnement multi-offres"
+      ]
+    },
+    {
       "id": "BM-ADV-001",
       "slug": "publicite-sponsoring-multi-formats",
       "category": "modèles unitaires",
