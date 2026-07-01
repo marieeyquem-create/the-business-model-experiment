@@ -1854,8 +1854,8 @@
       "name": "BM-MKT-001 – Marketplace multi-catégories",
       "display_name": "Marketplace multi-catégories",
       "subtitle": "Le modèle financier des plateformes qui mettent en relation acheteurs et vendeurs et se rémunèrent sur les transactions.",
-      "short_description": "Pilotez GMV, commissions, take rate, acheteurs, vendeurs, acquisition, annulations, litiges et trésorerie catégorie par catégorie.",
-      "long_description": "Ce template permet de modéliser une véritable marketplace sans confondre transactions, utilisateurs et chiffre d'affaires. Vous pouvez définir plusieurs catégories avec leurs commissions et coûts, prévoir l'activité mensuelle des acheteurs et vendeurs, mesurer la liquidité, les CAC et le take rate, puis simuler les encaissements du GMV et les reversements vendeurs sur 24 mois.",
+      "short_description": "Pilotez le volume total des ventes, les commissions conservées, les acheteurs, les vendeurs, l'acquisition, les annulations, les litiges et la trésorerie catégorie par catégorie.",
+      "long_description": "Ce template permet de modéliser une véritable marketplace sans confondre transactions, utilisateurs et chiffre d'affaires. Vous pouvez définir plusieurs catégories avec leurs commissions et coûts, prévoir l'activité mensuelle des acheteurs et vendeurs, mesurer la liquidité, le coût d'acquisition client et la part des ventes conservée par la plateforme, puis simuler les encaissements du volume total des ventes et les reversements vendeurs sur 24 mois.",
       "audience": [
         "Marketplaces de produits ou services",
         "Plateformes de réservation",
@@ -1868,9 +1868,9 @@
         "500 lignes de prévisions mensuelles",
         "Acheteurs et vendeurs suivis séparément",
         "Nouveaux utilisateurs et utilisateurs perdus",
-        "GMV brut et net après annulations",
+        "Volume total des ventes avant et après annulations",
         "Commission vendeur, frais acheteur et frais fixes",
-        "Take rate réel",
+        "Part réelle des ventes conservée par la plateforme",
         "Transactions par acheteur et par vendeur",
         "CAC acheteur et CAC vendeur",
         "Coûts de paiement, support et litiges",
@@ -1907,8 +1907,8 @@
       "tags": [
         "marketplace",
         "commission",
-        "GMV",
-        "take rate",
+        "volume total des ventes",
+        "part des ventes conservée",
         "acheteurs",
         "vendeurs",
         "transactions",
@@ -1926,15 +1926,15 @@
             "Migration vers Baradozig Framework v2",
             "Reconstruction multi-catégories",
             "Ajout du suivi bilatéral acheteurs et vendeurs",
-            "Distinction GMV, chiffre d'affaires et flux de paiement",
+            "Distinction entre volume total des ventes, chiffre d'affaires et flux de paiement",
             "Création d'un dashboard métier avec cinq graphiques"
           ]
         }
       ],
       "faq": [
         {
-          "question": "Le GMV est-il mon chiffre d'affaires ?",
-          "answer": "Non. Le GMV est le volume vendu entre utilisateurs. Votre chiffre d'affaires correspond aux commissions et frais conservés."
+          "question": "Le volume total des ventes est-il mon chiffre d'affaires ?",
+          "answer": "Non. Le volume total des ventes correspond à ce que les acheteurs paient aux vendeurs via la plateforme. Votre chiffre d'affaires correspond seulement aux commissions et frais que la plateforme conserve."
         },
         {
           "question": "Puis-je avoir plusieurs taux de commission ?",
@@ -1946,7 +1946,7 @@
         },
         {
           "question": "La plateforme peut-elle encaisser le paiement total ?",
-          "answer": "Oui. Vous choisissez entre l'encaissement du GMV avec reversement vendeur ou l'encaissement des seuls revenus de la plateforme."
+          "answer": "Oui. Vous choisissez entre l'encaissement du paiement total avec reversement vendeur ou l'encaissement des seuls revenus de la plateforme."
         }
       ],
       "screenshots": [],
