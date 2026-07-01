@@ -635,19 +635,21 @@
       "category": "modèles unitaires",
       "name": "BM-ASSO-001 – Association / structure à revenus mixtes",
       "display_name": "Association / structure à revenus mixtes",
-      "subtitle": "Le modèle financier des associations, collectifs et structures hybrides financés par cotisations, dons, subventions, prestations ou événements.",
-      "short_description": "Pilotez revenus mixtes, frais de fonctionnement, activités, ressources humaines, dépendance financière et trésorerie.",
-      "long_description": "Ce template modélise une association ou structure hybride qui combine plusieurs sources de revenus : cotisations, dons, mécénat, subventions, prestations, événements, ventes ou contributions libres. Vous paramétrez les sources de revenus, les activités, les dépenses directes, les charges fixes et les ressources humaines. Le fichier calcule automatiquement le budget, la couverture des frais de fonctionnement, la dépendance aux principales ressources, le résultat et la trésorerie sur 24 mois.",
+      "subtitle": "Le modèle financier des associations, collectifs et structures hybrides financés par cotisations, dons, subventions, prestations, événements ou privatisations.",
+      "short_description": "Pilotez revenus mixtes, privatisation du lieu, frais de fonctionnement, activités, ressources humaines, dépendance financière et trésorerie.",
+      "long_description": "Ce template modélise une association ou structure hybride qui combine plusieurs sources de revenus : cotisations, dons, mécénat, subventions, prestations, événements, privatisation d'un lieu, ventes ou contributions libres. Vous paramétrez les sources de revenus, les activités, les dépenses directes, les charges fixes et les ressources humaines. Le fichier calcule automatiquement le budget, la couverture des frais de fonctionnement, la dépendance aux principales ressources, le résultat et la trésorerie sur 24 mois.",
       "business_model_description": "Dans une structure à revenus mixtes, l'enjeu n'est pas seulement d'équilibrer un budget global. Il faut vérifier si les revenus sont libres ou affectés, s'ils couvrent les frais de fonctionnement, si les activités financent vraiment leurs coûts directs, si la structure dépend trop d'une seule ressource et si la trésorerie reste positive malgré les délais d'encaissement. Les KPI clés sont les revenus acquis, la part de fonctionnement couverte, le reste à financer, le poids de la première source, les coûts RH, le résultat opérationnel et la trésorerie minimale.",
       "audience": [
         "Associations avec cotisations, dons, prestations, événements ou subventions",
         "Collectifs, tiers-lieux, structures culturelles, structures d'intérêt général ou ESS",
+        "Structures qui privatisent ponctuellement un lieu pour financer leur fonctionnement",
         "Organisations qui doivent financer leurs activités et leurs frais de structure",
         "Structures qui mélangent revenus libres et financements affectés",
         "Entrepreneurs sociaux qui veulent vérifier la viabilité économique de leur modèle"
       ],
       "features": [
         "Sources de revenus paramétrables",
+        "Privatisation du lieu en revenus et coûts directs",
         "Prévisions de revenus mois par mois",
         "Distinction revenus libres / affectés",
         "Part des revenus couvrant le fonctionnement",
@@ -668,6 +670,7 @@
         "subventions",
         "prestations",
         "événements",
+        "privatisation",
         "ESS"
       ],
       "files": [
@@ -724,6 +727,10 @@
         {
           "question": "Les salaires sont-ils pris en compte ?",
           "answer": "Oui. La feuille Ressources humaines permet de saisir les coûts au coût total employeur, pour éviter de sous-estimer le vrai coût de l'équipe."
+        },
+        {
+          "question": "Puis-je intégrer la privatisation d'un lieu ?",
+          "answer": "Oui. Le template prévoit une source de revenu et une activité dédiées à la privatisation du lieu, avec les coûts directs associés comme ménage, accueil, sécurité, technique ou remise en état."
         }
       ],
       "screenshots": [],
