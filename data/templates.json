@@ -630,6 +630,110 @@
       ]
     },
     {
+      "id": "BM-ASSO-001",
+      "slug": "association-structure-revenus-mixtes",
+      "category": "modèles unitaires",
+      "name": "BM-ASSO-001 – Association / structure à revenus mixtes",
+      "display_name": "Association / structure à revenus mixtes",
+      "subtitle": "Le modèle financier des associations, collectifs et structures hybrides financés par cotisations, dons, subventions, prestations ou événements.",
+      "short_description": "Pilotez revenus mixtes, frais de fonctionnement, activités, ressources humaines, dépendance financière et trésorerie.",
+      "long_description": "Ce template modélise une association ou structure hybride qui combine plusieurs sources de revenus : cotisations, dons, mécénat, subventions, prestations, événements, ventes ou contributions libres. Vous paramétrez les sources de revenus, les activités, les dépenses directes, les charges fixes et les ressources humaines. Le fichier calcule automatiquement le budget, la couverture des frais de fonctionnement, la dépendance aux principales ressources, le résultat et la trésorerie sur 24 mois.",
+      "business_model_description": "Dans une structure à revenus mixtes, l'enjeu n'est pas seulement d'équilibrer un budget global. Il faut vérifier si les revenus sont libres ou affectés, s'ils couvrent les frais de fonctionnement, si les activités financent vraiment leurs coûts directs, si la structure dépend trop d'une seule ressource et si la trésorerie reste positive malgré les délais d'encaissement. Les KPI clés sont les revenus acquis, la part de fonctionnement couverte, le reste à financer, le poids de la première source, les coûts RH, le résultat opérationnel et la trésorerie minimale.",
+      "audience": [
+        "Associations avec cotisations, dons, prestations, événements ou subventions",
+        "Collectifs, tiers-lieux, structures culturelles, structures d'intérêt général ou ESS",
+        "Organisations qui doivent financer leurs activités et leurs frais de structure",
+        "Structures qui mélangent revenus libres et financements affectés",
+        "Entrepreneurs sociaux qui veulent vérifier la viabilité économique de leur modèle"
+      ],
+      "features": [
+        "Sources de revenus paramétrables",
+        "Prévisions de revenus mois par mois",
+        "Distinction revenus libres / affectés",
+        "Part des revenus couvrant le fonctionnement",
+        "Activités et dépenses directes",
+        "Charges fixes de structure",
+        "Ressources humaines au coût total employeur",
+        "Couverture des frais de fonctionnement",
+        "Dépendance à la première source de revenu",
+        "Trésorerie mensuelle",
+        "Dashboard métier avec explication des KPI",
+        "Sortie standard compatible avec les consolidations Baradozig"
+      ],
+      "business_models": [
+        "association",
+        "revenus mixtes",
+        "cotisations",
+        "dons",
+        "subventions",
+        "prestations",
+        "événements",
+        "ESS"
+      ],
+      "files": [
+        "template Excel",
+        "guide PDF",
+        "mode d'emploi détaillé",
+        "fiche produit",
+        "données produit JSON"
+      ],
+      "delivery_filename": "BM-ASSO-001-association-structure-revenus-mixtes.xlsx",
+      "price": 49,
+      "currency": "EUR",
+      "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-ASSO-001",
+      "guide_url": "../templates.html#guide-title",
+      "limitations": [
+        "Vous pilotez principalement des demandes de financement par projet avec cofinancements et versements complexes : utilisez plutôt Financements de projets multi-bailleurs.",
+        "Vous vendez surtout des prestations commerciales sur devis : utilisez plutôt Missions sur devis / projets sur mesure.",
+        "Vous organisez surtout des événements avec participants, billetterie et coûts propres : utilisez plutôt Événementiel multi-événements."
+      ],
+      "tags": [
+        "association",
+        "revenus mixtes",
+        "fonctionnement",
+        "cotisations",
+        "dons",
+        "subventions",
+        "trésorerie",
+        "ESS"
+      ],
+      "difficulty": "intermédiaire",
+      "version": "1.0.0",
+      "date": "2026-07-01",
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-07-01",
+          "changes": [
+            "Création du template Association / structure à revenus mixtes au format Baradozig Framework v2",
+            "Ajout des sources de revenus, activités, dépenses, charges fixes et ressources humaines",
+            "Ajout de la couverture des frais de fonctionnement et de la dépendance aux revenus",
+            "Création d'un dashboard métier avec explication des KPI"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Quelle différence avec Financements de projets multi-bailleurs ?",
+          "answer": "Financements multi-bailleurs suit des demandes individualisées, cofinancements et versements par projet. Ce template est plus global : il modélise la structure, ses revenus mixtes, ses activités, ses frais de fonctionnement et sa trésorerie."
+        },
+        {
+          "question": "Puis-je distinguer les revenus affectés et libres ?",
+          "answer": "Oui. Vous indiquez quelle part de chaque revenu peut financer le fonctionnement, ce qui permet de repérer le reste à financer."
+        },
+        {
+          "question": "Les salaires sont-ils pris en compte ?",
+          "answer": "Oui. La feuille Ressources humaines permet de saisir les coûts au coût total employeur, pour éviter de sous-estimer le vrai coût de l'équipe."
+        }
+      ],
+      "screenshots": [],
+      "related_products": [
+        "BM-GRA-001 – Financements de projets multi-bailleurs",
+        "BM-EVT-001 – Événementiel multi-événements",
+        "BM-PRJ-001 – Missions sur devis / projets sur mesure"
+      ]
+    },
+    {
       "id": "BM-AUD-001",
       "slug": "monetisation-audience-multiplateformes",
       "category": "modèles unitaires",
