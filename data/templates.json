@@ -1074,6 +1074,117 @@
       ]
     },
     {
+      "id": "BM-FOOD-001",
+      "slug": "vente-alimentaire-multi-canaux",
+      "category": "modèles unitaires",
+      "name": "BM-FOOD-001 – Vente alimentaire multi-canaux",
+      "display_name": "Vente alimentaire multi-canaux",
+      "subtitle": "Le modèle financier des activités qui vendent des produits alimentaires préparés sur place, à emporter, en livraison, en click & collect, en événementiel ou via revendeurs.",
+      "short_description": "Pilotez canaux, commandes, panier moyen, coût matière, emballages, commissions, pertes, capacité, main-d'œuvre, point mort et trésorerie.",
+      "long_description": "Ce template modélise une activité qui vend des produits alimentaires préparés via plusieurs canaux : sur place, à emporter, livraison plateforme, click & collect, food truck, événementiel simple, revendeur ou abonnement. Vous paramétrez les offres alimentaires, les canaux, les volumes vendus mois par mois, les coûts matière, emballages, commissions, pertes, charges fixes et capacité. Le fichier calcule automatiquement le chiffre d'affaires, la marge par canal, le taux de coût matière, le point mort, la capacité utilisée, le profit et la trésorerie sur 24 mois.",
+      "business_model_description": "Dans une activité alimentaire multi-canaux, le chiffre d'affaires dépend des volumes vendus et du panier moyen, mais la rentabilité se joue souvent dans le coût matière, les pertes, les emballages, les commissions, le temps de préparation et la capacité de service. Un canal peut générer beaucoup de ventes mais peu de marge, par exemple si les plateformes ou les pertes absorbent le résultat. Les indicateurs clés sont le chiffre d'affaires par canal, la marge après matières et commissions, le coût matière en pourcentage du chiffre d'affaires, les pertes, le panier moyen, la capacité utilisée, le point mort et la trésorerie.",
+      "audience": [
+        "Petite restauration, coffee shop, snacking ou vente à emporter",
+        "Dark kitchen, click & collect ou livraison locale",
+        "Food truck, stand alimentaire ou vente événementielle simple",
+        "Pâtisserie, boulangerie, traiteur simple ou plats préparés",
+        "Marques alimentaires locales qui vendent en direct, via plateformes ou revendeurs"
+      ],
+      "features": [
+        "Offres alimentaires paramétrables",
+        "Canaux de vente activables",
+        "Prévisions de commandes ou unités mois par mois",
+        "Panier moyen et prix hors taxes",
+        "Coût matière, emballage et pertes",
+        "Commissions plateformes ou revendeurs",
+        "Capacité mensuelle de production ou service",
+        "Charges fixes imputées",
+        "Point mort en commandes et en chiffre d'affaires",
+        "Marge par canal",
+        "Trésorerie avec délais d'encaissement",
+        "Dashboard métier avec graphiques de synthèse",
+        "Sortie standard compatible avec les consolidations Baradozig"
+      ],
+      "business_models": [
+        "vente alimentaire",
+        "restauration rapide",
+        "vente à emporter",
+        "livraison",
+        "dark kitchen",
+        "food truck",
+        "click and collect",
+        "coffee shop",
+        "traiteur simple"
+      ],
+      "files": [
+        "template Excel",
+        "guide PDF",
+        "mode d'emploi détaillé",
+        "fiche produit",
+        "données produit JSON"
+      ],
+      "delivery_filename": "BM-FOOD-001-vente-alimentaire-multi-canaux.xlsx",
+      "price": 49,
+      "currency": "EUR",
+      "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-FOOD-001",
+      "guide_url": "../templates.html#guide-title",
+      "limitations": [
+        "Vous produisez uniquement après commande avec devis, acompte et solde : utilisez plutôt Production à la commande / fabrication sur mesure.",
+        "Vous vendez surtout des produits déjà en stock via une boutique non alimentaire : utilisez plutôt E-commerce multi-produits.",
+        "Votre activité est un restaurant sur place avec gestion fine des tables, services et rotations : ce template donne une base, mais peut nécessiter une personnalisation."
+      ],
+      "tags": [
+        "alimentaire",
+        "restauration",
+        "vente à emporter",
+        "livraison",
+        "dark kitchen",
+        "food truck",
+        "coût matière",
+        "pertes",
+        "point mort"
+      ],
+      "difficulty": "intermédiaire",
+      "version": "1.0.0",
+      "date": "2026-07-01",
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-07-01",
+          "changes": [
+            "Création du template Vente alimentaire multi-canaux au format Baradozig Framework v2",
+            "Ajout des offres alimentaires, canaux, prévisions ventes et pertes",
+            "Ajout du coût matière, des commissions, du point mort et de la capacité",
+            "Création d'un dashboard métier avec graphiques de synthèse"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Quelle différence avec Production à la commande ?",
+          "answer": "Production à la commande suit des commandes spécifiques avec délais, acompte et solde. Vente alimentaire multi-canaux suit plutôt des ventes fréquentes par canal, avec panier moyen, coût matière, pertes, commissions, capacité et point mort."
+        },
+        {
+          "question": "Puis-je suivre plusieurs canaux ?",
+          "answer": "Oui. Vous pouvez distinguer sur place, à emporter, livraison plateforme, click & collect, événementiel simple, revendeur ou abonnement."
+        },
+        {
+          "question": "Le template prend-il en compte les pertes ?",
+          "answer": "Oui. Les pertes, invendus ou produits jetés peuvent être saisis en pourcentage ou en montants complémentaires pour éviter de surestimer la marge."
+        },
+        {
+          "question": "Est-ce adapté à un restaurant complet ?",
+          "answer": "Il peut servir de base, mais un restaurant avec rotation de tables, plusieurs services, réservations et personnel détaillé peut nécessiter une personnalisation."
+        }
+      ],
+      "screenshots": [],
+      "related_products": [
+        "BM-MTO-001 – Production à la commande / fabrication sur mesure",
+        "BM-ECO-001 – E-commerce avec plusieurs produits",
+        "BM-EVT-001 – Événementiel multi-événements"
+      ]
+    },
+    {
       "id": "BM-FOR-001",
       "slug": "formation-accompagnement",
       "category": "modèles unitaires",
