@@ -484,6 +484,12 @@ a {
   margin-bottom: 10px;
 }
 
+.guide-help {
+  margin: 0 0 4px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
 .guide-panel label {
   display: grid;
   grid-template-columns: 20px 1fr;
@@ -495,6 +501,38 @@ a {
   color: var(--muted);
   background: var(--surface-2);
   cursor: pointer;
+}
+
+.guide-choice-group {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  overflow: hidden;
+}
+
+.guide-choice-group summary {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 14px;
+  color: var(--text);
+  background: var(--surface-2);
+  font-weight: 850;
+  cursor: pointer;
+}
+
+.guide-choice-group[open] summary {
+  border-bottom: 1px solid var(--line);
+}
+
+.guide-choice-list {
+  display: grid;
+  gap: 8px;
+  padding: 12px;
+}
+
+.guide-choice-list label {
+  background: #fff;
 }
 
 .guide-panel input {
