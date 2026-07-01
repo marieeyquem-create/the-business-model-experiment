@@ -1621,6 +1621,122 @@
       ]
     },
     {
+      "id": "BM-REC-001",
+      "slug": "services-recurrents-forfaits-mensuels",
+      "category": "modèles unitaires",
+      "name": "BM-REC-001 – Services récurrents / forfaits mensuels",
+      "display_name": "Services récurrents / forfaits mensuels",
+      "subtitle": "Le modèle financier des prestations vendues chaque mois : forfaits, clients actifs, temps passé, sous-traitance, marge, capacité et trésorerie.",
+      "short_description": "Pilotez forfaits mensuels, clients récurrents, temps consommé, revenu par jour, taux d'occupation, missions ponctuelles et trésorerie.",
+      "long_description": "Ce template modélise une activité de services récurrents ou fonctions externalisées vendues sous forme de forfaits mensuels : RAF, DAF, RH, office management, support, assistance, maintenance, marketing opérationnel ou bras droit freelance. Vous saisissez les forfaits, les nouveaux clients mois par mois, les clients qui arrêtent, le temps consommé, la sous-traitance et les missions ponctuelles. Le fichier calcule automatiquement le revenu récurrent, la marge, le taux d'occupation, le revenu par jour, le profit et la trésorerie sur 24 mois.",
+      "business_model_description": "Dans un modèle de services récurrents, le client paie chaque mois pour qu'un service humain soit réalisé régulièrement. Ce n'est pas seulement un abonnement : derrière le paiement mensuel, il y a du temps de travail à produire. La rentabilité dépend donc du prix du forfait, du temps réellement nécessaire pour servir chaque client, des coûts directs, de la sous-traitance et de la capacité disponible. Le risque principal est de vendre du récurrent qui semble rassurant en chiffre d'affaires, mais qui consomme trop de temps et devient peu rentable ou impossible à absorber.",
+      "audience": [
+        "RAF, DAF, RH ou office manager externalisés",
+        "Freelances ou petites équipes qui vendent des forfaits mensuels",
+        "Services de support, assistance, maintenance ou secrétariat externalisé",
+        "Prestataires marketing, opérations, automatisation, no-code ou CRM en retainer mensuel",
+        "Entrepreneurs qui veulent savoir combien de clients récurrents ils peuvent gérer sans se saturer"
+      ],
+      "features": [
+        "Forfaits mensuels paramétrables",
+        "Clients actifs par forfait",
+        "Clients qui arrêtent expliqués sans jargon",
+        "Temps prévu et temps réellement consommé par client",
+        "Revenu mensuel récurrent",
+        "Revenu par jour travaillé",
+        "Taux d'occupation et capacité mensuelle",
+        "Coûts directs et sous-traitance",
+        "Missions ponctuelles en complément",
+        "Charges fixes imputées",
+        "Compte de résultat et trésorerie sur 24 mois",
+        "Contrôles automatiques sur capacité, trésorerie et revenu par jour",
+        "Dashboard métier avec graphiques de synthèse",
+        "Sortie standard compatible avec les consolidations Baradozig"
+      ],
+      "business_models": [
+        "services récurrents",
+        "forfaits mensuels",
+        "fonctions externalisées",
+        "RAF externalisé",
+        "DAF externalisé",
+        "office management",
+        "support externalisé",
+        "retainer",
+        "maintenance mensuelle"
+      ],
+      "files": [
+        "template Excel",
+        "guide PDF",
+        "mode d'emploi détaillé",
+        "fiche produit",
+        "données produit JSON"
+      ],
+      "delivery_filename": "BM-REC-001-services-recurrents-forfaits-mensuels.xlsx",
+      "price": 49,
+      "currency": "EUR",
+      "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-REC-001",
+      "guide_url": "../templates.html#guide-title",
+      "limitations": [
+        "Votre activité repose surtout sur des projets uniques avec devis, acompte et solde.",
+        "Vous produisez des contenus éditoriaux commandés par des marques.",
+        "Vous vendez un abonnement sans temps humain significatif par client.",
+        "Vous vendez une formation, une cohorte ou un accompagnement pédagogique structuré."
+      ],
+      "tags": [
+        "services récurrents",
+        "forfaits mensuels",
+        "RAF externalisé",
+        "DAF externalisé",
+        "RH externalisé",
+        "office manager",
+        "support",
+        "maintenance",
+        "retainer",
+        "capacité",
+        "revenu par jour"
+      ],
+      "difficulty": "intermédiaire",
+      "version": "1.0.0",
+      "date": "2026-07-01",
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-07-01",
+          "changes": [
+            "Création du template Services récurrents / forfaits mensuels au format Baradozig Framework v2",
+            "Ajout des forfaits mensuels, prévisions clients, missions ponctuelles et sous-traitance",
+            "Ajout des contrôles sur capacité, trésorerie et revenu par jour",
+            "Création d'un dashboard métier avec graphiques de synthèse"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Quelle différence avec Prestations sur mesure multi-projets ?",
+          "answer": "Prestations sur mesure modélise des missions uniques avec devis, planning, acompte et solde. Ce template modélise des services répétés chaque mois, avec clients actifs, temps mensuel consommé et capacité."
+        },
+        {
+          "question": "Est-ce adapté à un RAF ou DAF externalisé ?",
+          "answer": "Oui. C'est un cas d'usage central : vous pouvez modéliser plusieurs forfaits, le nombre de clients par forfait, les jours consommés et le revenu par jour."
+        },
+        {
+          "question": "Pourquoi suivre le temps réellement consommé ?",
+          "answer": "Parce qu'un forfait peut sembler rentable avec son prix mensuel, mais devenir fragile si le client consomme plus de temps que prévu."
+        },
+        {
+          "question": "Peut-on ajouter des missions ponctuelles ?",
+          "answer": "Oui. Les missions facturées en plus du forfait sont saisies dans une feuille dédiée pour voir si elles améliorent la rentabilité ou saturent la capacité."
+        }
+      ],
+      "screenshots": [],
+      "related_products": [
+        "BM-PRJ-001 – Prestations sur mesure multi-projets",
+        "BM-SRV-001 – Prestation de service multi-offres",
+        "BM-FOR-001 – Formation et accompagnement multi-offres",
+        "BM-BRC-001 – Brand content multi-projets"
+      ]
+    },
+    {
       "id": "BM-SRV-001",
       "slug": "prestation-service",
       "category": "modèles unitaires",
