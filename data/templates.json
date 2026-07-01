@@ -1625,6 +1625,119 @@
       "business_model_description": "Une marketplace met en relation des acheteurs et des vendeurs, puis conserve une commission ou des frais sur les transactions. Le volume total vendu sur la plateforme n'est donc pas son chiffre d'affaires. Le taux de commission réel, le nombre d'acheteurs et de vendeurs actifs, la fréquence des transactions et leur coût d'acquisition permettent de vérifier que la plateforme génère suffisamment d'échanges pour devenir rentable."
     },
     {
+      "id": "BM-MTO-001",
+      "slug": "fabrication-commande-production-artisanale",
+      "category": "modèles unitaires",
+      "name": "BM-MTO-001 – Fabrication à la commande / production artisanale",
+      "display_name": "Fabrication à la commande / production artisanale",
+      "subtitle": "Le modèle financier des activités qui produisent après commande : artisanat, objets personnalisés, petites séries, fabrication à la demande ou produits faits sur mesure.",
+      "short_description": "Pilotez commandes, acomptes, matières, pertes, temps de production, capacité atelier, marge par commande, trésorerie et commandes en attente.",
+      "long_description": "Ce template modélise une activité qui fabrique ou produit après commande : artisanat, mobilier, textile en petite série, objets personnalisés, impression à la demande, produits alimentaires faits sur commande, cosmétiques en lots ou production de pièces uniques. Vous saisissez les produits fabriqués, les commandes, les quantités, les acomptes, les délais, les matières, le temps de production, les coûts externes et les investissements. Le fichier calcule automatiquement le chiffre d'affaires, la marge, la capacité, les commandes en attente, le profit et la trésorerie sur 24 mois.",
+      "business_model_description": "Dans un modèle de fabrication à la commande, la vente ne suffit pas : il faut pouvoir acheter les matières, produire dans les délais, absorber les pertes éventuelles et encaisser assez tôt pour ne pas financer toute la production soi-même. La rentabilité dépend du prix, du coût matière, du temps de fabrication, de la capacité disponible, des acomptes, des délais de livraison et des délais de paiement. Les indicateurs clés sont la marge par commande, le revenu par heure de production, le taux d'occupation de l'atelier, les commandes en attente, la trésorerie et le besoin de financement avant livraison.",
+      "audience": [
+        "Artisans, créateurs et ateliers qui fabriquent après commande",
+        "Entrepreneurs qui vendent des objets personnalisés ou des pièces uniques",
+        "Marques produisant en petites séries ou en précommande",
+        "Fabricants de mobilier, textile, accessoires, cosmétiques, produits alimentaires ou impressions à la demande",
+        "Porteurs de projet qui veulent vérifier prix, matières, temps de production et trésorerie avant de prendre plus de commandes"
+      ],
+      "features": [
+        "Produits fabriqués paramétrables",
+        "Commandes saisies ligne par ligne",
+        "Quantités, prix hors taxes, acompte et solde",
+        "Délai de production et délai de paiement du solde",
+        "Coût matière par unité et pertes de production",
+        "Temps de fabrication par unité",
+        "Coûts externes et sous-traitance par commande",
+        "Achats matières complémentaires",
+        "Capacité atelier et taux d'occupation",
+        "Commandes en attente",
+        "Revenu par heure de production",
+        "Trésorerie avec achats de matières, acomptes, soldes et investissements",
+        "Dashboard métier avec graphiques de synthèse",
+        "Sortie standard compatible avec les consolidations Baradozig"
+      ],
+      "business_models": [
+        "fabrication à la commande",
+        "production artisanale",
+        "petite série",
+        "précommande",
+        "objet personnalisé",
+        "atelier",
+        "make to order",
+        "production sur mesure"
+      ],
+      "files": [
+        "template Excel",
+        "guide PDF",
+        "mode d'emploi détaillé",
+        "fiche produit",
+        "données produit JSON"
+      ],
+      "delivery_filename": "BM-MTO-001-fabrication-commande-production-artisanale.xlsx",
+      "price": 49,
+      "currency": "EUR",
+      "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-MTO-001",
+      "guide_url": "../templates.html#guide-title",
+      "limitations": [
+        "Vous vendez surtout des produits déjà en stock via une boutique : utilisez plutôt E-commerce multi-produits.",
+        "Vous vendez surtout du temps humain sans fabrication matérielle : utilisez plutôt Offres de service standardisées ou Missions sur devis / projets sur mesure.",
+        "Vous louez un actif au lieu de produire un objet : utilisez plutôt Location / mise à disposition d'actifs."
+      ],
+      "tags": [
+        "fabrication",
+        "commande",
+        "artisanat",
+        "production",
+        "petite série",
+        "précommande",
+        "matières",
+        "atelier",
+        "capacité",
+        "trésorerie"
+      ],
+      "difficulty": "intermédiaire",
+      "version": "1.0.0",
+      "date": "2026-07-01",
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-07-01",
+          "changes": [
+            "Création du template Fabrication à la commande / production artisanale au format Baradozig Framework v2",
+            "Ajout des produits fabriqués, commandes, matières, capacité et investissements",
+            "Ajout du suivi des acomptes, soldes, délais de production et commandes en attente",
+            "Création d'un dashboard métier avec graphiques de synthèse"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Quelle différence avec E-commerce multi-produits ?",
+          "answer": "E-commerce multi-produits convient mieux si vous vendez des produits déjà définis avec stock, canaux et approvisionnements. Ce template est centré sur la production après commande : matières, temps de fabrication, acompte, solde, délai de livraison et capacité atelier."
+        },
+        {
+          "question": "Puis-je saisir une commande différente pour chaque client ?",
+          "answer": "Oui. Chaque ligne de la feuille Commandes peut représenter une commande spécifique avec son produit, sa quantité, son prix, ses délais, ses coûts et son acompte."
+        },
+        {
+          "question": "Le template suit-il la capacité de production ?",
+          "answer": "Oui. Les heures nécessaires sont comparées à la capacité mensuelle disponible pour repérer les risques de surcharge ou de sous-activité."
+        },
+        {
+          "question": "Les acomptes sont-ils pris en compte ?",
+          "answer": "Oui. Le fichier distingue l'acompte encaissé à la commande et le solde encaissé après livraison ou selon le délai de paiement indiqué."
+        }
+      ],
+      "screenshots": [],
+      "related_products": [
+        "BM-ECO-001 – E-commerce avec plusieurs produits",
+        "BM-SRV-001 – Offres de service standardisées",
+        "BM-PRJ-001 – Missions sur devis / projets sur mesure",
+        "BM-LOC-001 – Location / mise à disposition d'actifs"
+      ]
+    },
+    {
       "id": "BM-PRJ-001",
       "slug": "prestations-sur-mesure-multi-projets",
       "category": "modèles unitaires",
