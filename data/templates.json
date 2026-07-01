@@ -1296,6 +1296,117 @@
       "business_model_description": "Ce modèle permet à une entreprise d'autoriser l'exploitation d'une marque, d'un contenu, d'une technologie ou d'un autre droit en échange de redevances. Les revenus peuvent être fixes, calculés sur les ventes, facturés à l'unité ou soumis à un minimum garanti. Le suivi des redevances, des avances, des reversements, des échéances et de la concentration des revenus permet d'évaluer la rentabilité et le risque de chaque contrat."
     },
     {
+      "id": "BM-LOC-001",
+      "slug": "location-mise-a-disposition-actifs",
+      "category": "modèles unitaires",
+      "name": "BM-LOC-001 – Location / mise à disposition d'actifs",
+      "display_name": "Location / mise à disposition d'actifs",
+      "subtitle": "Le modèle financier des activités qui louent des salles, studios, véhicules, équipements, machines, espaces ou matériels.",
+      "short_description": "Pilotez actifs disponibles, formules de location, taux d'occupation, revenus, coûts d'usage, investissements, point mort et trésorerie.",
+      "long_description": "Ce template modélise une activité de location ou de mise à disposition d'actifs : salles, studios, véhicules, équipements, machines, box, espaces, matériel événementiel ou postes de travail. Vous paramétrez les actifs, les formules de location, les volumes loués mois par mois, les coûts variables, les charges fixes et les investissements. Le fichier calcule automatiquement le chiffre d'affaires, l'occupation, la marge, le point mort, le profit et la trésorerie sur 24 mois.",
+      "business_model_description": "Dans un modèle de location, la rentabilité dépend de votre capacité à faire travailler un actif limité : une salle vide, un véhicule immobilisé ou du matériel non loué coûtent encore de l'argent. Le chiffre d'affaires doit donc être lu avec le taux d'occupation, le revenu par unité disponible, les coûts d'usage, les charges fixes et les investissements à financer. Les indicateurs clés sont le taux d'occupation, le revenu par unité disponible, la marge après coûts variables, le point mort d'occupation, le profit opérationnel et la trésorerie.",
+      "audience": [
+        "Entrepreneurs qui louent du matériel, des équipements ou des machines",
+        "Studios photo, vidéo, podcast ou lieux de création loués à l'heure ou à la journée",
+        "Salles, espaces de coworking, bureaux, box ou lieux événementiels",
+        "Activités de location de véhicules, vélos, remorques ou équipements mobiles",
+        "Porteurs de projet qui veulent vérifier si un actif coûteux sera assez utilisé"
+      ],
+      "features": [
+        "Actifs ou catégories d'actifs paramétrables",
+        "Formules de location à l'heure, à la journée, au mois ou au forfait",
+        "Prévisions de locations mois par mois",
+        "Capacité disponible et taux d'occupation",
+        "Prix moyen hors taxes et remises éventuelles",
+        "Coûts variables d'usage, nettoyage, maintenance ou commission",
+        "Charges fixes imputées à l'activité",
+        "Investissements et aménagements initiaux",
+        "Point mort d'occupation calculé automatiquement",
+        "Revenu par unité disponible",
+        "Dashboard métier avec graphiques de synthèse",
+        "Sortie standard compatible avec les consolidations Baradozig"
+      ],
+      "business_models": [
+        "location",
+        "mise à disposition d'actifs",
+        "location de salle",
+        "location de matériel",
+        "studio",
+        "coworking",
+        "véhicules",
+        "équipements",
+        "taux d'occupation"
+      ],
+      "files": [
+        "template Excel",
+        "guide PDF",
+        "mode d'emploi détaillé",
+        "fiche produit",
+        "données produit JSON"
+      ],
+      "delivery_filename": "BM-LOC-001-location-mise-a-disposition-actifs.xlsx",
+      "price": 49,
+      "currency": "EUR",
+      "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-LOC-001",
+      "guide_url": "../templates.html#guide-title",
+      "limitations": [
+        "Votre activité vend surtout des prestations humaines sur mesure : utilisez plutôt Prestations sur mesure multi-projets ou Services récurrents / forfaits mensuels.",
+        "Votre revenu vient surtout d'un abonnement sans actif limité à occuper : utilisez plutôt Abonnements multi-offres.",
+        "Vous vendez des produits physiques avec stocks : utilisez plutôt E-commerce multi-produits."
+      ],
+      "tags": [
+        "location",
+        "actifs",
+        "matériel",
+        "salle",
+        "studio",
+        "coworking",
+        "taux d'occupation",
+        "point mort",
+        "trésorerie"
+      ],
+      "difficulty": "intermédiaire",
+      "version": "1.0.0",
+      "date": "2026-07-01",
+      "changelog": [
+        {
+          "version": "1.0.0",
+          "date": "2026-07-01",
+          "changes": [
+            "Création du template Location / mise à disposition d'actifs au format Baradozig Framework v2",
+            "Ajout des actifs, formules de location, prévisions et coûts variables",
+            "Ajout du taux d'occupation, revenu par unité disponible et point mort d'occupation",
+            "Création d'un dashboard métier avec graphiques de synthèse"
+          ]
+        }
+      ],
+      "faq": [
+        {
+          "question": "Puis-je modéliser plusieurs types d'actifs ?",
+          "answer": "Oui. La feuille Actifs permet de distinguer plusieurs catégories : salle, studio, véhicule, matériel, box ou équipement."
+        },
+        {
+          "question": "Le template fonctionne-t-il si je loue à l'heure et à la journée ?",
+          "answer": "Oui. Les formules de location permettent de saisir différentes unités : heure, demi-journée, journée, mois ou forfait."
+        },
+        {
+          "question": "Pourquoi suivre le taux d'occupation ?",
+          "answer": "Parce qu'un actif peu loué continue souvent à générer des charges fixes. Le taux d'occupation permet de savoir si la capacité disponible travaille suffisamment."
+        },
+        {
+          "question": "Les investissements sont-ils pris en compte ?",
+          "answer": "Oui. Les achats, aménagements ou dépôts initiaux peuvent être saisis dans Investissements pour analyser leur impact sur la trésorerie."
+        }
+      ],
+      "screenshots": [],
+      "related_products": [
+        "BM-EVT-001 – Événementiel multi-événements",
+        "BM-PRJ-001 – Prestations sur mesure multi-projets",
+        "BM-REC-001 – Services récurrents / forfaits mensuels",
+        "BM-ECO-001 – E-commerce multi-produits"
+      ]
+    },
+    {
       "id": "BM-MEM-001",
       "slug": "communaute-espace-membre",
       "category": "modèles unitaires",
