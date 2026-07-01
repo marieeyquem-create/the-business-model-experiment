@@ -375,6 +375,47 @@
         "BM-LOC-001": ["places"]
       };
 
+      const productSearchAliasesById = {
+        "BM-RDV-001": [
+          "kine", "kinesitherapeute", "kinésithérapeute", "physio", "osteopathe", "ostéopathe",
+          "psychologue", "psy", "therapeute", "thérapeute", "coach individuel", "medecin", "médecin",
+          "cabinet medical", "cabinet médical", "cabinet paramedical", "cabinet paramédical",
+          "infirmier", "infirmiere", "infirmière", "sage femme", "dieticien", "diététicien",
+          "nutritionniste", "naturopathe", "sophrologue", "estheticienne", "esthéticienne",
+          "coiffeur", "salon de coiffure", "massage", "masseur", "soins", "rendez vous", "prise de rdv"
+        ],
+        "BM-FOOD-001": ["restaurant", "traiteur", "food truck", "dark kitchen", "coffee shop", "boulangerie", "patisserie", "pâtisserie", "plats prepares", "plats préparés"],
+        "BM-RET-001": ["commerce", "magasin", "concept store", "boutique", "retail", "librairie", "epicerie", "épicerie"],
+        "BM-ECO-001": ["shopify", "woocommerce", "amazon", "etsy", "vente en ligne", "dnvb", "marque produit"],
+        "BM-MTO-001": ["artisan", "artisanat", "createur", "créateur", "bijoux", "meuble", "textile", "cosmetique", "cosmétique", "sur mesure", "precommande", "précommande"],
+        "BM-FOR-001": ["formateur", "formatrice", "organisme de formation", "opco", "cours", "atelier", "masterclass", "cohorte", "programme"],
+        "BM-PRJ-001": ["consultant", "consultante", "freelance", "agence", "bureau d'etude", "bureau d'étude", "devis", "mission client"],
+        "BM-SRV-001": ["pack", "offre packagée", "offre packagee", "service standard", "prestation standard", "forfait"],
+        "BM-REC-001": ["raf externalise", "raf externalisé", "daf externalise", "daf externalisé", "rh externalise", "rh externalisé", "office manager", "maintenance mensuelle"],
+        "BM-SUB-001": ["box", "membership", "club payant", "abonnement mensuel", "abonnement annuel", "plan payant"],
+        "BM-APP-001": ["saas", "logiciel", "application", "app", "plateforme digitale", "outil en ligne", "freemium"],
+        "BM-MEM-001": ["communaute", "communauté", "club", "espace membre", "adhesion", "adhésion", "membres"],
+        "BM-ADV-001": ["annonceur", "regie", "régie", "pub", "sponsor", "sponsoring", "partenariat média", "cpm", "cpc"],
+        "BM-AUD-001": ["youtube", "instagram", "tiktok", "twitch", "podcast", "newsletter", "createur de contenu", "créateur de contenu", "influenceur", "influenceuse"],
+        "BM-BRC-001": ["contenu de marque", "studio de contenu", "article sponsorise", "article sponsorisé", "video de marque", "vidéo de marque", "podcast de marque"],
+        "BM-EDI-001": ["editeur", "éditeur", "edition", "édition", "livre", "bd", "revue", "magazine", "fanzine", "autoedition", "autoédition"],
+        "BM-GRA-001": ["subvention", "fondation", "bailleur", "appel a projets", "appel à projets", "financement public", "cofinancement"],
+        "BM-TEN-001": ["marche public", "marché public", "appel d'offres", "collectivite", "collectivité", "institution", "grand compte", "ao"],
+        "BM-EVT-001": ["conference", "conférence", "seminaire", "séminaire", "retraite", "salon", "billetterie", "festival"],
+        "BM-LOC-001": ["location salle", "coworking", "studio", "materiel", "matériel", "equipement", "équipement", "privatisation"],
+        "BM-MKT-001": ["place de marche", "place de marché", "mise en relation", "plateforme commission", "vendeurs", "acheteurs"],
+        "BM-LEAD-001": ["prospection", "leads", "rdv qualifie", "rdv qualifié", "apport de prospects", "contact qualifie", "contact qualifié"],
+        "BM-LIC-001": ["royalties", "droits auteur", "droits d'auteur", "licence de marque", "redevance", "franchise"],
+        "BM-ASSO-001": ["association", "asso", "collectif", "tiers lieu", "tiers-lieu", "cotisation", "dons", "adhérents"]
+      };
+
+      function normalizeSearchText(value) {
+        return String(value || "")
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .toLowerCase();
+      }
+
       function formatProductPrice(product) {
         return product.price == null ? "Sur demande" : `${product.price} €`;
       }
@@ -384,7 +425,7 @@
       }
 
       function productSearchText(product) {
-        return [
+        return normalizeSearchText([
           product.id,
           product.slug,
           product.name,
@@ -394,12 +435,13 @@
           product.long_description,
           ...(product.tags || []),
           ...(product.business_models || []),
-          ...(product.audience || [])
-        ].filter(Boolean).join(" ").toLowerCase();
+          ...(product.audience || []),
+          ...(productSearchAliasesById[product.id] || [])
+        ].filter(Boolean).join(" "));
       }
 
       function productMatchesFilter(product) {
-        const searchTerm = (catalogueSearch?.value || "").trim().toLowerCase();
+        const searchTerm = normalizeSearchText((catalogueSearch?.value || "").trim());
         const groups = productGroupsById[product.id] || [];
         const matchesGroup = activeCatalogueFilter === "all" || groups.includes(activeCatalogueFilter);
         const matchesSearch = !searchTerm || productSearchText(product).includes(searchTerm);
