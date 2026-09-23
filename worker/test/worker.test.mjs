@@ -9,6 +9,7 @@ import {
   extractOutputText,
   fileIsAllowed,
   sanitizeActions,
+  sanitizeDiagnosticRecommendation,
   sanitizeMessages,
   usageStats,
 } from "../src/index.js";
@@ -71,10 +72,47 @@ test("le diagnostic donne des priorites sans livrer gratuitement le modele compl
     templates,
     safetyIdentifier: "safe-id",
   });
-  assert.equal(body.max_output_tokens, 1100);
-  assert.equal(body.text.format.schema.properties.architecture_issues.maxItems, 4);
-  assert.equal(body.text.format.schema.properties.missing_building_blocks.maxItems, 3);
+  assert.equal(body.max_output_tokens, 700);
+  assert.deepEqual(
+    body.text.format.schema.properties.status.enum,
+    ["complete", "needs_clarification"],
+  );
+  assert.equal(body.text.format.schema.properties.key_gaps.maxItems, 4);
+  assert.deepEqual(
+    body.text.format.schema.properties.recommendation_type.enum,
+    ["unitary", "combination", "personalized", "none"],
+  );
   assert.match(body.instructions, /ne fournis pas de tableau complet/i);
+  assert.match(body.instructions, /ne recommande jamais un seul template/i);
+});
+
+test("plusieurs templates produisent une combinaison et non une fiche unique", () => {
+  const catalog = [
+    ...templates,
+    { id: "BM-SUB-001", slug: "abonnement-simple", title: "Abonnements multi-offres" },
+  ];
+  const recommendation = sanitizeDiagnosticRecommendation({
+    recommendation_type: "unitary",
+    recommendation_title: "Combinaison recommandee",
+    recommendation_copy: "Deux activites doivent etre consolidees.",
+    recommended_template_ids: ["template:BM-RDV-001", "template:BM-SUB-001"],
+  }, catalog, env);
+  assert.equal(recommendation.type, "combination");
+  assert.deepEqual(recommendation.templates.map((item) => item.id), [
+    "template:BM-RDV-001",
+    "template:BM-SUB-001",
+  ]);
+  assert.deepEqual(recommendation.actions.map((item) => item.id), ["templates-assistant", "coaching"]);
+});
+
+test("une consolidation specifique oriente vers l'accompagnement", () => {
+  const recommendation = sanitizeDiagnosticRecommendation({
+    recommendation_type: "personalized",
+    recommendation_title: "Modele personnalise",
+    recommendation_copy: "Les activites sont interdependantes.",
+    recommended_template_ids: [],
+  }, templates, env);
+  assert.deepEqual(recommendation.actions.map((item) => item.id), ["coaching"]);
 });
 
 test("extractOutputText accepte les deux formes Responses", () => {

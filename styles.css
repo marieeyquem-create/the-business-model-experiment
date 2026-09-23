@@ -451,6 +451,39 @@ a {
   border-top: 1px solid var(--line);
 }
 
+.assistant-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 32px;
+  align-items: center;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: #faf8ff;
+}
+
+.assistant-entry-copy {
+  max-width: 760px;
+}
+
+.assistant-entry-copy h2 {
+  margin: 0 0 14px;
+}
+
+.assistant-entry-copy > p:not(.eyebrow) {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.assistant-entry-actions {
+  display: grid;
+  gap: 10px;
+  min-width: 260px;
+}
+
+.assistant-entry-actions .button {
+  width: 100%;
+}
+
 .guide-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
@@ -712,6 +745,10 @@ a {
   border-radius: 8px;
   background: var(--surface);
   box-shadow: 0 12px 30px rgba(40, 28, 70, 0.06);
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
 }
 
 .orientation-card strong {
@@ -947,6 +984,7 @@ a {
   .split,
   .about-strip,
   .module,
+  .assistant-entry,
   .guide-layout,
   .contact-layout {
     grid-template-columns: 1fr;

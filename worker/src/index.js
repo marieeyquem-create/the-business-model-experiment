@@ -31,26 +31,33 @@ const CHAT_SCHEMA = {
 const DIAGNOSTIC_SCHEMA = {
   type: "object",
   properties: {
-    summary: { type: "string" },
-    architecture_strengths: {
-      type: "array",
-      items: { type: "string" },
-      maxItems: 3,
+    status: {
+      type: "string",
+      enum: ["complete", "needs_clarification"],
     },
-    architecture_issues: {
+    identified_models: {
       type: "array",
       items: { type: "string" },
       maxItems: 4,
     },
-    missing_building_blocks: {
+    clarification_question: { type: "string" },
+    summary: { type: "string" },
+    key_gaps: {
       type: "array",
       items: { type: "string" },
-      maxItems: 3,
+      maxItems: 4,
     },
-    priorities: {
+    priority: { type: "string" },
+    recommendation_type: {
+      type: "string",
+      enum: ["unitary", "combination", "personalized", "none"],
+    },
+    recommendation_title: { type: "string" },
+    recommendation_copy: { type: "string" },
+    recommended_template_ids: {
       type: "array",
       items: { type: "string" },
-      maxItems: 3,
+      maxItems: 4,
     },
     limitations: { type: "string" },
     action_ids: {
@@ -60,11 +67,16 @@ const DIAGNOSTIC_SCHEMA = {
     },
   },
   required: [
+    "status",
+    "identified_models",
+    "clarification_question",
     "summary",
-    "architecture_strengths",
-    "architecture_issues",
-    "missing_building_blocks",
-    "priorities",
+    "key_gaps",
+    "priority",
+    "recommendation_type",
+    "recommendation_title",
+    "recommendation_copy",
+    "recommended_template_ids",
     "limitations",
     "action_ids"
   ],
@@ -83,7 +95,7 @@ Regles commerciales :
 - Si aucune ressource n'est vraiment pertinente, dis-le et utilise la phase no_fit.
 - Au maximum deux actions, choisies uniquement dans la liste fournie.
 - Un template unitaire convient a une logique de revenus identifiable.
-- Le guide convient aux activites avec plusieurs revenus ou quand le visiteur hesite.
+- L'assistant poursuit l'echange lorsqu'il y a plusieurs revenus ou quand le visiteur hesite, puis recommande la combinaison adaptee.
 - Le parcours personnalise convient aux mecanismes interdependants ou aux besoins importants d'accompagnement.
 - La formation gratuite peut etre proposee quand la personne doit d'abord comprendre les bases.
 - N'invente ni offre, ni prix, ni fonctionnalite, ni URL.
@@ -92,9 +104,10 @@ Regles commerciales :
 - N'entretiens jamais volontairement le flou : explique clairement les constats et leur importance, puis distingue honnetement le diagnostic gratuit de la mise en oeuvre proposee dans les ressources payantes.
 
 Parcours diagnostic :
-- Identifie d'abord l'activite, qui paie, les differentes sources de revenus, les liens eventuels entre elles, le stade du projet et la decision que la personne cherche a prendre.
+- Si la personne a un previsionnel, propose de le deposer immediatement : le fichier constitue le point de depart.
+- Si elle n'a pas de fichier, identifie l'activite, qui paie, les differentes sources de revenus, les liens eventuels entre elles, le stade du projet et la decision qu'elle cherche a prendre.
 - Ne transforme pas cet echange en questionnaire : rebondis sur chaque reponse et pose uniquement la prochaine question utile.
-- Mets can_upload_forecast a true seulement quand tu comprends suffisamment le business model pour comparer le fichier a l'activite, en general apres deux a quatre reponses utiles.
+- Mets can_upload_forecast a true des le debut du parcours diagnostic.
 - Le fichier est facultatif. Si la personne n'en a pas, apporte une premiere lecture de son modele puis recommande la structure ou les ressources pertinentes.
 
 Style : chaleureux, precis, pedagogique, sans jargon. Deux courts paragraphes au maximum, puis eventuellement une question. Pas de diagnostic definitif, pas de conseil comptable, fiscal, juridique ou d'investissement.
@@ -102,6 +115,15 @@ Style : chaleureux, precis, pedagogique, sans jargon. Deux courts paragraphes au
 
 const DIAGNOSTIC_INSTRUCTIONS = `
 Tu realises une premiere revue de l'architecture d'un previsionnel financier, a partir du fichier et du contexte d'activite recueilli dans la conversation.
+
+Commence par chercher dans le classeur les indices permettant d'identifier une ou plusieurs activites et leurs mecanismes de revenus : noms des feuilles, libelles, hypotheses, volumes, prix, couts, stocks, recurrence, capacite, projets, canaux et consolidation.
+
+Decision avant tout diagnostic :
+- si le fichier permet d'identifier avec suffisamment de certitude le ou les business models, utilise status complete et produis le diagnostic court ;
+- si une ambiguite peut modifier les hypotheses attendues ou la recommandation, utilise status needs_clarification et pose une seule question simple dans clarification_question ;
+- avec status needs_clarification, ne donne encore aucun verdict, aucun manque et aucune recommandation : laisse les autres champs textuels vides, les listes vides et recommendation_type a none ;
+- utilise le contexte fourni lors d'un second passage pour lever le doute ;
+- apres deux demandes de clarification infructueuses, explique la limite et oriente vers l'accompagnement personnalise sans inventer de conclusion sur le fichier.
 
 Tu dois examiner uniquement :
 - si les feuilles et zones de saisie sont organisees de facon comprehensible ;
@@ -131,9 +153,21 @@ Chaque critique doit expliquer simplement pourquoi la structure pose probleme et
 
 Perimetre de cette premiere lecture gratuite :
 - selectionne les points les plus importants au lieu de chercher l'exhaustivite ;
-- donne au maximum quatre constats a corriger, trois hypotheses manquantes et trois priorites ;
+- resume le constat general en deux phrases courtes au maximum ;
+- cite au maximum quatre manques, chacun en une phrase tres courte ;
+- formule une seule priorite immediate ;
 - indique la direction de la correction, sans produire les formules, les tableaux, l'architecture detaillee feuille par feuille ou le modele final ;
-- termine par une transition sobre vers la ressource qui permet de mettre les corrections en oeuvre, seulement si elle est reellement pertinente.
+- n'utilise pas les champs de sortie pour repeter la meme idee sous plusieurs formulations.
+
+Regles de recommandation commerciale :
+- utilise unitary uniquement lorsqu'une seule activite et un seul mecanisme de revenus correspondent reellement a un template du catalogue ;
+- si plusieurs business units ou plusieurs modeles de revenus distincts sont identifies, ne recommande jamais un seul template ;
+- utilise combination lorsque chaque modele est couvert par un template standard et que les activites peuvent etre assemblees avec une consolidation commune ; cite alors tous les templates utiles dans recommended_template_ids et utilise l'action templates-assistant ;
+- utilise personalized lorsque les activites dependent les unes des autres, partagent des hypotheses difficiles a repartir, necessitent une consolidation specifique, ou lorsqu'au moins un modele n'est pas couvert par le catalogue ; utilise alors l'action coaching ;
+- utilise none si aucune ressource n'est pertinente ;
+- pour unitary ou combination, l'action principale conduit vers le ou les templates ; une seconde action coaching peut permettre a la personne qui ne se sent pas autonome d'etre accompagnee ;
+- recommendation_title annonce clairement la solution : template unique, combinaison avec consolidation, ou accompagnement personnalise ;
+- recommendation_copy explique en deux phrases maximum pourquoi cette solution correspond aux modeles identifies et ce qu'elle permet de corriger.
 `;
 
 function json(data, status = 200, headers = {}) {
@@ -410,7 +444,7 @@ function resourceContext(templates) {
   return JSON.stringify({
     generic_actions: [
       { action_id: "templates-library", label: "Voir la bibliotheque de templates" },
-      { action_id: "templates-guide", label: "Composer mon modele avec le guide" },
+      { action_id: "templates-assistant", label: "Identifier la bonne combinaison" },
       { action_id: "coaching", label: "Decouvrir les accompagnements" },
       { action_id: "formation", label: "Suivre la formation gratuite" },
       { action_id: "contact", label: "Poser une question a Marie" },
@@ -423,7 +457,7 @@ function actionMap(templates, env) {
   const site = String(env.SITE_URL || FALLBACK_SITE_URL).replace(/\/$/, "");
   const map = new Map([
     ["templates-library", { label: "Voir les templates", url: `${site}/templates.html#catalogue-templates` }],
-    ["templates-guide", { label: "Composer mon modele", url: `${site}/templates.html#guide-title` }],
+    ["templates-assistant", { label: "Voir la combinaison recommandee", url: `${site}/templates.html#assistant-choice` }],
     ["coaching", { label: "Voir les accompagnements", url: `${site}/coaching.html` }],
     ["formation", { label: "Formation gratuite", url: `${site}/formation.html` }],
     ["contact", { label: "Contacter Marie", url: `${site}/contact.html` }],
@@ -444,6 +478,43 @@ function sanitizeActions(actionIds, templates, env) {
     .filter((id) => map.has(id) && !seen.has(id) && seen.add(id))
     .slice(0, 2)
     .map((id) => ({ id, ...map.get(id) }));
+}
+
+function sanitizeDiagnosticRecommendation(result, templates, env) {
+  const templatesByAction = new Map(
+    templates.map((item) => [`template:${item.id}`, item]),
+  );
+  const recommended = [...new Set(
+    (Array.isArray(result.recommended_template_ids) ? result.recommended_template_ids : [])
+      .filter((id) => templatesByAction.has(id)),
+  )].slice(0, 4);
+  const allowedTypes = new Set(["unitary", "combination", "personalized", "none"]);
+  let type = allowedTypes.has(result.recommendation_type)
+    ? result.recommendation_type
+    : "none";
+  if (recommended.length > 1 && type === "unitary") type = "combination";
+
+  let actionIds = [];
+  if (type === "unitary") {
+    actionIds = recommended.slice(0, 1);
+    if (!actionIds.length) actionIds = ["templates-library"];
+    actionIds.push("coaching");
+  } else if (type === "combination") {
+    actionIds = ["templates-assistant", "coaching"];
+  } else if (type === "personalized") {
+    actionIds = ["coaching"];
+  }
+
+  return {
+    type,
+    title: clampText(result.recommendation_title, 120),
+    copy: clampText(result.recommendation_copy, 420),
+    templates: recommended.map((id) => ({
+      id,
+      label: templatesByAction.get(id).title.replace(/^BM-[A-Z]+-\d+\s*[–-]\s*/, ""),
+    })),
+    actions: sanitizeActions(actionIds, templates, env),
+  };
 }
 
 function extractOutputText(payload) {
@@ -504,7 +575,7 @@ function diagnosticRequestBody({ file, base64, mime, context, templates, safetyI
     model: MODEL,
     store: false,
     reasoning: { effort: "none" },
-    max_output_tokens: 1100,
+    max_output_tokens: 700,
     safety_identifier: safetyIdentifier,
     instructions: `${BASE_INSTRUCTIONS}\n${DIAGNOSTIC_INSTRUCTIONS}\nRESSOURCES AUTORISEES\n${resourceContext(templates)}`,
     input: [
@@ -618,15 +689,37 @@ async function handleDiagnostic(request, env, headers) {
   );
   await recordUsage(env, budget.key, "diagnostic", openai.estimatedCostEur, openai.usage);
   const result = openai.result;
+  if (result.status === "needs_clarification") {
+    return json(
+      {
+        status: "needs_clarification",
+        identified_models: (result.identified_models || [])
+          .slice(0, 4)
+          .map((item) => clampText(item, 100)),
+        clarification_question: clampText(result.clarification_question, 300),
+      },
+      200,
+      headers,
+    );
+  }
+  const recommendation = sanitizeDiagnosticRecommendation(result, templates, env);
   return json(
     {
-      summary: clampText(result.summary, 1800),
-      architecture_strengths: result.architecture_strengths || [],
-      architecture_issues: result.architecture_issues || [],
-      missing_building_blocks: result.missing_building_blocks || [],
-      priorities: result.priorities || [],
-      limitations: clampText(result.limitations, 1000),
-      actions: sanitizeActions(result.action_ids, templates, env),
+      status: "complete",
+      identified_models: (result.identified_models || [])
+        .slice(0, 4)
+        .map((item) => clampText(item, 100)),
+      summary: clampText(result.summary, 500),
+      key_gaps: (result.key_gaps || []).slice(0, 4).map((item) => clampText(item, 180)),
+      priority: clampText(result.priority, 240),
+      limitations: clampText(result.limitations, 320),
+      recommendation: {
+        type: recommendation.type,
+        title: recommendation.title,
+        copy: recommendation.copy,
+        templates: recommendation.templates,
+      },
+      actions: recommendation.actions,
     },
     200,
     headers,
@@ -684,6 +777,7 @@ export {
   estimateResponseCostEur,
   fileIsAllowed,
   sanitizeActions,
+  sanitizeDiagnosticRecommendation,
   sanitizeMessages,
   usageStats,
 };

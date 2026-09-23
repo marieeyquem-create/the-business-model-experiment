@@ -18,13 +18,15 @@ Pour GitHub Pages, déposer tout le contenu du dossier dans un dépôt GitHub pu
 
 ## Assistant IA et diagnostic de prévisionnel
 
-Le site inclut un assistant conversationnel qui commence par caractériser l'activité et ses sources de revenus. Le visiteur peut ensuite :
+Le site inclut un assistant qui propose d'abord de déposer le prévisionnel, sans questionnaire préalable. Il cherche dans le fichier les indices permettant d'identifier une ou plusieurs activités et leurs mécanismes de revenus. S'il peut les reconnaître avec assez de certitude, il produit directement le diagnostic court. Si une ambiguïté change l'analyse attendue, il pose une seule question simple avant de conclure. Sans fichier, il poursuit la caractérisation conversationnelle du business model. Le visiteur peut ainsi :
 
 - recevoir une première lecture de son modèle économique ;
 - être orienté vers un template, le guide, une formation ou un accompagnement ;
 - transmettre facultativement un fichier XLSX, XLS ou CSV pour examiner l'architecture de son prévisionnel.
 
-Le diagnostic du fichier porte sur la structure, les hypothèses modifiables, les formules visibles, les doubles saisies, les contrôles et les indicateurs utiles. Il ne juge pas les montants et ne constitue pas une validation comptable. Cette première lecture gratuite sélectionne les problèmes et priorités les plus importants, mais ne livre ni modèle complet, ni formules Excel, ni procédure de correction cellule par cellule. La mise en œuvre est assurée par les templates ou l'accompagnement lorsque l'une de ces offres est réellement pertinente.
+Le diagnostic du fichier porte sur la structure, les hypothèses modifiables, les formules visibles, les doubles saisies, les contrôles et les indicateurs utiles. Il ne juge pas les montants et ne constitue pas une validation comptable. Cette première lecture gratuite résume le constat en deux phrases, cite au maximum quatre manques et donne une seule priorité. Elle ne livre ni modèle complet, ni formules Excel, ni procédure de correction cellule par cellule.
+
+La recommandation distingue ensuite un template unique, une combinaison de templates avec consolidation, ou un accompagnement personnalisé. Plusieurs business units ne peuvent pas conduire à la recommandation d'un seul template : la combinaison standard est proposée lorsque les activités sont indépendantes et couvertes par la bibliothèque ; le parcours personnalisé est proposé lorsqu'elles sont interdépendantes, que la consolidation est spécifique ou qu'un modèle manque au catalogue. Lorsqu'un template standard convient, un second accès à l'accompagnement reste visible pour les personnes qui ne souhaitent pas avancer seules.
 
 La partie visible est dans `assistant-widget.js` et `assistant-widget.css`. La clé OpenAI reste dans le Worker Cloudflare situé dans `worker/` ; elle ne doit jamais être ajoutée au HTML ou au JavaScript public.
 

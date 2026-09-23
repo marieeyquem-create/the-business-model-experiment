@@ -45,7 +45,7 @@
       "price": 49,
       "currency": "EUR",
       "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-EDI-001",
-      "guide_url": "../templates.html#guide-title",
+      "guide_url": "../templates.html?assistant=1#assistant-choice",
       "limitations": [
         "Vous avez une autre activité indépendante à consolider avec l'édition.",
         "Une vente éditoriale déclenche ensuite du coaching, de la formation ou une autre offre.",
@@ -235,7 +235,7 @@
       "price": 49,
       "currency": "EUR",
       "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-GRA-001",
-      "guide_url": "../templates.html#guide-title",
+      "guide_url": "../templates.html?assistant=1#assistant-choice",
       "limitations": [
         "Le financeur impose des règles contractuelles très spécifiques non prévues par le modèle.",
         "Vous devez produire une comptabilité analytique certifiée ou un reporting réglementaire détaillé.",
@@ -345,7 +345,7 @@
       "price": 49,
       "currency": "EUR",
       "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-TEN-001",
-      "guide_url": "../templates.html#guide-title",
+      "guide_url": "../templates.html?assistant=1#assistant-choice",
       "limitations": [
         "Vous demandez une subvention ou un financement de projet : utilisez plutôt Financements de projets multi-bailleurs.",
         "Vous vendez des missions sur devis sans procédure formalisée d'appel d'offres : utilisez plutôt Missions sur devis / projets sur mesure.",
@@ -455,7 +455,7 @@
       "price": 49,
       "currency": "EUR",
       "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-ADV-001",
-      "guide_url": "../templates.html#guide-title",
+      "guide_url": "../templates.html?assistant=1#assistant-choice",
       "limitations": [
         "L'annonceur achète des leads ou des contacts qualifiés plutôt que de la visibilité.",
         "Vous devez suivre chaque insertion publicitaire dans un outil d'adserving opérationnel.",
@@ -569,7 +569,7 @@
       "price": 49,
       "currency": "EUR",
       "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-APP-001",
-      "guide_url": "../templates.html#guide-title",
+      "guide_url": "../templates.html?assistant=1#assistant-choice",
       "limitations": [
         "Votre activité est surtout une communauté animée avec contenus et événements.",
         "Vous vendez principalement des missions sur devis ou projets sur mesure autour du produit.",
@@ -684,7 +684,7 @@
       "price": 49,
       "currency": "EUR",
       "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-ASSO-001",
-      "guide_url": "../templates.html#guide-title",
+      "guide_url": "../templates.html?assistant=1#assistant-choice",
       "limitations": [
         "Vous pilotez principalement des demandes de financement par projet avec cofinancements et versements complexes : utilisez plutôt Financements de projets multi-bailleurs.",
         "Vous vendez surtout des prestations commerciales sur devis : utilisez plutôt Missions sur devis / projets sur mesure.",
@@ -799,7 +799,7 @@
       "price": 49,
       "currency": "EUR",
       "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-AUD-001",
-      "guide_url": "../templates.html#guide-title",
+      "guide_url": "../templates.html?assistant=1#assistant-choice",
       "limitations": [
         "Vous êtes payé directement par une marque ou un label pour produire un contenu ou une campagne.",
         "Vous vendez principalement de l'inventaire publicitaire à des annonceurs.",
@@ -914,7 +914,7 @@
       "price": 49,
       "currency": "EUR",
       "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-BRC-001",
-      "guide_url": "../templates.html#guide-title",
+      "guide_url": "../templates.html?assistant=1#assistant-choice",
       "limitations": [
         "Vous vendez principalement de l'inventaire publicitaire au CPM ou au CPC.",
         "Votre activité repose surtout sur des leads vendus à des clients.",
@@ -1020,7 +1020,7 @@
       "price": 49,
       "currency": "EUR",
       "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-ECO-001",
-      "guide_url": "../templates.html#guide-title",
+      "guide_url": "../templates.html?assistant=1#assistant-choice",
       "limitations": [
         "Une vente déclenche ensuite un abonnement, une maintenance ou une autre source de revenus.",
         "Vous fabriquez avec des nomenclatures complexes, plusieurs composants ou des capacités industrielles.",
@@ -1128,7 +1128,7 @@
       "price": 49,
       "currency": "EUR",
       "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-EVT-001",
-      "guide_url": "../templates.html#guide-title",
+      "guide_url": "../templates.html?assistant=1#assistant-choice",
       "limitations": [
         "Votre activité repose principalement sur des abonnements récurrents.",
         "Vous vendez surtout des missions sur devis ou projets sur mesure sans événement daté.",
@@ -1238,7 +1238,7 @@
       "price": 49,
       "currency": "EUR",
       "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-FOOD-001",
-      "guide_url": "../templates.html#guide-title",
+      "guide_url": "../templates.html?assistant=1#assistant-choice",
       "limitations": [
         "Vous produisez uniquement après commande avec devis, acompte et solde : utilisez plutôt Production à la commande / fabrication sur mesure.",
         "Vous vendez surtout des produits déjà en stock via une boutique non alimentaire : utilisez plutôt E-commerce multi-produits.",
@@ -1350,7 +1350,7 @@
       "price": 49,
       "currency": "EUR",
       "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-FOR-001",
-      "guide_url": "../templates.html#guide-title",
+      "guide_url": "../templates.html?assistant=1#assistant-choice",
       "limitations": [
         "Une formation déclenche automatiquement une vente de coaching selon un taux de conversion.",
         "Vous vendez un abonnement récurrent donnant accès à des formations ou séances.",
@@ -1460,7 +1460,7 @@
       "price": 49,
       "currency": "EUR",
       "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-LEAD-001",
-      "guide_url": "../templates.html#guide-title",
+      "guide_url": "../templates.html?assistant=1#assistant-choice",
       "limitations": [
         "Vous suivez chaque prospect individuellement dans un CRM.",
         "La rémunération dépend du chiffre d'affaires futur généré chez le client.",
@@ -1571,7 +1571,7 @@
       "price": 49,
       "currency": "EUR",
       "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-LIC-001",
-      "guide_url": "../templates.html#guide-title",
+      "guide_url": "../templates.html?assistant=1#assistant-choice",
       "limitations": [
         "Le contrat inclut une prestation importante de déploiement, formation ou accompagnement.",
         "Vous devez produire une reddition de comptes juridique détaillée par transaction.",
@@ -1680,7 +1680,7 @@
       "price": 49,
       "currency": "EUR",
       "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-LOC-001",
-      "guide_url": "../templates.html#guide-title",
+      "guide_url": "../templates.html?assistant=1#assistant-choice",
       "limitations": [
         "Votre activité vend surtout des prestations humaines sur mesure : utilisez plutôt Missions sur devis / projets sur mesure ou Services récurrents / forfaits mensuels.",
         "Votre revenu vient surtout d'un abonnement sans actif limité à occuper : utilisez plutôt Abonnements multi-offres.",
@@ -1790,7 +1790,7 @@
       "price": 49,
       "currency": "EUR",
       "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-MEM-001",
-      "guide_url": "../templates.html#guide-title",
+      "guide_url": "../templates.html?assistant=1#assistant-choice",
       "limitations": [
         "Votre activité est un SaaS pur avec métriques techniques avancées.",
         "Vous vendez uniquement des missions sur devis ou projets sur mesure.",
@@ -1898,7 +1898,7 @@
       "price": 49,
       "currency": "EUR",
       "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-MKT-001",
-      "guide_url": "../templates.html#guide-title",
+      "guide_url": "../templates.html?assistant=1#assistant-choice",
       "limitations": [
         "Vous vendez également un abonnement premium aux vendeurs.",
         "Vous monétisez des annonces sponsorisées, des leads ou de la publicité.",
@@ -2010,7 +2010,7 @@
       "price": 49,
       "currency": "EUR",
       "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-MTO-001",
-      "guide_url": "../templates.html#guide-title",
+      "guide_url": "../templates.html?assistant=1#assistant-choice",
       "limitations": [
         "Vous vendez surtout des produits déjà en stock via une boutique : utilisez plutôt E-commerce multi-produits.",
         "Vous vendez surtout du temps humain sans fabrication matérielle : utilisez plutôt Offres de service standardisées ou Missions sur devis / projets sur mesure.",
@@ -2119,7 +2119,7 @@
       "price": 49,
       "currency": "EUR",
       "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-PRJ-001",
-      "guide_url": "../templates.html#guide-title",
+      "guide_url": "../templates.html?assistant=1#assistant-choice",
       "limitations": [
         "Vous vendez principalement une offre standard avec un prix fixe et un volume élevé.",
         "Votre activité repose surtout sur des abonnements récurrents.",
@@ -2227,7 +2227,7 @@
       "price": 49,
       "currency": "EUR",
       "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-RDV-001",
-      "guide_url": "../templates.html#guide-title",
+      "guide_url": "../templates.html?assistant=1#assistant-choice",
       "limitations": [
         "Vous vendez surtout des projets longs sur devis : utilisez plutôt Missions sur devis / projets sur mesure.",
         "Vous vendez des forfaits mensuels avec clients actifs et temps consommé : utilisez plutôt Services récurrents / forfaits mensuels.",
@@ -2334,7 +2334,7 @@
       "price": 49,
       "currency": "EUR",
       "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-REC-001",
-      "guide_url": "../templates.html#guide-title",
+      "guide_url": "../templates.html?assistant=1#assistant-choice",
       "limitations": [
         "Votre activité repose surtout sur des projets uniques avec devis, acompte et solde.",
         "Vous produisez des contenus éditoriaux commandés par des marques.",
@@ -2446,7 +2446,7 @@
       "price": 49,
       "currency": "EUR",
       "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-RET-001",
-      "guide_url": "../templates.html#guide-title",
+      "guide_url": "../templates.html?assistant=1#assistant-choice",
       "limitations": [
         "Vous vendez surtout en ligne avec frais d'expédition, retours et acquisition digitale : utilisez plutôt E-commerce multi-produits.",
         "Vous fabriquez après commande avec acompte, production et solde : utilisez plutôt Production à la commande / fabrication sur mesure.",
@@ -2548,7 +2548,7 @@
       "price": 49,
       "currency": "EUR",
       "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-SRV-001",
-      "guide_url": "../templates.html#guide-title",
+      "guide_url": "../templates.html?assistant=1#assistant-choice",
       "limitations": [
         "Chaque client donne lieu à un devis complet, un projet unique, un acompte et un solde : utilisez plutôt Missions sur devis / projets sur mesure.",
         "Une mission déclenche ensuite un abonnement, une commission ou une autre source de revenus.",
@@ -2753,7 +2753,7 @@
       "price": 49,
       "currency": "EUR",
       "purchase_url": "https://buy.stripe.com/6oU4gBelZ86jghU4AF63K0a?client_reference_id=BM-SUB-001",
-      "guide_url": "../templates.html#guide-title",
+      "guide_url": "../templates.html?assistant=1#assistant-choice",
       "limitations": [
         "Certains abonnés achètent ensuite du coaching, des options ou des services complémentaires.",
         "Des clients passent régulièrement d'une formule à une autre et vous souhaitez modéliser précisément les migrations.",
