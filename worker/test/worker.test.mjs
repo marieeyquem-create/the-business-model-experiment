@@ -4,6 +4,7 @@ import assert from "node:assert/strict";
 import {
   actionMap,
   chatRequestBody,
+  diagnosticRequestBody,
   estimateResponseCostEur,
   extractOutputText,
   fileIsAllowed,
@@ -59,6 +60,21 @@ test("le corps OpenAI utilise Luna, Responses stateless et structured outputs", 
   assert.equal(body.store, false);
   assert.equal(body.reasoning.effort, "none");
   assert.equal(body.text.format.type, "json_schema");
+});
+
+test("le diagnostic donne des priorites sans livrer gratuitement le modele complet", () => {
+  const body = diagnosticRequestBody({
+    file: { name: "previsionnel.xlsx" },
+    base64: "UEsDBA==",
+    mime: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    context: "Activite avec abonnement",
+    templates,
+    safetyIdentifier: "safe-id",
+  });
+  assert.equal(body.max_output_tokens, 1100);
+  assert.equal(body.text.format.schema.properties.architecture_issues.maxItems, 4);
+  assert.equal(body.text.format.schema.properties.missing_building_blocks.maxItems, 3);
+  assert.match(body.instructions, /ne fournis pas de tableau complet/i);
 });
 
 test("extractOutputText accepte les deux formes Responses", () => {

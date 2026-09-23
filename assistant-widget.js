@@ -381,12 +381,12 @@
 
   function renderDiagnostic(data) {
     const box = element("article", "bm-assistant-diagnostic");
-    box.append(textElement("h3", "Premier diagnostic de la structure"));
+    box.append(textElement("h3", "Première lecture de votre prévisionnel"));
     box.append(textElement("p", data.summary));
     appendDiagnosticList(box, "Ce qui est déjà bien structuré", data.architecture_strengths);
     appendDiagnosticList(box, "Points à corriger ou clarifier", data.architecture_issues);
     appendDiagnosticList(box, "Hypothèses importantes à pouvoir modifier", data.missing_building_blocks);
-    appendDiagnosticList(box, "Priorités", data.priorities);
+    appendDiagnosticList(box, "Vos prochaines priorités", data.priorities);
     if (data.limitations) box.append(textElement("p", data.limitations, "bm-assistant-limit"));
     log.append(box);
     scrollToBottom();

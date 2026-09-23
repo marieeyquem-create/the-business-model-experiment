@@ -35,22 +35,22 @@ const DIAGNOSTIC_SCHEMA = {
     architecture_strengths: {
       type: "array",
       items: { type: "string" },
-      maxItems: 4,
+      maxItems: 3,
     },
     architecture_issues: {
       type: "array",
       items: { type: "string" },
-      maxItems: 6,
+      maxItems: 4,
     },
     missing_building_blocks: {
       type: "array",
       items: { type: "string" },
-      maxItems: 5,
+      maxItems: 3,
     },
     priorities: {
       type: "array",
       items: { type: "string" },
-      maxItems: 4,
+      maxItems: 3,
     },
     limitations: { type: "string" },
     action_ids: {
@@ -87,6 +87,9 @@ Regles commerciales :
 - Le parcours personnalise convient aux mecanismes interdependants ou aux besoins importants d'accompagnement.
 - La formation gratuite peut etre proposee quand la personne doit d'abord comprendre les bases.
 - N'invente ni offre, ni prix, ni fonctionnalite, ni URL.
+- Apporte assez de valeur pour que la personne comprenne son probleme et sa prochaine priorite, mais ne construis pas gratuitement son modele financier complet.
+- Ne fournis pas de tableau complet, de formule Excel, de liste exhaustive de cellules a creer ni de tutoriel pas a pas. Ces elements relevent du template ou de l'accompagnement.
+- N'entretiens jamais volontairement le flou : explique clairement les constats et leur importance, puis distingue honnetement le diagnostic gratuit de la mise en oeuvre proposee dans les ressources payantes.
 
 Parcours diagnostic :
 - Identifie d'abord l'activite, qui paie, les differentes sources de revenus, les liens eventuels entre elles, le stade du projet et la decision que la personne cherche a prendre.
@@ -125,6 +128,12 @@ Interdictions absolues :
 - ne presente pas cette revue comme un audit ou une validation comptable.
 
 Chaque critique doit expliquer simplement pourquoi la structure pose probleme et comment la corriger. Si le fichier ne permet pas de verifier un point, dis-le clairement. Recommande au maximum deux ressources de la liste autorisee.
+
+Perimetre de cette premiere lecture gratuite :
+- selectionne les points les plus importants au lieu de chercher l'exhaustivite ;
+- donne au maximum quatre constats a corriger, trois hypotheses manquantes et trois priorites ;
+- indique la direction de la correction, sans produire les formules, les tableaux, l'architecture detaillee feuille par feuille ou le modele final ;
+- termine par une transition sobre vers la ressource qui permet de mettre les corrections en oeuvre, seulement si elle est reellement pertinente.
 `;
 
 function json(data, status = 200, headers = {}) {
@@ -495,7 +504,7 @@ function diagnosticRequestBody({ file, base64, mime, context, templates, safetyI
     model: MODEL,
     store: false,
     reasoning: { effort: "none" },
-    max_output_tokens: 1500,
+    max_output_tokens: 1100,
     safety_identifier: safetyIdentifier,
     instructions: `${BASE_INSTRUCTIONS}\n${DIAGNOSTIC_INSTRUCTIONS}\nRESSOURCES AUTORISEES\n${resourceContext(templates)}`,
     input: [

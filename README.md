@@ -24,7 +24,7 @@ Le site inclut un assistant conversationnel qui commence par caractériser l'act
 - être orienté vers un template, le guide, une formation ou un accompagnement ;
 - transmettre facultativement un fichier XLSX, XLS ou CSV pour examiner l'architecture de son prévisionnel.
 
-Le diagnostic du fichier porte sur la structure, les hypothèses modifiables, les formules visibles, les doubles saisies, les contrôles et les indicateurs utiles. Il ne juge pas les montants et ne constitue pas une validation comptable.
+Le diagnostic du fichier porte sur la structure, les hypothèses modifiables, les formules visibles, les doubles saisies, les contrôles et les indicateurs utiles. Il ne juge pas les montants et ne constitue pas une validation comptable. Cette première lecture gratuite sélectionne les problèmes et priorités les plus importants, mais ne livre ni modèle complet, ni formules Excel, ni procédure de correction cellule par cellule. La mise en œuvre est assurée par les templates ou l'accompagnement lorsque l'une de ces offres est réellement pertinente.
 
 La partie visible est dans `assistant-widget.js` et `assistant-widget.css`. La clé OpenAI reste dans le Worker Cloudflare situé dans `worker/` ; elle ne doit jamais être ajoutée au HTML ou au JavaScript public.
 
