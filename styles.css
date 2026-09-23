@@ -776,6 +776,42 @@ a {
   box-shadow: 0 12px 30px rgba(40, 28, 70, 0.06);
 }
 
+.catalogue-recommendation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px;
+  border: 1px solid rgba(124, 58, 237, 0.35);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  background: #faf8ff;
+}
+
+.catalogue-recommendation[hidden] {
+  display: none;
+}
+
+.catalogue-recommendation > div:first-child {
+  display: grid;
+  gap: 5px;
+}
+
+.catalogue-recommendation strong {
+  color: var(--accent-dark);
+  font-size: 18px;
+}
+
+.catalogue-recommendation span {
+  color: var(--muted);
+}
+
+.catalogue-recommendation-actions {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 10px;
+}
+
 .catalogue-search {
   display: grid;
   gap: 8px;
@@ -1002,6 +1038,12 @@ a {
   .cards.four,
   .orientation-grid {
     grid-template-columns: 1fr;
+  }
+
+  .catalogue-recommendation,
+  .catalogue-recommendation-actions {
+    align-items: stretch;
+    flex-direction: column;
   }
 
   .cards.two {

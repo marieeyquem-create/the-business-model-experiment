@@ -132,6 +132,16 @@
           </a>
         </div>
         <div class="catalogue-tools" aria-label="Filtres de la bibliothèque">
+          <div class="catalogue-recommendation" id="catalogue-recommendation" hidden>
+            <div>
+              <strong>Templates recommandés pour votre activité</strong>
+              <span id="catalogue-recommendation-copy"></span>
+            </div>
+            <div class="catalogue-recommendation-actions">
+              <a class="button primary" id="buy-recommended-templates" href="#">Acheter la sélection</a>
+              <button class="button secondary" id="show-all-templates" type="button">Voir toute la bibliothèque</button>
+            </div>
+          </div>
           <label class="catalogue-search" for="template-search">
             Rechercher un template
             <input id="template-search" type="search" placeholder="Tapez votre activité : café, kiné, marque de bijoux, association culturelle, SaaS..." />
@@ -245,8 +255,24 @@
       const catalogueSearch = document.querySelector("#template-search");
       const catalogueCount = document.querySelector("#template-catalogue-count");
       const catalogueFilterPills = document.querySelector("#template-filter-pills");
+      const catalogueRecommendation = document.querySelector("#catalogue-recommendation");
+      const catalogueRecommendationCopy = document.querySelector("#catalogue-recommendation-copy");
+      const buyRecommendedTemplates = document.querySelector("#buy-recommended-templates");
+      const showAllTemplates = document.querySelector("#show-all-templates");
       let catalogueProducts = [];
       let activeCatalogueFilter = "all";
+      const recommendedIds = new Set(
+        (new URLSearchParams(window.location.search).get("recommended") || "")
+          .split(",")
+          .map((id) => id.trim())
+          .filter(Boolean),
+      );
+      let showingRecommendation = recommendedIds.size > 0;
+
+      const combinedPurchaseLinks = {
+        2: "https://buy.stripe.com/28E3cx91FdqDe9Mc3763K06",
+        3: "https://buy.stripe.com/7sYdRb6TxeuHaXA9UZ63K07",
+      };
 
       const productGroupsById = {
         "BM-SRV-001": ["services"],
@@ -630,6 +656,7 @@
       }
 
       function productMatchesFilter(product) {
+        if (showingRecommendation) return recommendedIds.has(product.id);
         const groups = productGroupsById[product.id] || [];
         const matchesGroup = activeCatalogueFilter === "all" || groups.includes(activeCatalogueFilter);
         const matchesSearch = productSearchScore(product, catalogueSearch?.value || "") > 0;
@@ -642,6 +669,24 @@
         const filteredProducts = products
           .filter(productMatchesFilter)
           .sort((a, b) => productSearchScore(b, rawSearchTerm) - productSearchScore(a, rawSearchTerm));
+        if (showingRecommendation && catalogueRecommendation) {
+          catalogueRecommendation.hidden = false;
+          const count = filteredProducts.length;
+          catalogueRecommendationCopy.textContent = count === 1
+            ? "Un template correspond à votre diagnostic."
+            : `${count} templates seront réunis dans un fichier consolidé prêt à remplir.`;
+          if (count === 1) {
+            buyRecommendedTemplates.href = filteredProducts[0]?.purchase_url || "#";
+            buyRecommendedTemplates.textContent = "Acheter ce template – 49 €";
+          } else if (combinedPurchaseLinks[count]) {
+            const reference = encodeURIComponent(`COMBO-${filteredProducts.map((item) => item.id).join("-")}`);
+            buyRecommendedTemplates.href = `${combinedPurchaseLinks[count]}?client_reference_id=${reference}`;
+            buyRecommendedTemplates.textContent = `Acheter les ${count} templates combinés – ${count === 2 ? "79" : "99"} €`;
+          } else {
+            buyRecommendedTemplates.href = "coaching.html";
+            buyRecommendedTemplates.textContent = "Construire mon modèle personnalisé";
+          }
+        }
         catalogueGrid.replaceChildren();
         if (catalogueCount) {
           const countLabel = filteredProducts.length === 1 ? "1 template affiché" : `${filteredProducts.length} templates affichés`;
@@ -683,7 +728,7 @@
           const actions = document.createElement("div");
           actions.className = "product-actions";
 
-          if (product.purchase_url) {
+          if (product.purchase_url && !showingRecommendation) {
             const buyLink = document.createElement("a");
             buyLink.className = "button primary";
             buyLink.href = product.purchase_url;
@@ -719,6 +764,8 @@
       }
 
       catalogueSearch?.addEventListener("input", () => {
+        showingRecommendation = false;
+        catalogueRecommendation.hidden = true;
         activeCatalogueFilter = "all";
         catalogueFilterPills?.querySelectorAll(".filter-pill").forEach((pill) => {
           pill.classList.toggle("active", pill.dataset.filter === "all");
@@ -728,10 +775,24 @@
       catalogueFilterPills?.addEventListener("click", (event) => {
         const button = event.target.closest("button[data-filter]");
         if (!button) return;
+        showingRecommendation = false;
+        catalogueRecommendation.hidden = true;
         activeCatalogueFilter = button.dataset.filter;
         catalogueFilterPills.querySelectorAll(".filter-pill").forEach((pill) => {
           pill.classList.toggle("active", pill === button);
         });
+        renderTemplateCatalogue(catalogueProducts);
+      });
+
+      showAllTemplates?.addEventListener("click", () => {
+        showingRecommendation = false;
+        catalogueRecommendation.hidden = true;
+        activeCatalogueFilter = "all";
+        catalogueSearch.value = "";
+        catalogueFilterPills?.querySelectorAll(".filter-pill").forEach((pill) => {
+          pill.classList.toggle("active", pill.dataset.filter === "all");
+        });
+        history.replaceState({}, "", `${window.location.pathname}#catalogue-templates`);
         renderTemplateCatalogue(catalogueProducts);
       });
 

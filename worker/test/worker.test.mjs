@@ -102,7 +102,25 @@ test("plusieurs templates produisent une combinaison et non une fiche unique", (
     "template:BM-RDV-001",
     "template:BM-SUB-001",
   ]);
-  assert.deepEqual(recommendation.actions.map((item) => item.id), ["templates-assistant", "coaching"]);
+  assert.deepEqual(recommendation.actions.map((item) => item.id), ["templates-recommended", "coaching"]);
+  assert.match(recommendation.actions[0].url, /recommended=BM-RDV-001%2CBM-SUB-001/);
+});
+
+test("les identifiants sans prefixe template sont acceptes", () => {
+  const catalog = [
+    ...templates,
+    { id: "BM-SUB-001", slug: "abonnement-simple", title: "Abonnements multi-offres" },
+  ];
+  const recommendation = sanitizeDiagnosticRecommendation({
+    recommendation_type: "combination",
+    recommendation_title: "Combinaison recommandee",
+    recommendation_copy: "Deux modeles distincts.",
+    recommended_template_ids: ["BM-RDV-001", "BM-SUB-001"],
+  }, catalog, env);
+  assert.deepEqual(recommendation.templates.map((item) => item.id), [
+    "template:BM-RDV-001",
+    "template:BM-SUB-001",
+  ]);
 });
 
 test("une consolidation specifique oriente vers l'accompagnement", () => {

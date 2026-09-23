@@ -163,6 +163,7 @@ Regles de recommandation commerciale :
 - utilise unitary uniquement lorsqu'une seule activite et un seul mecanisme de revenus correspondent reellement a un template du catalogue ;
 - si plusieurs business units ou plusieurs modeles de revenus distincts sont identifies, ne recommande jamais un seul template ;
 - utilise combination lorsque chaque modele est couvert par un template standard et que les activites peuvent etre assemblees avec une consolidation commune ; cite alors tous les templates utiles dans recommended_template_ids et utilise l'action templates-assistant ;
+- dans recommended_template_ids, recopie uniquement les identifiants BM-... exacts fournis dans le catalogue ; n'utilise ni le titre du template ni un identifiant invente ;
 - utilise personalized lorsque les activites dependent les unes des autres, partagent des hypotheses difficiles a repartir, necessitent une consolidation specifique, ou lorsqu'au moins un modele n'est pas couvert par le catalogue ; utilise alors l'action coaching ;
 - utilise none si aucune ressource n'est pertinente ;
 - pour unitary ou combination, l'action principale conduit vers le ou les templates ; une seconde action coaching peut permettre a la personne qui ne se sent pas autonome d'etre accompagnee ;
@@ -204,7 +205,12 @@ function isAllowedRequest(request, env) {
 }
 
 function clampText(value, maxLength) {
-  return typeof value === "string" ? value.trim().slice(0, maxLength) : "";
+  if (typeof value !== "string") return "";
+  const clean = value.trim();
+  if (clean.length <= maxLength) return clean;
+  const shortened = clean.slice(0, Math.max(1, maxLength - 1));
+  const lastSpace = shortened.lastIndexOf(" ");
+  return `${shortened.slice(0, lastSpace > maxLength * 0.6 ? lastSpace : shortened.length).trim()}…`;
 }
 
 function sanitizeMessages(messages) {
@@ -486,6 +492,7 @@ function sanitizeDiagnosticRecommendation(result, templates, env) {
   );
   const recommended = [...new Set(
     (Array.isArray(result.recommended_template_ids) ? result.recommended_template_ids : [])
+      .map((id) => String(id).startsWith("template:") ? String(id) : `template:${id}`)
       .filter((id) => templatesByAction.has(id)),
   )].slice(0, 4);
   const allowedTypes = new Set(["unitary", "combination", "personalized", "none"]);
@@ -494,15 +501,27 @@ function sanitizeDiagnosticRecommendation(result, templates, env) {
     : "none";
   if (recommended.length > 1 && type === "unitary") type = "combination";
 
-  let actionIds = [];
+  let actions = [];
   if (type === "unitary") {
-    actionIds = recommended.slice(0, 1);
-    if (!actionIds.length) actionIds = ["templates-library"];
-    actionIds.push("coaching");
+    const actionIds = recommended.length ? [...recommended.slice(0, 1), "coaching"] : ["templates-library", "coaching"];
+    actions = sanitizeActions(actionIds, templates, env);
   } else if (type === "combination") {
-    actionIds = ["templates-assistant", "coaching"];
+    if (recommended.length) {
+      const site = String(env.SITE_URL || FALLBACK_SITE_URL).replace(/\/$/, "");
+      const ids = recommended.map((id) => id.replace(/^template:/, "")).join(",");
+      actions = [
+        {
+          id: "templates-recommended",
+          label: `Voir et acheter les ${recommended.length} templates recommandes`,
+          url: `${site}/templates.html?recommended=${encodeURIComponent(ids)}#catalogue-templates`,
+        },
+        ...sanitizeActions(["coaching"], templates, env),
+      ];
+    } else {
+      actions = sanitizeActions(["templates-assistant", "coaching"], templates, env);
+    }
   } else if (type === "personalized") {
-    actionIds = ["coaching"];
+    actions = sanitizeActions(["coaching"], templates, env);
   }
 
   return {
@@ -513,7 +532,7 @@ function sanitizeDiagnosticRecommendation(result, templates, env) {
       id,
       label: templatesByAction.get(id).title.replace(/^BM-[A-Z]+-\d+\s*[–-]\s*/, ""),
     })),
-    actions: sanitizeActions(actionIds, templates, env),
+    actions,
   };
 }
 
@@ -710,7 +729,7 @@ async function handleDiagnostic(request, env, headers) {
         .slice(0, 4)
         .map((item) => clampText(item, 100)),
       summary: clampText(result.summary, 500),
-      key_gaps: (result.key_gaps || []).slice(0, 4).map((item) => clampText(item, 180)),
+      key_gaps: (result.key_gaps || []).slice(0, 4).map((item) => clampText(item, 240)),
       priority: clampText(result.priority, 240),
       limitations: clampText(result.limitations, 320),
       recommendation: {
