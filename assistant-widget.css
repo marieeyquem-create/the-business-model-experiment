@@ -1,0 +1,349 @@
+.bm-assistant-launcher,
+.bm-assistant-panel,
+.bm-assistant-panel * {
+  box-sizing: border-box;
+}
+
+.bm-assistant-launcher {
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  z-index: 80;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 8px 18px 8px 9px;
+  border: 0;
+  border-radius: 999px;
+  color: #fff;
+  background: #7c3aed;
+  box-shadow: 0 18px 45px rgba(40, 28, 70, 0.28);
+  font: 800 15px/1 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  cursor: pointer;
+}
+
+.bm-assistant-launcher[hidden] {
+  display: none;
+}
+
+.bm-assistant-launcher:hover,
+.bm-assistant-launcher:focus-visible {
+  background: #5b21b6;
+}
+
+.bm-assistant-launcher img {
+  width: 36px;
+  height: 36px;
+  padding: 5px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.bm-assistant-panel {
+  position: fixed;
+  right: 22px;
+  bottom: 86px;
+  z-index: 81;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  width: min(420px, calc(100vw - 28px));
+  height: min(680px, calc(100vh - 112px));
+  overflow: hidden;
+  border: 1px solid #ded8e8;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 26px 70px rgba(40, 28, 70, 0.22);
+  color: #201b2d;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.bm-assistant-panel[hidden] {
+  display: none;
+}
+
+.bm-assistant-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  min-height: 72px;
+  padding: 12px 14px;
+  border-bottom: 1px solid #ded8e8;
+  background: #fbfaf8;
+}
+
+.bm-assistant-header img {
+  width: 38px;
+  height: 38px;
+}
+
+.bm-assistant-title {
+  display: grid;
+  gap: 3px;
+}
+
+.bm-assistant-title strong {
+  font-size: 15px;
+}
+
+.bm-assistant-title span {
+  color: #665f72;
+  font-size: 12px;
+}
+
+.bm-assistant-close {
+  width: 38px;
+  height: 38px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #665f72;
+  font-size: 25px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.bm-assistant-close:hover,
+.bm-assistant-close:focus-visible {
+  background: #f2f0ec;
+  color: #201b2d;
+}
+
+.bm-assistant-log {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  overflow-y: auto;
+  padding: 18px 14px 22px;
+  scroll-behavior: smooth;
+}
+
+.bm-assistant-message {
+  width: fit-content;
+  max-width: 88%;
+  margin: 0;
+  padding: 11px 13px;
+  border-radius: 8px;
+  white-space: pre-wrap;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.bm-assistant-message.assistant {
+  justify-self: start;
+  border: 1px solid #ded8e8;
+  background: #f7f5f2;
+}
+
+.bm-assistant-message.user {
+  justify-self: end;
+  color: #fff;
+  background: #5b21b6;
+}
+
+.bm-assistant-message.error {
+  border-color: #fecaca;
+  color: #991b1b;
+  background: #fef2f2;
+}
+
+.bm-assistant-starters,
+.bm-assistant-quick-replies,
+.bm-assistant-actions {
+  display: grid;
+  gap: 8px;
+}
+
+.bm-assistant-choice,
+.bm-assistant-action {
+  width: 100%;
+  min-height: 42px;
+  padding: 10px 12px;
+  border: 1px solid #cfc5df;
+  border-radius: 8px;
+  color: #4c1d95;
+  background: #fff;
+  font: 750 13px/1.3 inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.bm-assistant-choice:hover,
+.bm-assistant-choice:focus-visible,
+.bm-assistant-action:hover,
+.bm-assistant-action:focus-visible {
+  border-color: #7c3aed;
+  background: #f6f1ff;
+}
+
+.bm-assistant-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.bm-assistant-action::after {
+  content: "→";
+  flex: 0 0 auto;
+  font-size: 18px;
+}
+
+.bm-assistant-upload,
+.bm-assistant-diagnostic {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #cfc5df;
+  border-radius: 8px;
+  background: #faf8ff;
+}
+
+.bm-assistant-upload h3,
+.bm-assistant-diagnostic h3,
+.bm-assistant-diagnostic h4 {
+  margin: 0;
+  letter-spacing: 0;
+}
+
+.bm-assistant-upload h3 {
+  font-size: 16px;
+}
+
+.bm-assistant-upload p,
+.bm-assistant-upload small,
+.bm-assistant-diagnostic p,
+.bm-assistant-diagnostic li {
+  margin: 0;
+  color: #665f72;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.bm-assistant-upload input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ded8e8;
+  border-radius: 8px;
+  background: #fff;
+  font: inherit;
+}
+
+.bm-assistant-consent {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 9px;
+  align-items: start;
+  color: #4e475b;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.bm-assistant-consent input {
+  width: 17px;
+  height: 17px;
+  margin: 1px 0 0;
+  accent-color: #7c3aed;
+}
+
+.bm-assistant-upload button,
+.bm-assistant-composer button {
+  min-height: 42px;
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: #fff;
+  background: #7c3aed;
+  font: 800 13px/1 inherit;
+  cursor: pointer;
+}
+
+.bm-assistant-upload button:disabled,
+.bm-assistant-composer button:disabled {
+  opacity: 0.52;
+  cursor: not-allowed;
+}
+
+.bm-assistant-skip {
+  color: #5b21b6 !important;
+  background: transparent !important;
+  border: 1px solid #cfc5df !important;
+}
+
+.bm-assistant-diagnostic section {
+  display: grid;
+  gap: 6px;
+}
+
+.bm-assistant-diagnostic h4 {
+  font-size: 13px;
+}
+
+.bm-assistant-diagnostic ul {
+  display: grid;
+  gap: 5px;
+  margin: 0;
+  padding-left: 18px;
+}
+
+.bm-assistant-limit {
+  padding: 10px;
+  border-left: 3px solid #0f766e;
+  background: #f0fdfa;
+}
+
+.bm-assistant-typing {
+  color: #665f72;
+  font-size: 13px;
+}
+
+.bm-assistant-composer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid #ded8e8;
+  background: #fff;
+}
+
+.bm-assistant-composer textarea {
+  min-height: 44px;
+  max-height: 110px;
+  resize: none;
+  border: 1px solid #ded8e8;
+  border-radius: 8px;
+  padding: 11px 12px;
+  color: #201b2d;
+  background: #fbfaf8;
+  font: 14px/1.4 inherit;
+}
+
+.bm-assistant-composer textarea:focus {
+  outline: 2px solid rgba(124, 58, 237, 0.2);
+  border-color: #7c3aed;
+}
+
+@media (max-width: 560px) {
+  .bm-assistant-launcher {
+    right: 14px;
+    bottom: 14px;
+  }
+
+  .bm-assistant-panel {
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100dvh;
+    max-height: none;
+    border: 0;
+    border-radius: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bm-assistant-log {
+    scroll-behavior: auto;
+  }
+}

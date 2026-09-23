@@ -128,7 +128,9 @@ a {
   border-radius: 999px;
   padding: 0 20px;
   font-weight: 800;
+  font-family: inherit;
   border: 1px solid transparent;
+  cursor: pointer;
 }
 
 .button.primary {

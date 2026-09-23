@@ -1,0 +1,5 @@
+OPENAI_API_KEY=remplacer_par_une_cle_api_de_test
+SAFETY_SALT=remplacer_par_une_phrase_secrete_longue
+
+# Facultatif pendant le test. Ne pas mettre de guillemets.
+BUDGET_ALERT_WEBHOOK_URL=

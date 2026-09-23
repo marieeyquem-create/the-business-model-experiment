@@ -1,0 +1,29 @@
+name = "the-business-model-experiment-assistant"
+main = "src/index.js"
+compatibility_date = "2026-09-23"
+
+[vars]
+SITE_URL = "https://the-business-model-experiment.com"
+CATALOG_URL = "https://the-business-model-experiment.com/data/templates.json"
+ALLOWED_ORIGINS = "https://the-business-model-experiment.com,https://www.the-business-model-experiment.com,http://localhost:8080,http://127.0.0.1:8080"
+MAX_DAILY_REQUESTS_PER_IP = "20"
+MAX_MONTHLY_CHAT_REQUESTS = "2000"
+MAX_MONTHLY_DIAGNOSTICS = "25"
+MAX_FILE_BYTES = "5242880"
+MONTHLY_OPENAI_BUDGET_EUR = "15"
+BUDGET_WARNING_RATIO = "0.8"
+
+[triggers]
+crons = ["0 8 * * 1"]
+
+# Secrets a ajouter avant le deploiement :
+#   npx wrangler secret put OPENAI_API_KEY
+#   npx wrangler secret put SAFETY_SALT
+#   npx wrangler secret put BUDGET_ALERT_WEBHOOK_URL
+#   npx wrangler secret put STATS_API_KEY
+#
+# Pour rendre les quotas fiables entre toutes les instances, creer un KV puis
+# decommenter ce bloc en remplacant l'identifiant :
+# [[kv_namespaces]]
+# binding = "USAGE_KV"
+# id = "IDENTIFIANT_KV_A_REMPLACER"
